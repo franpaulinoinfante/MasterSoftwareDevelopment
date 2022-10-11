@@ -27,6 +27,8 @@
 
 ### Intrucciones generales
 
+![image](https://user-images.githubusercontent.com/46433173/195127586-e5597ae0-91e3-4963-8e7d-7f12111f1270.png)
+
 ### Actividad Put
 
 ### Actividad Move
