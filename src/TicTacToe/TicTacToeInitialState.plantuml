@@ -1,0 +1,77 @@
+@startuml InitialState
+ title Initial State
+
+ object TicTacToe
+
+ object Board
+ object "Square" as o1
+ object "Square" as o2
+ object "Square" as o3
+ object "Square" as o4
+ object "Square" as o5
+ object "Square" as o6
+ object "Square" as o7
+ object "Square" as o8
+ object "Square" as o9
+
+ object "Coordinate" as c1 {
+    row = 0
+    column = 0
+ }
+ object "Coordinate" as c2{
+    row = 0
+    column = 1
+    
+ }
+ object "Coordinate" as c3{
+    row = 0
+    column = 2
+ }
+ object "Coordinate" as c4{
+    row = 1
+    column = 0
+ }
+ object "Coordinate" as c5{
+    row = 1
+    column = 1
+ }
+ object "Coordinate" as c6{
+    row = 1
+    column = 2
+ }
+ object "Coordinate" as c7{
+    row = 2
+    column = 0
+ }
+ object "Coordinate" as c8{
+    row = 2
+    column = 1
+ }
+ object "Coordinate" as c9{
+    row = 2
+    column = 2
+ }
+
+TicTacToe --> Board
+Board -down-> o1
+Board -down-> o2
+Board -down-> o3
+Board -left-> o4
+Board -left-> o5
+Board -left-> o6
+Board -right-> o7
+Board -right-> o8
+Board -right-> o9
+
+o1 --> c1
+o2 --> c2
+o3 --> c3
+o4 --> c4
+o5 --> c5
+o6 --> c6
+o7 --> c7
+o8 --> c8
+o9 --> c9
+
+
+@enduml

@@ -19,6 +19,8 @@
 
 ### Estado Inicial
 
+image.png
+
 ### Estado Final Jugador - X - logra, TicTacToe cumpliendo Objetio tres en raya con Diagonal principal.
 
 ### Intrucciones generales
