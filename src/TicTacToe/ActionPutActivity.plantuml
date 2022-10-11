@@ -1,0 +1,17 @@
+@startuml ActionPut
+title Action Put Activity
+
+start
+
+repeat
+    :Coordinate to Put;
+    repeat
+        :Enter the row;
+        :Enter the column;
+    repeat while(coordinate it no valid valid or the square is not empty)
+        :Put Token in square;
+        :Token = Token + 1;
+        :Turn Change;
+repeat while(token less than or equal 3 or there is not TicTacToe)
+stop
+@enduml

@@ -1,0 +1,47 @@
+@startuml Activities
+title Activities
+start
+
+:Random TurnX;
+repeat
+    :Coordinate to Put at TokenX;
+    repeat
+        :Enter row;
+        :Enter column;
+    repeat while(coordinate is valid or square is empty)
+    :Put TokenX on Square;
+    :Turn Change;
+    :Coordinate to Put at TokenO;
+    repeat
+        :Enter row;
+        :Enter column;
+    repeat while(coordinate is valid or square is empty)
+    :Put TokenO on Square;
+    :Turn Change;
+repeat while(TurnX less 3)
+:Coordinate to Put at TokenO;
+repeat
+    :Enter row;
+    :Enter column;
+repeat while(coordinate is valid or square is empty)
+:Put TokenO on Square;
+if(Is TicTacToe with TokenO) then(no)
+    :Turn Change;
+    :Coordinate To MoveX;
+    repeat
+        :Enter row;
+        :Enter column;
+    repeat while(coordinate is not valid or is not owner token)
+    :Coordinate to put the token to move;
+    repeat
+        :Enter row;
+        :Enter column;
+    repeat while(coordinate is no valid or the coordinate is no empty)
+        :Put Token;
+        :Turn Change;
+else (yes)
+
+endif
+
+stop
+@enduml

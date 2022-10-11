@@ -1,0 +1,21 @@
+@startuml Action Move Activity
+title Action Move Activity
+start
+
+repeat
+    :Coordinate to move;
+    repeat    
+        :Enter row;
+        :Enter column;
+    repeat while(coordinate it no valid valid or not owner of the token)
+    :Coordinate to put the piece to move;
+    repeat
+        :Enter row;
+        :Enter column;
+    repeat while(coordinate is no valid or the coordinate is no empty)
+        :Put Token;
+        :Turn Change;
+repeat while(there is not TicTacToe)
+stop
+
+@enduml
