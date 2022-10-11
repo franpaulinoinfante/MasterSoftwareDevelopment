@@ -1,0 +1,21 @@
+@startuml Funcionality
+
+title Intrucciones Generales
+
+state A as "ocissous"
+state B as "ocissous"
+state C as " ocissous"
+state D as "ocissous"
+state E as "ocissous"
+[*] --> A
+A --> B: put X
+B --> A : put O
+B --> C : [IsCompletedX]
+C --> D : put O
+C --> [*] : [IsTicTacToeX]
+D --> E : move x
+E --> D : move O
+D --> [*] : [IsTicTacToeO]
+E --> [*] : [IsTicTacToeX]
+
+@enduml

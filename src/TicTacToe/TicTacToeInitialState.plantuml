@@ -1,77 +1,82 @@
 @startuml InitialState
- title Initial State
 
- object TicTacToe
+title Initial State
 
- object Board
- object "Square" as o1
- object "Square" as o2
- object "Square" as o3
- object "Square" as o4
- object "Square" as o5
- object "Square" as o6
- object "Square" as o7
- object "Square" as o8
- object "Square" as o9
+together{
+   object ":Square" as Square11
+   object ":Square" as Square12
+   object ":Square" as Square13
 
- object "Coordinate" as c1 {
-    row = 0
-    column = 0
- }
- object "Coordinate" as c2{
-    row = 0
-    column = 1
-    
- }
- object "Coordinate" as c3{
-    row = 0
-    column = 2
- }
- object "Coordinate" as c4{
-    row = 1
-    column = 0
- }
- object "Coordinate" as c5{
-    row = 1
-    column = 1
- }
- object "Coordinate" as c6{
-    row = 1
-    column = 2
- }
- object "Coordinate" as c7{
-    row = 2
-    column = 0
- }
- object "Coordinate" as c8{
-    row = 2
-    column = 1
- }
- object "Coordinate" as c9{
-    row = 2
-    column = 2
- }
+   object ":Square" as Square21
+   object ":Square" as Square22
+   object ":Square" as Square23
 
-TicTacToe --> Board
-Board --> o1
-Board --> o2
-Board --> o3
-Board --> o4
-Board --> o5
-Board --> o6
-Board --> o7
-Board --> o8
-Board --> o9
+   object ":Square" as Square31
+   object ":Square" as Square32
+   object ":Square" as Square33
+}
 
-o1 --> c1
-o2 --> c2
-o3 --> c3
-o4 --> c4
-o5 --> c5
-o6 --> c6
-o7 --> c7
-o8 --> c8
-o9 --> c9
+object ":Coordinate" as Coordinate11 {
+   row = 0
+   column = 0
+}
+object ":Coordinate" as Coordinate12{
+   row = 0
+   column = 1
+   
+}
+object ":Coordinate" as Coordinate13{
+   row = 0
+   column = 2
+}
+object ":Coordinate" as Coordinate21{
+   row = 1
+   column = 0
+}
+object ":Coordinate" as Coordinate22{
+   row = 1
+   column = 1
+}
+object ":Coordinate" as Coordinate23{
+   row = 1
+   column = 2
+}
+object ":Coordinate" as Coordinate31{
+   row = 2
+   column = 0
+}
+object ":Coordinate" as Coordinate32{
+   row = 2
+   column = 1
+}
+object ":Coordinate" as Coordinate33{
+   row = 2
+   column = 2
+}
 
+Square11 *-down-> Coordinate11
+Square12 *-down-> Coordinate12
+Square13 *-down-> Coordinate13
+Square21 *-down-> Coordinate21
+Square22 *-down-> Coordinate22
+Square23 *-down-> Coordinate23
+Square31 *-down-> Coordinate31
+Square32 *-down-> Coordinate32
+Square33 *-down-> Coordinate33
+
+Square11 -[hidden]right-> Square12
+Square12 -[hidden]right-> Square13
+Square21 -[hidden]right-> Square22
+Square22 -[hidden]right-> Square23
+Square31 -[hidden]right-> Square32
+Square32 -[hidden]right-> Square33
+
+Square11 -[hidden]down-> Square21
+Square12 -[hidden]down-> Square22
+Square13 -[hidden]down-> Square23
+
+Square21 -[hidden]down-> Square31
+Square22 -[hidden]down-> Square32
+Square23 -[hidden]down-> Square33
 
 @enduml
