@@ -10,11 +10,11 @@
 - 1.5 [Actividad Put](#Actividad-Put)
 - 1.5 [Actividad Move](#Actividad-Move)
 2. [Requisitos](#Requisitos)
-3. [Vista de Casos de Uso](#Vista de Casos de Uso)
-- 3.1 [Vsita de Caso de Uso Start](#Vsita de Caso de Uso Start)
-- 3.2 [Vsita de Caso de Uso Play](#Vsita de Caso de Uso Play)
-- 3.3 [Vsita de Caso de Uso Resume](#Vsita de Caso de Uso Resume)
-- 3.4 [Prototipo de Interfaz](#Prototipo de Interfaz)
+3. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
+- 3.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
+- 3.2 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
+- 3.3 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
+- 3.4 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 
 ### Modelo del Dominio
 
