@@ -27,11 +27,11 @@
 
 ### Intrucciones generales
 
-![image](https://user-images.githubusercontent.com/46433173/195127586-e5597ae0-91e3-4963-8e7d-7f12111f1270.png)
+![image](https://user-images.githubusercontent.com/46433173/195147493-e8e82d3c-c516-4f32-ae54-4a670d43f7f2.png)
 
 ### Actividad Put
 
-![image](https://user-images.githubusercontent.com/46433173/195145908-8222e226-8c2e-491c-acd3-83e89668bc92.png)
+![image](https://user-images.githubusercontent.com/46433173/195147444-d7d8aed6-4939-49b0-9a61-a736d2539eb1.png)
 
 ### Actividad Move
 
