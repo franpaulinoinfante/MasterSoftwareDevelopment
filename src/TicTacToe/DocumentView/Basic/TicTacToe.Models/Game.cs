@@ -2,4 +2,5 @@
 
 internal class Game
 {
+    private Board _board;
 }

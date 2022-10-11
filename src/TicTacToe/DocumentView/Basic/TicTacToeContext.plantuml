@@ -1,0 +1,6 @@
+@startuml Context
+
+Game *--> "2" Player
+
+
+@enduml
