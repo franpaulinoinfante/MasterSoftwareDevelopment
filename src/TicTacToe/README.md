@@ -31,6 +31,6 @@
 
 ### Actividad Put
 
-![image](https://user-images.githubusercontent.com/46433173/195132275-c419855a-4c83-4ac6-8317-c8669cd6c555.png)
+![image](https://user-images.githubusercontent.com/46433173/195132723-799492bb-ffdd-4e9d-8930-9359b51ed7b7.png)
 
 ### Actividad Move
