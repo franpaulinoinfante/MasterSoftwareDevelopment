@@ -1,12 +1,13 @@
 @startuml Context
-Title Domain Model TicTacToe
+Title Contexto - TicTacToe
+
 Game *--> "2" Player
 Game *-down-> "1" Turn
 Game *--> "1" Board
 
 Turn --> "2" Player
-Player -right-> "1" Board
-Player *--> "1" Goal
+Player --> "1" Board
+Player *-down-> "1" Goal
 Player *--> "1" Color
 Player *--> "3" Token
 Color <|-- X
