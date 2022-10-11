@@ -1,6 +1,47 @@
 @startuml Context
-
+Title Domain Model TicTacToe
 Game *--> "2" Player
+Game *-down-> "1" Turn
+Game *--> "1" Board
+
+Turn --> "2" Player
+Player -right-> "1" Board
+Player *--> "1" Goal
+Player *--> "1" Color
+Player *--> "3" Token
+Color <|-- X
+Color <|-- O
+
+Board *--> "3x3" Square
+Square *-down-> "1" Coordinate
+Square  o--> "1" Token
+Token *--> "1" Color
+
+Action <|-- Put
+Action <|-- Move
+Action ..> "1" Token
+Action ..> "target" Square
+
+
+Diagonal -up-|> Goal
+Diagonal <|-- MainDiagonal
+Diagonal <|-- InverseDiagonal
+Horizontal -up-|> Goal
+Vertical  -up-|> Goal
+
+Goal ..> "3" Put
+Goal ..> "0...n" Move
+Move ..> "origin" Square
+Goal ..> "3" Square
+
 
 
 @enduml
+
+
+
+
+
+
+
+
