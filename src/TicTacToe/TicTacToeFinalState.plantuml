@@ -2,8 +2,12 @@
  title Initial State
 
  object TicTacToe
-
  object Board
+ object X
+ object O
+
+ TicTacToe --> Board
+
  object "Square" as o1
  object "Square" as o2
  object "Square" as o3
@@ -52,7 +56,6 @@
     column = 2
  }
 
-TicTacToe --> Board
 Board --> o1
 Board --> o2
 Board --> o3
@@ -72,6 +75,28 @@ o6 --> c6
 o7 --> c7
 o8 --> c8
 o9 --> c9
+
+
+ object "Piece" as p1
+ object "Piece" as p2
+ object "Piece" as p3
+ object "Piece" as p4
+ object "Piece" as p5
+
+ p1 --> X
+ p2 --> X
+ p3 --> X
+ p4 --> O
+ p5 --> O
+
+c1 --> p1
+c2 --> p4
+
+c5 --> p2
+c6 --> p5
+
+c9 --> p3
+
 
 
 @enduml
