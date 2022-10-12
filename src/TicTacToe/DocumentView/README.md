@@ -14,8 +14,8 @@
 -	¿Qué tipo de visibilidad tendrían que tener otros paquetes de la capa de Presentación?
 -	¿Cómo deberían de comunicarse las clases que no son ventanas con otras ventanas?
 
-En diferentes contextos el modelo es sinónimo de la Capa del Dominio de los objetos y la vista es un sinónimo para los objetos de la presentación, tales como, ventanas, vista de webs o móviles.<br>
 En diferentes contextos el modelo es sinónimo de la Capa del Dominio de los objetos y la vista es un sinónimo para los objetos de la presentación, tales como, ventanas, vista de webs o móviles.
+
 ##### Solución:
 El Principio de Separación Modelo-Vista establece que los objetos del modelo (dominio) no deberían conocer directamente a los objetos de la vista (presentación). Asegurando que cualquier código con el objetivo de manipulas la presentación, solo haga eso “manipular la presentación”, desplazando toda la lógica del dominio y de datos en áreas separadas.<br>
 Asociado al sub-patron Principio de Única Responsabilidad “SRP” de SOLID, que ayuda a definir capas lógicas y fisifcas de la arquitectura.
