@@ -13,6 +13,7 @@
 -	¿Quién debe ser responsable de capturar entradas generada por un agente externo, “persona mediante teclado o ratón, o máquinas mediante señales de un sensor o tramas de red?
 -	¿Qué tipo de visibilidad tendrían que tener otros paquetes de la capa de Presentación?
 -	¿Cómo deberían de comunicarse las clases que no son ventanas con otras ventanas?
+
 En diferentes contextos el modelo es sinónimo de la Capa del Dominio de los objetos y la vista es un sinónimo para los objetos de la presentación, tales como, ventanas, vista de webs o móviles.<br>
 En diferentes contextos el modelo es sinónimo de la Capa del Dominio de los objetos y la vista es un sinónimo para los objetos de la presentación, tales como, ventanas, vista de webs o móviles.
 ##### Solución:
