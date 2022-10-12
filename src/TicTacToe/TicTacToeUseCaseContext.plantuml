@@ -45,10 +45,7 @@ state K as " "
 state L as " "
 state M as " "
 state N as " "
-
 state I as " "
-state J as " "
-state K as " "
 
 state if <<choice>>
 state if1 <<choice>>
@@ -92,3 +89,20 @@ if4 --> E: [is winner]
 E --> I: system displays winner message
 I --> [*]: system asks Resume
 @enduml 
+
+@startuml ViewUseCaseResume
+state OUT_GAME
+state INITIAL
+state EXIT
+state A as " "
+state B as " "
+state if <<choice>>
+
+[*] --> OUT_GAME
+OUT_GAME --> A: system request Resume
+A --> if
+if --> INITIAL: player answer yes
+    INITIAL --> [*]
+if --> EXIT: player answer no
+    EXIT --> [*]
+@enduml
