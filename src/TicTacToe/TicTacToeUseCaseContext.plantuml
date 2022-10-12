@@ -1,0 +1,92 @@
+@startuml UseCaseContext
+state INITIAL
+state IN_GAME
+state OUT_GAME
+state EXIT
+state if_finished <<choice>>
+state if_resumed <<choice>>
+
+
+[*] --> INITIAL
+INITIAL --> IN_GAME: Start
+IN_GAME --> if_finished: Play
+if_finished --> IN_GAME
+if_finished --> OUT_GAME: [finished]
+OUT_GAME --> if_resumed: Resume
+if_resumed --> INITIAL: [continued]
+if_resumed --> EXIT
+EXIT --> [*]
+@enduml
+
+
+@startuml ViewUseCaseStart
+state INITIAL
+state IN_GAME
+state start as " "
+state started as " "
+[*] --> INITIAL
+INITIAL --> start: Player requests a new game   
+start --> started: system show empty board
+started --> IN_GAME : system ready to play 
+IN_GAME -->[*]
+@enduml
+
+@startuml ViewUseCasePlay
+state if_state <<choice>>
+state if_state2 <<choice>>
+state if_state3 <<choice>>
+state if_state4 <<choice>>
+state IN_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state G as " "
+state H as " "
+state I as " "
+state J as " "
+state Put1 as " "
+state Winner
+state Resume
+state if_resume <<choice>>
+state if <<choice>>
+state if1 <<choice>>
+state if2 <<choice>>
+state if3 <<choice>>
+state if_not_valid_coordinate1 <<choice>>
+state if_not_valid_coordinate2 <<choice>>
+
+[*] --> if_state 
+if_state --> IN_GAME
+IN_GAME --> A: player with the turn requests to play
+A --> B: system request coordinate to put
+B --> if1
+if1 --> C: player write target coordinate
+C --> if_not_valid_coordinate1
+if_not_valid_coordinate1 -right-> D: [error1]
+    note on link 
+        coordinate is not valid or
+        square is not empty
+    end note
+D -up-> E: system show errors
+E -left-> if1
+if1 --> Winner: system show winner message
+Winner -up-> if_resume
+if_resume -up-> if_state2
+if_state2 -up-> if_state3
+if_state3 -up-> if_state4
+if_state4 --> if_state
+if_not_valid_coordinate1 --> Put1: system write board with new token
+Put1 --> F : system request coordinate to put new turn
+F --> if2
+if2 --> H: player write target coordinate
+H --> if_not_valid_coordinate2
+if_not_valid_coordinate2 -right-> I: [error1]
+I -up-> if3: system show errors
+if3 --> if2
+if_not_valid_coordinate2 -left-> J
+
+
+@enduml 
