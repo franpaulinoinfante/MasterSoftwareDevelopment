@@ -8,8 +8,8 @@
 ### Vista de Lógica/Diseño
 - Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View**
 
-Principio de Separación Modelo-Vista (Separated Presentation Pattern).
-- Problema:
+Principio de Separación Modelo-Vista (Separated Presentation Pattern). <br>
+- Problema: <br>
 •	¿Quién debe ser responsable de capturar entradas generada por un agente externo, “persona mediante teclado o ratón, o máquinas mediante señales de un sensor o tramas de red?
 •	¿Qué tipo de visibilidad tendrían que tener otros paquetes de la capa de Presentación?
 •	¿Cómo deberían de comunicarse las clases que no son ventanas con otras ventanas?
