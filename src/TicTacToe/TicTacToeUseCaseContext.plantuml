@@ -32,10 +32,6 @@ IN_GAME -->[*]
 @enduml
 
 @startuml ViewUseCasePlay
-state if_state <<choice>>
-state if_state2 <<choice>>
-state if_state3 <<choice>>
-state if_state4 <<choice>>
 state IN_GAME
 state A as " "
 state B as " "
@@ -45,48 +41,54 @@ state E as " "
 state F as " "
 state G as " "
 state H as " "
+state K as " "
+state L as " "
+state M as " "
+state N as " "
+
 state I as " "
 state J as " "
-state Put1 as " "
-state Winner
-state Resume
-state if_resume <<choice>>
+state K as " "
+
 state if <<choice>>
 state if1 <<choice>>
 state if2 <<choice>>
 state if3 <<choice>>
-state if_not_valid_coordinate1 <<choice>>
-state if_not_valid_coordinate2 <<choice>>
+state if4 <<choice>>
 
-[*] --> if_state 
-if_state --> IN_GAME
-IN_GAME --> A: player with the turn requests to play
-A --> B: system request coordinate to put
-B --> if1
-if1 --> C: player write target coordinate
-C --> if_not_valid_coordinate1
-if_not_valid_coordinate1 -right-> D: [error1]
-    note on link 
-        coordinate is not valid or
+[*] --> IN_GAME
+IN_GAME --> if: current player request Play
+if --> A: [token on board < 3]
+    if --> F: system request coordinate to move
+    F --> G: current player enter coordinate
+    G --> if2: system displays updated board--
+    if2 --> H: system request coordinate to put
+        if2 --> K: [error!!]
+        note on link
+            coordinate is not valid
+            square is not empty
+            player is not owner of token on square
+        end note
+        K --> L: system show errors
+        L --> [*]: systeme allows to continue the game
+    H --> if3: current player enter coordinate
+    if3 --> M
+        M --> if1: [error!]
+    if3 --> C
+    
+A --> B: system request coordinate to put 
+B --> C : current player enter coordinate
+C --> if1
+    if1 --> N: [error]
+    note on link
+        coordinate is not valid
         square is not empty
     end note
-D -up-> E: system show errors
-E -left-> if1
-if1 --> Winner: system show winner message
-Winner -up-> if_resume
-if_resume -up-> if_state2
-if_state2 -up-> if_state3
-if_state3 -up-> if_state4
-if_state4 --> if_state
-if_not_valid_coordinate1 --> Put1: system write board with new token
-Put1 --> F : system request coordinate to put new turn
-F --> if2
-if2 --> H: player write target coordinate
-H --> if_not_valid_coordinate2
-if_not_valid_coordinate2 -right-> I: [error1]
-I -up-> if3: system show errors
-if3 --> if2
-if_not_valid_coordinate2 -left-> J
-
-
+    N --> L: system show errors!!!
+if1 --> D
+D --> if4: system displays updated board
+    if4 --> L
+if4 --> E: [is winner]
+E --> I: system displays winner message
+I --> [*]: system asks Resume
 @enduml 
