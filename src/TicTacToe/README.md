@@ -61,6 +61,10 @@
 
 ### Vsita de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/195362112-b873c50f-d9a2-451b-b631-b85ee9a68a8d.png)
+
 ### Vsita de Caso de Uso Resume
+
+![image](https://user-images.githubusercontent.com/46433173/195361789-aaa6d03d-50a5-44d4-8ee8-00159c27d0b3.png)
 
 ### Prototipo de Interfaz 
