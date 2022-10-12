@@ -13,15 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{47E3D204-61D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModelViewPresenter", "ModelViewPresenter", "{4F9245BA-658B-4AB7-BA82-7D873FEBDE9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "src\TicTacToe\DocumentView\Basic\TicTacToe\TicTacToe.csproj", "{F7C9ACD7-C66A-404D-8721-2FB325EEF77F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "src\TicTacToe\DocumentView\Basic\TicTacToe\TicTacToe.csproj", "{F7C9ACD7-C66A-404D-8721-2FB325EEF77F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Models", "src\TicTacToe\DocumentView\Basic\TicTacToe.Models\TicTacToe.Models.csproj", "{0FEC4B73-D697-4ED1-8338-46FF5093C540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Models", "src\TicTacToe\DocumentView\Basic\TicTacToe.Models\TicTacToe.Models.csproj", "{0FEC4B73-D697-4ED1-8338-46FF5093C540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Views", "src\TicTacToe\DocumentView\Basic\TicTacToe.Views\TicTacToe.Views.csproj", "{3DFDE43D-E4DF-44A9-B179-FAFE4D39BF12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Views", "src\TicTacToe\DocumentView\Basic\TicTacToe.Views\TicTacToe.Views.csproj", "{3DFDE43D-E4DF-44A9-B179-FAFE4D39BF12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Utils", "src\TicTacToe\DocumentView\Basic\TicTacToe.Utils\TicTacToe.Utils.csproj", "{4513413A-6427-4459-A378-FDD28E096EE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Utils", "src\TicTacToe\DocumentView\Basic\TicTacToe.Utils\TicTacToe.Utils.csproj", "{4513413A-6427-4459-A378-FDD28E096EE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.ConsoleApp", "src\TicTacToe\DocumentView\Basic\TicTacToe.ConsoleApp\TicTacToe.ConsoleApp.csproj", "{F4203449-D9F1-406E-B53B-9664F8417B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.ConsoleApp", "src\TicTacToe\DocumentView\Basic\TicTacToe.ConsoleApp\TicTacToe.ConsoleApp.csproj", "{F4203449-D9F1-406E-B53B-9664F8417B88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

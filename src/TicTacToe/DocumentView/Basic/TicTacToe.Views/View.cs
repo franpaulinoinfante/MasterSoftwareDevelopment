@@ -1,5 +1,11 @@
-﻿namespace TicTacToe.Views;
+﻿using TicTacToe.Models;
 
-internal class View
+namespace TicTacToe.Views;
+
+public class View : WithGameView
 {
+	public View(Game game) : base(game)
+	{
+
+	}
 }

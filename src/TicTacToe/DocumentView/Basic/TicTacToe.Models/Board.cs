@@ -1,6 +1,5 @@
-﻿namespace TicTacToe.Models
+﻿namespace TicTacToe.Models;
+
+internal class Board
 {
-    internal class Board
-    {
-    }
 }

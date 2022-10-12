@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe.Models;
 
-internal class Game
+public class Game
 {
     private Board _board;
 }
