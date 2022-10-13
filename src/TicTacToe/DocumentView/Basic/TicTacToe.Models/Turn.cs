@@ -1,4 +1,6 @@
-﻿namespace TicTacToe.Models
+﻿using TicTacToe.Types;
+
+namespace TicTacToe.Models
 {
     internal class Turn
     {
@@ -14,9 +16,19 @@
 
         internal Player CurrentPlayer => _players[_current];
 
+        internal Player GetLast()
+        {
+            return _players[Current()];
+        }
+
         internal void Next()
         {
-            _current = (_current + 1) % Turn.NUM_PLAYERS;
+            _current = Current();
+        }
+
+        private int Current()
+        {
+            return(_current + 1) % Turn.NUM_PLAYERS;
         }
     }
 }

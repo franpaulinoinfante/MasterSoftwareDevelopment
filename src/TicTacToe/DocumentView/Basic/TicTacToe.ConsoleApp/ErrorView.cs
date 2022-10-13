@@ -2,7 +2,7 @@
 
 internal class ErrorView
 {
-    static string[] MESSAGES = {
+    private static readonly string[] MESSAGES = {
             "The square is not empty",
             "There is not a token of yours",
             "The origin and target squares are the same",

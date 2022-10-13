@@ -13,6 +13,7 @@ namespace TicTacToe.ConsoleApp
         internal void Interact()
         {
             new MessageView().WriteLine(MessageType.TITLE);
+            new BoardView().Write(_game);
         }
     }
 }

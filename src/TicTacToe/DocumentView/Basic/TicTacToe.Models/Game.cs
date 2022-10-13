@@ -19,7 +19,6 @@ public class Game
     public void NewGame()
     {
         _board.Reset();
-
         for (int i = 0; i < Turn.NUM_PLAYERS; i++)
         {
             _players[i] = new Player(Enum.GetValues<Token>()[i], _board);
@@ -28,9 +27,14 @@ public class Game
 
     public Token CurrentPlayer => _turn.CurrentPlayer.Token;
 
+    public Token GetToken(Coordinate coordinate)
+    {
+        return _board.GetToken(coordinate);
+    }
+
     public bool IsTicTacToe()
     {
-        return _board.IsticTacToe(CurrentPlayer);
+        return _board.IsticTacToe(_turn.GetLast().Token);
     }
 
     public bool AreAllTokenOnBoard()
@@ -45,7 +49,6 @@ public class Game
 
     public void PutToken(Coordinate coordinate)
     {
-
         _players[(int)CurrentPlayer].PutToken(coordinate);
     }
 

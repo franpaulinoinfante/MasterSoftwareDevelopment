@@ -5,24 +5,25 @@
         public static string ROW = "Row: ";
         public static string COLUNM = "Colunm: ";
 
-        public ConcreteCoordinate()
-        {
+        private readonly int _row;
+        private readonly int _column;
 
-        }
+        public ConcreteCoordinate()
+        { }
 
         public ConcreteCoordinate(int row, int column)
         {
-            Row = row;
-            Column = column;
+            _row = row;
+            _column = column;
         }
 
-        public int Row { get; set; }
+        public int Row => _row;
 
-        public int Column { get; set; }
+        public int Column => _column;
 
         public bool IsNull()
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public Direction GetDirection(ICoordinate coordinate)
@@ -48,17 +49,17 @@
 
         public bool IsInHorizonal(ICoordinate coordinate)
         {
-            return Row == ((ConcreteCoordinate)coordinate).Row;
+            return _row == ((ConcreteCoordinate)coordinate)._row;
         }
 
         public bool IsInVertical(ICoordinate coordinate)
         {
-            return Column == ((ConcreteCoordinate)coordinate).Column;
+            return _column == ((ConcreteCoordinate)coordinate)._column;
         }
 
         public bool IsInMainDiagonal()
         {
-            return Row - Column == 0;
+            return _row - _column == 0;
         }
     }
 }

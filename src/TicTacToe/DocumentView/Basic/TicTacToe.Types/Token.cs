@@ -3,6 +3,6 @@
 public enum Token
 {
     X,
-    Y,
+    O,
     NULL
 }

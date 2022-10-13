@@ -4,7 +4,7 @@ namespace TicTacToe.ConsoleApp
 {
     internal class MessageView
     {
-        MessageType _messageType;
+        private readonly MessageType _messageType;
 
         private readonly string[] MESSAGES = new string[]
         {
@@ -28,14 +28,24 @@ namespace TicTacToe.ConsoleApp
             _messageType = messageType;
         }
 
-        internal void WriteLine(MessageType type)
+        internal void WriteLine(MessageType messageType)
         {
-            ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)type]);
+            ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)messageType]);
         }
 
         internal void WriteLine(string title)
         {
             ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)_messageType].Replace("#player", title));
+        }
+
+        internal void Write(MessageType messageType)
+        {
+            ConsoleIO.GetInstance().Write(MESSAGES[(int)messageType]);
+        }
+
+        public override string ToString()
+        {
+            return MESSAGES[(int)_messageType];
         }
     }
 }

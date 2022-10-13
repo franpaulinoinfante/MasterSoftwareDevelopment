@@ -2,12 +2,17 @@
 
 public class ClosedInterval
 {
-    public ClosedInterval(int inferior, int v)
+    private int _min;
+    private int _max;
+
+    public ClosedInterval(int min, int max)
     {
+        _min = min;
+        _max = max;
     }
 
-    internal bool IsIncluide(int row)
+    public bool IsIncluide(int value)
     {
-        throw new NotImplementedException();
+        return _min <= value && value <= _max;
     }
 }

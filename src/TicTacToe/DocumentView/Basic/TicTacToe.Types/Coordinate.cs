@@ -21,7 +21,7 @@ namespace TicTacToe.Types
 
         public Coordinate(int row, int column) : base(row, column)
         {
-            _adaptee = new Coordinate(row, column);
+            _adaptee = new ConcreteCoordinate(row, column);
             Debug.Assert(IsValid());
         }
 
@@ -48,7 +48,7 @@ namespace TicTacToe.Types
             return _adaptee.IsNull();
         }
 
-        private bool IsValid()
+        public bool IsValid()
         {
             Debug.Assert(!_adaptee.IsNull());
 
@@ -58,7 +58,7 @@ namespace TicTacToe.Types
 
         public ClosedInterval GetLimits()
         {
-            return new ClosedInterval(inferior: 0, Coordinate.DIMENSION - 1);
+            return new ClosedInterval(min: 0, Coordinate.DIMENSION - 1);
         }
 
         public Direction GetDirection(ConcreteCoordinate concreteCoordinate)
@@ -82,7 +82,7 @@ namespace TicTacToe.Types
 
         public void Random()
         {
-            Random random = new Random(System.Threading.Timeout.InfiniteTimeSpan.Milliseconds);
+            Random random = new Random(Timeout.InfiniteTimeSpan.Milliseconds);
             _adaptee = new ConcreteCoordinate(random.Next(Coordinate.DIMENSION), random.Next(Coordinate.DIMENSION));
         }
     }

@@ -5,7 +5,7 @@ using TicTacToe.Views;
 
 internal class PlayerView
 {
-    private Game _game;
+    private readonly Game _game;
 
     public PlayerView(Game game)
     {
@@ -33,11 +33,12 @@ internal class PlayerView
             coordinate = GetCoordinate(MessageType.ENTER_COORDINATE_TO_PUT);
             errorCode = GetErrorCodeToPutToken(coordinate);
         } while (errorCode != ErrorCode.NULL);
+        _game.PutToken(coordinate);
     }
 
     private Coordinate GetCoordinate(MessageType messageType)
     {
-        return (Coordinate)new CoordinateView().Read(messageType);
+        return new CoordinateView().Read(messageType);
     }
 
     private ErrorCode GetErrorCodeToPutToken(Coordinate coordinate)
@@ -45,7 +46,10 @@ internal class PlayerView
         Debug.Assert(coordinate != null);
 
         ErrorCode errorCode = _game.GetErrorCodeToPut(coordinate);
-        new ErrorView().WriteLine(errorCode);
+        if (errorCode != ErrorCode.NULL)
+        {
+            new ErrorView().WriteLine(errorCode);
+        }
         return errorCode;
     }
 
@@ -73,7 +77,10 @@ internal class PlayerView
         Debug.Assert(!coordinate.IsNull());
 
         ErrorCode errorCode = _game.GetErrorCodeToMoveOrigin(coordinate);
-        new ErrorView().WriteLine(errorCode);
+        if (errorCode != ErrorCode.NULL)
+        {
+            new ErrorView().WriteLine(errorCode);
+        }
         return errorCode;
     }
 
@@ -81,8 +88,11 @@ internal class PlayerView
     {
         Debug.Assert(!origin.IsNull() && !target.IsNull());
 
-        ErrorCode errorCode = _game.GetErrorCodeToMoveTarget(origin, target);
-        new ErrorView().WriteLine(errorCode);
+        ErrorCode errorCode = _game.GetErrorCodeToMoveTarget(origin, target); 
+        if (errorCode != ErrorCode.NULL)
+        {
+            new ErrorView().WriteLine(errorCode);
+        }
         return errorCode;
     }
 }

@@ -5,27 +5,26 @@ namespace TicTacToe.Models
 {
     internal class Player
     {
-        private readonly Token _token;
         private readonly Board _board;
-
-        public Token Token { get; internal set; }
+        private readonly Token _token;
 
         public Player(Token tokens, Board board)
         {
             _token = tokens;
             _board = board;
         }
+        public Token Token => _token;
 
         internal void PutToken(Coordinate coordinate)
         {
-            Debug.Assert(!_board.AreAllTokenOnBoard(_token));
+            Debug.Assert(!_board.AreAllTokenOnBoard(Token));
 
-            _board.PutToken(coordinate, _token);
+            _board.PutToken(coordinate, Token);
         }
 
         internal ErrorCode GetErrorCodeToMoveOrigin(Coordinate coordinate)
         {
-            if (!_board.IsEmpty(coordinate))
+            if (!_board.IsOccupied(coordinate, _token))
             {
                 return ErrorCode.NOT_EMPTY;
             }

@@ -41,16 +41,16 @@ namespace TicTacToe.Models
             return count == Coordinate.DIMENSION;
         }
 
-        private bool IsOccupied(Coordinate coordinate, Token token)
+        public bool IsOccupied(Coordinate coordinate, Token token)
         {
-            return _tokens[coordinate.Row, coordinate.Column] == token;
+            return _tokens[coordinate.Row, coordinate.Colunm] == token;
         }
 
         internal void PutToken(Coordinate coordinate, Token token)
         {
             Debug.Assert(coordinate != null);
 
-            _tokens[coordinate.Row, coordinate.Column] = token;
+            _tokens[coordinate.Row, coordinate.Colunm] = token;
         }
 
         internal ErrorCode GetErrorCodeToPut(Coordinate coordinate)
@@ -69,21 +69,22 @@ namespace TicTacToe.Models
 
         internal void Move(Coordinate origin, Coordinate target)
         {
-            Debug.Assert(origin.IsNull() && (!IsEmpty(origin)));
-            Debug.Assert(target.IsNull() && IsEmpty(target));
+            Debug.Assert(!origin.IsNull() && (!IsEmpty(origin)));
+            Debug.Assert(!target.IsNull() && IsEmpty(target));
             Debug.Assert(!origin.Equals(target));
 
-            Token token = GetColor(origin);
-            PutToken(origin, token);
+            Token token = GetToken(origin);
+            PutToken(origin, Token.NULL);
             PutToken(target, token);
         }
 
-        private Token GetColor(Coordinate origin)
+        internal Token GetToken(Coordinate origin)
         {
             Debug.Assert(!origin.IsNull());
 
-            return _tokens[origin.Row, origin.Column];
+            return _tokens[origin.Row, origin.Colunm];
         }
+
 
         internal ErrorCode GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)
         {
@@ -101,9 +102,12 @@ namespace TicTacToe.Models
         internal bool IsticTacToe(Token token)
         {
             Debug.Assert(token != Token.NULL);
-
             List<Direction> directions = GetDirections(token);
-            for (int i = 0; i < directions.Count; i++)
+            if (directions.Count < Coordinate.DIMENSION - 1)
+            {
+                return false;
+            }
+            for (int i = 0; i < directions.Count - 1; i++)
             {
                 if (directions[i] != directions[i + 1])
                 {
@@ -138,7 +142,7 @@ namespace TicTacToe.Models
             {
                 for (int j = 0; j < Coordinate.DIMENSION; j++)
                 {
-                    if (GetColor(new Coordinate(i, j)) == token)
+                    if (GetToken(new Coordinate(i, j)) == token)
                     {
                         coordinates.Add(new Coordinate(i, j));
                     }
