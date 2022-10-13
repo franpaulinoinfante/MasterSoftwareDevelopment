@@ -1,4 +1,6 @@
-﻿namespace TicTacToe.Models;
+﻿using TicTacToe.Types;
+
+namespace TicTacToe.Models;
 
 public class Game
 {
@@ -8,31 +10,62 @@ public class Game
 
     public Game()
     {
-
+        _board = new Board();
+        _players = new Player[Turn.NUM_PLAYERS];
+        NewGame();
+        _turn = new Turn(_players);
     }
 
-    public void Reset()
+    public void NewGame()
     {
+        _board.Reset();
 
+        for (int i = 0; i < Turn.NUM_PLAYERS; i++)
+        {
+            _players[i] = new Player(Enum.GetValues<Token>()[i], _board);
+        }
     }
 
-    public void PutToken(Coordinate target, Token token)
-    {
+    public Token CurrentPlayer => _turn.CurrentPlayer.Token;
 
+    public bool IsTicTacToe()
+    {
+        return _board.IsticTacToe(CurrentPlayer);
     }
 
-    public Coordinate GetCoordinate()
+    public bool IsComplete()
     {
-
+        return _board.IsComplete(CurrentPlayer);
     }
 
-    public void MoveToken(Coordinate origin, Coordinate target)
+    public void Next()
     {
-
+        _turn.Next();
     }
 
-    public bool AreAllTokenObBoard()
+    public void PutToken(Coordinate coordinate)
     {
-        throw new NotImplementedException();
+
+        _players[(int)CurrentPlayer].PutToken(coordinate);
+    }
+
+    public ErrorCode GetErrorCodeToPut(Coordinate coordinate)
+    {
+        return _board.GetErrorCodeToPut(coordinate);
+    }
+
+    public void Move(Coordinate origin, Coordinate target)
+    {
+        _players[(int)CurrentPlayer].Move(origin, target);
+    }
+
+    public ErrorCode GetErrorCodeToMoveOrigin(Coordinate coordinate)
+    {
+        return _players[(int)CurrentPlayer].GetErrorCodeToMoveOrigin(coordinate);
+    }
+
+    public ErrorCode GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)
+    {
+        return _board.GetErrorCodeToMoveTarget(origin, target);
     }
 }

@@ -1,10 +1,10 @@
-﻿namespace TicTacToe.Models.Types;
+﻿namespace TicTacToe.Types;
 
-public enum ErrorType
+public enum ErrorCode
 {
     NOT_EMPTY,
     NOT_OWNER,
     SAME_COORDINATES,
     WRONG_COORDINATES,
-    NULL,
+    NULL
 }

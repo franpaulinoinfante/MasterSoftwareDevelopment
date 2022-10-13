@@ -58,7 +58,7 @@ namespace TicTacToe.ConsoleApp{
         ~Token(Token)
         +Write()
     }
-    TokenView *--> tictacttoe.models.TokenType
+    TokenView *--> tictacttoe.types.TokenType
     TokenView ..> ConsoleIO
 
     class PlayView{
@@ -96,7 +96,7 @@ namespace TicTacToe.ConsoleApp{
         ~ErrorView(Error)
         +Write()
     }
-    ErrorView *--> tictacttoe.models.ErrorType
+    ErrorView *--> tictacttoe.types.ErrorType
     ErrorView ..> MessageView
     ErrorView ..> ConsoleIO
 
@@ -125,13 +125,13 @@ namespace TicTacToe.ConsoleApp{
     RESUME
     }
 
-    enum tictacttoe.models.TokenType{
+    enum tictacttoe.types.TokenType{
         X
         O
         NULL
     }
 
-    enum tictacttoe.models.ErrorType{
+    enum tictacttoe.types.ErrorType{
         NOT_EMPTY
         NOT_OWNER
         SAME_COORDINATES
@@ -142,55 +142,126 @@ namespace TicTacToe.ConsoleApp{
 }
 @enduml
 
-@startuml TicTacToe.models
+@startuml TicTacToe.Models
     namespace TicTacToe.Models{
         class Game{
-            ~Game()
-            +Reset()
-            +PutToken()            
-            +GetCoordinate(Token) : Coordinate
-            +GetPutError(): ErrorType
-            +MoveToken()
-            +GetMoveOriginError() : ErrorType
-            +GetMoveTargeError() : ErrorType
-            +GetActivePlayer() : Token
-            +BoardWrite()
-
+            +Game()
+            +NewGame()
+            +GetCurrentPlayer() : Token
+            +IsTicTacToe(Token) : bool
+            +IsComplete(Token) : bool
+            +PutToken(Coordinate)
+            +GetPutTokenError(): ErrorCode
+            +MoveToken(Coordinate, Coordinate)
+            +GetMoveOriginError(Coordinate)
+            +GetMoveTargetError(Coordinate, Coordinate)
         }
-        Game *--> "1" Board
-        Game *--> "2" Player
-        Game *--> "1" Turn
-
-        class Turn{
-            -current : int
-            ~Turn()
-            ~Change()
-            ~GetActivePlayer() : Token
-        }
-        Turn --> "2" Player
-
-        class Player{
-            ~Player(Board)
-            ~Put(Coordinate)
-            ~Move(Coordinate origin, Coordinate Target)
-            ~GetToken() : Token
-        }
-        Player --> Board
+        TicTacToe.Models.Game *--> "1" Board
+        TicTacToe.Models.Game *--> "1" Turn
+        TicTacToe.Models.Game *--> "2" Player
+        TicTacToe.Models.Game ..> TicTacToe.Types.ErrorCode
+        TicTacToe.Models.Game ..> TicTacToe.Types.Token
+        TicTacToe.Models.Game ..> "1" TicTacToe.Types.Coordinate
 
         class Board{
             ~Board()
-            ~Put(Coordinate, Token)
-            ~Move(Coordinate origin, Coordinate targe)
-            -Remove(Coordinate)
-            ~IsComplete() : bool
-            ~IsEmpty() : bool
-            ~IsOcuppied(Token, Coordinate)
-            ~GetToken(Coordinate) : Token
-            ~IsTicTacToe(Token) : Bool
-            -GetCoordinates(): List<Coordinate>
-            ~Write()
+            ~Reset()
+            ~Put(Token, Coordinate)
+            ~GetPutTokenError(Coordinate) : ErrorCode
+            -IsEmpty(Coordinate) : bool
+            ~IsComplete(Token) : bool
+            ~Move(Token, Coordinate, Coordinate)
+            ~GetMoveOriginError(Token, Coordinate) : ErrorCode
+            -IsOccupied(Token, Coordinate) : bool
+            ~GetMoveTargeError(Coordinate, Coordinate) : ErrorCode
+            ~IsTicTacToe(Token) : bool
+            -GetDirections(Token) : Direction
+            -GetCoordinate(Token) : Coordinate[]
         }
-        Board *--> Token[]
+        TicTacToe.Models.Board *--> TicTacToe.Types.Token
+        TicTacToe.Models.Board ..> TicTacToe.Types.ErrorCode
+        TicTacToe.Models.Board ..> "1" TicTacToe.Types.Coordinate
+        TicTacToe.Models.Board ..> TicTacToe.Utils.Direction
 
+
+        class Turn{
+            ~current
+            ~Turn(Player[])
+            ~Reset()
+            ~GetCurrent() : Player
+            ~Next()
+        }
+        TicTacToe.Models.Turn --> "2" Player
+        TicTacToe.Models.Turn ..> TicTacToe.Types.Token
+
+        class Player{
+            ~Player(Token, Board)
+            ~GetToken() : Token
+            ~PutToken(Token, Coordinate)
+            ~MoveToken(Token, Coordinate, Coordinate)
+        }
+        TicTacToe.Models.Player --> "1" Board
+        TicTacToe.Models.Player --> "1" TicTacToe.Types.Token
+        TicTacToe.Models.Player ..> "1" TicTacToe.Types.Coordinate
+    }
+
+    namespace TicTacToe.Types{
+        class Coordinate{
+            +{static} DIMENSION : int
+            +
+        }
+        TicTacToe.Types.Coordinate -up-|> TicTacToe.Utils.ConcreteCoordinate
+        TicTacToe.Types.Coordinate .up.> TicTacToe.Utils.Direction
+
+        enum Token{
+            +X
+            +O
+        }
+
+        enum ErrorCode{
+            +NOT_EMPTY
+            +NOT_OWNER
+            +SAME_COORDINATES
+            +WRONG_COORDINATES
+            +NULL
+        }
+    }
+
+@enduml
+
+@startuml TicTacToe.Utils
+    namespace TicTacToe.Utils{     
+        interface ICoordinate{
+            +{static} NULL : NullCoordinate.GetInstante()
+            +IsNull(): bool
+            +GetDirection(Coordinate) : Direction
+            +InHorizontal(Coordinate) : bool
+            +InVertial(Coordinate) : bool
+            +InDiagonal(Coordinate) : bool
+        } 
+        TicTacToe.Utils.ICoordinate ..> Direction
+
+        class Coordinate{
+            -row : int
+            -column : int
+            +Coordinate()
+            +Coordinate(row, column)
+            +SetCoordinate(row, column)
+            +GetRow() : int
+            +GetColunm() : int
+            +IsIncluide(Coordinate) : bool
+            +GetDirection(Coordinate) : Direction
+        }        
+        Coordinate .up.> ICoordinate
+        TicTacToe.Utils.Coordinate ..> Direction
+        
+
+        enum Direction{
+            VERTICAL,
+	        HORIZONTAL,
+	        MAIN_DIAGONAL,
+	        INVERSE_DIAGONAL,
+	        NULL;
+        }
     }
 @enduml
