@@ -18,7 +18,7 @@ namespace TicTacToe.Models
 
         internal void PutToken(Coordinate coordinate)
         {
-            Debug.Assert(!_board.IsComplete(_token));
+            Debug.Assert(!_board.AreAllTokenOnBoard(_token));
 
             _board.PutToken(coordinate, _token);
         }

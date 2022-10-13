@@ -25,7 +25,7 @@ namespace TicTacToe.Models
             }
         }
 
-        internal bool IsComplete(Token token)
+        internal bool AreAllTokenOnBoard(Token token)
         {
             int count = 0;
             for (int i = 0; i < Coordinate.DIMENSION; i++)

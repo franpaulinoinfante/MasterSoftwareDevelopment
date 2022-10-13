@@ -33,9 +33,9 @@ public class Game
         return _board.IsticTacToe(CurrentPlayer);
     }
 
-    public bool IsComplete()
+    public bool AreAllTokenOnBoard()
     {
-        return _board.IsComplete(CurrentPlayer);
+        return _board.AreAllTokenOnBoard(CurrentPlayer);
     }
 
     public void Next()

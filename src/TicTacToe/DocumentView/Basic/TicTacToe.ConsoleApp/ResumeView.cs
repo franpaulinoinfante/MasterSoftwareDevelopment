@@ -14,7 +14,7 @@ internal class ResumeView : WithGameView
         yesNoDialog.Read(new MessageView(MessageType.RESUME).ToString());
         if (yesNoDialog.IsAffirmative())
         {
-            _game.Reset();
+            _game.NewGame();
         }
         return yesNoDialog.IsAffirmative();
     }
