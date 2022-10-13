@@ -34,4 +34,7 @@ Las vistas serán responsables de:<br>
 -	Permitir la ejecución de la capa del modelo de manera independiente de la capa de interfaz de usuario, como en un sistema de procesamiento de mensajes o en modo de procesamiento por lotes.
 -	Permitir trasladar fácilmente la capa del modelo a otro framework de interfaz de usuario.
 
+### Arquitectura Document/View
+
+![image](https://user-images.githubusercontent.com/46433173/195432646-96d0b346-d388-477e-8a3d-951102ca7347.png)
 
