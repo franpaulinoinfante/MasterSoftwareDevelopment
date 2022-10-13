@@ -1,0 +1,14 @@
+﻿namespace TicTacToe.Views;
+
+public enum MessageType
+{
+    TITLE,
+    HORIZONTAL_LINE,
+    VERTICAL_LINE,
+    ENTER_COORDINATE_TO_PUT,
+    COORDINATE_TO_PUT,
+    COORDINATE_TO_REMOVE,
+    COORDINATE_TO_MOVE,
+    PLAYER_WIN,
+    RESUME
+}

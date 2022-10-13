@@ -1,0 +1,196 @@
+@startuml TicTacToe
+title namespace.TicTacToe
+class Game as "tictactoe.models.\nGame"
+class View as "tictactoe.models.\nView"
+class Token as "tictactoe.models.\Token"
+
+
+class TicTacToe{
+        ~TicTacToe()
+        #Play()
+    }
+    TicTacToe *-down-> Game
+    TicTacToe *-down-> View
+@enduml
+
+@startuml TicTacToe.Views
+title Views
+namespace TicTacToe.ConsoleApp{
+    abstract WithGameView{
+        ~WithGameView(Game)
+    }
+    WithGameView *--> tictacttoe.models.Game
+    WithGameView <|-- StartView
+    WithGameView <|-- PlayView
+    WithGameView <|-- ResumeView
+    
+    class View{
+        ~View(Game)
+        +Interact()
+    }
+    View *--> StartView
+    View *--> PlayView
+    View *--> ResumeView
+    View *--> tictacttoe.models.Game
+
+    class StartView{
+        ~StartView(Game)
+        +Interact()
+    }
+    StartView ..> BoardView
+    StartView ..> MessageView
+
+     class MessageView{
+        ~MessageView(MessageType)
+     }
+     MessageView *--> MessageType
+    
+
+    class BoardView{
+        ~BoardView(Game)
+        +Write()
+    }
+    BoardView *--> tictacttoe.models.Game
+    BoardView ..> TokenView
+    BoardView ..> MessageView
+
+    class TokenView{
+        ~Token(Token)
+        +Write()
+    }
+    TokenView *--> tictacttoe.models.TokenType
+    TokenView ..> ConsoleIO
+
+    class PlayView{
+        ~Play(Game)
+        +Interact()
+    }
+    PlayView ..> tictacttoe.models.Game
+    PlayView ..>PlayerView
+    PlayView ..> BoardView
+    PlayView ..> ConsoleIO
+
+    class PlayerView{
+        ~PlayerView(Game)
+        +Interact()
+        -PutToken()
+        -GetCoordinate()
+        -GetPutError() : Error
+        -MoveToken()
+        -GetMoveOriginError() : Error
+        -GetMoveTargetError() : Error
+    }
+    PlayerView ..> tictacttoe.models.Game
+    PlayerView ..> CoordinateView
+    PlayerView ..> ErrorView
+
+    class CoordinateView{
+        +Read() : Coordainte
+    }
+    CoordinateView ..> tictacttoe.models.Game
+    CoordinateView ..> ErrorView
+    CoordinateView ..> MessageView
+    CoordinateView ..> ConsoleIO
+
+    class ErrorView{
+        ~ErrorView(Error)
+        +Write()
+    }
+    ErrorView *--> tictacttoe.models.ErrorType
+    ErrorView ..> MessageView
+    ErrorView ..> ConsoleIO
+
+    class ResumeView{
+        ~Resume(Game)
+        +Interact()
+    }
+    ResumeView ..> tictacttoe.models.Game
+    ResumeView ..> MessageView
+    ResumeView ..> YesOrNotDialog
+
+    class YesOrNotDialog{
+
+    }
+    YesOrNotDialog ..> ConsoleIO
+
+    enum MessageType{
+    TITLE
+    HORIZONTAL_LINE
+    VERTICAL_LINE
+    ENTER_COORDINATE_TO_PUT
+    COORDINATE_TO_PUT
+    COORDINATE_TO_REMOVE
+    COORDINATE_TO_MOVE
+    PLAYER_WIN
+    RESUME
+    }
+
+    enum tictacttoe.models.TokenType{
+        X
+        O
+        NULL
+    }
+
+    enum tictacttoe.models.ErrorType{
+        NOT_EMPTY
+        NOT_OWNER
+        SAME_COORDINATES
+        WRONG_COORDINATES
+        NULL
+
+    }
+}
+@enduml
+
+@startuml TicTacToe.models
+    namespace TicTacToe.Models{
+        class Game{
+            ~Game()
+            +Reset()
+            +PutToken()            
+            +GetCoordinate(Token) : Coordinate
+            +GetPutError(): ErrorType
+            +MoveToken()
+            +GetMoveOriginError() : ErrorType
+            +GetMoveTargeError() : ErrorType
+            +GetActivePlayer() : Token
+            +BoardWrite()
+
+        }
+        Game *--> "1" Board
+        Game *--> "2" Player
+        Game *--> "1" Turn
+
+        class Turn{
+            -current : int
+            ~Turn()
+            ~Change()
+            ~GetActivePlayer() : Token
+        }
+        Turn --> "2" Player
+
+        class Player{
+            ~Player(Board)
+            ~Put(Coordinate)
+            ~Move(Coordinate origin, Coordinate Target)
+            ~GetToken() : Token
+        }
+        Player --> Board
+
+        class Board{
+            ~Board()
+            ~Put(Coordinate, Token)
+            ~Move(Coordinate origin, Coordinate targe)
+            -Remove(Coordinate)
+            ~IsComplete() : bool
+            ~IsEmpty() : bool
+            ~IsOcuppied(Token, Coordinate)
+            ~GetToken(Coordinate) : Token
+            ~IsTicTacToe(Token) : Bool
+            -GetCoordinates(): List<Coordinate>
+            ~Write()
+        }
+        Board *--> Token[]
+
+    }
+@enduml

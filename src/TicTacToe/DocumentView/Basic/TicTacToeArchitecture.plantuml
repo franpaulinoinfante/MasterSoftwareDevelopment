@@ -1,4 +1,5 @@
 @startuml TicTacToeArchitectureDocumentView
+title Architecture - Document/View
 package TicTacToe #DDDDDD { }
 package TicTacToe.Models #DDDDDD { }
 package TicTacToe.Views #DDDDDD { }
@@ -17,4 +18,4 @@ TicTacToe.ConsoleApp .down.> TicTacToe.Models
 TicTacToe.ConsoleApp .down.> TicTacToe.Views
 TicTacToe.ConsoleApp .down.> TicTacToe.Utils
 TicTacToe.ConsoleApp .down.> DotNet.Console
-@enduml
+

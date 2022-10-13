@@ -5,8 +5,8 @@ namespace TicTacToe;
 
 public abstract class Main
 {
-    private Game _game;
-    private View _view;
+    private readonly Game _game;
+    private readonly View _view;
 
     public Main()
     {
@@ -20,6 +20,10 @@ public abstract class Main
 
     protected void Play()
     {
-        Console.WriteLine("Hello World");
+        do
+        {
+            _view.Start();
+            _view.Play();
+        } while (_view.Resume());
     }
 }
