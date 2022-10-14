@@ -36,5 +36,6 @@ Las vistas serán responsables de:<br>
 
 ### Arquitectura Document/View
 
-![image](https://user-images.githubusercontent.com/46433173/195432646-96d0b346-d388-477e-8a3d-951102ca7347.png)
+![image](https://user-images.githubusercontent.com/46433173/195862351-7c33456a-70d0-495a-a3cf-77fbf4f48bc7.png)
+
 
