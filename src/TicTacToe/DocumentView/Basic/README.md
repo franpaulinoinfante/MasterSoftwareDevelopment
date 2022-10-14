@@ -13,10 +13,16 @@
   - [3.1. Diseño](#Diseño)
   - [3.2. Rediseño](#Rediseño)
 - 4 [Vista de Desarrollo/Implementación](#Vista-de-Desarrollo/Implementación)
-- 5 [Vista de Despliegue/Física]]Vista-de-Despliegue/Física)
+- 5 [Vista de Despliegue/Física]](#Vista-de-Despliegue/Física)
 - 6 [Vista de Procesos](#Vista-de-Procesos)
 
 ### Requisitos 1. Básica
 
 | * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
 | :------- | :------: |  
+
+### Vista Lógica/Diseño
+
+** Arquitectura Document/View Mediante el Patrón de Vista Separada
+
+![image](https://user-images.githubusercontent.com/46433173/195953748-d9d0526d-4183-4d17-a5c0-3232b2798c07.png)
