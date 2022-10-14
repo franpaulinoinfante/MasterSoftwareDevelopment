@@ -2,11 +2,11 @@
 
 namespace TicTacToe.Views;
 
-public abstract class WithGameView
+public abstract class WithViewGame
 {
     protected Game _game;
 
-    protected WithGameView(Game game)
+    protected WithViewGame(Game game)
     {
         _game = game;
     }

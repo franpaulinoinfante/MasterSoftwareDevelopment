@@ -2,7 +2,7 @@
 using TicTacToe.Models;
 using TicTacToe.Views;
 
-internal class ResumeView : WithGameView
+internal class ResumeView : WithViewGame
 {
     public ResumeView(Game game) : base(game)
     {

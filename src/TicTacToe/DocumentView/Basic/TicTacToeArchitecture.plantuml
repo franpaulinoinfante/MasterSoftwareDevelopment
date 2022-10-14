@@ -5,13 +5,15 @@ package TicTacToe #DDDDDD { }
 package TicTacToe.Models #DDDDDD { }
 package TicTacToe.Views #DDDDDD { }
 Package TicTacToe.ConsoleApp #DDDDDD { }
+package TicTacToe.Winform #DDDDDD { }
 package TicTacToe.Utils #DDDDDD { }
 package TicTacToe.Types #DDDDDD { }
 package DotNet.Console #White{ }
 
-TicTacToe <.up. TicTacToe.ConsoleApp
 TicTacToe .down.> TicTacToe.Models
 TicTacToe .down.> TicTacToe.Views
+TicTacToe <.up. TicTacToe.ConsoleApp
+TicTacToe <.up. TicTacToe.Winform
 TicTacToe.Models .down.> TicTacToe.Utils
 TicTacToe.Models .down.> TicTacToe.Types
 TicTacToe.Views .down.> TicTacToe.Models
@@ -22,4 +24,8 @@ TicTacToe.ConsoleApp .down.> TicTacToe.Views
 TicTacToe.ConsoleApp .down.> TicTacToe.Utils
 TicTacToe.ConsoleApp .down.> DotNet.Console
 TicTacToe.ConsoleApp .down.> TicTacToe.Types
+TicTacToe.Winform .down.> TicTacToe.Models
+TicTacToe.Winform .down.> TicTacToe.Views
+TicTacToe.Winform .down.> TicTacToe.Utils
+TicTacToe.Winform .down.> TicTacToe.Types
 

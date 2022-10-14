@@ -2,7 +2,7 @@
 using TicTacToe.Models;
 using TicTacToe.Views;
 
-internal class PlayView : WithGameView
+internal class PlayView : WithViewGame
 {
     public PlayView(Game game) : base(game)
     {

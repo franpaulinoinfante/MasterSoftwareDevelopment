@@ -1,3 +1,106 @@
+@startuml TicTacToeAnalysisConsoleApp
+title TicTacToe ConsoleApp
+namespace TicTacToe.ConsoleApp{
+    class ConsoleApp{
+        #CreateViewGame(Game) : ViewGame
+        +{static} Main(string[])
+    }
+    ConsoleApp ..> ConsoleTicTacToe
+
+    class ConsoleTicTacToe{
+        ~ConsoleApp(Game)      
+        ~GameView(Game)
+        ~Start()
+        ~Play()
+        ~Resume()
+    }
+    ConsoleTicTacToe *--> StartView
+    ConsoleTicTacToe *--> PlayView
+    ConsoleTicTacToe *--> ResumeView
+
+    class StartView{
+        ~StartView(Game)
+        ~Interact()
+    }
+    StartView ..> BoardView
+    StartView ..> MessageView
+    StartView ..> TicTacToe.Views.MessageType
+
+    class PlayView{
+        ~PlayView(Game)
+        ~Interact()
+    }
+    PlayView ..> PlayerView
+    PlayView ..> BoardView
+    PlayView ..> MessageView
+    PlayView ..> TicTacToe.Views.MessageType
+    PlayerView ..> TicTacToe.Models.Token
+
+    class PlayerView{
+        ~PlayerView(Game)
+        ~Interact()
+        -PutToken()
+        -GetErrorCodeToPutToken(Coordinate) : ErrorType
+        -MoveToken()
+        -GetErrorCodeToMoveOrigin(Coordinate) : ErrorType
+        -GetErrorCodeToMoveTarge(Coordinate, Coordinate) : ErrorType
+    }
+    PlayerView ..> TicTacToe.Models.Coordinate
+    PlayerView ..> ErrorView
+    PlayerView ..> TicTacToe.Models.ErrorType
+    PlayerView ..> MessageView
+    PlayerView ..> TicTacToe.Views.MessageType
+
+    class ResumeView{
+        ~Resume(Game)
+        ~Interact()
+    }
+    ResumeView ..> MessageView
+    ResumeView ..> TicTacToe.Views.MessageType
+    ResumeView ..> YesNoDialog
+
+
+    class BoardView{
+        ~BoardView(Game)
+        ~Write()
+    }
+    BoardView ..> MessageView
+    BoardView ..> TicTacToe.Views.MessageType
+
+
+    class MessageView{
+        ~MessageView(MessageType)
+        ~Write()
+    }
+    MessageView --> TicTacToe.Views.MessageType
+    MessageView ..> ConsoleIO
+
+    class ErrorView{
+        ~ErrorView(ErrorType)
+        ~Write()
+    }
+    ErrorView --> TicTacToe.Models.ErrorType
+    ErrorView ..> ConsoleIO
+
+    class YesNoDialog{
+        ~Read()
+        ~IsAffirmative() : bool
+    }
+    YesNoDialog ..> ConsoleIO
+    
+     enum TicTacToe.Models.Token{
+     }
+
+    enum TicTacToe.Views.MessageType{
+
+    }
+
+    enum TicTacToe.Models.ErrorType{
+
+    }
+}
+@enduml
+
 @startuml TicTacToeAnalisys
 title TicTacToe Analisys
 namespace TicTacToe.Models{
@@ -55,10 +158,13 @@ namespace TicTacToe.Models{
         ~GetErrorCodeToMoveOrigin(Coordinate) : CodeError.TokenNotOwner
         ~GetErrorCodeToMoveTarget(Coordinate, Coordinate) : Coordinate.SameCoordinate
         ~IsTicTacToe(Token) : bool
+        -GetDirections(Token) : List<Direction>
+        -GetCoordinates(Token) : List<Coordinate>
     }
     Board ..> TicTacToe.Types.Coordinate
     Board ..> TicTacToe.Types.Token
     Board ..> TicTacToe.Types.ErrorCode
+    Board ..> TicTacToe.Utils.Direction
 }
 
 namespace TicTacToe.Types{

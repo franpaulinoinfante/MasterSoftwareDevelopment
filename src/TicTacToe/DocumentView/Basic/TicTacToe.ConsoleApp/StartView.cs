@@ -3,7 +3,7 @@ using TicTacToe.Views;
 
 namespace TicTacToe.ConsoleApp
 {
-    internal class StartView : WithGameView
+    internal class StartView : WithViewGame
     {
         public StartView(Game game) : base(game)
         { }
