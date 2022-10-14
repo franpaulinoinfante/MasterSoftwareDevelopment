@@ -1,6 +1,4 @@
-# Document/View Architecture
-
-### Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View
+# Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View**
 
 #### Principio de Separación Modelo-Vista (Separated Presentation Pattern).
 ##### Problema:
