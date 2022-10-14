@@ -9,12 +9,12 @@
   - 2.4 [Paquete TicTacToe.Models](#Paquete-TicTacToe.Models)
   - 2.5 [Paquete TicTacToe.Types](#Paquete-TicTacToe.Types)
   - 2.6 [Paquete TicTacToe.Utils](#Paquete-TicTacToe.Utils)
-- 3 Calidad del Software
-  - 3.1. Diseño
-  - 3.2. Rediseño
-- 4 Vista de Desarrollo/Implementación
-- 5 Vista de Despliegue/Física
-- 6 Vista de Procesos
+- 3 [Calidad del Software](#Calidad-del-Software)
+  - [3.1. Diseño](#Diseño)
+  - [3.2. Rediseño](#Rediseño)
+- 4 [Vista de Desarrollo/Implementación](#Vista-de-Desarrollo/Implementación)
+- 5 [Vista de Despliegue/Física]]Vista-de-Despliegue/Física)
+- 6 [Vista de Procesos](#Vista-de-Procesos)
 
 ### Requisitos 1. Básica
 
