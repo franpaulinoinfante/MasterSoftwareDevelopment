@@ -42,9 +42,9 @@ Aunque puede invalidar u omitir fácilmente la separación entre documento y vis
 La arquitectura de documentos y vistas facilitan la compatibilidad con varias vistas, varios tipos de documento, ventanas divisoras y otras características valiosas de la interfaz de usuario.<br>
 Lo que busca es crear diferentes vistas para cada parte de la interacción del usuario con el sistema.<br>
 Se divide en:
--	Una vista para cada caso de uso.
--	Vistas auxiliares para cada objeto del modelo que se necesite presentar en pantalla o se necesite gestionar.
-- 
+-	En una vista principal compuesta,
+-	por una vista por cada caso de uso y cada caso de uso está compuesto,
+- por vistas auxiliares por cada modelo que el caso de uso necesite interactuar con cada modelo que se necesite leer o escribir, y si estas vistas auxiliares también necesitan leer de otros modelos se crearan otras sub-vistas. 
 
 
 ![image](https://user-images.githubusercontent.com/46433173/195862351-7c33456a-70d0-495a-a3cf-77fbf4f48bc7.png)
