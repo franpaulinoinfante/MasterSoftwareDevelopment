@@ -23,6 +23,8 @@
 
 ### Vista Lógica/Diseño
 
-** Arquitectura Document/View Mediante el Patrón de Vista Separada
+**Arquitectura Document/View Mediante el Patrón de Vista Separada**
+
+### Arquitectura
 
 ![image](https://user-images.githubusercontent.com/46433173/195953748-d9d0526d-4183-4d17-a5c0-3232b2798c07.png)
