@@ -1,4 +1,4 @@
-# TicTacToe. Solución 2.1. documentView Basic
+# TicTacToe. DocumentView Basic
 
 ### Requisitos 1. Básica
 
