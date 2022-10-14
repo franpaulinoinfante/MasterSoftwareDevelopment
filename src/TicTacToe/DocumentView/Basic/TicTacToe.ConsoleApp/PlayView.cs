@@ -13,14 +13,14 @@ internal class PlayView : WithGameView
         bool isTicTacToe;
         do
         {
+            new PlayerView(_game).Interact();
             isTicTacToe = _game.IsTicTacToe();
             if (!isTicTacToe)
             {
-                new PlayerView(_game).Interact();
                 _game.Next();
-            }            
+            }
             new BoardView().Write(_game);
         } while (!isTicTacToe);
-        new MessageView(MessageType.PLAYER_WIN).WriteLine(_game.CurrentPlayer.ToString());
+        new MessageView(MessageType.PLAYER_WIN).WriteLine(Enum.GetName(_game.GetCurrentPlayer()));
     }
 }

@@ -88,7 +88,7 @@ internal class PlayerView
     {
         Debug.Assert(!origin.IsNull() && !target.IsNull());
 
-        ErrorCode errorCode = _game.GetErrorCodeToMoveTarget(origin, target); 
+        ErrorCode errorCode = _game.GetErrorCodeToMoveTarget(origin, target);
         if (errorCode != ErrorCode.NULL)
         {
             new ErrorView().WriteLine(errorCode);

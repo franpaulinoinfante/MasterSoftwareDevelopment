@@ -1,21 +1,25 @@
 @startuml TicTacToeArchitectureDocumentView
 title Architecture - Document/View
+
 package TicTacToe #DDDDDD { }
 package TicTacToe.Models #DDDDDD { }
 package TicTacToe.Views #DDDDDD { }
 Package TicTacToe.ConsoleApp #DDDDDD { }
 package TicTacToe.Utils #DDDDDD { }
+package TicTacToe.Types #DDDDDD { }
 package DotNet.Console #White{ }
-package DotNet.Utils #White{ }
 
 TicTacToe <.up. TicTacToe.ConsoleApp
 TicTacToe .down.> TicTacToe.Models
 TicTacToe .down.> TicTacToe.Views
-TicTacToe.Views .down.> TicTacToe.Models
 TicTacToe.Models .down.> TicTacToe.Utils
-TicTacToe.Models .down.> DotNet.Utils
+TicTacToe.Models .down.> TicTacToe.Types
+TicTacToe.Views .down.> TicTacToe.Models
+TicTacToe.Views .down.> TicTacToe.Types
+TicTacToe.Types .down.> TicTacToe.Utils
 TicTacToe.ConsoleApp .down.> TicTacToe.Models
 TicTacToe.ConsoleApp .down.> TicTacToe.Views
 TicTacToe.ConsoleApp .down.> TicTacToe.Utils
 TicTacToe.ConsoleApp .down.> DotNet.Console
+TicTacToe.ConsoleApp .down.> TicTacToe.Types
 

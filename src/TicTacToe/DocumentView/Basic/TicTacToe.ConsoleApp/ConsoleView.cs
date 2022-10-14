@@ -2,7 +2,7 @@
 using TicTacToe.Models;
 using TicTacToe.Views;
 
-internal class ConsoleView : View
+public class ConsoleView : View
 {
     private readonly StartView _startView;
     private readonly PlayView _playView;
@@ -29,4 +29,6 @@ internal class ConsoleView : View
     {
         return _resumeView.Interact();
     }
+
+
 }

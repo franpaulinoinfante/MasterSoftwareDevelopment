@@ -9,7 +9,7 @@ public class ConsoleTicTacToe : Main
         return new ConsoleView(game);
     }
 
-    protected static void Main(string[] args)
+    public static void Main(string[] args)
     {
         new ConsoleTicTacToe().Play();
     }

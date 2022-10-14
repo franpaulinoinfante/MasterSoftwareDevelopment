@@ -25,7 +25,12 @@ public class Game
         }
     }
 
-    public Token CurrentPlayer => _turn.CurrentPlayer.Token;
+    private Player CurrentPlayer => _turn.CurrentPlayer;
+
+    public Token GetCurrentPlayer()
+    {
+        return CurrentPlayer.Token;
+    }
 
     public Token GetToken(Coordinate coordinate)
     {
@@ -34,18 +39,13 @@ public class Game
 
     public bool IsTicTacToe()
     {
-        var result = _board.IsticTacToe(_turn.GetLast().Token);
+        var result = _board.IsticTacToe(CurrentPlayer.Token);
         return result;
-    }
-
-    public Token GetLastTurn()
-    {
-        return _turn.GetLast().Token;
     }
 
     public bool AreAllTokenOnBoard()
     {
-        return _board.AreAllTokenOnBoard(CurrentPlayer);
+        return _board.AreAllTokenOnBoard(CurrentPlayer.Token);
     }
 
     public void Next()
@@ -55,7 +55,7 @@ public class Game
 
     public void PutToken(Coordinate coordinate)
     {
-        _players[(int)CurrentPlayer].PutToken(coordinate);
+        _players[(int)CurrentPlayer.Token].PutToken(coordinate);
     }
 
     public ErrorCode GetErrorCodeToPut(Coordinate coordinate)
@@ -65,12 +65,12 @@ public class Game
 
     public void Move(Coordinate origin, Coordinate target)
     {
-        _players[(int)CurrentPlayer].Move(origin, target);
+        _players[(int)CurrentPlayer.Token].Move(origin, target);
     }
 
     public ErrorCode GetErrorCodeToMoveOrigin(Coordinate coordinate)
     {
-        return _players[(int)CurrentPlayer].GetErrorCodeToMoveOrigin(coordinate);
+        return _players[(int)CurrentPlayer.Token].GetErrorCodeToMoveOrigin(coordinate);
     }
 
     public ErrorCode GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)

@@ -77,7 +77,7 @@ namespace TicTacToe.Types
         private bool InverseDiagonal()
         {
             ConcreteCoordinate coordinate = (ConcreteCoordinate)_adaptee;
-            return coordinate.Row + coordinate.Column == Coordinate.DIMENSION;
+            return coordinate.Row + coordinate.Column == Coordinate.DIMENSION - 1;
         }
 
         public void Random()

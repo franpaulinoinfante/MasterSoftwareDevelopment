@@ -1,6 +1,4 @@
-﻿using TicTacToe.Types;
-
-namespace TicTacToe.Models
+﻿namespace TicTacToe.Models
 {
     internal class Turn
     {
@@ -28,7 +26,7 @@ namespace TicTacToe.Models
 
         private int Current()
         {
-            return(_current + 1) % Turn.NUM_PLAYERS;
+            return (_current + 1) % Turn.NUM_PLAYERS;
         }
     }
 }

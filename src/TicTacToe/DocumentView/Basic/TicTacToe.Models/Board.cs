@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using TicTacToe.Types;
+using TicTacToe.Utils.Coordinates;
 
 namespace TicTacToe.Models;
 

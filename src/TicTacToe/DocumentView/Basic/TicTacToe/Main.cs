@@ -16,8 +16,6 @@ public abstract class Main
 
     protected abstract View CreateView(Game game);
 
-
-
     protected void Play()
     {
         do
