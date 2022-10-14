@@ -2,13 +2,13 @@
 using TicTacToe.Models;
 using TicTacToe.Views;
 
-public class ConsoleView : View
+public class ConsoleTicTacToe : ViewGame
 {
     private readonly StartView _startView;
     private readonly PlayView _playView;
     private readonly ResumeView _resumeView;
 
-    public ConsoleView(Game game) : base(game)
+    public ConsoleTicTacToe(Game game) : base(game)
     {
         _startView = new StartView(game);
         _playView = new PlayView(game);

@@ -2,15 +2,15 @@
 using TicTacToe.Models;
 using TicTacToe.Views;
 
-public class ConsoleTicTacToe : Main
+public class ConsoleApp : Main
 {
     protected override ViewGame CreateView(Game game)
     {
-        return new ConsoleView(game);
+        return new ConsoleTicTacToe(game);
     }
 
     public static void Main(string[] args)
     {
-        new ConsoleTicTacToe().Play();
+        new ConsoleApp().Play();
     }
 }

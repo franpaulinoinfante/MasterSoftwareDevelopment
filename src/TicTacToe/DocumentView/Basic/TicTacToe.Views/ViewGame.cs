@@ -2,9 +2,9 @@
 
 namespace TicTacToe.Views;
 
-public abstract class View : WithGameView
+public abstract class ViewGame : WithViewGame
 {
-    public View(Game game) : base(game)
+    public ViewGame(Game game) : base(game)
     {
 
     }

@@ -6,7 +6,7 @@ namespace TicTacToe;
 public abstract class Main
 {
     private readonly Game _game;
-    private readonly GameView _view;
+    private readonly ViewGame _view;
 
     public Main()
     {
@@ -14,7 +14,7 @@ public abstract class Main
         _view = CreateView(_game);
     }
 
-    protected abstract GameView CreateView(Game game);
+    protected abstract ViewGame CreateView(Game game);
 
     protected void Play()
     {
