@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\TicTacToe.Types\TicTacToe.Types.csproj" />
     <ProjectReference Include="..\TicTacToe.Types\TicTacToe.Types.csproj" />
   </ItemGroup>
 

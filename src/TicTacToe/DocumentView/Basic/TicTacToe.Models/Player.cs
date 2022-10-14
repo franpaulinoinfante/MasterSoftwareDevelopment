@@ -13,6 +13,7 @@ namespace TicTacToe.Models
             _token = tokens;
             _board = board;
         }
+
         public Token Token => _token;
 
         internal void PutToken(Coordinate coordinate)

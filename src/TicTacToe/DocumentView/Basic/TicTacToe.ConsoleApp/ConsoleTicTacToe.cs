@@ -4,7 +4,6 @@ using TicTacToe.Views;
 
 public class ConsoleTicTacToe : Main
 {
-
     protected override View CreateView(Game game)
     {
         return new ConsoleView(game);

@@ -34,7 +34,13 @@ public class Game
 
     public bool IsTicTacToe()
     {
-        return _board.IsticTacToe(_turn.GetLast().Token);
+        var result = _board.IsticTacToe(_turn.GetLast().Token);
+        return result;
+    }
+
+    public Token GetLastTurn()
+    {
+        return _turn.GetLast().Token;
     }
 
     public bool AreAllTokenOnBoard()

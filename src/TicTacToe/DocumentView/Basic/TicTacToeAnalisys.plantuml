@@ -1,0 +1,101 @@
+@startuml TicTacToeAnalisys
+title TicTacToe Analisys
+namespace TicTacToe.Models{
+    class Game{
+        +Game()
+        +NewGame()
+        +IsTicTacToe(Token) : bool
+        +GetToken(Coordinate) : Token
+        +NextTurn()
+        +GetCurrentTurn() : Token
+        +AreAllTokenOnBoard() : bool
+        +PutToken(Coordinate, Token)
+        +GetErrorCodeToPutToken(Coordinate) : CodeError.SquareNoEmpty
+        +MoveToken(Coordinate, Coordinate)
+        +GetErrorCodeToMoveOrigin(Coordinate) : CodeError.TokenNotOwner
+        +GetErrorCodeToMoveTarget(Coordinate, Coordinate) : CodeError.SameCoordinate
+    }
+    Game *--> "1" Board
+    Game *--> "2" Player
+    Game *--> "1" Turn
+    Game ..> TicTacToe.Types.Coordinate
+    Game ..> TicTacToe.Types.Token
+    Game ..> TicTacToe.Types.ErrorCode
+
+    class Turn{
+        ~{static} NUM_PLAYERS : int
+        -current : int
+        ~Turn(Players[])
+        ~GetCurrent() : Player
+        ~NewGame()
+        ~Next()
+    }
+    Turn --> "2" Player
+
+    class Player{
+        ~Player(Token, Board)
+        ~GetToken() : Token
+        ~PutToken(Coordinate)
+        ~MoveToken(Coordinate, Coordinate)
+    }
+    Player --> "1" Board
+    Player ..> TicTacToe.Types.Coordinate
+    Player ..> TicTacToe.Types.Token
+
+    class Board{
+        ~Board()
+        ~NewGame()
+        ~AreAllTokenOnBoard() : bool
+        ~GetToken(Coordinate) : Token
+        -IsOccupied(Coordinate, Token) : bool
+        ~Put(Coordinate, Token)
+        ~GetErrorCodeToPutToken(Coordinate) : ErrorCode.SquareNotEmpty
+        ~IsEmpty(Coordinate) : Bool
+        ~Move(Coordinate, Coordinate)
+        ~GetErrorCodeToMoveOrigin(Coordinate) : CodeError.TokenNotOwner
+        ~GetErrorCodeToMoveTarget(Coordinate, Coordinate) : Coordinate.SameCoordinate
+        ~IsTicTacToe(Token) : bool
+    }
+    Board ..> TicTacToe.Types.Coordinate
+    Board ..> TicTacToe.Types.Token
+    Board ..> TicTacToe.Types.ErrorCode
+}
+
+namespace TicTacToe.Types{
+    class Coordinate{}
+
+    enum Token{}
+
+    enum ErrorCode{}
+}
+@enduml
+
+@startuml TicTacToe.Types
+title TicTaccToe Types
+namespace TicTaccToe.Types{
+    class Coordinate{
+        +{static} DIMENSION : int
+        -row : int
+        -colunm : int
+        +Coordinate()
+        +Coordinate(row, colunm)
+        +GetRow() : int
+        +GetColunm() : int
+        +SetCoordinate(row, colunm)
+    }
+
+    enum Token{
+        +X,
+        +O,
+        +NULL
+    }
+
+    enum ErrorCode{
+        +NOT_EMPTY,
+        +NOT_OWNER,
+        +SAME_COORDINATES,
+        +WRONG_COORDINATES,
+        +NULL
+    }
+}
+@enduml

@@ -187,7 +187,6 @@ namespace TicTacToe.ConsoleApp{
         class Turn{
             ~current
             ~Turn(Player[])
-            ~Reset()
             ~GetCurrent() : Player
             ~Next()
         }
@@ -198,6 +197,7 @@ namespace TicTacToe.ConsoleApp{
             ~Player(Token, Board)
             ~GetToken() : Token
             ~PutToken(Token, Coordinate)
+            ~GetErrorCodeToPut(Coordinate) : ErrorCode
             ~MoveToken(Token, Coordinate, Coordinate)
         }
         TicTacToe.Models.Player --> "1" Board

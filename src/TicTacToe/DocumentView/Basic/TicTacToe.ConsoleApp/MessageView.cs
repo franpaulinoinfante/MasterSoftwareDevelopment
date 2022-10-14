@@ -1,4 +1,5 @@
-﻿using TicTacToe.Views;
+﻿using TicTacToe.Types;
+using TicTacToe.Views;
 
 namespace TicTacToe.ConsoleApp
 {
