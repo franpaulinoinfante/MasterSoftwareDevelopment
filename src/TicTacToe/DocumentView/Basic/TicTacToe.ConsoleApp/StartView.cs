@@ -6,9 +6,7 @@ namespace TicTacToe.ConsoleApp
     internal class StartView : WithGameView
     {
         public StartView(Game game) : base(game)
-        {
-
-        }
+        {}
 
         internal void Interact()
         {
