@@ -1,16 +1,16 @@
 @startuml TicTacToe
-title namespace.TicTacToe
-class Game as "tictactoe.models.\nGame"
-class View as "tictactoe.models.\nView"
-class Token as "tictactoe.models.\Token"
-
-
-class TicTacToe{
-        ~TicTacToe()
+title TicTacToe
+namespace TicTacToe{
+    abstract TicTacToe{
+        #TicTacToe()
+        #{abstract} CreateView(Game) : ViewGame
         #Play()
     }
-    TicTacToe *-down-> Game
-    TicTacToe *-down-> View
+    TicTacToe *--> TicTacToe.Models.Game
+    TicTacToe <|-- TicTacToe.ConsoleApp.ConsoleTicTacToe
+    TicTacToe *--> TicTacToe.Views.ViewGame
+}
+
 @enduml
 
 @startuml TicTacToe.Views

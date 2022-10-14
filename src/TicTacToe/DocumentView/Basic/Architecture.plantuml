@@ -1,0 +1,14 @@
+@startuml ArchitectureDocumentView
+title Architecture - Document/View Basic
+
+package TicTacToe #DDDDDD { }
+package TicTacToe.Models #DDDDDD { }
+Package TicTacToe.ConsoleApp #DDDDDD { }
+package TicTacToe.Utils #DDDDDD { }
+
+TicTacToe .down.> TicTacToe.Models
+TicTacToe <.up. TicTacToe.ConsoleApp
+TicTacToe.Models .down.> TicTacToe.Utils
+TicTacToe.ConsoleApp .down.> TicTacToe.Models
+TicTacToe.ConsoleApp .down.> TicTacToe.Utils
+@enduml

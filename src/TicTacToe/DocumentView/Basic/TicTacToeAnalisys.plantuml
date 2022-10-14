@@ -1,6 +1,8 @@
 @startuml TicTacToeAnalysisConsoleApp
-title TicTacToe ConsoleApp
+title TicTacToe Document/View
 namespace TicTacToe.ConsoleApp{
+    TicTacToe.WithViewGame *-down-> TicTacToe.Models.Game
+
     class ConsoleApp{
         #CreateViewGame(Game) : ViewGame
         +{static} Main(string[])
@@ -12,11 +14,12 @@ namespace TicTacToe.ConsoleApp{
         ~GameView(Game)
         ~Start()
         ~Play()
-        ~Resume()
+        ~Resume() : bool
     }
     ConsoleTicTacToe *--> StartView
     ConsoleTicTacToe *--> PlayView
     ConsoleTicTacToe *--> ResumeView
+    ConsoleTicTacToe -up-|> TicTacToe.WithViewGame
 
     class StartView{
         ~StartView(Game)
@@ -25,6 +28,7 @@ namespace TicTacToe.ConsoleApp{
     StartView ..> BoardView
     StartView ..> MessageView
     StartView ..> TicTacToe.Views.MessageType
+    StartView -up-|> TicTacToe.WithViewGame
 
     class PlayView{
         ~PlayView(Game)
@@ -34,16 +38,18 @@ namespace TicTacToe.ConsoleApp{
     PlayView ..> BoardView
     PlayView ..> MessageView
     PlayView ..> TicTacToe.Views.MessageType
-    PlayerView ..> TicTacToe.Models.Token
+    PlayView ..> TicTacToe.Models.Token
+    PlayView -up-|> TicTacToe.WithViewGame
 
     class PlayerView{
         ~PlayerView(Game)
         ~Interact()
         -PutToken()
-        -GetErrorCodeToPutToken(Coordinate) : ErrorType
+        -GetCoordinate() : Coordinate
+        -GetErrorTypeToPutToken(Coordinate) : ErrorType
         -MoveToken()
-        -GetErrorCodeToMoveOrigin(Coordinate) : ErrorType
-        -GetErrorCodeToMoveTarge(Coordinate, Coordinate) : ErrorType
+        -GetErrorTypeToMoveOrigin(Coordinate) : ErrorType
+        -GetErrorTypeToMoveTarge(Coordinate, Coordinate) : ErrorType
     }
     PlayerView ..> TicTacToe.Models.Coordinate
     PlayerView ..> ErrorView
@@ -53,11 +59,12 @@ namespace TicTacToe.ConsoleApp{
 
     class ResumeView{
         ~Resume(Game)
-        ~Interact()
+        ~Interact() : bool
     }
     ResumeView ..> MessageView
     ResumeView ..> TicTacToe.Views.MessageType
     ResumeView ..> YesNoDialog
+    ResumeView -up-|> TicTacToe.WithViewGame
 
 
     class BoardView{
@@ -69,15 +76,21 @@ namespace TicTacToe.ConsoleApp{
 
 
     class MessageView{
+        -{static} MESSAGES : string[]
+        ~MessageView()
         ~MessageView(MessageType)
-        ~Write()
+        ~Write(MessageType)
+        ~WriteLine(MessageType)
+        ~WriteLine(title : string)
+        ~ToString()
     }
     MessageView --> TicTacToe.Views.MessageType
     MessageView ..> ConsoleIO
 
     class ErrorView{
+        -{static} ERROR_MESSAGES : string[]
         ~ErrorView(ErrorType)
-        ~Write()
+        ~WriteLine(ErrorTpe)
     }
     ErrorView --> TicTacToe.Models.ErrorType
     ErrorView ..> ConsoleIO
@@ -101,8 +114,8 @@ namespace TicTacToe.ConsoleApp{
 }
 @enduml
 
-@startuml TicTacToeAnalisys
-title TicTacToe Analisys
+@startuml TicTacToeModels
+title TicTacToe Models
 namespace TicTacToe.Models{
     class Game{
         +Game()
@@ -113,17 +126,17 @@ namespace TicTacToe.Models{
         +GetCurrentTurn() : Token
         +AreAllTokenOnBoard() : bool
         +PutToken(Coordinate, Token)
-        +GetErrorCodeToPutToken(Coordinate) : CodeError.SquareNoEmpty
+        +GetErrorCodeToPutToken(Coordinate) : ErrorType.SquareNoEmpty
         +MoveToken(Coordinate, Coordinate)
-        +GetErrorCodeToMoveOrigin(Coordinate) : CodeError.TokenNotOwner
-        +GetErrorCodeToMoveTarget(Coordinate, Coordinate) : CodeError.SameCoordinate
+        +GetErrorCodeToMoveOrigin(Coordinate) : ErrorType.TokenNotOwner
+        +GetErrorCodeToMoveTarget(Coordinate, Coordinate) : ErrorType.SameCoordinate
     }
     Game *--> "1" Board
     Game *--> "2" Player
     Game *--> "1" Turn
-    Game ..> TicTacToe.Types.Coordinate
-    Game ..> TicTacToe.Types.Token
-    Game ..> TicTacToe.Types.ErrorCode
+    Game ..> Coordinate
+    Game ..> Token
+    Game ..> ErrorType
 
     class Turn{
         ~{static} NUM_PLAYERS : int
@@ -142,8 +155,8 @@ namespace TicTacToe.Models{
         ~MoveToken(Coordinate, Coordinate)
     }
     Player --> "1" Board
-    Player ..> TicTacToe.Types.Coordinate
-    Player ..> TicTacToe.Types.Token
+    Player ..> Coordinate
+    Player ..> Token
 
     class Board{
         ~Board()
@@ -152,27 +165,53 @@ namespace TicTacToe.Models{
         ~GetToken(Coordinate) : Token
         -IsOccupied(Coordinate, Token) : bool
         ~Put(Coordinate, Token)
-        ~GetErrorCodeToPutToken(Coordinate) : ErrorCode.SquareNotEmpty
+        ~GetErrorCodeToPutToken(Coordinate) : ErrorType.SquareNotEmpty
         ~IsEmpty(Coordinate) : Bool
         ~Move(Coordinate, Coordinate)
-        ~GetErrorCodeToMoveOrigin(Coordinate) : CodeError.TokenNotOwner
-        ~GetErrorCodeToMoveTarget(Coordinate, Coordinate) : Coordinate.SameCoordinate
+        ~GetErrorCodeToMoveOrigin(Coordinate) : ErrorType.TokenNotOwner
+        ~GetErrorCodeToMoveTarget(Coordinate, ErrorType) : Coordinate.SameCoordinate
         ~IsTicTacToe(Token) : bool
         -GetDirections(Token) : List<Direction>
         -GetCoordinates(Token) : List<Coordinate>
     }
-    Board ..> TicTacToe.Types.Coordinate
-    Board ..> TicTacToe.Types.Token
-    Board ..> TicTacToe.Types.ErrorCode
-    Board ..> TicTacToe.Utils.Direction
-}
+    Board ..> Coordinate
+    Board ..> Token
+    Board ..> ErrorType
+    Board ..> Direction
 
-namespace TicTacToe.Types{
-    class Coordinate{}
+    class Coordinate{
+        +{static} DIMENSION : int
+        -row : int
+        -colunm : int
+        +Coordinate()
+        +Coordinate(row, colunm)
+        +GetRow() : int
+        +GetColunm() : int
+        +SetCoordinate(row, colunm)
+        +GetDirections() : Direction
+    }
 
-    enum Token{}
+    enum Direction{
+        +Horizontal
+        +Vertical
+        +MainDiagonal
+        +InverseDiagonal
+        +Null
+    }
 
-    enum ErrorCode{}
+    enum Token{
+        +X,
+        +O,
+        +NULL
+    }
+
+    enum ErrorType{
+        +NOT_EMPTY
+        +NOT_OWNER
+        +SAME_COORDINATES
+        +WRONG_COORDINATES
+        +NULL
+    }
 }
 @enduml
 
