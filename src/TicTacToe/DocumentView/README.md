@@ -1,12 +1,4 @@
-# TicTacToe. DocumentView Basic
-
-### Requisitos 1. Básica
-
-| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
-| :------- | :------: |  
-
-### Vista de Lógica/Diseño
-- Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View**
+# Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View**
 
 #### Principio de Separación Modelo-Vista (Separated Presentation Pattern).
 ##### Problema:
@@ -36,6 +28,16 @@ Las vistas serán responsables de:<br>
 
 ### Arquitectura Document/View
 
-![image](https://user-images.githubusercontent.com/46433173/195862351-7c33456a-70d0-495a-a3cf-77fbf4f48bc7.png)
+De forma predeterminada, se crea un esqueleto de aplicación con una clase de documento (modelo) y una clase de vista. Separando la administración de datos en estas dos clases. El documento (modelo) almacena los datos y administra la impresión de los datos y coordina la actualización de varias vistas de los datos. La vista muestra los datos y administra la interacción del usuario con ellos, incluida la selección y edición.<br>
+En este modelo, un objeto lee y escribe datos en el almacenamiento persistente. El documento (modelo) también puede proporcionar una interfaz a los datos dondequiera que resida (por ejemplo, en una base de datos). Un objeto de vista independiente administra la presentación de datos, desde la representación de los datos en una ventana hasta la selección y edición de datos por parte del usuario. La vista obtiene los datos de visualización del modelo y comunica al documento los cambios en los datos.<br>
+Aunque puede invalidar u omitir fácilmente la separación entre documento y vistas, hay razones atractivas para seguir este esquema en la mayoría de los casos. Una de las mejores es cuando se necesitan varias vistas del mismo documento, como una hoja de cálculo y una vista de gráfico. El modelo de documento/vista permite que un objeto de vista independiente represente cada vista de los datos, mientras que el código común a todas las vistas (como un motor de cálculo) puede residir en el documento. El documento también asume la tarea de actualizar todas las vistas cada vez que cambian los datos.<br>
+La arquitectura de documentos y vistas facilitan la compatibilidad con varias vistas, varios tipos de documento, ventanas divisoras y otras características valiosas de la interfaz de usuario.<br>
+Lo que busca es crear diferentes vistas para cada parte de la interacción del usuario con el sistema.<br>
+Se divide en:
+-	En una vista principal compuesta,
+-	por una vista por cada caso de uso y cada caso de uso está compuesto,
+- por vistas auxiliares por cada modelo que el caso de uso necesite interactuar con cada modelo que se necesite leer o escribir, y si estas vistas auxiliares también necesitan leer de otros modelos se crearan otras sub-vistas. 
+
+![image](https://user-images.githubusercontent.com/46433173/195909102-e9a482f3-e5d4-4ede-907e-d7f55e52d91d.png)
 
 
