@@ -1,4 +1,4 @@
-# TicTacToe. DocumentView Basic
+# Document/View Architecture
 
 ### Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View
 
