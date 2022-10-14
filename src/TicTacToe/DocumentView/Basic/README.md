@@ -1,3 +1,7 @@
 # TicTacToe Document/View Architecture Basic
 
-![image](https://user-images.githubusercontent.com/46433173/195909257-9b40af54-407b-450b-818e-245d5f292b79.png)
+
+### Requisitos 1. Básica
+
+| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
+| :------- | :------: |  
