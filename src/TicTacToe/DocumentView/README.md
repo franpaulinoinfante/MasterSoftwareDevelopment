@@ -46,7 +46,6 @@ Se divide en:
 -	por una vista por cada caso de uso y cada caso de uso está compuesto,
 - por vistas auxiliares por cada modelo que el caso de uso necesite interactuar con cada modelo que se necesite leer o escribir, y si estas vistas auxiliares también necesitan leer de otros modelos se crearan otras sub-vistas. 
 
-
-![image](https://user-images.githubusercontent.com/46433173/195862351-7c33456a-70d0-495a-a3cf-77fbf4f48bc7.png)
+![image](https://user-images.githubusercontent.com/46433173/195909102-e9a482f3-e5d4-4ede-907e-d7f55e52d91d.png)
 
 
