@@ -171,13 +171,14 @@ Do you want to continue? (y/n):
 ### Análisis
 
 Analizar los requisistos a través de su refinamiento y estructura para realizar una compresión precisa de los requisitos, una descripción de los requisitos que es facil de mantener y ayuda a estructurar el sistema:
-
 - Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos
 - Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
 - Estructurar los requisitos de manera que facilite su compresión, cambiábndoloes y en general mantenerlo.
 - Acercase al diseño, auque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementacion
 
 ### Arquitectura
+
+![image](https://user-images.githubusercontent.com/46433173/195990702-4e1a4615-0c25-4566-b392-027d4ddaf2ad.png)
 
 ### Namespace TicTacToeConsoleApp
 
