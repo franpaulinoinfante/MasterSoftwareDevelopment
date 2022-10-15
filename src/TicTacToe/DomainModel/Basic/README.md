@@ -29,7 +29,7 @@
 
 ### Vsita de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/195210902-9f9c3d1c-4ff6-48e8-9de3-6ed51096f08e.png)
+![image](https://user-images.githubusercontent.com/46433173/196008469-c7157c67-4054-4d8b-9f9a-7eb5ec341cac.png)
 
 ### Vsita de Caso de Uso Play
 
