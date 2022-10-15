@@ -9,7 +9,7 @@ internal class ErrorView
             "The coordinates are wrong"
     };
 
-    internal void WriteLine(ErrorCode errorCode)
+    internal void WriteLine(ErrorType errorCode)
     {
         ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)errorCode]);
     }

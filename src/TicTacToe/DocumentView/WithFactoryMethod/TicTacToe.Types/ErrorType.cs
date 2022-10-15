@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe.Types;
 
-public enum ErrorCode
+public enum ErrorType
 {
     NOT_EMPTY,
     NOT_OWNER,

@@ -20,7 +20,7 @@ internal class CoordinateView
             error = !coordinate.IsValid();
             if (error)
             {
-                new ErrorView().WriteLine(ErrorCode.WRONG_COORDINATES);
+                new ErrorView().WriteLine(ErrorType.WRONG_COORDINATES);
             }
         } while (error);
         return coordinate;

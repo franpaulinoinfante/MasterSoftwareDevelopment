@@ -1,0 +1,43 @@
+@startuml TicTacToeDomainModelArchitecture
+title Domain Model
+package TicTacToe{    
+    package TicTacToe.Models{
+        namespace TicTacToe.Models{
+            class TicTacToe{
+                ~TicTacToe()
+                ~Start()
+                -PlayGame()
+                -Resume() : bool
+                -NewGame()
+            }
+            TicTacToe *--> "1" Turn
+            TicTacToe *--> "2" Player
+            TicTacToe *--> "1" Board
+    
+            class Turn{
+                ~{static} NUM_PLAYERS : int
+                -current : int
+                ~CurrentPlayer : Player
+                ~Turn(Player[])
+                ~Reset()
+                ~Next()
+            }
+            Turn *--> "2" Player
+            Turn ..> Token
+        }
+
+        enum Token{
+            X
+            O
+            Null
+        }
+    }
+
+    package TicTacToe.Utils{
+        namespace TicTacToeUtils{
+
+        }
+    }
+}
+
+@enduml

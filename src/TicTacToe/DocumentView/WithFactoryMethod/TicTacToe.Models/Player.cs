@@ -23,13 +23,13 @@ namespace TicTacToe.Models
             _board.PutToken(coordinate, Token);
         }
 
-        internal ErrorCode GetErrorCodeToMoveOrigin(Coordinate coordinate)
+        internal ErrorType GetErrorCodeToMoveOrigin(Coordinate coordinate)
         {
             if (!_board.IsOccupied(coordinate, _token))
             {
-                return ErrorCode.NOT_EMPTY;
+                return ErrorType.NOT_EMPTY;
             }
-            return ErrorCode.NULL;
+            return ErrorType.NULL;
         }
 
         internal void Move(Coordinate origin, Coordinate target)

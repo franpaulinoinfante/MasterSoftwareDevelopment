@@ -58,7 +58,7 @@ public class Game
         _players[(int)CurrentPlayer.Token].PutToken(coordinate);
     }
 
-    public ErrorCode GetErrorCodeToPut(Coordinate coordinate)
+    public ErrorType GetErrorCodeToPut(Coordinate coordinate)
     {
         return _board.GetErrorCodeToPut(coordinate);
     }
@@ -68,12 +68,12 @@ public class Game
         _players[(int)CurrentPlayer.Token].Move(origin, target);
     }
 
-    public ErrorCode GetErrorCodeToMoveOrigin(Coordinate coordinate)
+    public ErrorType GetErrorCodeToMoveOrigin(Coordinate coordinate)
     {
         return _players[(int)CurrentPlayer.Token].GetErrorCodeToMoveOrigin(coordinate);
     }
 
-    public ErrorCode GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)
+    public ErrorType GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)
     {
         return _board.GetErrorCodeToMoveTarget(origin, target);
     }

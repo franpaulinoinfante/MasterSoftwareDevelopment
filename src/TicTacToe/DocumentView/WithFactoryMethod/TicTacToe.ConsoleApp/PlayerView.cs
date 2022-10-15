@@ -27,12 +27,12 @@ internal class PlayerView
     private void PutToken()
     {
         Coordinate coordinate;
-        ErrorCode errorCode;
+        ErrorType errorCode;
         do
         {
             coordinate = GetCoordinate(MessageType.ENTER_COORDINATE_TO_PUT);
             errorCode = GetErrorCodeToPutToken(coordinate);
-        } while (errorCode != ErrorCode.NULL);
+        } while (errorCode != ErrorType.NULL);
         _game.PutToken(coordinate);
     }
 
@@ -41,12 +41,12 @@ internal class PlayerView
         return new CoordinateView().Read(messageType);
     }
 
-    private ErrorCode GetErrorCodeToPutToken(Coordinate coordinate)
+    private ErrorType GetErrorCodeToPutToken(Coordinate coordinate)
     {
         Debug.Assert(coordinate != null);
 
-        ErrorCode errorCode = _game.GetErrorCodeToPut(coordinate);
-        if (errorCode != ErrorCode.NULL)
+        ErrorType errorCode = _game.GetErrorCodeToPut(coordinate);
+        if (errorCode != ErrorType.NULL)
         {
             new ErrorView().WriteLine(errorCode);
         }
@@ -56,40 +56,40 @@ internal class PlayerView
     private void MoveToken()
     {
         Coordinate origin;
-        ErrorCode errorCode;
+        ErrorType errorCode;
         do
         {
             origin = GetCoordinate(MessageType.COORDINATE_TO_REMOVE);
             errorCode = GetErrorCodeToMoveOrigin(origin);
-        } while (errorCode != ErrorCode.NULL);
+        } while (errorCode != ErrorType.NULL);
 
         Coordinate target;
         do
         {
             target = GetCoordinate(MessageType.COORDINATE_TO_MOVE);
             errorCode = GetErrorCodeToMoveTarge(origin, target);
-        } while (errorCode != ErrorCode.NULL);
+        } while (errorCode != ErrorType.NULL);
         _game.Move(origin, target);
     }
 
-    private ErrorCode GetErrorCodeToMoveOrigin(Coordinate coordinate)
+    private ErrorType GetErrorCodeToMoveOrigin(Coordinate coordinate)
     {
         Debug.Assert(!coordinate.IsNull());
 
-        ErrorCode errorCode = _game.GetErrorCodeToMoveOrigin(coordinate);
-        if (errorCode != ErrorCode.NULL)
+        ErrorType errorCode = _game.GetErrorCodeToMoveOrigin(coordinate);
+        if (errorCode != ErrorType.NULL)
         {
             new ErrorView().WriteLine(errorCode);
         }
         return errorCode;
     }
 
-    private ErrorCode GetErrorCodeToMoveTarge(Coordinate origin, Coordinate target)
+    private ErrorType GetErrorCodeToMoveTarge(Coordinate origin, Coordinate target)
     {
         Debug.Assert(!origin.IsNull() && !target.IsNull());
 
-        ErrorCode errorCode = _game.GetErrorCodeToMoveTarget(origin, target);
-        if (errorCode != ErrorCode.NULL)
+        ErrorType errorCode = _game.GetErrorCodeToMoveTarget(origin, target);
+        if (errorCode != ErrorType.NULL)
         {
             new ErrorView().WriteLine(errorCode);
         }

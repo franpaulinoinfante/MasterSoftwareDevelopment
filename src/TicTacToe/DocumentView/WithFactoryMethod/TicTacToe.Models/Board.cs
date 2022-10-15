@@ -53,13 +53,13 @@ internal class Board
         _tokens[coordinate.Row, coordinate.Colunm] = token;
     }
 
-    internal ErrorCode GetErrorCodeToPut(Coordinate coordinate)
+    internal ErrorType GetErrorCodeToPut(Coordinate coordinate)
     {
         if (!IsEmpty(coordinate))
         {
-            return ErrorCode.NOT_EMPTY;
+            return ErrorType.NOT_EMPTY;
         }
-        return ErrorCode.NULL;
+        return ErrorType.NULL;
     }
 
     internal bool IsEmpty(Coordinate coordinate)
@@ -85,17 +85,17 @@ internal class Board
         return _tokens[origin.Row, origin.Colunm];
     }
 
-    internal ErrorCode GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)
+    internal ErrorType GetErrorCodeToMoveTarget(Coordinate origin, Coordinate target)
     {
         if (origin.Equals(target))
         {
-            return ErrorCode.SAME_COORDINATES;
+            return ErrorType.SAME_COORDINATES;
         }
         if (!IsEmpty(target))
         {
-            return ErrorCode.NOT_EMPTY;
+            return ErrorType.NOT_EMPTY;
         }
-        return ErrorCode.NULL;
+        return ErrorType.NULL;
     }
 
     internal bool IsticTacToe(Token token)
