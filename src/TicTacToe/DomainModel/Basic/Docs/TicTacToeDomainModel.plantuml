@@ -1,0 +1,11 @@
+@startuml TicTacToeDomainModelArchitecture
+title Architecture - Domain Model
+
+namespace TicTacToeConsoleApp #DDDDDD { }
+namespace TicTacToeUtils #DDDDDD { }
+namespace DotNet.Console { }
+
+TicTacToeConsoleApp ..> TicTacToeUtils
+TicTacToeConsoleApp ..> DotNet.Console
+
+@enduml
