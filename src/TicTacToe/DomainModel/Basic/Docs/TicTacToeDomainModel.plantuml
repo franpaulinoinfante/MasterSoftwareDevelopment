@@ -3,7 +3,7 @@ title Architecture - Domain Model
 
 namespace TicTacToeConsoleApp #DDDDDD { }
 namespace TicTacToeUtils #DDDDDD { }
-namespace DotNet.Console { }
+namespace DotNet.Console #White { }
 
 TicTacToeConsoleApp ..> TicTacToeUtils
 TicTacToeConsoleApp ..> DotNet.Console
