@@ -1,4 +1,4 @@
-# - - - - - TicTacToe Practice - - - - -
+# - - - - - TicTacToe Practice - Domain Model- - - - -
 
 **índice***
 1. [Requisitos](#Requisitos)

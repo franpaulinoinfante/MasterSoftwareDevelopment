@@ -1,0 +1,11 @@
+@startuml ViewUseCaseStart
+state INITIAL
+state IN_GAME
+state start as " "
+state started as " "
+[*] --> INITIAL
+INITIAL --> start: Player requests a new game   
+start --> started: system show empty board
+started --> IN_GAME : system ready to play 
+IN_GAME -->[*]
+@enduml

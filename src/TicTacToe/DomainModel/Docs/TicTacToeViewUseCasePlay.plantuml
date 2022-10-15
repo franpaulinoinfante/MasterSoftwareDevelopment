@@ -1,36 +1,3 @@
-@startuml UseCaseContext
-state INITIAL
-state IN_GAME
-state OUT_GAME
-state EXIT
-state if_finished <<choice>>
-state if_resumed <<choice>>
-
-
-[*] --> INITIAL
-INITIAL --> IN_GAME: Start
-IN_GAME --> if_finished: Play
-if_finished --> IN_GAME
-if_finished --> OUT_GAME: [finished]
-OUT_GAME --> if_resumed: Resume
-if_resumed --> INITIAL: [continued]
-if_resumed --> EXIT
-EXIT --> [*]
-@enduml
-
-
-@startuml ViewUseCaseStart
-state INITIAL
-state IN_GAME
-state start as " "
-state started as " "
-[*] --> INITIAL
-INITIAL --> start: Player requests a new game   
-start --> started: system show empty board
-started --> IN_GAME : system ready to play 
-IN_GAME -->[*]
-@enduml
-
 @startuml ViewUseCasePlay
 state IN_GAME
 state A as " "
