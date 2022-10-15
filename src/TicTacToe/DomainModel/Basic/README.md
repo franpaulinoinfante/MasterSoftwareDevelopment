@@ -29,7 +29,7 @@
 
 ### Vsita de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/195210902-9f9c3d1c-4ff6-48e8-9de3-6ed51096f08e.png)
+![image](https://user-images.githubusercontent.com/46433173/196008561-4923f589-0a7c-48a9-977b-2c821b19b56c.png)
 
 ### Vsita de Caso de Uso Play
 
@@ -182,7 +182,7 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Namespace TicTacToeConsoleApp
 
-### Namespace TicTacToeUtils
+![image](https://user-images.githubusercontent.com/46433173/196008516-6708e167-d8ca-4fe4-b22d-a9ece381db40.png)
 
 ### Casos de Uso
 
