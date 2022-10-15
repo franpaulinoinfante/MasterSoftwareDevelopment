@@ -182,7 +182,7 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Namespace TicTacToeConsoleApp
 
-### Namespace TicTacToeUtils
+![image](https://user-images.githubusercontent.com/46433173/196008394-d68f8c9b-ea1e-4967-b88b-0ad1866c7c49.png)
 
 ### Casos de Uso
 
