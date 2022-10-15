@@ -12,9 +12,9 @@
     - 3.1.1 [Análisis Start](#Análisis-Start)
     - 3.1.2 [Análisis Play](#Análisis-Play)
     - 3.1.3 [Análisis Resume](#Análisis-Resume)
-    - 3.2 [Pquetes](#Paquetes)
-    - 3.2.1 [TicTacToe-ConsoleApp](#TicTacToeConsoleApp)
-    - 3.2.2 [TicTacToe-Utils](#TicTac-ToeUtils)
+    - 3.2 [Arquitectura](#Arquitectura)
+    - 3.2.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
+    - 3.2.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
 
 ### Requisitos
 
@@ -152,6 +152,22 @@ X Player: You win!!! :-)
 Do you want to continue? (y/n):
 ```
 
+## Vista Lógica
+
+- Aplicación del Modelo del Dominio mediante:
+    - Estrategias de Clasificación:
+        - Descripción Informal
+        - Análisis Clásico 
+        - Análisis Experto del Dominio
+        - Análisis del Comportamiento 
+        - Reparto de Responsabilidades
+        - Análisis de Casos de Uso
+    - Relaciones entre Clases
+        - Relación entre Clases por Colaboración
+            - Relación de Composición/Agregación
+            - Relación de Asociación
+            - Relación de Dependencia/Uso 
+
 ### Análisis
 
 ### Casos de Uso
@@ -162,8 +178,8 @@ Do you want to continue? (y/n):
 
 ### Análisis Resume
 
-### Pquetes
+### Arquitectura
 
-### TicTacToeConsoleApp
+### Namespace TicTacToeConsoleApp
 
-### TicTacToeUtils
+### Namespace TicTacToeUtils
