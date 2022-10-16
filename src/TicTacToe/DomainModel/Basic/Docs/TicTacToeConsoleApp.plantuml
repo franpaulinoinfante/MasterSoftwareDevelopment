@@ -1,7 +1,6 @@
 @startuml TicTacToeDomainModelArchitecture
 title Domain Model
-package TicTacToe{    
-    namespace TicTacToe.ConsoleApp{
+        namespace TicTacToe.ConsoleApp{
         class TicTacToe{
             ~TicTacToe()
             ~Start()
@@ -10,11 +9,11 @@ package TicTacToe{
             -NewGame()
             ~{static} Main(string)
         }
-        TicTacToe *--> "1" Turn
-        TicTacToe *--> "2" Player
-        TicTacToe *--> "1" Board
-        TicTacToe ..> Message
-        TicTacToe ..> MessageType            
+        TicTacToe.ConsoleApp.TicTacToe *--> "1" TicTacToe.ConsoleApp.Turn
+        TicTacToe.ConsoleApp.TicTacToe *--> "2" TicTacToe.ConsoleApp.Player
+        TicTacToe.ConsoleApp.TicTacToe *--> "1" TicTacToe.ConsoleApp.Board
+        TicTacToe.ConsoleApp.TicTacToe ..> TicTacToe.ConsoleApp.Types.Message
+        TicTacToe.ConsoleApp.TicTacToe ..> TicTacToe.ConsoleApp.Types.MessageType            
 
         class Turn{
             ~{static} NUM_PLAYERS : int
@@ -26,8 +25,8 @@ package TicTacToe{
             ~Next()
             -Change() : int
         }
-        Turn *--> "2" Player
-        Turn ..> "2" Token
+        TicTacToe.ConsoleApp.Turn --> "2" TicTacToe.ConsoleApp.Player
+        TicTacToe.ConsoleApp.Turn ..> "2" TicTacToe.ConsoleApp.Types.Token
 
         class Player{
             ~Token => Token
@@ -41,14 +40,14 @@ package TicTacToe{
             ~GetErrorTypeToMoveTarget(Coordinate, Coordinate) : ErrorType.SameCoordinate
             ~Resume() : bool
         }
-        Player ..> Token
-        Player --> Board
-        Player ..> Coordinate
-        Player ..> Message
-        Player ..> MessageType
-        Player ..> Error
-        Player ..> ErrorType
-        Player ..> YesNotDialog
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.Types.Token
+        TicTacToe.ConsoleApp.Player --> TicTacToe.ConsoleApp.Board
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.Types.Coordinate
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.Types.Message
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.Types.MessageType
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.Types.Error
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.Types.ErrorType
+        TicTacToe.ConsoleApp.Player ..> TicTacToe.ConsoleApp.IO.YesNotDialog
 
         class Board{
             ~Board()
@@ -67,16 +66,16 @@ package TicTacToe{
             -GetCoordinate(Tokent) : List<Coordinate>
             ~Write()
         }
-        Board o--> "3x3" Token
-        Board ..> Coordinate
-        Board ..> Direction
-        Board ..> Message
-        Board ..> MessageType
-        Board ..> Error
-        Board ..> ErrorType
-        Board ..> ConsoleIO
+        TicTacToe.ConsoleApp.Board o--> "3x3" TicTacToe.ConsoleApp.Types.Token
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.Types.Coordinate
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.Types.Direction
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.Types.Message
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.Types.MessageType
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.Types.Error
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.Types.ErrorType
+        TicTacToe.ConsoleApp.Board ..> TicTacToe.ConsoleApp.IO.ConsoleIO
 
-        class Coordinate{
+        class TicTacToe.ConsoleApp.Types.Coordinate{
             -[static] DIMENSION : int
             -{static} ROW : string
             -{static} COLUNM : string
@@ -89,24 +88,24 @@ package TicTacToe{
             ~IsValid() : bool
             ~Equals(Coordinate) : bool
             ~GetDirection(Coordinate) : Direction
-            -InVertical() : bool
-            -InHorizontal() : bool
+            -InVertical(Coordinate) : bool
+            -InHorizontal(Coordinate) : bool
             -InMainDiagonal() : bool
             -InInverseDiagonal() : bool
         }
-        Coordinate ..> ClosedInterval
-        Coordinate ..> ConsoleIO
-        Coordinate ..> Direction
-        Coordinate ..> Message
-        Coordinate ..> MessageType
+        TicTacToe.ConsoleApp.Types.Coordinate ..> TicTacToe.ConsoleApp.Types.ClosedInterval
+        TicTacToe.ConsoleApp.Types.Coordinate ..> TicTacToe.ConsoleApp.IO.ConsoleIO
+        TicTacToe.ConsoleApp.Types.Coordinate ..> TicTacToe.ConsoleApp.Types.Direction
+        TicTacToe.ConsoleApp.Types.Coordinate ..> TicTacToe.ConsoleApp.Types.Message
+        TicTacToe.ConsoleApp.Types.Coordinate ..> TicTacToe.ConsoleApp.Types.MessageType
 
-        class ClosedInterval{
+        class TicTacToe.ConsoleApp.Types.ClosedInterval{
             -min : int
             -max : int
             ~ClosedInterval(min, max)
             ~IsIncluide(value) : bool
         }
-        class Message{
+        class TicTacToe.ConsoleApp.Types.Message{
             -{static} MESSAGES : string[]
             ~Message(MessageType)
             ~Write(MessageType messageType)
@@ -114,10 +113,10 @@ package TicTacToe{
             ~WriteLine(string player)
             WriteLine(MessageType)
         }
-        Message --> MessageType
-        Message ..> ConsoleIO
+        TicTacToe.ConsoleApp.Types.Message --> TicTacToe.ConsoleApp.Types.MessageType
+        TicTacToe.ConsoleApp.Types.Message ..> TicTacToe.ConsoleApp.IO.ConsoleIO
 
-        enum MessageType{
+        enum TicTacToe.ConsoleApp.Types.MessageType{
             +TITLE,
             +HORIZONTAL_LINE,
             +VERTICAL_LINE,
@@ -128,14 +127,14 @@ package TicTacToe{
             +WINNER,
             +RESUME
         }
-        class YesNotDialog{
+        class TicTacToe.ConsoleApp.IO.YesNotDialog{
             ~YesNotDialog()
             ~Read(string)
             ~IsAffirmative() : bool
         }
-        YesNotDialog ..> ConsoleIO
+        TicTacToe.ConsoleApp.IO.YesNotDialog ..> TicTacToe.ConsoleApp.IO.ConsoleIO
 
-        enum Direction{
+        enum TicTacToe.ConsoleApp.Types.Direction{
             +HORIZONAL,
             +VERTICAL,
             +MAIN_DIAGONAL,
@@ -143,21 +142,21 @@ package TicTacToe{
             +NULL
         }
 
-        enum Token{
+        enum TicTacToe.ConsoleApp.Types.Token{
             +X,
             +O,
             +NULL
         }
         
-        class Error{
+        class TicTacToe.ConsoleApp.Types.Error{
             -{static} ERRORS : string
             ~Error(ErrorType)
             ~WriteLine()
         }
-        Error *--> ErrorType
-        Error ..> ConsoleIO
+        TicTacToe.ConsoleApp.Types.Error *--> TicTacToe.ConsoleApp.Types.ErrorType
+        TicTacToe.ConsoleApp.Types.Error ..> TicTacToe.ConsoleApp.IO.ConsoleIO
 
-        enum ErrorType{
+        enum TicTacToe.ConsoleApp.Types.ErrorType{
             +IS_NOT_EMPTY,
             +NOT_OWNER,
             +SAME_COORDINATES,
@@ -165,6 +164,4 @@ package TicTacToe{
             +NULL
         }
     }
-}
-
 @enduml

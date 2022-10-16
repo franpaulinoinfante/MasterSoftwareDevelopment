@@ -8,10 +8,14 @@
     public Turn(Player[] players, Board _board)
     {
         _players = players;
-        Reset(_board);
+        NewGame(_board);
     }
 
-    internal void Reset(Board board)
+    public int Current => _current;
+
+    public int Last => Change();
+
+    internal void NewGame(Board board)
     {
         for (int i = 0; i < NUM_PLAYERS; i++)
         {
@@ -19,10 +23,6 @@
         }
         _current = new Random().Next(NUM_PLAYERS);
     }
-
-    public int Current => _current;
-
-    public int Last => Change();
 
     internal void Next()
     {

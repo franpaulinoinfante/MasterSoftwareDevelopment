@@ -1,0 +1,14 @@
+@startuml YouViewContext
+title Context
+
+YouViews *--> "0..n" User
+YouViews --> "0..n" Video
+User *--> "0..n" Video
+Video *--> "1" Detail
+Video *--> "1" Thumbnail
+Video o--> "0..n" Playlist
+Video *--> "1" Audience
+Video ..> PaidPromotion
+
+
+@enduml

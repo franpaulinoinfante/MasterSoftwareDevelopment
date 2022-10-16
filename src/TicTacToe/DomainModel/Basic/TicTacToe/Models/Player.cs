@@ -30,8 +30,8 @@ internal class Player
 
     internal void MoveToken()
     {
-        Coordinate origin;
         ErrorType errorType;
+        Coordinate origin;
         do
         {
             origin = new Coordinate().Read(MessageType.COORDINATE_TO_REMOVE);

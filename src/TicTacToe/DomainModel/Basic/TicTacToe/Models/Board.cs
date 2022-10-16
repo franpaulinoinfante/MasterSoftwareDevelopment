@@ -7,10 +7,10 @@ internal class Board
     public Board()
     {
         _tokens = new TokenType[Coordinate.DIMENSION, Coordinate.DIMENSION];
-        Reset();
+        NewGame();
     }
 
-    internal void Reset()
+    internal void NewGame()
     {
         for (int i = 0; i < Coordinate.DIMENSION; i++)
         {

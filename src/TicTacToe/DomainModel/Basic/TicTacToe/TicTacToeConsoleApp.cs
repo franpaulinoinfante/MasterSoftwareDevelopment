@@ -55,7 +55,7 @@ internal class TicTacToe
 
     private void NewGame()
     {
-        _board.Reset();
-        _turn.Reset(_board);
+        _board.NewGame();
+        _turn.NewGame(_board);
     }
 }
