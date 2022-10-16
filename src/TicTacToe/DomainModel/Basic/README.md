@@ -188,6 +188,6 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ![image](https://user-images.githubusercontent.com/46433173/196037657-0178ece9-1f9f-4fb6-9e6f-01517124912a.png)
 
-### Namespace TicTacToeConsoleApp
+### Relación entre namespaces
 
 ![image](https://user-images.githubusercontent.com/46433173/196037744-1b61ac62-6f5d-45fc-a06b-f97580da99f2.png)
