@@ -41,7 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Views", "src\TicT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.ConsoleApp", "src\TicTacToe\DocumentView\WithFactoryMethod\TicTacToe.ConsoleApp\TicTacToe.ConsoleApp.csproj", "{C9B88CBC-DA69-4F85-87BC-9AEFB34774B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "src\TicTacToe\DomainModel\Basic\TicTacToe\TicTacToe.csproj", "{453B7925-7221-4218-8339-20274E5E8C8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "src\TicTacToe\DomainModel\Basic\TicTacToe\TicTacToe.csproj", "{453B7925-7221-4218-8339-20274E5E8C8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Machine", "Machine", "{AE960945-318E-4338-B452-58032F90C6FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{63E8D37B-B558-4FD0-BF4B-C5992E0FA7E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,10 @@ Global
 		{453B7925-7221-4218-8339-20274E5E8C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{453B7925-7221-4218-8339-20274E5E8C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{453B7925-7221-4218-8339-20274E5E8C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E8D37B-B558-4FD0-BF4B-C5992E0FA7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E8D37B-B558-4FD0-BF4B-C5992E0FA7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E8D37B-B558-4FD0-BF4B-C5992E0FA7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E8D37B-B558-4FD0-BF4B-C5992E0FA7E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +113,8 @@ Global
 		{906A3111-1B3E-4CB4-8739-11256B1BF038} = {605815E7-AFC0-4352-81C1-DF700442E4A3}
 		{C9B88CBC-DA69-4F85-87BC-9AEFB34774B0} = {605815E7-AFC0-4352-81C1-DF700442E4A3}
 		{453B7925-7221-4218-8339-20274E5E8C8E} = {C9070F6E-8E48-4073-B293-83F7666D45A0}
+		{AE960945-318E-4338-B452-58032F90C6FE} = {AEEAC4CE-706E-4725-8017-0A4ED08396B5}
+		{63E8D37B-B558-4FD0-BF4B-C5992E0FA7E2} = {AE960945-318E-4338-B452-58032F90C6FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AE9947C-D1D2-4C33-B59E-B63A1C009BCE}
