@@ -1,8 +1,10 @@
 ﻿internal class Message
 {
+    private readonly MessageType _messageType;
+
     private readonly string[] MESSAGES = new string[]
     {
-            "--- TIC TAC TOE ---",
+            "--- TIC TAC TOE ---\n",
             "---------------",
             " | ",
             "Coordinate to put",
@@ -12,8 +14,6 @@
             "#player player: You win!!! :-)",
             "Do you want to continue "
     };
-
-    private readonly MessageType _messageType;
 
 
     public Message(MessageType messageType)
