@@ -37,8 +37,8 @@
 
 ### Prototipo de Interfaz 
 
-*Número de jugadores: 0*
-'''
+**Número de jugadores: 0**
+```
 --- TIC TAC TOE ---
 Number of user? [0, 2]: 0
 -------------
@@ -88,7 +88,7 @@ Number of user? [0, 2]: 0
 -------------
 O Player: You win!!! :-)
 Do you want to continue? (y/n):
-'''
+```
 
 **Número de jugadores: 1**
 ```
@@ -143,7 +143,7 @@ Do you want to continue? (y/n):
 ```
 
 ***Número de jugadores: 2***
-'''
+```
 --- TIC TAC TOE ---
 Number of user? [0, 2]: 2
 -------------
@@ -257,7 +257,7 @@ Column: 2
 -------------
 X Player: You win!!! :-)
 Do you want to continue? (y/n):
-'''
+```
 
 ## Vista Lógica
 
@@ -277,7 +277,7 @@ Do you want to continue? (y/n):
         - Relación por Extensión y Polimorfismo
             - Herencia básica
             - Polimorfismo básico
-            
+
 ### Análisis
 Analizar los requisistos a través de su refinamiento y estructura para realizar una compresión precisa de los requisitos, una descripción de los requisitos que es facil de mantener y ayuda a estructurar el sistema:
 - Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos
