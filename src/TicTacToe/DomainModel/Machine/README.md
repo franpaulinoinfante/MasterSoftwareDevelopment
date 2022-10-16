@@ -4,9 +4,10 @@
 1. [Requisitos](#Requisitos)
 2. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
     - 2.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
-    - 2.2 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
-    - 2.3 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
-    - 2.4 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
+    - 2.2 [Vista de Caso de Uso Set Up Player](#Vsita-de-Caso-de-Set-Up-Player)
+    - 2.3 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
+    - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
+    - 2.5 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 3. [Análisis](#Analisis)
     - 3 [Arquitectura](#Arquitectura)
     - 3.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
@@ -14,7 +15,7 @@
 
 ### Requisitos
 
-| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
+| * _Funcionalidad: **Sencilla**_<br/> *_Maquina: **Si**_<br>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
 | :------- | :------: |  
 
 ### Vista de Casos de Uso
@@ -26,6 +27,10 @@
 ### Vsita de Caso de Uso Start
 
 ![image](https://user-images.githubusercontent.com/46433173/196008561-4923f589-0a7c-48a9-977b-2c821b19b56c.png)
+
+### Vista de Caso de Uso Set Up Player
+
+
 
 ### Vsita de Caso de Uso Play
 
@@ -47,53 +52,47 @@ Number of user? [0, 2]: 0
 |   |   |   |
 -------------
 -------------
+|   |   | x |
 |   |   |   |
 |   |   |   |
-| X |   |   |
 -------------
 -------------
+|   | X |   |
+|   |   |   |
 |   | O |   |
+-------------
+-------------
+|   | X |   |
 |   |   |   |
-| X |   |   |
--------------
--------------
-|   | O |   |
-|   |   | X |
-| X |   |   |
--------------
--------------
-| O | O |   |
-|   |   | X |
-| X |   |   |
--------------
--------------
-| O | O |   |
-|   |   | X |
-| X |   | X |
--------------
--------------
-| O | O |   |
 |   | O | X |
-| X |   | X |
 -------------
 -------------
-| O | O |   |
-| X | O | X |
-|   |   | X |
+|   | X |   |
+| O |   |   |
+|   | O | X |
 -------------
 -------------
-| O | O | O |
-| X |   | X |
-|   |   | X |
+|   | X | X |
+| O |   |   |
+|   | O | X |
 -------------
-O Player: You win!!! :-)
+-------------
+|   | X | X |
+| O |   | O |
+|   | O | X |
+-------------
+-------------
+| X | X | X |
+| O |   | O |
+|   | O |   |
+X Player: You win!!! :-)
 Do you want to continue? (y/n):
 ```
 
 **Número de jugadores: 1**
 ```
 --- TIC TAC TOE ---
-Number of user? [0, 2]: 1
+Number of user? [0 - 2]: 1
 -------------
 |   |   |   |
 |   |   |   |
@@ -287,8 +286,8 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Arquitectura
 
-![image](https://user-images.githubusercontent.com/46433173/196037657-0178ece9-1f9f-4fb6-9e6f-01517124912a.png)
+
 
 ### Modelos
 
-![image](https://user-images.githubusercontent.com/46433173/196037744-1b61ac62-6f5d-45fc-a06b-f97580da99f2.png)
+

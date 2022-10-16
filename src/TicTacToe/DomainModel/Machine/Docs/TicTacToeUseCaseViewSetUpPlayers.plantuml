@@ -1,0 +1,28 @@
+@startuml UseCaseSetUpPlayer
+Title Vista de Caso de Uso Set Up Players
+
+state INITIAL
+state IN_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+
+state if <<choice>>
+
+[*] --> INITIAL
+INITIAL --> A : System request number of players? [0 - 2]
+A --> B : User enter number of players
+B --> if : [number players is valid]
+if --> D : [error]
+    note on link
+        number of player out of range
+    endnote
+    D --> E : System displays error
+    E --> [*]
+if --> C : System displays empty board
+C --> IN_GAME : System allous Play
+IN_GAME --> [*]
+
+@enduml
