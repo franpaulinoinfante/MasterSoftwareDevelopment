@@ -190,4 +190,4 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Namespace TicTacToeConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/196037124-ece57591-e559-46d9-b3ec-48add6e94151.png)
+![image](https://user-images.githubusercontent.com/46433173/196037744-1b61ac62-6f5d-45fc-a06b-f97580da99f2.png)
