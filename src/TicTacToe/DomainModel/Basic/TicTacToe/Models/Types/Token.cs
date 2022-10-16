@@ -1,13 +1,13 @@
 ﻿internal class Token
 {
-    private TokenType _tokenType;
+    private readonly TokenType _tokenType;
 
     public Token(TokenType tokenType)
     {
         _tokenType = tokenType;
     }
 
-    private string[] TOKENS = new string[]
+    private readonly string[] TOKENS = new string[]
     {
         "X",
         "O",

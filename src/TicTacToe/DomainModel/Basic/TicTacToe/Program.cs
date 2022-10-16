@@ -2,9 +2,9 @@
 
 internal class TicTacToe
 {
-    private Board _board;
-    private Player[] _players;
-    private Turn _turn;
+    private readonly Board _board;
+    private readonly Player[] _players;
+    private readonly Turn _turn;
 
     public TicTacToe()
     {

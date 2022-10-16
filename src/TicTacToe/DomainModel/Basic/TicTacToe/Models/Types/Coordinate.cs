@@ -18,7 +18,7 @@
     }
 
     public int Row => _row;
-    public int Colunm  => _colunm;
+    public int Colunm => _colunm;
 
     internal Coordinate Read(MessageType messageType)
     {
@@ -39,11 +39,11 @@
 
     private bool IsValid()
     {
-        return new Interval(min: 0, Coordinate.DIMENSION - 1).Incuide(_row) && 
+        return new Interval(min: 0, Coordinate.DIMENSION - 1).Incuide(_row) &&
             new Interval(min: 0, Coordinate.DIMENSION - 1).Incuide(_colunm);
     }
 
-    internal  bool Equals(Coordinate coordinate)
+    internal bool Equals(Coordinate coordinate)
     {
         return _row == coordinate._row && _colunm == coordinate._colunm;
     }

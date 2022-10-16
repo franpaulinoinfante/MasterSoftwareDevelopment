@@ -112,11 +112,6 @@ public class ConsoleIO
         Console.WriteLine(outInt);
     }
 
-    public void ConsoleReadKey()
-    {
-        Console.ReadKey();
-    }
-
     private void WriteError(string format)
     {
         WriteLine($"ERROR DE FORMATO.\tIntroduzca un valor con formato: {format}");
