@@ -30,7 +30,7 @@
 
 ### Vista de Caso de Uso Set Up Player
 
-
+![image](https://user-images.githubusercontent.com/46433173/196046634-c5eafc78-7e41-493b-96db-84e6a2ada6fe.png)
 
 ### Vsita de Caso de Uso Play
 
@@ -286,8 +286,16 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Arquitectura
 
+![image](https://user-images.githubusercontent.com/46433173/196046675-3078041d-9d4d-4199-a648-2229926891bd.png)
 
+### Namespaces
 
-### Modelos
+### Models
 
+### Types
 
+![image](https://user-images.githubusercontent.com/46433173/196054310-1865d75a-ae86-4dfa-8f6d-b6ebb3702248.png)
+
+### ConsoleIOs
+
+![image](https://user-images.githubusercontent.com/46433173/196054678-72526581-85c6-47eb-8ca9-81efc2c9fe19.png)
