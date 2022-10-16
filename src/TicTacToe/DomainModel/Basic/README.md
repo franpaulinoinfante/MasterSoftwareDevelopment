@@ -8,13 +8,13 @@
     - 2.3 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
     - 2.4 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 3. [Análisis](#Analisis)
-    - 3.1 [Arquitectura](#Arquitectura)
-    - 3.1.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
-    - 3.1.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
-    - 3.2 [Casos de Uso](#Casos-de-Uso)
-    - 3.2.1 [Análisis Start](#Análisis-Start)
-    - 3.2.2 [Análisis Play](#Análisis-Play)
-    - 3.2.3 [Análisis Resume](#Análisis-Resume)
+    - 3.1 [Casos de Uso](#Casos-de-Uso)
+    - 3.1.1 [Análisis Start](#Análisis-Start)
+    - 3.1.2 [Análisis Play](#Análisis-Play)
+    - 3.1.3 [Análisis Resume](#Análisis-Resume)
+    - 3.2 [Arquitectura](#Arquitectura)
+    - 3.2.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
+    - 3.3.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
 
 ### Requisitos
 
@@ -176,6 +176,14 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 - Estructurar los requisitos de manera que facilite su compresión, cambiábndoloes y en general mantenerlo.
 - Acercase al diseño, auque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementacion
 
+### Análisis Casos de Uso
+
+### Análisis Start
+
+### Análisis Play
+
+### Análisis Resume
+
 ### Arquitectura
 
 ![image](https://user-images.githubusercontent.com/46433173/195990702-4e1a4615-0c25-4566-b392-027d4ddaf2ad.png)
@@ -183,11 +191,3 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 ### Namespace TicTacToeConsoleApp
 
 ![image](https://user-images.githubusercontent.com/46433173/196008516-6708e167-d8ca-4fe4-b22d-a9ece381db40.png)
-
-### Casos de Uso
-
-### Análisis Start
-
-### Análisis Play
-
-### Análisis Resume
