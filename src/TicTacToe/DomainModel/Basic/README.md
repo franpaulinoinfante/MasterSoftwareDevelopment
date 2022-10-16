@@ -186,8 +186,8 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Arquitectura
 
-![image](https://user-images.githubusercontent.com/46433173/195990702-4e1a4615-0c25-4566-b392-027d4ddaf2ad.png)
+![image](https://user-images.githubusercontent.com/46433173/196037657-0178ece9-1f9f-4fb6-9e6f-01517124912a.png)
 
 ### Namespace TicTacToeConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/196008516-6708e167-d8ca-4fe4-b22d-a9ece381db40.png)
+![image](https://user-images.githubusercontent.com/46433173/196037124-ece57591-e559-46d9-b3ec-48add6e94151.png)
