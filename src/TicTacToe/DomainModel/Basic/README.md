@@ -8,13 +8,9 @@
     - 2.3 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
     - 2.4 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 3. [Análisis](#Analisis)
-    - 3.1 [Casos de Uso](#Casos-de-Uso)
-    - 3.1.1 [Análisis Start](#Análisis-Start)
-    - 3.1.2 [Análisis Play](#Análisis-Play)
-    - 3.1.3 [Análisis Resume](#Análisis-Resume)
-    - 3.2 [Arquitectura](#Arquitectura)
-    - 3.2.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
-    - 3.3.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
+    - 3 [Arquitectura](#Arquitectura)
+    - 3.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
+    - 3.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
 
 ### Requisitos
 
@@ -167,27 +163,17 @@ Do you want to continue? (y/n):
             - Relación de Composición/Agregación
             - Relación de Asociación
             - Relación de Dependencia/Uso 
-
 ### Análisis
-
 Analizar los requisistos a través de su refinamiento y estructura para realizar una compresión precisa de los requisitos, una descripción de los requisitos que es facil de mantener y ayuda a estructurar el sistema:
 - Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos
 - Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
 - Estructurar los requisitos de manera que facilite su compresión, cambiábndoloes y en general mantenerlo.
 - Acercase al diseño, auque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementacion
 
-### Análisis Casos de Uso
-
-### Análisis Start
-
-### Análisis Play
-
-### Análisis Resume
-
 ### Arquitectura
 
 ![image](https://user-images.githubusercontent.com/46433173/196037657-0178ece9-1f9f-4fb6-9e6f-01517124912a.png)
 
-### Relación entre namespaces
+### Modelos
 
 ![image](https://user-images.githubusercontent.com/46433173/196037744-1b61ac62-6f5d-45fc-a06b-f97580da99f2.png)
