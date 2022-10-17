@@ -1,0 +1,116 @@
+@startuml TicTacToeConsoleApp
+title ConsoleApp
+namespace ConsoleApp{
+    class ConsoleApp{
+        #CreateGameView(Game) : GameView
+        +{static} Main(string[])
+    }
+    ConsoleApp -up-|> TicTacToe.Main
+    ConsoleApp .down.> ConsoleGameView
+    
+    abstract Views.GameView{}
+
+
+    class ConsoleGameView{
+        ~ConsoleGameView(Game)
+        ~Start()
+        ~SetUpPlayers()
+        ~Play()
+        ~Resume() : bool
+    }
+    ConsoleGameView -up-|> Views.GameView
+    ConsoleGameView *--> Models.Game
+    ConsoleGameView *--> StartView
+    ConsoleGameView *--> SetUpPlayersView
+    ConsoleGameView *--> PlayView
+    ConsoleGameView *--> ResumeView
+
+    class StartView{
+        ~StartView(Game)
+        ~Interact()
+    }
+    StartView ..> MessageView
+    StartView ..> Views.Types.MessageType
+    StartView ..> BoardView
+    StartView ..> Models.Game
+
+    class SetUpPlayersView{
+        ~SetUpPlayersView(Game)
+        ~Interact()
+    }
+    SetUpPlayersView ..> Models.Game
+    SetUpPlayersView ..> MessageView
+    SetUpPlayersView ..> Views.Types.MessageType
+    SetUpPlayersView ..> ConsoleApp.ConsoleIOs.BoundedIntDialog
+
+    class PlayView{
+        ~PlayView(Game)
+        ~Interact()
+    }
+    PlayView ..> Models.Game
+    PlayView ..> PlayerView
+    PlayView ..> BoardView
+    PlayView ..> MessageView
+    PlayView ..> Views.Types.MessageType
+
+    class ResumeView{
+        ~ResumeView(Game)
+        ~Interact() : bool
+    }
+    ResumeView ..> Models.Game
+    ResumeView ..> MessageView
+    ResumeView ..> Views.Types.MessageType
+    ResumeView ..> ConsoleApp.ConsoleIOs.YesNotDialog
+
+    class BoardView{
+        ~BoardView()
+        ~Write(Game)
+    }
+    BoardView ..> Models.Game
+    BoardView ..> Models.Types.Coordinate
+    BoardView ..> MessageView
+    BoardView ..> ConsoleApp.ConsoleIOs.ConsoleIO   
+
+    class PlayerView{
+        ~PlayView()
+        ~Play(Game)
+        -PutToken()
+        -ReadCoordinate(MessageType) : Coordinate
+        -GetErrorTypeToPutToken(Coordinate) : ErrorType
+        -MoveToken()
+        -GetErrorTypeToMoveOrigin(Coordinate) : ErrorType
+        -GetErrorTypeToMoveTarget(Coordinate, Coordinate) : ErrorType
+    }
+    PlayerView ..> Models.Game
+    PlayerView ..> Models.Types.Coordinate
+    PlayerView ..> Models.Types.Token
+    PlayerView ..> MessageView
+    PlayerView ..> Views.Types.MessageType
+    PlayerView ..> ErrorView
+    PlayerView ..> Models.Types.ErrorType
+
+    class MessageView{
+        -{static} MESSAGES : string[]
+        ~MessageView(MessageType)
+        ~WriteLine()
+        ~WriteLine(Player)
+        ~ToString() : string
+    }
+    MessageView --> Views.Types.MessageType
+    MessageView ..> Models.Types.Token
+    MessageView ..> ConsoleApp.ConsoleIOs.ConsoleIO
+
+    class ErrorView{
+        -{static} ERRORS : string[]
+        ~ErrorView(ErrorType)
+        ~WriteLine()
+    }
+    ErrorView --> Views.Types.ErrorType
+    ErrorView ..> ConsoleApp.ConsoleIOs.ConsoleIO
+
+    enum Views.Types.MessageType{}
+    enum Models.Types.Token{}
+    enum Models.Types.ErrorType{}
+}
+
+@enduml
