@@ -288,9 +288,11 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ![image](https://user-images.githubusercontent.com/46433173/196046675-3078041d-9d4d-4199-a648-2229926891bd.png)
 
-### Namespaces
+**Vista de los diferentes namespaces**
 
 ### Models
+
+![image](https://user-images.githubusercontent.com/46433173/196193327-2654f69e-2cec-4c40-9796-455bec865141.png)
 
 ### Types
 
