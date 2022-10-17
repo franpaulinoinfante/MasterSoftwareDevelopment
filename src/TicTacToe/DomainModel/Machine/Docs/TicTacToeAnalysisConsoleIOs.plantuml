@@ -1,0 +1,30 @@
+@startuml TicTacToeAnalysisConsoleIOs
+namespace ConsoleIOs{
+    class ConsoleIO{
+        +ReadInt(title)
+        +Write(title)
+        +WriteLine(title)
+    }
+
+    class YesNotDialog{
+        -{static} AFFIRMATIVE : char
+        -{static} NEGATIVE : char
+        -{static} SUFFIX : string
+        -{static} MESSAGE : string
+        -answer : string
+        +Read(message)
+        +IsAffirmative() : bool
+        +IsNegative() : bool
+        -GetAnswer() : char
+    }
+    YesNotDialog ..> ConsoleIO
+
+    class BoundedIntDialog{
+        -limit : ClosedInterval
+        -{static} ERROR_MESSAGE : string
+        +BoundedIntDialog(messate)
+        +Read(message) : int
+    }
+    BoundedIntDialog ..> ConsoleIO
+}
+@enduml

@@ -1,13 +1,13 @@
 ﻿using System.Diagnostics;
 
-namespace TicTacToe;
+namespace TicTacToe.ConsolesIO;
 
 public class YesNoDialog
 {
     private const char AFFIRMATIVE = 'y';
     private const char NEGATIVE = 'n';
-    private static readonly string SUFFIX = $"? ({YesNoDialog.AFFIRMATIVE}/{YesNoDialog.NEGATIVE})";
-    private static readonly string MESSAGE = $"The value must be: ({YesNoDialog.AFFIRMATIVE} or {YesNoDialog.NEGATIVE})";
+    private static readonly string SUFFIX = $"? ({AFFIRMATIVE}/{NEGATIVE})";
+    private static readonly string MESSAGE = $"The value must be: ({AFFIRMATIVE} or {NEGATIVE})";
 
     private string _answer;
 
@@ -20,22 +20,22 @@ public class YesNoDialog
         do
         {
             consoleIO.Write(message);
-            _answer = consoleIO.ReadString(YesNoDialog.SUFFIX);
+            _answer = consoleIO.ReadString(SUFFIX);
 
             ok = IsAffirmative() || IsNegative();
             if (!ok)
             {
-                consoleIO.WriteLine(YesNoDialog.MESSAGE);
+                consoleIO.WriteLine(MESSAGE);
             }
         } while (!ok);
     }
 
-    public bool IsAffirmative() => GetAnswer() == YesNoDialog.AFFIRMATIVE;
+    public bool IsAffirmative() => GetAnswer() == AFFIRMATIVE;
 
     private char GetAnswer()
     {
         return char.ToLower(_answer.ToCharArray()[0]);
     }
 
-    public bool IsNegative() => GetAnswer() == YesNoDialog.NEGATIVE;
+    public bool IsNegative() => GetAnswer() == NEGATIVE;
 }

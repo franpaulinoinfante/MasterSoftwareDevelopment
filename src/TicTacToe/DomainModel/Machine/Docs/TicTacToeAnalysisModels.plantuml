@@ -1,0 +1,100 @@
+@startuml TicTacToeAnalysisWithPolimorfismoModels
+title TicTacToe Model
+namespace TicTacToeModels{
+    class Game{
+        ~Game()
+        ~Start()
+        -SetUpPlayers()
+        -Play()
+        -Resume() : bool
+        -NewGame()
+    }
+    Game *--> "1" Turn
+    Game *--> "2" Player
+    Game *--> "1" Board
+    Game ..> ConsolesIO.YesNotDialog
+    Game ..> ConsolesIO.BoundedIntDialog
+
+    class Turn{
+        -{static} NUM_PLAYERS : int
+        -current : int
+        ~Turn(Player[], Board)
+        ~Current => current
+        ~SetUpPlayers(numberUsers, Board)
+        ~Next()
+        -Change() : int
+    }
+    Turn --> "2" Player
+    Turn ..> PlayerCreator
+    Turn ..> "2" Types.Token
+
+    class PlayerCreator{
+        ~CreatePlayer(Token, Board, value) : Player
+    }
+    PlayerCreator ..> Player
+    PlayerCreator ..> UserPlayer
+    PlayerCreator ..> MachinePlayer
+
+    abstract Player{
+        -tokensPlaced : int
+        ~Token => Token
+        ~TokensPlaced => tokensPlaced
+        ~Player(Token, Board)
+        ~PutToken()
+        #{abstract} ReadCoordinate() : Coordinate
+        #GetErrorTypeToPut(Coordinate) : ErrorType.SquareNotEmpty
+        ~MoveToken()
+        #GetErrorTypeToMoveOrigin(Coordinate) : ErrorType.NotOwner
+        #GetErrorTypeToMoveTarget(Coordinate, Coordinate) : ErrorType. SameCoordinate
+        ~SignVictory()
+    }
+    Player <|-- UserPlayer
+    Player <|-- MachinePlayer
+    Player --> "1" Types.Token
+    Player --> "1" Board
+    Player ..> Types.Coordinate
+    Player ..> Types.Message
+    Player ..> Types.MessageType
+    Player ..> Types.Error
+    Player ..> Types.ErrorType
+
+    class UserPlayer{
+        #ReadCoordinate() : Coordinate
+        #GetErrorTypeToPut(Coordinate) : ErrorType.SquareNotEmpty
+        #GetErrorTypeToMoveOrigin(Coordinate) : ErrorType.NotOwner
+        #GetErrorTypeToMoveTarget(Coordinate, Coordinate) : ErrorType.SameCoordinate
+    }
+
+    class MachinePlayer{
+        #ReadCoordinate() : Coordinate
+    }
+
+    class Board{
+        ~Board()
+        ~NewGame()
+        ~PutToken(Coordinate, Token)
+        ~MoveToken(Coordinate, Coordinate)
+        ~IsOccupied(Coordinate, Token) : bool
+        -GetToken(Coordinate) : Token
+        ~IsTicTacToe(Token) : bool
+        -GetDirections(Token) : List<Direction>
+        -GetCoordinates(Token) : List<Coordinate>
+        ~Write()
+    }
+    Board o--> "0..6" Types.Token
+    Board *--> "3x3" Types.Coordinate
+    Board ..> Types.Direction
+    Board ..> Types.Message
+    Board ..> Types.MessageType
+    Board ..> ConsolesIO.ConsoleIO
+
+    class ConsolesIO.ConsoleIO
+    class ConsolesIO.YesNotDialog
+    class ConsolesIO.BoundedIntDialog
+
+    enum Types.Token{}
+    enum Types.MessageType{}
+    enum Types.Direction{}
+    enum Types.ErrorType{}
+}
+@enduml

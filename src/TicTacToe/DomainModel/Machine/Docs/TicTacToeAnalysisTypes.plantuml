@@ -1,0 +1,84 @@
+@startuml TicTacToeAnalysisTypes
+    namespace Types{
+        class Coordinate{
+            -{static} DIMENSION : int
+            -{static} ROW : string
+            -{static} COLUNM : string
+            -row : int
+            -colunm : int
+            -Coordinate(row, colunm)
+            ~Row => row
+            ~Colunm => Colunm
+            ~Read(MessageType) : Coordinate
+            -GetErrorTypeToReadCoordinate() : ErrorType.WRONG_COORDINATE
+            ~GetDirection(Coordinate) : Direction
+            -IsInHorizontal(Coordinate) : bool
+            -IsInVertical(Coordinate) : bool
+            -IsInMainDiagonal() : bool
+            -IsInInverseDiagonal() : bool
+        }
+        Coordinate ..> ClosedInterval
+        Coordinate ..> Direction
+        Coordinate ..> ErrorType
+        Coordinate ..> Error
+        Coordinate ..> MessageType
+        Coordinate ..> Message
+
+        class ClosedInterval{
+            -min : int
+            -max : int
+            ~ClosedInterval(min, max)
+            ~Incluide(value) : bool
+        }
+
+        enum Direction{
+            +HORIZONTAL,
+            +VERTICAL,
+            +MAIN_DIAGONAL,
+            +INVERSE_DIAGONAL,
+            +NULL
+        }
+
+        class Error{
+            -{static} ERRORS : string[]
+            ~Error(ErrorType)
+            ~WriteLine()
+        }
+        Error --> ErrorType
+        Error ..> ConsolesIO.ConsoleIO
+
+        enum ErrorType{
+            +NOT_EMPTY,
+            +NOT_OWNER,
+            +SAME_COORDINATE,
+            +WRONG_COORDINATE,
+            +NULL
+        }
+
+        class Message{
+            -{static} MESSAGES : string[]
+            ~Message(MessageType)
+            ~WriteLine()
+        }
+        Message ..> ConsolesIO.ConsoleIO
+
+        enum MessageType{
+            +TITLE("--- TIC TAC TOE ---"),
+            +NUMBER_PLAYERS("Number of user"),
+            +HORIZONTAL_LINE("---------------"),
+            +VERTICAL_LINE(" | "),
+            +ENTER_COORDINATE_TO_PUT("Enter a coordinate to put a token:"),
+            +COORDINATE_TO_PUT("Coordinate to put"),
+            +COORDINATE_TO_REMOVE("Origin coordinate to move"),
+            +COORDINATE_TO_MOVE("Target coordinate to move"),
+            +PLAYER_WIN("#player player: You win!!! :-)"),
+            +RESUME("Do you want to continue");
+        }
+
+        enum Token{
+            +X,
+            +O,
+            +NULL
+        }
+    }
+@enduml

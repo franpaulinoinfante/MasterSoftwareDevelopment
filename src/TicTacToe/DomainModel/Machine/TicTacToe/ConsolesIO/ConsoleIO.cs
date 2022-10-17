@@ -1,4 +1,4 @@
-﻿namespace TicTacToe;
+﻿namespace TicTacToe.ConsolesIO;
 
 public class ConsoleIO
 {
