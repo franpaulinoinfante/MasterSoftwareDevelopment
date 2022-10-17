@@ -8,7 +8,7 @@
     - 2.3 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
     - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
     - 2.5 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
-3. [Vista Lógica/Diseño](#Vista-Lógica-Diseño)
+3. [Vista Lógica-Diseño](#Vista-Lógica-Diseño)
     - 3.1 [Arquitectura](#Arquitectura)
     - 3.2 [Namespace TicTacToe](#Namespace-TicTacToe)
     - 3.3 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
@@ -261,13 +261,17 @@ X Player: You win!!! :-)
 Do you want to continue? (y/n):
 ```
 
-## Vista Lógica/Diseño
+## Vista Lógica-Diseño
 
 ### Arquitectura
 
-### Namespace TicTacToe
+![image](https://user-images.githubusercontent.com/46433173/196204159-528dd2c0-82d3-4ef3-b484-a7f488fe446e.png)
+
+**Namespaces**
 
 ### Namespace TicTacToe-ConsoleApp
+
+![image](https://user-images.githubusercontent.com/46433173/196235448-0ac65bda-f3fd-44d8-9876-7f1e1712f7cf.png)
 
 ### Namespace TicTacToe.Views
  
