@@ -282,3 +282,5 @@ Do you want to continue? (y/n):
 ![image](https://user-images.githubusercontent.com/46433173/196265461-13d98824-9d16-443d-9082-7a41680f795b.png)
 
 ### Namespace TicTacToe.Models.Types
+
+![image](https://user-images.githubusercontent.com/46433173/196269473-733d4f5c-a67b-4fda-8acf-25b7ba7a3934.png)
