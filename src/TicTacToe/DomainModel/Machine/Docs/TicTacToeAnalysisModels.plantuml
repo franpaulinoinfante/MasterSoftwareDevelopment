@@ -40,10 +40,11 @@ namespace TicTacToeModels{
         ~Token => Token
         ~TokensPlaced => tokensPlaced
         ~Player(Token, Board)
-        ~PutToken()
+        ~Play()
+        #PutToken()
         #{abstract} ReadCoordinate() : Coordinate
         #GetErrorTypeToPut(Coordinate) : ErrorType.SquareNotEmpty
-        ~MoveToken()
+        #MoveToken()
         #GetErrorTypeToMoveOrigin(Coordinate) : ErrorType.NotOwner
         #GetErrorTypeToMoveTarget(Coordinate, Coordinate) : ErrorType. SameCoordinate
         ~SignVictory()
