@@ -1,0 +1,18 @@
+@startuml TicTacToeArchitecture
+title TicTacToe Architecture DocumentView Basic
+
+namespace TicTacToe #GreenYellow { }
+namespace ConsoleApp #LightBlue { }
+namespace Views #MediumPurple { }
+namespace Models #RoyalBlue { }
+namespace Models.Types #DDDDDD { }
+
+TicTacToe .down.> Views
+TicTacToe .down.> Models
+TicTacToe <.up. ConsoleApp
+Views .down.> Models
+ConsoleApp .down.> Views
+ConsoleApp .down.> Models
+ConsoleApp .down.> Models.Types
+
+@enduml

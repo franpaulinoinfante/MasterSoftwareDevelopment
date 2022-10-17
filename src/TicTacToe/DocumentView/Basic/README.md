@@ -1,43 +1,276 @@
-# Principio de Separación Modelo-Vista mediante la **Arquitectura Document/View**
+# - - - - - TicTacToe - Document\View Basic - Practice - - - - -
 
-#### Principio de Separación Modelo-Vista (Separated Presentation Pattern).
-##### Problema:
--	¿Quién debe ser responsable de capturar entradas generada por un agente externo, “persona mediante teclado o ratón, o máquinas mediante señales de un sensor o tramas de red?
--	¿Qué tipo de visibilidad tendrían que tener otros paquetes de la capa de Presentación?
--	¿Cómo deberían de comunicarse las clases que no son ventanas con otras ventanas?
+**índice**
+1. [Requisitos](#Requisitos)
+2. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
+    - 2.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
+    - 2.2 [Vista de Caso de Uso Set Up Player](#Vsita-de-Caso-de-Set-Up-Player)
+    - 2.3 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
+    - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
+    - 2.5 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
+3. [Vista Lógica/Diseño](#Vista-Lógica-Diseño)
+    - 3.1 [Arquitectura](#Arquitectura)
+    - 3.2 [Namespace TicTacToe](#Namespace-TicTacToe)
+    - 3.3 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
+    - 3.4 [Namespace TicTacToe.View](#Namespace-TicTacToe.Views)
+    - 3.5 [Namespace TicTacToe.Models](#Namespace-TicTacToe.Models)
+        - 3.5.1 [Namespace TicTacToe.Models.Types](#Namespace-TicTacToe.Models.Types)
 
-En diferentes contextos el modelo es sinónimo de la Capa del Dominio de los objetos y la vista es un sinónimo para los objetos de la presentación, tales como, ventanas, vista de webs o móviles.
+### Requisitos
 
-##### Solución:
-El Principio de Separación Modelo-Vista establece que los objetos del modelo (dominio) no deberían conocer directamente a los objetos de la vista (presentación). Asegurando que cualquier código con el objetivo de manipulas la presentación, solo haga eso “manipular la presentación”, desplazando toda la lógica del dominio y de datos en áreas separadas.<br>
-Asociado al sub-patron Principio de Única Responsabilidad “SRP” de SOLID, que ayuda a definir capas lógicas y fisifcas de la arquitectura.
-##### Beneficios:
-Las vistas serán responsables de:<br>
--	Gestionar controles de interfaz: botones, listas, paneles, diálogos…
--	Gestionar su Estado: referidos a los datos actuales mostrados en la interfaz.
--	Gestionar su Lógica: para manipular los controles de interfaz.
--	Gestionar su Sincronización: coordinando su estado con el estado de los objetos de datos y negocio en memoria y/o persistencia
-##### Motivos:
--	Dar soporte a definiciones de modelos cohesivos que se centren en los procesos del dominio, en lugar de preocuparse de las interfaces de usuario. 
--	Permitir separar el desarrollo de las capas del modelo y la interfaz de usuario.
--	Minimizar el impacto de los cambios de los requisitos de la interfaz sobre la capa del dominio.
--	Permitir que se conecten fácilmente otras vistas a una capa de dominio existente, sin afectar a la capa del dominio.
--	Permitir múltiples vistas simultáneas sobre el mismo modelo del dominio, como una vista de la información sobre las ventas en formato tabular o mediante un diagrama de barras.
--	Permitir la ejecución de la capa del modelo de manera independiente de la capa de interfaz de usuario, como en un sistema de procesamiento de mensajes o en modo de procesamiento por lotes.
--	Permitir trasladar fácilmente la capa del modelo a otro framework de interfaz de usuario.
+| * _Funcionalidad: **Sencilla**_<br/> *_Maquina: **Si**_<br>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
+| :------- | :------: |  
 
-### Arquitectura Document/View
+### Vista de Casos de Uso
 
-De forma predeterminada, se crea un esqueleto de aplicación con una clase de documento (modelo) y una clase de vista. Separando la administración de datos en estas dos clases. El documento (modelo) almacena los datos y administra la impresión de los datos y coordina la actualización de varias vistas de los datos. La vista muestra los datos y administra la interacción del usuario con ellos, incluida la selección y edición.<br>
-En este modelo, un objeto lee y escribe datos en el almacenamiento persistente. El documento (modelo) también puede proporcionar una interfaz a los datos dondequiera que resida (por ejemplo, en una base de datos). Un objeto de vista independiente administra la presentación de datos, desde la representación de los datos en una ventana hasta la selección y edición de datos por parte del usuario. La vista obtiene los datos de visualización del modelo y comunica al documento los cambios en los datos.<br>
-Aunque puede invalidar u omitir fácilmente la separación entre documento y vistas, hay razones atractivas para seguir este esquema en la mayoría de los casos. Una de las mejores es cuando se necesitan varias vistas del mismo documento, como una hoja de cálculo y una vista de gráfico. El modelo de documento/vista permite que un objeto de vista independiente represente cada vista de los datos, mientras que el código común a todas las vistas (como un motor de cálculo) puede residir en el documento. El documento también asume la tarea de actualizar todas las vistas cada vez que cambian los datos.<br>
-La arquitectura de documentos y vistas facilitan la compatibilidad con varias vistas, varios tipos de documento, ventanas divisoras y otras características valiosas de la interfaz de usuario.<br>
-Lo que busca es crear diferentes vistas para cada parte de la interacción del usuario con el sistema.<br>
-Se divide en:
--	En una vista principal compuesta,
--	por una vista por cada caso de uso y cada caso de uso está compuesto,
-- por vistas auxiliares por cada modelo que el caso de uso necesite interactuar con cada modelo que se necesite leer o escribir, y si estas vistas auxiliares también necesitan leer de otros modelos se crearan otras sub-vistas. 
+| Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
+|---|---|
+|![image](https://user-images.githubusercontent.com/46433173/195204864-f650c52c-cbcb-4288-8f86-6a32de30eb62.png) |![image](https://user-images.githubusercontent.com/46433173/195207035-a3001085-dde5-4d3c-aa22-81ea8cda5b84.png)
 
-![image](https://user-images.githubusercontent.com/46433173/195909102-e9a482f3-e5d4-4ede-907e-d7f55e52d91d.png)
+### Vsita de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/196008561-4923f589-0a7c-48a9-977b-2c821b19b56c.png)
 
+### Vista de Caso de Uso Set Up Player
+
+![image](https://user-images.githubusercontent.com/46433173/196046634-c5eafc78-7e41-493b-96db-84e6a2ada6fe.png)
+
+### Vsita de Caso de Uso Play
+
+![image](https://user-images.githubusercontent.com/46433173/195362112-b873c50f-d9a2-451b-b631-b85ee9a68a8d.png)
+
+### Vsita de Caso de Uso Resume
+
+![image](https://user-images.githubusercontent.com/46433173/195361789-aaa6d03d-50a5-44d4-8ee8-00159c27d0b3.png)
+
+### Prototipo de Interfaz 
+
+**Número de jugadores: 0**
+```
+--- TIC TAC TOE ---
+Number of user? [0, 2]: 0
+-------------
+|   |   |   |
+|   |   |   |
+|   |   |   |
+-------------
+-------------
+|   |   | x |
+|   |   |   |
+|   |   |   |
+-------------
+-------------
+|   | X |   |
+|   |   |   |
+|   | O |   |
+-------------
+-------------
+|   | X |   |
+|   |   |   |
+|   | O | X |
+-------------
+-------------
+|   | X |   |
+| O |   |   |
+|   | O | X |
+-------------
+-------------
+|   | X | X |
+| O |   |   |
+|   | O | X |
+-------------
+-------------
+|   | X | X |
+| O |   | O |
+|   | O | X |
+-------------
+-------------
+| X | X | X |
+| O |   | O |
+|   | O |   |
+X Player: You win!!! :-)
+Do you want to continue? (y/n):
+```
+
+**Número de jugadores: 1**
+```
+--- TIC TAC TOE ---
+Number of user? [0 - 2]: 1
+-------------
+|   |   |   |
+|   |   |   |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 1
+Column: 1
+-------------
+| X |   |   |
+|   |   |   |
+|   |   |   |
+-------------
+-------------
+| X |   | O |
+|   |   |   |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 2
+Column: 2
+-------------
+| X |   | O |
+|   | X |   |
+|   |   |   |
+-------------
+-------------
+| X |   | O |
+|   | X | O |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 3
+Column: 2
+-------------
+| X |   | O |
+|   | X | O |
+|   | X |   |
+-------------
+-------------
+| X |   | O |
+|   | X | O |
+|   | X | O |
+-------------
+O Player: You win!!! :-)
+Do you want to continue? (y/n):
+```
+
+***Número de jugadores: 2***
+```
+--- TIC TAC TOE ---
+Number of user? [0, 2]: 2
+-------------
+|   |   |   |
+|   |   |   |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 4
+Column: -1
+The coordinates are wrong
+Enter a coordinate to put a token:
+Row: 1
+Column: 1
+-------------
+| X |   |   |
+|   |   |   |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 1
+Column: 1
+The square is not empty
+Enter a coordinate to put a token:
+Row: 1
+Column: 2
+-------------
+| X | O |   |
+|   |   |   |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 2
+Column: 2
+-------------
+| X | O |   |
+|   | X |   |
+|   |   |   |
+-------------
+Enter a coordinate to put a token:
+Row: 3
+Column: 3
+-------------
+| X | O |   |
+|   | X |   |
+|   |   | O |
+-------------
+Enter a coordinate to put a token:
+Row: 1
+Column: 3
+-------------
+| X | O | X |
+|   | X |   |
+|   |   | O |
+-------------
+Enter a coordinate to put a token:
+Row: 3
+Column: 1
+-------------
+| X | O | X |
+|   | X |   |
+| O |   | O |
+-------------
+Origin coordinate to move
+Row: 3
+Column: 1
+There is not a token of yours
+Origin coordinate to move
+Row: 1
+Column: 1
+Target coordinate to move
+Row: 1
+Column: 1
+The origin and target squares are the same
+Target coordinate to move
+Row: 3
+The origin and target squares are the same
+Target coordinate to move
+Row: 3
+Column: 1
+The square is not empty
+Target coordinate to move
+Row: 3
+Column: 2
+-------------
+|   | O | X |
+|   | X |   |
+| O | X | O |
+-------------
+Origin coordinate to move
+Row: 1
+Column: 2
+Target coordinate to move
+Row: 1
+Column: 1
+-------------
+| O |   | X |
+|   | X |   |
+| O | X | O |
+-------------
+Origin coordinate to move
+Row: 1
+Column: 3
+Target coordinate to move
+Row: 1
+Column: 2
+-------------
+| O | X |   |
+|   | X |   |
+| O | X | O |
+-------------
+X Player: You win!!! :-)
+Do you want to continue? (y/n):
+```
+
+## Vista Lógica/Diseño
+
+### Arquitectura
+
+### Namespace TicTacToe
+
+### Namespace TicTacToe-ConsoleApp
+
+### Namespace TicTacToe.Views
+ 
+### Namespace TicTacToe.Models
+
+### Namespace TicTacToe.Models.Types

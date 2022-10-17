@@ -1,6 +1,6 @@
 # - - - - - TicTacToe Practice - - - - -
 
-**índice***
+**índice**
 1. [Requisitos](#Requisitos)
 2. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
     - 2.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
@@ -9,9 +9,9 @@
     - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
     - 2.5 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 3. [Análisis](#Analisis)
-    - 3 [Arquitectura](#Arquitectura)
-    - 3.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
-    - 3.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
+    - 3.1 [Arquitectura](#Arquitectura)
+    - 3.2 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
+    - 3.3 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
 
 ### Requisitos
 
