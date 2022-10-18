@@ -271,10 +271,16 @@ Do you want to continue? (y/n):
 
 ### Namespace TicTacToe-ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/196235448-0ac65bda-f3fd-44d8-9876-7f1e1712f7cf.png)
+![image](https://user-images.githubusercontent.com/46433173/196240514-b1b5af22-9e9c-410d-a8a9-bedd89602518.png)
 
 ### Namespace TicTacToe.Views
+
+![image](https://user-images.githubusercontent.com/46433173/196240351-bdcb2fa2-505f-4422-89d3-dc00fe23fb7d.png)
  
 ### Namespace TicTacToe.Models
 
+![image](https://user-images.githubusercontent.com/46433173/196265461-13d98824-9d16-443d-9082-7a41680f795b.png)
+
 ### Namespace TicTacToe.Models.Types
+
+![image](https://user-images.githubusercontent.com/46433173/196269473-733d4f5c-a67b-4fda-8acf-25b7ba7a3934.png)
