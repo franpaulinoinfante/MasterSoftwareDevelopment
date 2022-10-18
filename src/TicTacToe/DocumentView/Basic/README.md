@@ -279,8 +279,8 @@ Do you want to continue? (y/n):
  
 ### Namespace TicTacToe.Models
 
-![image](https://user-images.githubusercontent.com/46433173/196265461-13d98824-9d16-443d-9082-7a41680f795b.png)
+![image](https://user-images.githubusercontent.com/46433173/196548106-03f7ea2d-57cc-448d-a6a6-07f7f6a34188.png)
 
 ### Namespace TicTacToe.Models.Types
 
-![image](https://user-images.githubusercontent.com/46433173/196269473-733d4f5c-a67b-4fda-8acf-25b7ba7a3934.png)
+![image](https://user-images.githubusercontent.com/46433173/196542763-bb5d0c34-7796-460c-b920-fc75973808ff.png)
