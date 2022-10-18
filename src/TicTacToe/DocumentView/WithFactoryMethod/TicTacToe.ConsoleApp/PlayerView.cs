@@ -12,7 +12,7 @@ internal class PlayerView
         _game = game;
     }
 
-    internal void Interact()
+    protected void Interact()
     {
         if (!_game.AreAllTokenOnBoard())
         {
@@ -41,7 +41,7 @@ internal class PlayerView
         return new CoordinateView().Read(messageType);
     }
 
-    private ErrorType GetErrorCodeToPutToken(Coordinate coordinate)
+    protected virtual ErrorType GetErrorCodeToPutToken(Coordinate coordinate)
     {
         Debug.Assert(coordinate != null);
 
@@ -51,7 +51,7 @@ internal class PlayerView
             new ErrorView().WriteLine(errorCode);
         }
         return errorCode;
-    }
+    } 
 
     private void MoveToken()
     {
@@ -72,7 +72,7 @@ internal class PlayerView
         _game.Move(origin, target);
     }
 
-    private ErrorType GetErrorCodeToMoveOrigin(Coordinate coordinate)
+    protected virtual ErrorType GetErrorCodeToMoveOrigin(Coordinate coordinate)
     {
         Debug.Assert(!coordinate.IsNull());
 
@@ -84,7 +84,7 @@ internal class PlayerView
         return errorCode;
     }
 
-    private ErrorType GetErrorCodeToMoveTarge(Coordinate origin, Coordinate target)
+    protected virtual ErrorType GetErrorCodeToMoveTarge(Coordinate origin, Coordinate target)
     {
         Debug.Assert(!origin.IsNull() && !target.IsNull());
 

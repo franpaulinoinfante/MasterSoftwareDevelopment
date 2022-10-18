@@ -1,0 +1,43 @@
+@startuml TicTacToeModelsTypes
+title TicTacToe - Types
+namespace Types{
+    enum Token{
+        +X,
+        +O,
+        +Null
+    }
+
+    enum Direction{
+        +HORIZONTAL,
+        +VERTICAL,
+        +MAIN_DIAGONAL,
+        +INVERSE_DIAGONAL,
+        +NULL
+    }
+
+    enum ErrorType{
+        +NOT_EMPTY,
+        +NOT_OWNER,
+        +SAME_COORDINATE,
+        +WRONG_COORDINATE,
+        +NULL
+    }
+
+    class Coordinate{
+        -{static} ROW : string
+        -{static} COLUNM : string
+        -row : int
+        -colunm : int
+        +Coordinate(row, colunm)
+        +Row => row
+        +Colunm => colunm
+        +Read(message) : Coordinate
+        +ReadRandom(message) : Coordinate
+        +GetDirection(Coordinate) : Direction
+        -InHorizontal(Coordinate) : bool
+        -InVertial(Coordinate) : bool
+        -InMainDiagonal() : bool
+        -InInverseDiagonal() : bool
+    }
+}
+@enduml

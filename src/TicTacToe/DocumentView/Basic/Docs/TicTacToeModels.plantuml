@@ -1,0 +1,92 @@
+@startuml TicTacToeModels
+title TicTacToe Models
+namespace Models{
+    class Game{
+        +Game()
+        +NewGame()
+        +SetUpPlayer(numPlayer)
+        +GetToken(Coordinate) : Token
+        +IsTicTacToe(Token) : bool
+        +PutToken(Coordinate)
+        +GetErrorTypeToPut(Coordinate) : ErrorType
+        +MoveToken(Coordinate, Coordinate)
+        +GetErrorTypeToMoveOrigin(Coordinate) : ErrorType
+        +GetErrorTypeToMoveTarget(Coordinate, Coordinate) : Error.Type
+        +Next()
+    }
+    Game *--> "1" Board
+    Game *--> "2" Player
+    Game *--> "1" Turn
+    Game ..> Types.Token
+    Game ..> Types.Coordinate
+    Game ..> Types.ErrorType
+    Game ..> PlayerCreator
+
+    class Turn {
+        ~{static} NUM_PLAYERS : int
+        -current : int
+        ~Turn(Player[])
+        ~GetCurrent() : Player
+        ~Next()
+    }
+    Turn --> Player
+
+    abstract Player{
+        -placed_Tokens : int
+        #Player(Board)
+        #AreAllTokenOnBoard() : bool
+        #GetToken() : Token
+        #PutToken(Coordinate)
+        #ReadCoordinate() : Coordinate
+        #GetErrorTypeToPut(Coordinate) : ErrorType
+        #MoveToken(Coordinate, Coordinate)
+        #GetErrorTypeToMoveOrigin(Coordinate) : ErrorType
+        #GetErrorTypeToMoveTarget(Coordinate, Coordinate) : Error.Type
+    }
+    Player *--> Types.Token
+    Player --> Board
+    Player <|-- UserPlayer
+    Player <|-- MachinePlayer
+    Player ..> Types.Coordinate
+    Player ..> Types.ErrorType
+
+    class UserPlayer{
+        ~UserPlayer(Board)
+        #ReadCoordinate() : Coordinate
+        #GetErrorTypeToPut(Coordinate) : ErrorType
+        #GetErrorTypeToMoveOrigin(Coordinate) : ErrorType
+        #GetErrorTypeToMoveTarget(Coordinate, Coordinate) : Error.Type
+    }
+
+    class MachinePlayer{
+        ~MachinePlayer(Board)
+        #ReadCoordinate() : Coordinate
+    }
+
+    class PlayerCreator{
+        ~{static} GetInstance() : PlayerCreator
+        ~CreatePlayer(count, numPlayer, Board) : Player
+    }
+    PlayerCreator ..> Player
+    PlayerCreator ..> UserPlayer
+    PlayerCreator ..> MachinePlayer
+
+    class Board{
+        ~Board()
+        ~GetToken(Coordinate)
+        ~IsOcuppied(Coordinate, Token) : bool
+        ~IsTicTacToe(Token) : bool
+        -GetDirections(Token) : List<Direction>
+        -GetCoordinates(Token) : List<Coordinate>
+    }
+    Board *--> "3x3" Types.Token
+    Board ..> Types.Coordinate
+    Board ..> Types.Direction
+    
+
+    enum Types.ErrorType {}
+    enum Types.Token{}
+    enum Types.Direction
+
+}
+@enduml

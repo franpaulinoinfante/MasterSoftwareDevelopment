@@ -105,7 +105,7 @@ namespace ConsoleApp{
         ~ErrorView(ErrorType)
         ~WriteLine()
     }
-    ErrorView --> Views.Types.ErrorType
+    ErrorView --> Models.Types.ErrorType
     ErrorView ..> ConsoleApp.ConsoleIOs.ConsoleIO
 
     enum Views.Types.MessageType{}
