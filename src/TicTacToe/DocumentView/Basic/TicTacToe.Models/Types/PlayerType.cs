@@ -2,7 +2,7 @@
 {
     public enum PlayerType
     {
-        USER = 0,
-        MACHINE = 1
+        USER,
+        MACHINE
     }
 }

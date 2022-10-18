@@ -13,7 +13,6 @@ public class Game
     private Turn _turn;
     private Player[] _players;
 
-
     public Game()
     {
         _board = new Board();
@@ -22,6 +21,12 @@ public class Game
     }
 
     public PlayerType CurrentPlayerType => _turn.CurrentPlayer.PlayerType;
+
+    public void NewGame()
+    {
+        _turn.NewGame();
+        _board.NewGame();
+    }
 
     public bool AreAllTokenOnBoard()
     {
@@ -33,17 +38,11 @@ public class Game
         return _board.GetToken(coordinate);
     }
 
-    public void NewGame()
-    {
-        _turn.NewGame();
-        _board.NewGame();
-    }
-
     public void SetUpPlayers(int numPlayers)
     {
         for (int i = 0; i < SetUp.NUM_PLAYERS; i++)
         {
-            _players[i] = PlayerCreator.Creator.GetPlayer(i, numPlayers, _board);
+            _players[i] = PlayerCreator.GetInstance.GetPlayer(i, numPlayers, _board);
         }
     }
 

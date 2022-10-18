@@ -11,7 +11,7 @@ internal class PlayerCreator
 {
     private static PlayerCreator _instance;
 
-    internal static PlayerCreator Creator
+    internal static PlayerCreator GetInstance
     {
         get 
         {
