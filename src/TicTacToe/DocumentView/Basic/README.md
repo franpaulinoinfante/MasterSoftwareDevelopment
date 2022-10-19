@@ -279,7 +279,7 @@ Do you want to continue? (y/n):
  
 ### Namespace TicTacToe.Models
 
-![image](https://user-images.githubusercontent.com/46433173/196548106-03f7ea2d-57cc-448d-a6a6-07f7f6a34188.png)
+![image](https://user-images.githubusercontent.com/46433173/196696107-a5b7f3f7-d68e-4026-9221-a1d0b51262e7.png)
 
 ### Namespace TicTacToe.Models.Types
 
