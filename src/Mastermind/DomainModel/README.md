@@ -16,8 +16,6 @@
 | * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![image](https://user-images.githubusercontent.com/46433173/196737543-bb3ab377-a450-41ec-970d-761dc76231dd.png)|
 | :------- | :------: |  
 
-| :------- | :------: |  
-
 ### Vista de Casos de Uso
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
@@ -26,14 +24,17 @@
 
 ### Vsita de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/196804771-f8763c45-0da9-424e-a1d9-ae901ef2b9f1.png)
 
 
 ### Vsita de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/196812675-632d4711-3fdb-42be-8f70-d189a03638ca.png)
 
 
 ### Vsita de Caso de Uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/196812707-c9c51ce0-5182-48cd-850d-251d510bb914.png)
 
 
 ### Prototipo de Interfaz  
