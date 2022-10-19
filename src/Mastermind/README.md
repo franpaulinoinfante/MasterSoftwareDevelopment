@@ -23,7 +23,7 @@
 
 ### Estado Final
 
-![image](https://user-images.githubusercontent.com/46433173/196755911-f3c3db8e-5d61-41fc-9b65-a012587a5da4.png)
+![image](https://user-images.githubusercontent.com/46433173/196788019-393ec38f-24ec-4c83-989d-728cc241c2f8.png)
 
 ### Intrucciones generales
 
