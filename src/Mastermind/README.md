@@ -26,3 +26,5 @@
 ![image](https://user-images.githubusercontent.com/46433173/196755911-f3c3db8e-5d61-41fc-9b65-a012587a5da4.png)
 
 ### Intrucciones generales
+
+![image](https://user-images.githubusercontent.com/46433173/196787385-885b537c-7600-4fba-b81c-135c03c0f82f.png)
