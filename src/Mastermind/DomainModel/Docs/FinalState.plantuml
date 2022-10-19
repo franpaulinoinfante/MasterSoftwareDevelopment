@@ -1,0 +1,53 @@
+@startuml InitialState
+title Final State
+object ":Mastermind" as Mastermind
+object ":Board" as Board{
+    secrectCombination : rcby
+    List<ProposedCombination> : 4
+    List<Result> : 4
+}
+
+object ":SecrectCombination" as SecrectCombination{
+    List<Color> : rcby
+    hiden : false
+}
+
+object ":ProposedCombination" as ProposedCombination{
+   Color : rcby
+}
+
+object ":Color" as Color1{
+    color : red
+}
+object ":Color" as Color2{
+    color : cyan
+}
+object ":Color" as Color3{
+    color : blue
+}
+object ":Color" as Color4{
+    color : yelleow
+}
+
+object ":Result" as Result {
+    whites : 0
+    blacks : 4
+    isWinner : true
+}
+
+object ":WinnerResult" as WinnerResult {
+    blacks : 4
+}
+
+Mastermind -down-> Board
+Board -down-> SecrectCombination
+Board -down-> ProposedCombination
+Board -down-> Result
+SecrectCombination -down-> Color1
+SecrectCombination -down-> Color2
+SecrectCombination -down-> Color3
+SecrectCombination -down-> Color4
+SecrectCombination --> Result
+SecrectCombination --> ProposedCombination
+Result -down-> WinnerResult
+@enduml
