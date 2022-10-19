@@ -1,4 +1,4 @@
-# - - - - - Mastermind Practice - Domain Model- - - - -
+# - - - - - Mastermind Practice -- - - - -
 
 
 **índice***
