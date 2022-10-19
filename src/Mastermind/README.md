@@ -10,7 +10,8 @@
 
 ### Modelo del Dominio
 
-![image](https://user-images.githubusercontent.com/46433173/196737543-bb3ab377-a450-41ec-970d-761dc76231dd.png)
+| * _Descripción: **Se juega en un tablero con fichas blancas y negras pequeñas y de otros colores, de un tamaño algo superior. Uno de los jugadores escoge un número de fichas de colores, 4 en el juego original, y pone un código secreto oculto del otro jugador. Este, tomando fichas de colores del mismo conjunto, aventura una posibilidad contestada con negras (fichas de color bien colocadas) o blancas (fichas de color con el color correcto, pero mal colocadas).** <br/> * | ![image](https://user-images.githubusercontent.com/46433173/196737543-bb3ab377-a450-41ec-970d-761dc76231dd.png)|
+| :------- | :------: |  
 
 ### Contexto
 
