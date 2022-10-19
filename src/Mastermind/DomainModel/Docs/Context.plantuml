@@ -1,0 +1,43 @@
+@startuml MastermindContext
+title Mastermind Context
+Mastermind *--> "1" Turn
+Mastermind *--> "2" Player
+Mastermind *--> "1" Board
+
+Turn --> "2" Player
+Player <|-- MakerPlayer
+Player <|-- BreakerPlayer
+Player --> Board
+
+Combination *--> "4" Color
+Combination <|-- SecrectCombination
+Combination <|-- ProposedCombination
+SecrectCombination ..> ProposedCombination
+
+Board *--> SecrectCombination
+Board o--> "0..10" ProposedCombination
+Board o--> "0..10" Result
+
+MakerPlayer --> "1" SecrectCombination
+BreakerPlayer --> "0..10" ProposedCombination
+MakerPlayer ..> Result
+
+
+Result *--> "4" Token
+Result <|-- WinnerResult
+WinnerResult *--> "4" Black
+
+Token <|-- White
+Token <|-- Black
+
+enum Color{
+    +Red,
+    +Green,
+    +Blue,
+    +Yellow,
+    +Cyan,
+    +Magenta
+}
+
+@enduml
+

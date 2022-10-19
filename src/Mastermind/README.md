@@ -1,4 +1,4 @@
-# - - - - - TicTacToe Practice - - - - -
+# - - - - - Mastermind Practice - - - - -
 
 **índice***
 
@@ -20,7 +20,7 @@
 
 
 
-### Estado Final Jugador - X - logra, TicTacToe cumpliendo Objetio tres en raya con Diagonal principal.
+### Estado Final Jugador
 
 
 
