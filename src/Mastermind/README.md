@@ -19,10 +19,10 @@
 
 ### Estado Inicial
 
-![image](https://user-images.githubusercontent.com/46433173/196748972-25c29c78-48f8-432c-889c-71c791a70897.png)
+![image](https://user-images.githubusercontent.com/46433173/196753825-4b2e4d8f-5c9e-47bf-a831-877235d43ddc.png)
 
 ### Estado Final
 
-
+![image](https://user-images.githubusercontent.com/46433173/196754514-42bdd181-30d1-4861-be07-4040d4268c96.png)
 
 ### Intrucciones generales
