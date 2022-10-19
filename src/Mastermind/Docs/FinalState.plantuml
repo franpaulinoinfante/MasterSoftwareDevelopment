@@ -13,7 +13,7 @@ object ":SecrectCombination" as SecrectCombination{
 }
 
 object ":ProposedCombination" as ProposedCombination{
-   Color : rcby
+   List<Color> : rcby
 }
 
 object ":Color" as Color1{

@@ -1,0 +1,25 @@
+@startuml UseCaseContext
+title Functionality
+state IN_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+
+[*] --> IN_GAME
+IN_GAME --> A : MakeSecretCombination
+A --> B : ProposedCombination
+B --> A
+B --> C : AllProposalsMade
+B --> D : WinnerResult
+C --> [*]
+D --> [*]
+
+@enduml
+
+: proposedCombination
+A --> IN_GAME
+A --> B : All proposals made
+B --> [*]
+A --> C : WinnerResult
+C --> [*]

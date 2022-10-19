@@ -13,7 +13,7 @@ object ":SecrectCombination" as SecrectCombination{
 }
 
 object ":ProposedCombination" as ProposedCombination{
-   Color : null
+    List<Color> : null
 }
 
 object ":Color" as Color1{
