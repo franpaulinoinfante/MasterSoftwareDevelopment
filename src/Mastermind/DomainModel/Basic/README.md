@@ -196,3 +196,11 @@ gbry --> 0 blacks and 3 whites
 You've lost!!! :-(
 Do you want to continue? (y/n): 
 ```
+
+### Análisis
+
+### Arquitectura
+
+### Namespace Mastermind-ConsoleApp
+
+### Namespace Mastermind-Utils
