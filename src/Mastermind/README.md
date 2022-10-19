@@ -7,6 +7,7 @@
 - 1.2 [Estado Inicial](#Estado-Inicial)
 - 1.3 [Estado Final](#Estado-Final) 
 - 1.4 [Intrucciones generales](#Intrucciones-generales)
+- 1.5 [Actividad](#Actividad)
 
 ### Modelo del Dominio
 
@@ -28,3 +29,8 @@
 ### Intrucciones generales
 
 ![image](https://user-images.githubusercontent.com/46433173/196787385-885b537c-7600-4fba-b81c-135c03c0f82f.png)
+
+### Actividad
+
+![image](https://user-images.githubusercontent.com/46433173/196793856-a8354245-b48f-469f-8c45-0685e0ff7aca.png)
+
