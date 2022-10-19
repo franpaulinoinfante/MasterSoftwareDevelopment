@@ -10,8 +10,8 @@
     - 2.4 [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 3. [Análisis](#Analisis)
     - 3 [Arquitectura](#Arquitectura)
-    - 3.1 [Namespace TicTacToe-ConsoleApp](#Namespace-TicTacToeConsoleApp)
-    - 3.2 [Namespace TicTacToe-Utils](#TNamespace-icTac-ToeUtils)
+    - 3.1 [Namespace Mastermind-ConsoleApp](#Namespace-MastermindConsoleApp)
+    - 3.2 [Namespace Mastermind-Utils](#TNamespace-Mastermind-ToeUtils)
 
 ### Requisitos
 
