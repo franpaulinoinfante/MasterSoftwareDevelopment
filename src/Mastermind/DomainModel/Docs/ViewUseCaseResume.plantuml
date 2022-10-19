@@ -1,0 +1,14 @@
+@startuml ViewUseCaseResume
+title View Use Case Resume
+state OUT_GAME
+state INITIAL
+state EXIT
+state OUT as " "
+
+[*] --> OUT_GAME
+OUT_GAME --> OUT : System request Resume
+OUT --> INITIAL : Player answer yes
+OUT --> EXIT : Player answer no
+INITIAL --> [*]
+EXIT --> [*]
+@enduml
