@@ -25,7 +25,7 @@ internal abstract class Player
         }
         else
         {
-            MoveToken();    
+            MoveToken();
         }
     }
 

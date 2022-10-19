@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicTacToe.Models.Types;
+﻿using TicTacToe.Models.Types;
 
 namespace TicTacToe.Models;
 
@@ -29,7 +24,7 @@ internal class Turn
 
     private int Change()
     {
-        return (_current + 1) % 2; 
+        return (_current + 1) % 2;
     }
 
     private int Random()

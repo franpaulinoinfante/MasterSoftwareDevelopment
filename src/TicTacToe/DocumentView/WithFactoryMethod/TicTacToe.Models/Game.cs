@@ -39,7 +39,7 @@ public class Game
 
     public bool IsTicTacToe()
     {
-        var result = _board.IsticTacToe(CurrentPlayer.Token);
+        bool result = _board.IsticTacToe(CurrentPlayer.Token);
         return result;
     }
 

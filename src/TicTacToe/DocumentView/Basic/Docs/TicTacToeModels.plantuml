@@ -39,7 +39,7 @@ namespace Models{
 
     abstract Player{
         -placed_Tokens : int
-        #Player(Board)
+        #Player(Token, Board)
         #AreAllTokenOnBoard() : bool
         #GetToken() : Token
         #GetPlayerType : PlayerType
@@ -63,7 +63,7 @@ namespace Models{
     }
 
     class MachinePlayer{
-        ~MachinePlayer(Board)
+        ~MachinePlayer(Token, Board)
     }
 
     class PlayerCreator{
@@ -76,8 +76,10 @@ namespace Models{
 
     class Board{
         ~Board()
-        ~GetToken(Coordinate)
         ~IsOcuppied(Coordinate, Token) : bool
+        ~GetToken(Coordinate)
+        ~PutToken(Coordinate, Token)
+        ~MoveToken(Coordinate, Coordinate)
         ~IsTicTacToe(Token) : bool
         -GetDirections(Token) : List<Direction>
         -GetCoordinates(Token) : List<Coordinate>
@@ -86,11 +88,9 @@ namespace Models{
     Board ..> Types.Coordinate
     Board ..> Types.Direction
     
-
     enum Types.ErrorType {}
     enum Types.Token{}
     enum Types.Direction
     enum Types.PlayerType
-
 }
 @enduml

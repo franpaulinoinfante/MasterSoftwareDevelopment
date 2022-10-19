@@ -22,10 +22,14 @@ namespace TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews
             return coordinate;
         }
 
+        internal Coordinate ReadRandom(MessageType messageType)
+        {
+            return new Coordinate().Random();
+        }
+
         private ErrorType GetErrorTypeToReadCoordinate(Coordinate coordinate)
         {
             Coordinate a = new Coordinate();
-
             if (!coordinate.IsValid())
             {
                 return ErrorType.WRONG_COORDINATE;
@@ -33,9 +37,5 @@ namespace TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews
             return ErrorType.NULL;
         }
 
-        internal Coordinate ReadRandom(MessageType messageType)
-        {
-            return new Coordinate().Random();
-        }
     }
 }

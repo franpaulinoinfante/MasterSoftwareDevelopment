@@ -18,6 +18,6 @@ public class ClosedInterval
 
     public override string ToString()
     {
-        return $"[{ _min }-{ _max }]";
+        return $"[{_min}-{_max}]";
     }
 }

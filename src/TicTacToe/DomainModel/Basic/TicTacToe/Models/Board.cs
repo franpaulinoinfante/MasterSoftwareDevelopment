@@ -106,7 +106,7 @@ internal class Board
         Debug.Assert(origin != null);
         Debug.Assert(target != null);
 
-        var result = origin.Equals(target);
+        bool result = origin.Equals(target);
         if (origin.Equals(target))
         {
             return ErrorType.SAME_COORDINATE;

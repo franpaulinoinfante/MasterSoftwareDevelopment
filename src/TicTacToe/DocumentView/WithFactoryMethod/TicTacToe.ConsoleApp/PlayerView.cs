@@ -51,7 +51,7 @@ internal class PlayerView
             new ErrorView().WriteLine(errorCode);
         }
         return errorCode;
-    } 
+    }
 
     private void MoveToken()
     {

@@ -56,12 +56,12 @@ namespace TicTacToe.ConsoleApp.UseCaseView.PlayerViews
                 target = GetCoordinate(MessageType.COORDINATE_TO_MOVE);
                 errorType = GetErrorTypeToMoveTarge(origin, target);
             } while (errorType != ErrorType.NULL);
-            _game.MoveToken(origin, target);    
+            _game.MoveToken(origin, target);
         }
 
-        protected virtual ErrorType GetErrorTypeToMoveOrigin(Coordinate origin)
+        protected virtual ErrorType GetErrorTypeToMoveOrigin(Coordinate coordinate)
         {
-            return _game.GetErrorTypeToMoveOrigin(origin);
+            return _game.GetErrorTypeToMoveOrigin(coordinate);
         }
 
         protected virtual ErrorType GetErrorTypeToMoveTarge(Coordinate origin, Coordinate target)

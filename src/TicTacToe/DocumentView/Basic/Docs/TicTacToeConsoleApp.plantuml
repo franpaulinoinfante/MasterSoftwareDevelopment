@@ -49,6 +49,7 @@ namespace ConsoleApp{
     }
     PlayView ..> Models.Game
     PlayView ..> PlayerView
+    PlayView ..> PlayerViewPrototype
     PlayView ..> BoardView
     PlayView ..> MessageView
     PlayView ..> Views.Types.MessageType
@@ -69,25 +70,51 @@ namespace ConsoleApp{
     BoardView ..> Models.Game
     BoardView ..> Models.Types.Coordinate
     BoardView ..> MessageView
-    BoardView ..> ConsoleApp.ConsoleIOs.ConsoleIO   
+    BoardView ..> ConsoleApp.ConsoleIOs.ConsoleIO  
 
     class PlayerView{
         ~PlayView()
         ~Play(Game)
         -PutToken()
-        -ReadCoordinate(MessageType) : Coordinate
+        #{abstract} GetCoordinate(MessageType) : Coordinate
         -GetErrorTypeToPutToken(Coordinate) : ErrorType
         -MoveToken()
         -GetErrorTypeToMoveOrigin(Coordinate) : ErrorType
         -GetErrorTypeToMoveTarget(Coordinate, Coordinate) : ErrorType
     }
     PlayerView ..> Models.Game
+    PlayerView <|-- MachinePlayerView
+    PlayerView <|-- UserPlayerView
     PlayerView ..> Models.Types.Coordinate
     PlayerView ..> Models.Types.Token
     PlayerView ..> MessageView
     PlayerView ..> Views.Types.MessageType
     PlayerView ..> ErrorView
     PlayerView ..> Models.Types.ErrorType
+    PlayerView ..> CoordinateView
+    
+    class MachinePlayerView{
+        #GetCoordinate(MessageType) : Coordiante
+    }
+
+    class UserPlayerView{
+        #GetCoordinate(MessageType) : Coordiante
+    }
+
+    class PlayerViewPrototype{
+        -playersViewAsoc : Dictionary<PlayerType, PlayerView>
+        ~GetPlayerView(PlayerPrototype) : PlayerView
+    }
+    PlayerViewPrototype ..> PlayerView
+    PlayerViewPrototype ..> MachinePlayerView
+    PlayerViewPrototype ..> UserPlayerView 
+    
+    class CoordinateView{
+        ~Read(MessageType) : Coordinate
+        ~ReadRandom(MessageType) : Coordinate
+        -GetErrorTypeToReadCoordiante(Coordinate)
+    }
+    CoordinateView ..> Models.Coordiante
 
     class MessageView{
         -{static} MESSAGES : string[]

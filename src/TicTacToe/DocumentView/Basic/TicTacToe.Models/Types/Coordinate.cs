@@ -3,15 +3,13 @@
 public class Coordinate
 {
     public static readonly int DIMENSION = 3;
-    public const string ROW = "Row: ";
-    public const string COLUMN = "Column: ";
+    public static string ROW = "Row: ";
+    public static string COLUMN = "Column: ";
 
     private int _row;
     private int _column;
 
-    public Coordinate()
-    {
-    }
+    public Coordinate() { }
 
     public Coordinate(int row, int column)
     {
@@ -35,7 +33,7 @@ public class Coordinate
 
     public bool IsValid()
     {
-        return new ClosedInterval(min: 0, Coordinate.DIMENSION - 1).IsIncluide(_row) && 
+        return new ClosedInterval(min: 0, Coordinate.DIMENSION - 1).IsIncluide(_row) &&
             new ClosedInterval(min: 0, Coordinate.DIMENSION - 1).IsIncluide(_column);
     }
 
@@ -49,11 +47,11 @@ public class Coordinate
         {
             return Direction.VERTICAL;
         }
-        if (InMainDiagonal())
+        if (InMainDiagonal() && coordinate.InMainDiagonal())
         {
             return Direction.MAIN_DIAGONAL;
         }
-        if (InInverseDiagonal())
+        if (InInverseDiagonal() && coordinate.InInverseDiagonal())
         {
             return Direction.INVERSE_DIAGONAL;
         }
@@ -78,10 +76,5 @@ public class Coordinate
     private bool InInverseDiagonal()
     {
         return _row + _column == Coordinate.DIMENSION - 1;
-    }
-
-    public ErrorType IsIncluide(Coordinate coordinate)
-    {
-        throw new NotImplementedException();
     }
 }

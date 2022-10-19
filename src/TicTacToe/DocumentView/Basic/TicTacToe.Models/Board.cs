@@ -40,7 +40,7 @@ internal class Board
 
     internal void PutToken(Coordinate coordinate, Token token)
     {
-        Debug.Assert((coordinate != null));
+        Debug.Assert(coordinate != null);
 
         _tokens[coordinate.Row, coordinate.Column] = token;
     }

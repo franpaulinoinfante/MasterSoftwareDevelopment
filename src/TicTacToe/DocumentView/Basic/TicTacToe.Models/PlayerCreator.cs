@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicTacToe.Models.Types;
+﻿using TicTacToe.Models.Types;
 
 namespace TicTacToe.Models;
 
 internal class PlayerCreator
 {
-    private static PlayerCreator _instance;
+    private static readonly PlayerCreator _instance;
 
     internal static PlayerCreator GetInstance
     {
-        get 
+        get
         {
             if (_instance == null)
             {
@@ -25,7 +20,7 @@ internal class PlayerCreator
 
     internal Player GetPlayer(int position, int numPlayers, Board board)
     {
-        if (position<numPlayers)
+        if (position < numPlayers)
         {
             return new UserPlayer(Enum.GetValues<Token>()[position], board);
         }

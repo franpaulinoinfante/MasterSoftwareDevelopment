@@ -19,7 +19,7 @@ internal abstract class Player
 
     protected internal Token Token => _token;
 
-    internal protected PlayerType PlayerType => _playerType;
+    protected internal PlayerType PlayerType => _playerType;
 
     protected internal bool AreAllTokenOnBoard()
     {

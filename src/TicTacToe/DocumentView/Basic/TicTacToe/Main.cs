@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicTacToe.Models;
+﻿using TicTacToe.Models;
 using TicTacToe.Views;
 
 namespace TicTacToe;
 
 public abstract class Main
 {
-    private Game _game;
-    private GameView _gameView;
+    private readonly Game _game;
+    private readonly GameView _gameView;
 
     public Main()
     {

@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicTacToe.Models.Types;
+﻿using TicTacToe.Models.Types;
 
 namespace TicTacToe.Models;
 
 public class Game
 {
-    private Board _board;
-    private Turn _turn;
-    private Player[] _players;
+    private readonly Board _board;
+    private readonly Turn _turn;
+    private readonly Player[] _players;
 
     public Game()
     {
         _board = new Board();
         _players = new Player[SetUp.NUM_PLAYERS];
-        _turn = new Turn(_players); 
+        _turn = new Turn(_players);
     }
 
     public PlayerType CurrentPlayerType => _turn.CurrentPlayer.PlayerType;
