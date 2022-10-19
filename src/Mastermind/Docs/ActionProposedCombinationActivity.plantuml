@@ -1,0 +1,17 @@
+@startuml ActionProposedCombination
+title Action ProposedCombination
+start
+    :Propose a combination;
+    repeat
+        repeat
+            :Enter a combination;
+        repeat while(Proposed combination is not valid)
+        :Add Proposed combination;
+        : Check Results;
+        if(Is Winner Result) then (yes)
+            : Show winner messagen;
+        else(no)
+        endif
+    repeat while(Proposed combinations < 10 OR Is not winner result)
+stop
+@enduml
