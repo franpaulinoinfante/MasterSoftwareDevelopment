@@ -19,9 +19,9 @@
 
 ### Estado Inicial
 
+![image](https://user-images.githubusercontent.com/46433173/196748972-25c29c78-48f8-432c-889c-71c791a70897.png)
 
-
-### Estado Final Jugador
+### Estado Final
 
 
 
