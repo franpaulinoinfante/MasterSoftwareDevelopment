@@ -21,21 +21,20 @@
 ### Vista de Casos de Uso
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
-|---|---|
 | ![image](https://user-images.githubusercontent.com/46433173/196956510-c098110f-0fc4-4308-91d2-b75ff77d2c3a.png) | ![image](https://user-images.githubusercontent.com/46433173/196988400-31a9cba4-1d25-4ec3-ae77-2e92516fc27b.png)
 | :------- |
 
 ### Vsita de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/196956738-4955a6eb-0606-4ac2-a1b1-809d6896fa6d.png)
+![image](https://user-images.githubusercontent.com/46433173/196991691-1f9f3ba5-c440-4744-8507-05ac6bdb2384.png)
 
 ### Vsita de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/196956891-ffea6860-9842-46d5-ac9d-eb0ab3fd3a8c.png)
+![image](https://user-images.githubusercontent.com/46433173/196995680-46a27a69-ed66-4182-aa05-111c35ffaf0a.png)
 
 ### Vsita de Caso de Uso Resume
 
-![image](https://user-images.githubusercontent.com/46433173/196956830-6bdb96e9-c941-4de6-b200-7ccc6b0e3280.png)
+![image](https://user-images.githubusercontent.com/46433173/196991806-e4c1d0d1-c480-4bd5-9bf0-0a40e398aa7b.png)
 
 ### Prototipo de Interfaz
 ***Partida Ganada***
