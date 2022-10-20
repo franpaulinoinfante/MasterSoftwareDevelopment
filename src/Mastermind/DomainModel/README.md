@@ -10,7 +10,7 @@
 
 ### Requisitos
 
-| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![TicTacToe](https://user-images.githubusercontent.com/46433173/195204431-936b7ff3-1b33-4167-a362-30ede4d08aec.png) | 
+| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![image](https://user-images.githubusercontent.com/46433173/196945659-de5ef1f9-e5c1-4e26-9c4a-69de9ec0b8aa.png) | 
 | :------- | :------: |  
 
 ### Vista de Casos de Uso
@@ -21,10 +21,10 @@
 
 ### Vsita de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/195210902-9f9c3d1c-4ff6-48e8-9de3-6ed51096f08e.png)
+
 
 ### Vsita de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/195362112-b873c50f-d9a2-451b-b631-b85ee9a68a8d.png)
+
 
 ### Vsita de Caso de Uso Resume
