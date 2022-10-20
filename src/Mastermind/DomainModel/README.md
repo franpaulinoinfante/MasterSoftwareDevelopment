@@ -1,8 +1,8 @@
 # - - - - - Domain Model - - - - -
 
 **índice***
-- 1. [Requisitos](#Requisitos)
-- 2. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
+- 1 [Requisitos](#Requisitos)
+- 2 [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
     - 2.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
     - 2.2 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
     - 2.3 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
