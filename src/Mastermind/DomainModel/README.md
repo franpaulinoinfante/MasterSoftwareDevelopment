@@ -40,7 +40,7 @@
 ### Prototipo de Interfaz
 ***Partida Ganada***
 ```
----- Mastermind ----
+---- Mastermind ---
 0 attempt(s): 
 ****
 move a combination: rybgmc
