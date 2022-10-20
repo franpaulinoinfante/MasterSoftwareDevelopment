@@ -202,7 +202,31 @@ You've lost!!! :-(
 Do you want to continue? (y/n): 
 ```
 
+## Vista Lógica
+
+- Aplicación del Modelo del Dominio mediante:
+    - Estrategias de Clasificación:
+        - Descripción Informal
+        - Análisis Clásico 
+        - Análisis Experto del Dominio
+        - Análisis del Comportamiento 
+        - Reparto de Responsabilidades
+        - Análisis de Casos de Uso
+        - Separación de Asunto
+    - Relaciones entre Clases
+        - Relación entre Clases por Colaboración
+            - Relación de Composición/Agregación
+            - Relación de Asociación
+            - Relación de Dependencia/Uso 
+        - Relación Por Extensión "Herencia"
+
 ### Análisis
+Analizar los requisistos a través de su refinamiento y estructura para realizar una compresión precisa de los requisitos, una descripción de los requisitos que es facil de mantener y ayuda a estructurar el sistema:
+- Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos
+- Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
+- Estructurar los requisitos de manera que facilite su compresión, cambiábndoloes y en general mantenerlo.
+- Acercase al diseño, auque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementacion
+
 
 ### Arquitectura
 
