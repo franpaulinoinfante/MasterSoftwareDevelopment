@@ -21,10 +21,12 @@
 
 ### Vsita de Caso de Uso Start
 
-
+![image](https://user-images.githubusercontent.com/46433173/196956001-7af5644a-95f1-4632-985a-4d58d0de0071.png)
 
 ### Vsita de Caso de Uso Play
 
-
+![image](https://user-images.githubusercontent.com/46433173/196955919-cdf26080-e9bd-4808-bfed-2c271298701e.png)
 
 ### Vsita de Caso de Uso Resume
+
+![image](https://user-images.githubusercontent.com/46433173/196956055-bd93b062-d472-450a-98b6-1c493723cbcc.png)
