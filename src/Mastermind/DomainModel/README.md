@@ -21,6 +21,7 @@
 ### Vista de Casos de Uso
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
+|---|---|
 | ![image](https://user-images.githubusercontent.com/46433173/196956510-c098110f-0fc4-4308-91d2-b75ff77d2c3a.png) | ![image](https://user-images.githubusercontent.com/46433173/196988400-31a9cba4-1d25-4ec3-ae77-2e92516fc27b.png)
 | :------- |
 
