@@ -2,7 +2,6 @@
 title View Use Case Resume
 state IN_GAME
 state A as " "
-state B as " "
 state EXIT
 state INITIAL 
 state is_resume <<choice>>

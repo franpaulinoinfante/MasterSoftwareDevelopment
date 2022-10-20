@@ -1,0 +1,45 @@
+@startuml ViewUseCasesPlay
+title View Use Case Play
+state IN_GAME
+state INITIAL
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state G as " "
+state H as " "
+state I as " "
+
+state if1 <<choice>>
+state if2 <<choice>>
+state if3 <<choice>>
+
+
+[*] --> IN_GAME
+IN_GAME --> A : System request Combination
+A --> B : Player introduces Combination
+B --> if1 
+    if1 --> G : [error!]
+    note on link
+        Wrong Length
+        Wrong Color
+        Repeated Colors
+    endnote
+    G --> H : System displays error message
+    H --> I 
+    I --> [*] : System allows Play
+if1 --> C
+C --> D : System diplays Results
+D --> if2
+    if2 --> I
+if2 --> E : [IsWinner]
+E --> F : System displays winner message
+F --> if3 : System request Resume
+    if3 --> INITIAL : Player answer yes
+    INITIAL --> [*]
+
+if3 --> [*]  
+
+@enduml
