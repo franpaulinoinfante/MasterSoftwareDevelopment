@@ -21,7 +21,7 @@
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
 |---|---|
-| HERE |HERE
+| HERE | HERE
 
 ### Vsita de Caso de Uso Start
 
