@@ -15,21 +15,26 @@
 
 ### Requisitos
 
+| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![image](https://user-images.githubusercontent.com/46433173/196945659-de5ef1f9-e5c1-4e26-9c4a-69de9ec0b8aa.png) | 
+| :------- | :------: |  
 
 ### Vista de Casos de Uso
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
 |---|---|
-| HERE | HERE
+| ![image](https://user-images.githubusercontent.com/46433173/196956510-c098110f-0fc4-4308-91d2-b75ff77d2c3a.png) | ![image](https://user-images.githubusercontent.com/46433173/196956586-8aa8c8ab-98c0-4ec7-81f5-9beeb1d82f99.png)
 
 ### Vsita de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/196956738-4955a6eb-0606-4ac2-a1b1-809d6896fa6d.png)
 
 ### Vsita de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/196956891-ffea6860-9842-46d5-ac9d-eb0ab3fd3a8c.png)
 
 ### Vsita de Caso de Uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/196956830-6bdb96e9-c941-4de6-b200-7ccc6b0e3280.png)
 
 ### Prototipo de Interfaz
 ***Partida Ganada***
