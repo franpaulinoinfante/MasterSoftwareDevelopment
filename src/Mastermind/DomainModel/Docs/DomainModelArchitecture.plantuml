@@ -1,0 +1,109 @@
+@startuml DomainModelArchitecture
+title Análisis - Domain Model
+namespace MastermindConsoleApp{
+    class Game{
+        ~Game()
+        ~Start()
+        -Play()
+        -ReadCombination()
+        -Resume() : bool
+        -NewGame()
+        -Write()
+    }
+    Game *--> "1" Board
+    Game ..> ProposedCombination
+    Game ..> MessageType
+    Game ..> ConsoleIOs.YesNotDialog
+
+    class Board{
+        -{static} TOTAL_ATTEMPTS : int
+        -resultsCount
+        -attempts : int
+        ~Board()
+        ~NewGame()
+        ~AddProposedCombination(ProposedCombination)
+        ~CheckResult() : Result
+        ~AddResults()
+        ~IsFinished() : bool
+        -IsWinner() : bool
+        -IsLooser() : bool
+        ~Write()
+    }
+    Board *--> "1" SecretCombination
+    Board o--> "0..10" ProposedCombination
+    Board o--> "0..10" Result
+    Board ..> MessageType
+
+    abstract Combination{
+        #colors : Color[]
+        ~Combination()
+        #{abstract} Read() : Color[]
+        #{abstract} Constain(Color[]) : bool
+        #Write()
+    }
+    Combination <|-- SecretCombination
+    Combination <|-- ProposedCombination 
+    Combination ..> ColorType
+    Combination ..> MessageType
+
+    class SecretCombination{
+        ~SecretCombination()
+        ~CheckResult(ProposedCombination) : Result
+        -Constain(Color, position : int) : bool
+    }
+    SecretCombination ..> Result
+    SecretCombination ..> ProposedCombination
+
+    class ProposedCombination{
+        ~ProposedCombination()
+        -GetErrorTypeToRead(string colors) : ErrorType
+    }
+    ProposedCombination ..> ErrorType
+    ProposedCombination ..> ConsoleIOs.ConsoleIO
+
+    class Result{
+        -{static} WIN_WITH : int
+        -blacks : int
+        -whites : int
+        ~Result(blacks, whites)
+        ~IsWinner() : bool
+        ~Write()
+    }
+
+    enum MessageType{
+        ~Title,
+        ~SecretCombination,
+        ~Attempts,
+        ~ProposeCombination,
+        ~Results,
+        ~Winner,
+        ~Looser,
+        ~Resume
+    }
+    MessageType ..> ConsoleIOs.ConsoleIO
+
+    enum ErrorType{
+        ~Duplicated,
+        ~WrongCharacters,
+        ~WrongLength,
+        ~Null
+    }
+
+    enum ColorType{
+        ~Red,
+        ~Green,
+        ~Yellow,
+        ~Blue,
+        ~Magenta,
+        ~Cyan
+    }
+
+    class ConsoleIOs.ConsoleIO{
+        ~ReadString(string) : string
+    }
+
+    class ConsoleIOs.YesNotDialog{
+
+    }
+}
+@enduml
