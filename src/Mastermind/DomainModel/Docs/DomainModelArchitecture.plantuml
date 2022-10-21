@@ -1,5 +1,5 @@
 @startuml DomainModelArchitecture
-title Análisis - Domain Model
+title Análisis - Models
 namespace MastermindConsoleApp{
     class Game{
         ~Game()
@@ -115,13 +115,54 @@ namespace MastermindConsoleApp{
         ~Cyan
         ~GetColorType(ColorType)
     }
-    ColorType ..> ConsoleIOs.ConsoleIO
 
 
     class ConsoleIOs.ConsoleIO{
     }
 
     class ConsoleIOs.YesNotDialog{
+    }
+}
+@enduml
+
+@startuml DomainModel
+title Análisis - Types
+namespace MastermindTypes{
+    enum MessageType{
+        ~Title,
+        ~SecretCombination,
+        ~Attempts,
+        ~ProposeCombination,
+        ~Results,
+        ~Winner,
+        ~Looser,
+        ~Resume
+        ~WriteLine(MessageType)
+        ~WriteLine(MessageType, blacks, whites)
+        ~WriteLine(MessageType, attempts)
+        ~GetToString(MessageType)
+    }
+    MessageType ..> ConsoleIOs.ConsoleIO
+
+    enum ErrorType{
+        ~Duplicated,
+        ~WrongCharacters,
+        ~WrongLength,
+        ~Null
+        ~WriteLine(ErrorType)
+        ~WriteLine(ErrorType, ColorType[])
+        ~ToString(ErrorType)
+    }
+    ErrorType ..> ConsoleIOs.ConsoleIO
+
+    enum ColorType{
+        ~Red,
+        ~Green,
+        ~Yellow,
+        ~Blue,
+        ~Magenta,
+        ~Cyan
+        ~GetColorType(ColorType)
     }
 }
 @enduml
