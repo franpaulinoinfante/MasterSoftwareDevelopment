@@ -5,38 +5,26 @@ namespace MastermindConsoleApp.Models;
 
 internal class SecrectCombination : Combination
 {
-    public SecrectCombination()
+    internal void GenerateSecrectCombination()
     {
         ColorType[] colorTypes = Enum.GetValues<ColorType>();
         Random random = new Random();
-        int position = random.Next(minValue: 0, colorTypes.Length);
-        _colorTypes[_colors] = colorTypes[position];
-        _colors++;
-        while (_colors < Combination.Width)
+        int position = random.Next(minValue: 0, colorTypes.Length - 1);
+        int colors = 0; ;
+        _colorTypes[colors] = colorTypes[position];
+        colors++;
+        while (colors < Combination.Width)
         {
-            position = random.Next(minValue: 0, colorTypes.Length);
-            if (!IsDuplicate(colorTypes[position]))
+            position = random.Next(minValue: 0, colorTypes.Length - 1);
+            if (!Constain(colorTypes[position]))
             {
-                _colorTypes[_colors] = colorTypes[position];
-                _colors++;
+                _colorTypes[colors] = colorTypes[position];
+                colors++;
             }
         }
     }
 
-    private bool IsDuplicate(ColorType colorType)
-    {
-        int count = 0;
-        for (int i = 0; i < _colorTypes.Length; i++)
-        {
-            if (colorType == _colorTypes[i])
-            {
-                count++;
-            }
-        }
-        return count == 2;
-    }
-
-    internal Result GetResult(ProposedCombination proposedCombination)
+    internal Result CheckResults(ProposedCombination proposedCombination)
     {
         int whites = 0;
         int blacks = 0;
@@ -51,29 +39,26 @@ internal class SecrectCombination : Combination
                 blacks++;
             }
         }
-        return new Result(whites, blacks);
+        return new Result(proposedCombination, whites, blacks);
     }
 
     private bool Constain(ColorType colorType)
     {
         int i = 0;
-        while (i < Combination.Width || colorType != _colorTypes[i])
+        while (i < Combination.Width && _colorTypes[i] != colorType)
         {
             i++;
+        }
+        if (i == Combination.Width)
+        {
+            return false;
         }
         return colorType == _colorTypes[i];
     }
 
     private bool Constain(ColorType colorType, int position)
     {
-        for (int i = 0; i < _colorTypes.Length; i++)
-        {
-            if (Constain(colorType) && i == position)
-            {
-                return true;
-            }
-        }
-        return false;
+        return _colorTypes[position] == colorType;
     }
 
     internal protected override void Write()

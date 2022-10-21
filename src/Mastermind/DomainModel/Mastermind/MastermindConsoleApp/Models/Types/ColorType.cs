@@ -1,17 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MastermindConsoleApp.Models.Types;
+﻿namespace MastermindConsoleApp.Models.Types;
 
 internal enum ColorType
-{   Red,
+{
+    Red,
     Green,
     Yellow,
     Blue,
     Magenta,
     Cyan,
     Null
+}
+
+internal static class ExtensionColorType
+{
+    private static string[] ColorTypes =
+    {
+        "r",
+        "g",
+        "b",
+        "y",
+        "c",
+        "m",
+        ""
+    };
+
+
+    internal static string GetColorType(this ColorType colorType)
+    {
+
+        return ColorTypes[(int)colorType];
+    }
 }

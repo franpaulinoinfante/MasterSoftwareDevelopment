@@ -19,7 +19,7 @@ internal class ProposedCombination : Combination
         {
             characters = ConsoleIO.GetInstance().ReadString(MessageType.ProposeCombination.GetToString());
             errorType = GetErrorTypeReadColor(characters);
-            errorType.WriteLine();
+            errorType.WriteLine(Enum.GetValues<ColorType>());
         } while (errorType != ErrorType.Null);
         AddPropose(characters);
         return this;
@@ -33,7 +33,7 @@ internal class ProposedCombination : Combination
         }
 
         ColorType[] colorTypes = Enum.GetValues<ColorType>();
-        for (int i = 0; i < colorTypes.Length; i++)
+        for (int i = 0; i < characters.Length; i++)
         {
             ColorType color = GetColorType(characters[i]);
             if (color == Types.ColorType.Null)
@@ -52,7 +52,7 @@ internal class ProposedCombination : Combination
     {
         ColorType[] colorTypes = Enum.GetValues<ColorType>();
         int i = 0;
-        while (i < colorTypes.Length && colorTypes[i].ToString()[FisrtChar] != character)
+        while (i < colorTypes.Length && colorTypes[i].ToString().ToLower()[FisrtChar] != character)
         {
             i++;
         }
@@ -88,8 +88,7 @@ internal class ProposedCombination : Combination
     {
         for (int i = 0; i < _colorTypes.Length; i++)
         {
-            ConsoleIO.GetInstance().Write(_colorTypes.ToString().ToLower()[0]);
+            ConsoleIO.GetInstance().Write(_colorTypes[i].GetColorType().ToLower());
         }
-        ConsoleIO.GetInstance().WriteLine();
     }
 }

@@ -1,20 +1,20 @@
 ﻿using MastermindConsoleApp.Models.Types;
-using System.Reflection.Metadata;
 
 namespace MastermindConsoleApp.Models;
 
 internal class Board
 {
-    private SecrectCombination _secrectCombination;
-    private ProposedCombination[] _proposedCombinations;
-    private Result[] _results;
+    private readonly SecrectCombination _secrectCombination;
+    private readonly ProposedCombination[] _proposedCombinations;
+    private readonly Result[] _results;
 
-    private const int TotalAttemps = 10;
+    private const int TotalAttemps = 4;
     private int _attemps;
     private int _resultsCount;
 
     public Board()
     {
+        _secrectCombination = new SecrectCombination();
         _proposedCombinations = new ProposedCombination[TotalAttemps];
         _results = new Result[TotalAttemps];
         NewGame();
@@ -22,10 +22,14 @@ internal class Board
 
     internal void NewGame()
     {
-        _secrectCombination = new SecrectCombination();
+        for (int i = 0; i < _attemps; i++)
+        {
+            _proposedCombinations[i] = null;
+            _results[i] = null;
+        }
         _attemps = 0;
         _resultsCount = 0;
-
+        _secrectCombination.GenerateSecrectCombination();
     }
 
     internal void AddProposedCombination(ProposedCombination proposedCombination)
@@ -36,7 +40,7 @@ internal class Board
 
     internal void CheckResults()
     {
-        _results[_resultsCount] = _secrectCombination.GetResult(_proposedCombinations[_attemps]);
+        _results[_resultsCount] = _secrectCombination.CheckResults(_proposedCombinations[_attemps - 1]);
         _resultsCount++;
     }
 
@@ -52,11 +56,12 @@ internal class Board
 
     internal bool IsWinner()
     {
-        return _results[_resultsCount].IsWinner();
+        return _results[_resultsCount - 1].IsWinner();
     }
 
     internal void Write()
     {
+        MessageType.Attempts.WriteLine(_attemps);
         _secrectCombination.Write();
         for (int i = 0; i < _attemps; i++)
         {

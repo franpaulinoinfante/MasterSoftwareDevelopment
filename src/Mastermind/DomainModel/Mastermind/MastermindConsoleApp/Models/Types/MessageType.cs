@@ -33,9 +33,16 @@ internal static class Extension
         ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType]);
     }
 
+    internal static void WriteLine(this MessageType messageType, int blacks, int whites)
+    {
+        ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType]
+            .Replace("#blacks", $"{ blacks }")
+            .Replace("#whites", $"{ whites }"));
+    }
+
     internal static void WriteLine(this MessageType messageType, int attemps)
     {
-        ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType].Replace("#attemps", $"{attemps}"));
+        ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType].Replace("#attempts", $"{attemps}"));
     }
 
     internal static string GetToString(this MessageType messageType)

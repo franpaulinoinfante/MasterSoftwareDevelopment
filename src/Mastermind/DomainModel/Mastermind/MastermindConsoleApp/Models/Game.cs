@@ -29,7 +29,7 @@ internal class Game
             _board.AddProposedCombination(Read());
             _board.CheckResults();
             _board.Write();
-        } while (_board.Finished());
+        } while (!_board.Finished());
         Write();
     }
 
@@ -60,6 +60,9 @@ internal class Game
         {
             MessageType.Winner.WriteLine();
         }
-        MessageType.Looser.WriteLine();
+        else
+        {
+            MessageType.Looser.WriteLine();
+        }
     }
 }
