@@ -39,7 +39,7 @@ internal class SecrectCombination : Combination
                 blacks++;
             }
         }
-        return new Result(proposedCombination, whites, blacks);
+        return new Result(whites, blacks);
     }
 
     private bool Constain(ColorType colorType)

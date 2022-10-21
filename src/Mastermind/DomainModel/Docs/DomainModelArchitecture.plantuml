@@ -5,7 +5,7 @@ namespace MastermindConsoleApp{
         ~Game()
         ~Start()
         -Play()
-        -ReadCombination()
+        -Read()
         -Resume() : bool
         -NewGame()
         -Write()
@@ -16,14 +16,13 @@ namespace MastermindConsoleApp{
     Game ..> ConsoleIOs.YesNotDialog
 
     class Board{
-        -{static} TOTAL_ATTEMPTS : int
         -resultsCount
         -attempts : int
+        -{static} TOTAL_ATTEMPTS : int
         ~Board()
         ~NewGame()
         ~AddProposedCombination(ProposedCombination)
-        ~CheckResult() : Result
-        ~AddResults()
+        ~CheckResults() : Result
         ~IsFinished() : bool
         -IsWinner() : bool
         -IsLooser() : bool
@@ -33,42 +32,52 @@ namespace MastermindConsoleApp{
     Board o--> "0..10" ProposedCombination
     Board o--> "0..10" Result
     Board ..> MessageType
+    Board ..> ConsoleIOs.ConsoleIO
 
     abstract Combination{
         #colors : Color[]
+        #{static} Width : int
         ~Combination()
-        #{abstract} Read() : Color[]
-        #{abstract} Constain(Color[]) : bool
-        #Write()
+        #{abstract} Write()
     }
     Combination <|-- SecretCombination
     Combination <|-- ProposedCombination 
     Combination ..> ColorType
     Combination ..> MessageType
+    Combination ..> ConsoleIOs.ConsoleIO
 
     class SecretCombination{
         ~SecretCombination()
+        ~GenerateSecrectCombination()
         ~CheckResult(ProposedCombination) : Result
-        -Constain(Color, position : int) : bool
+        ~Constain(ColorType) : bool
+        -Constain(ColorType, position : int) : bool
     }
     SecretCombination ..> Result
     SecretCombination ..> ProposedCombination
 
     class ProposedCombination{
+        -{static} Duplicate : int
+        -{static} FirstChar : int
         ~ProposedCombination()
-        -GetErrorTypeToRead(string colors) : ErrorType
+        ~ColorTypes => ColorType
+        ~Read() : ProposeCombination
+        -GetErrorTypeToReadColorType(string colors) : ErrorType
+        -GetColorType(char) : ColorType
+        -IsDuplicate(ColorType, string) : bool
+        -AddPropose(string)
     }
     ProposedCombination ..> ErrorType
-    ProposedCombination ..> ConsoleIOs.ConsoleIO
 
     class Result{
-        -{static} WIN_WITH : int
         -blacks : int
         -whites : int
+        -{static} Width : int
         ~Result(blacks, whites)
         ~IsWinner() : bool
-        ~Write()
+        ~WriteLine()
     }
+    Result ..> ConsoleIOs.ConsoleIO
 
     enum MessageType{
         ~Title,
@@ -79,6 +88,10 @@ namespace MastermindConsoleApp{
         ~Winner,
         ~Looser,
         ~Resume
+        ~WriteLine(MessageType)
+        ~WriteLine(MessageType, blacks, whites)
+        ~WriteLine(MessageType, attempts)
+        ~GetToString(MessageType)
     }
     MessageType ..> ConsoleIOs.ConsoleIO
 
@@ -87,7 +100,11 @@ namespace MastermindConsoleApp{
         ~WrongCharacters,
         ~WrongLength,
         ~Null
+        ~WriteLine(ErrorType)
+        ~WriteLine(ErrorType, ColorType[])
+        ~ToString(ErrorType)
     }
+    ErrorType ..> ConsoleIOs.ConsoleIO
 
     enum ColorType{
         ~Red,
@@ -96,14 +113,15 @@ namespace MastermindConsoleApp{
         ~Blue,
         ~Magenta,
         ~Cyan
+        ~GetColorType(ColorType)
     }
+    ColorType ..> ConsoleIOs.ConsoleIO
+
 
     class ConsoleIOs.ConsoleIO{
-        ~ReadString(string) : string
     }
 
     class ConsoleIOs.YesNotDialog{
-
     }
 }
 @enduml

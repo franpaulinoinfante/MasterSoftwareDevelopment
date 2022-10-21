@@ -40,9 +40,9 @@ internal static class Extension
             .Replace("#whites", $"{ whites }"));
     }
 
-    internal static void WriteLine(this MessageType messageType, int attemps)
+    internal static void WriteLine(this MessageType messageType, int attempts)
     {
-        ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType].Replace("#attempts", $"{attemps}"));
+        ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType].Replace("#attempts", $"{attempts}"));
     }
 
     internal static string GetToString(this MessageType messageType)

@@ -18,14 +18,14 @@ internal class ProposedCombination : Combination
         do
         {
             characters = ConsoleIO.GetInstance().ReadString(MessageType.ProposeCombination.GetToString());
-            errorType = GetErrorTypeReadColor(characters);
+            errorType = GetErrorTypeToReadColorType(characters);
             errorType.WriteLine(Enum.GetValues<ColorType>());
         } while (errorType != ErrorType.Null);
         AddPropose(characters);
         return this;
     }
 
-    private ErrorType GetErrorTypeReadColor(string characters)
+    private ErrorType GetErrorTypeToReadColorType(string characters)
     {
         if (characters.Length != Combination.Width)
         {

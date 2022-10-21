@@ -8,9 +8,10 @@ internal class Board
     private readonly ProposedCombination[] _proposedCombinations;
     private readonly Result[] _results;
 
-    private const int TotalAttemps = 4;
     private int _attemps;
     private int _resultsCount;
+
+    private const int TotalAttemps = 4;
 
     public Board()
     {
