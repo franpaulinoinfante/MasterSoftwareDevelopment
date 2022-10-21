@@ -234,7 +234,7 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Namespace Mastermind-ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/197250590-edadeed2-8fe2-4d6a-900f-eb7bb51229b6.png)
+![image](https://user-images.githubusercontent.com/46433173/197250790-bf06593a-ad16-4321-acb0-d88e5870dfd5.png)
 
 ### Namespace Mastermind-Types
 
