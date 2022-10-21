@@ -18,7 +18,7 @@
 
 ### Requisitos
 
-| * _Funcionalidad: **Sencilla**_<br/> *_Maquina: **Si**_<br>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | https://user-images.githubusercontent.com/46433173/196945659-de5ef1f9-e5c1-4e26-9c4a-69de9ec0b8aa.png | 
+| * _Funcionalidad: **Sencilla**_<br/> *_Maquina: **Si**_<br>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![image](https://user-images.githubusercontent.com/46433173/197274966-0c85e9d1-30e7-40b0-84fc-6b916234aaab.png) | 
 | :------- | :------: |  
 
 ### Vista de Casos de Uso
