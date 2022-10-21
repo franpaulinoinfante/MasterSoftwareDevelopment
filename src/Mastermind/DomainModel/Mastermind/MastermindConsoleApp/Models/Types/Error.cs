@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MastermindConsoleApp.Models.Types;
 
-internal enum ErrorType
+internal enum Error
 {   Duplicated,
     WrongCharacters,
     WrongLength,
@@ -24,15 +24,15 @@ internal static class ExtensionErrorType
         ""
     };
 
-    internal static void WriteLine(this ErrorType errorType)
+    internal static void WriteLine(this Error errorType)
     {
-        if (errorType != ErrorType.Null)
+        if (errorType != Error.Null)
         {
             ConsoleIO.GetInstance().WriteLine(Errors[(int)errorType]);
         }
     }
 
-    internal static void WriteLine(this ErrorType errorType, ColorType[] colorTypes)
+    internal static void WriteLine(this Error errorType, Color[] colorTypes)
     {
         string replace = string.Empty;
         for (int i = 0; i < colorTypes.Length; i++)
@@ -42,7 +42,7 @@ internal static class ExtensionErrorType
         ConsoleIO.GetInstance().WriteLine(Errors[(int)errorType].Replace("#replace", replace));
     }
 
-    internal static string ToString(this ErrorType errorType)
+    internal static string ToString(this Error errorType)
     {
         return Errors[(int)errorType];
     }

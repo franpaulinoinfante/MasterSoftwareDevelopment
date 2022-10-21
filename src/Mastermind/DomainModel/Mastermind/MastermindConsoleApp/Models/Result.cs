@@ -22,7 +22,7 @@ namespace MastermindConsoleApp.Models
 
         internal void WriteLine()
         {
-            MessageType.Results.WriteLine( _blacks, _whites - _blacks);
+            Message.Results.WriteLine( _blacks, _whites - _blacks);
         }
     }
 }

@@ -9,48 +9,48 @@ internal class ProposedCombination : Combination
     private const int Duplicate = 2;
     private const int FisrtChar = 0;
 
-    internal ColorType[] ColorTypes => _colorTypes;
+    internal Types.Color[] ColorTypes => _colorTypes;
 
     internal ProposedCombination Read()
     {
         string characters;
-        ErrorType errorType;
+        Error errorType;
         do
         {
-            characters = ConsoleIO.GetInstance().ReadString(MessageType.ProposeCombination.GetToString());
+            characters = ConsoleIO.GetInstance().ReadString(Message.ProposeCombination.GetToString());
             errorType = GetErrorTypeToReadColorType(characters);
-            errorType.WriteLine(Enum.GetValues<ColorType>());
-        } while (errorType != ErrorType.Null);
+            errorType.WriteLine(Enum.GetValues<Color>());
+        } while (errorType != Error.Null);
         AddPropose(characters);
         return this;
     }
 
-    private ErrorType GetErrorTypeToReadColorType(string characters)
+    private Error GetErrorTypeToReadColorType(string characters)
     {
         if (characters.Length != Combination.Width)
         {
-            return ErrorType.WrongLength;
+            return Error.WrongLength;
         }
 
-        ColorType[] colorTypes = Enum.GetValues<ColorType>();
+        Color[] colorTypes = Enum.GetValues<Color>();
         for (int i = 0; i < characters.Length; i++)
         {
-            ColorType color = GetColorType(characters[i]);
-            if (color == Types.ColorType.Null)
+            Types.Color color = GetColorType(characters[i]);
+            if (color == Types.Color.Null)
             {
-                return ErrorType.WrongCharacters;
+                return Error.WrongCharacters;
             }
             if (IsDuplicate(color, characters))
             {
-                return ErrorType.Duplicated;
+                return Error.Duplicated;
             }
         }
-        return ErrorType.Null;
+        return Error.Null;
     }
 
-    private ColorType GetColorType(char character)
+    private Types.Color GetColorType(char character)
     {
-        ColorType[] colorTypes = Enum.GetValues<ColorType>();
+        Color[] colorTypes = Enum.GetValues<Color>();
         int i = 0;
         while (i < colorTypes.Length && colorTypes[i].ToString().ToLower()[FisrtChar] != character)
         {
@@ -63,7 +63,7 @@ internal class ProposedCombination : Combination
         return colorTypes[i];
     }
 
-    private bool IsDuplicate(ColorType color, string characters)
+    private bool IsDuplicate(Types.Color color, string characters)
     {
         int count = 0;
         for (int i = 0; i < characters.Length; i++)

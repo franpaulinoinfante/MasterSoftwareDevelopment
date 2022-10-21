@@ -2,7 +2,7 @@
 
 namespace MastermindConsoleApp.Models.Types;
 
-internal enum MessageType
+internal enum Message
 {
     Title,
     SecretCombination,
@@ -28,24 +28,24 @@ internal static class Extension
         "Do you want to continue"
     };
 
-    internal static void WriteLine(this MessageType messageType)
+    internal static void WriteLine(this Message messageType)
     {
         ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType]);
     }
 
-    internal static void WriteLine(this MessageType messageType, int blacks, int whites)
+    internal static void WriteLine(this Message messageType, int blacks, int whites)
     {
         ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType]
             .Replace("#blacks", $"{ blacks }")
             .Replace("#whites", $"{ whites }"));
     }
 
-    internal static void WriteLine(this MessageType messageType, int attempts)
+    internal static void WriteLine(this Message messageType, int attempts)
     {
         ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType].Replace("#attempts", $"{attempts}"));
     }
 
-    internal static string GetToString(this MessageType messageType)
+    internal static string GetToString(this Message messageType)
     {
         return Messages[(int)messageType];
     }

@@ -1,6 +1,6 @@
 ﻿namespace MastermindConsoleApp.Models.Types;
 
-internal enum ColorType
+internal enum Color
 {
     Red,
     Green,
@@ -25,7 +25,7 @@ internal static class ExtensionColorType
     };
 
 
-    internal static string GetColorType(this ColorType colorType)
+    internal static string GetColorType(this Color colorType)
     {
 
         return ColorTypes[(int)colorType];

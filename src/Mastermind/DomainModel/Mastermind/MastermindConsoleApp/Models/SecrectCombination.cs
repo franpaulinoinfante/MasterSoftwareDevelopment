@@ -7,7 +7,7 @@ internal class SecrectCombination : Combination
 {
     internal void GenerateSecrectCombination()
     {
-        ColorType[] colorTypes = Enum.GetValues<ColorType>();
+        Color[] colorTypes = Enum.GetValues<Color>();
         Random random = new Random();
         int position = random.Next(minValue: 0, colorTypes.Length - 1);
         int colors = 0; ;
@@ -42,7 +42,7 @@ internal class SecrectCombination : Combination
         return new Result(whites, blacks);
     }
 
-    private bool Constain(ColorType colorType)
+    private bool Constain(Types.Color colorType)
     {
         int i = 0;
         while (i < Combination.Width && _colorTypes[i] != colorType)
@@ -56,13 +56,13 @@ internal class SecrectCombination : Combination
         return colorType == _colorTypes[i];
     }
 
-    private bool Constain(ColorType colorType, int position)
+    private bool Constain(Types.Color colorType, int position)
     {
         return _colorTypes[position] == colorType;
     }
 
     internal protected override void Write()
     {
-        MessageType.SecretCombination.WriteLine();
+        Message.SecretCombination.WriteLine();
     }
 }

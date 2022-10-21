@@ -62,7 +62,7 @@ internal class Board
 
     internal void Write()
     {
-        MessageType.Attempts.WriteLine(_attemps);
+        Message.Attempts.WriteLine(_attemps);
         _secrectCombination.Write();
         for (int i = 0; i < _attemps; i++)
         {

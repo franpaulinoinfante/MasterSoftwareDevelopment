@@ -16,7 +16,7 @@ internal class Game
     {
         do
         {
-            MessageType.Title.WriteLine();
+            Message.Title.WriteLine();
             Play();
         } while (Resume());
     }
@@ -41,7 +41,7 @@ internal class Game
     private bool Resume()
     {
         YesNoDialog yesNoDialog = new YesNoDialog();
-        yesNoDialog.Read(MessageType.Resume.ToString());
+        yesNoDialog.Read(Message.Resume.ToString());
         if (yesNoDialog.IsAffirmative())
         {
             NewGame();
@@ -58,11 +58,11 @@ internal class Game
     {
         if (_board.IsWinner())
         {
-            MessageType.Winner.WriteLine();
+            Message.Winner.WriteLine();
         }
         else
         {
-            MessageType.Looser.WriteLine();
+            Message.Looser.WriteLine();
         }
     }
 }
