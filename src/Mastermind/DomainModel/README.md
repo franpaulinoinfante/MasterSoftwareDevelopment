@@ -230,6 +230,8 @@ Analizar los requisistos a través de su refinamiento y estructura para realizar
 
 ### Arquitectura
 
+![image](https://user-images.githubusercontent.com/46433173/196999637-53f179c9-11f7-4c9d-bff3-8992f128c5ac.png)
+
 ### Namespace Mastermind-ConsoleApp
 
 ### Namespace Mastermind-Utils
