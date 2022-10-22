@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace MastermindConsoleApp.Models.Types;
 
 internal enum Error
-{   Duplicated,
+{   
+    Duplicated,
     WrongCharacters,
     WrongLength,
     Null

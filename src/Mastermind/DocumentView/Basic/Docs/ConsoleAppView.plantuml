@@ -1,0 +1,101 @@
+@startuml ConsoleAppView
+title ConsoleApp View
+namespace ConsoleApp{
+    class Mastermind{
+        ~Play()
+        ~{static} Main(string)
+    }
+    Mastermind *--> Models.Game
+    Mastermind *--> GameView
+
+    abstract WithGameView{
+        ~WithGameView(Game)
+    }   
+    WithGameView <|-- StartView
+    WithGameView <|-- PlayView
+    WithGameView <|-- ResumeView
+    WithGameView <|-- GameView
+
+    class GameView{
+        ~GameView(Game) : base(Game)
+        ~Interact()
+    }
+    GameView  ..> Models.Game
+    GameView *--> StartView
+    GameView *--> PlayView
+    GameView *--> ResumeView
+
+    class StartView{
+        ~StartView(Game)
+        ~Interact()
+    }
+    StartView --> Models.Game
+    StartView ..> BoardView
+    StartView ..> MessageView
+
+    class PlayView{
+        ~PlayView(Game)
+        ~Interact()
+    }
+    PlayView --> Models.Game
+    PlayView ..> ProposedCombinationView
+    PlayView ..> Types.Color
+    PlayView ..> BoardView
+    PlayView ..> MessageView
+
+    class ResumeView{
+        ~ResumeView(Game)
+        ~Interact(): bool
+    }
+    ResumeView --> Models.Game
+    ResumeView ..> MessageView
+    ResumeView ..> ConsoleIOs.YesNotDialog
+
+    class BoardView{
+        ~BoardView()
+        ~Write(Game)
+    }
+    BoardView ..> Models.Game
+    BoardView ..> Types.Color
+    BoardView ..> MessageView
+    BoardView ..> ConsoleIOs.ConsoleIO
+
+    class ProposedCombinationView{
+        ~ProposedCombinationView()
+        ~Read(Game) : Color[]
+    }
+    ProposedCombinationView ..> Models.Game
+    ProposedCombinationView ..> Types.Color
+    ProposedCombinationView ..> MessageView
+    ProposedCombinationView ..> ErrorView
+    ProposedCombinationView ..> Types.Error
+
+    enum MessageView{
+        ~Title,
+        ~Attempts,
+        ~SecrectCombination,
+        ~ProposedCombination,
+        ~Results,
+        ~Winner,
+        ~Lost,
+        ~Resume
+        ~ToString()
+        ~WriteLine(Message)
+        ~WriteLine(attempts)
+        ~WriteLine(whites, blacks)
+    }
+    MessageView ..> ConsoleIOs.ConsoleIO
+
+    class ErrorView{
+        ~WriteLine(Error)
+    }
+    ErrorView --> Types.Error
+    ErrorView ..> ConsoleIOs.ConsoleIO
+
+    enum Types.Color{
+    }
+
+    enum Types.Error{
+    }
+}
+@enduml

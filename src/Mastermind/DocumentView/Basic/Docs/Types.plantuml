@@ -1,0 +1,21 @@
+@startuml MastermindTypes
+title Mastermind Types
+namespace Types{
+    enum Types.Color{
+        +Red,
+        +Green,
+        +Yellow,
+        +Blue,
+        +Magenta,
+        +Cyan,
+        +Null
+    }
+
+    enum Types.Error{
+        +Duplicated,
+        +WrongCharacters,
+        +WrongLength,
+        +Null
+    }
+}
+@enduml

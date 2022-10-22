@@ -1,0 +1,50 @@
+@startuml MastermindModels
+title Mastermind Models
+namespace Models{
+    class Game {
+        +{static} MaxAttempts : int
+        +Game()
+        +NewGame()
+        +Add(Color[])
+        +GetAttempts() : int
+        +GetWhites() : int
+        +GetBlacks() : int
+        +IsFinished() : bool
+        +IsWinner() : bool
+        +IsLooser() : bool
+        +GetErrorToProposedCombination(Colorp[]) : Error
+    }
+    Game *--> SecrectCombination
+    Game o--> "0..10" ProposedCombination
+    Game o--> "0..10" Result
+    Game ..> Types.Color
+    Game ..> Types.Error
+    
+    abstract Combination{
+        #{static} Width : int
+        #colors : Color[]
+    }
+    Combination <|-- SecrectCombination
+    Combination <|-- ProposedCombination
+    Combination --> "4" Types.Color
+
+    class SecrectCombination{
+        ~SecrectCombination()
+        ~CreateSecrectCombination()
+        ~CheckResult(Color[]) : Result
+        -Constain(Color) : bool
+        -Constain(Color, position) : bool
+    }
+    SecrectCombination ..> ProposedCombination
+    SecrectCombination ..> Result
+
+    class ProposedCombination{
+        ~Read(Color[])
+        ~GetErrorToProposedCombination(Colorp[]) : Error
+    }
+    ProposedCombination ..> Types.Error
+
+    enum Types.Color{}
+    enum Types.Error{}
+
+}
