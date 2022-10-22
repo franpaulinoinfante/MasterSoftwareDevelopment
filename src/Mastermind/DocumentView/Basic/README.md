@@ -33,7 +33,7 @@
 
 ### Vsita de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/197358882-1fae40f2-0d6c-4bcc-883a-05fa4921bac4.png)
+![image](https://user-images.githubusercontent.com/46433173/197359113-08bd84d2-0812-4e6f-9b61-7dca43ad86ec.png)
 
 ### Vsita de Caso de Uso Resume
 
