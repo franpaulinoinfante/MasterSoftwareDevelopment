@@ -210,20 +210,15 @@ Do you want to continue? (y/n):
 
 ### Arquitectura
 
-![image](https://user-images.githubusercontent.com/46433173/196204159-528dd2c0-82d3-4ef3-b484-a7f488fe446e.png)
-
-**Namespaces**
+![image](https://user-images.githubusercontent.com/46433173/197360526-deb01999-6783-4fa2-a016-b07b8e15a8a5.png)
 
 ### Namespace Mastermind
 
 ### Namespace Mastermind.ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/196550435-3b6dda94-6dd6-40bb-9f78-b8fda3846ca0.png)
  
 ### Namespace TicTacToe.Models
 
-![image](https://user-images.githubusercontent.com/46433173/196696107-a5b7f3f7-d68e-4026-9221-a1d0b51262e7.png)
 
 ### Namespace TicTacToe.Models.Types
 
-![image](https://user-images.githubusercontent.com/46433173/196542763-bb5d0c34-7796-460c-b920-fc75973808ff.png)
