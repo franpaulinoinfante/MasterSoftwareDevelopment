@@ -14,7 +14,7 @@
     - 3.3 [Mastermind-ConsoleApp](#Namespace-TicTacToeConsoleApp)
     - 3.4 [Mastermind.View](#Namespace-TicTacToe.Views)
     - 3.5 [Mastermind.Models](#Namespace-TicTacToe.Models)
-        - 3.5.1 [Mastermind.Models.Types](#Namespace-TicTacToe.Models.Types)
+    - 3.6 [Mastermind.Models.Types](#Namespace-TicTacToe.Models.Types)
 
 ### Requisitos
 

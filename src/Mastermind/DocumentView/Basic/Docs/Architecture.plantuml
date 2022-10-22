@@ -1,0 +1,20 @@
+@startuml ArchitectureDocumentViewBasic
+title Architecture Document/View Basic
+
+namespace Mastermind #GreenYellow { }
+namespace ConsoleApp #LightBlue { }
+namespace Models #RoyalBlue { }
+namespace Types #Yellow { }
+namespace DotNet.IO #DDDDDD { }
+namespace DotNet.Util #DDDDDD { }
+
+Mastermind .down.> Models
+Mastermind .down.> ConsoleApp
+ConsoleApp .down.> Models
+ConsoleApp .down.> Types
+ConsoleApp ..> DotNet.IO
+Models .down.> Types
+Models ..> DotNet.Util
+Types ..> DotNet.Util
+
+@enduml
