@@ -4,16 +4,16 @@ title Use Case View Resume
 state OUT_GAME
 state A as " "
 state B as " "
-state B as " "
-state C as " "
+state INITIAL
+state EXIT
 
 [*] --> OUT_GAME
 OUT_GAME --> A : Player request to Resume a new game
 A --> B : System requests to Continuar
-B --> C : Player introduces Yes
-C --> [*]
-B --> D : Player introduces No
-D--> [*]
+B --> INITIAL : Player introduces Yes
+INITIAL --> [*]
+B --> EXIT : Player introduces No
+EXIT--> [*]
 
 
 
