@@ -263,6 +263,8 @@ Do you want to continue? (y/n):
 
 ## Vista Lógica-Diseño
 
+- Arquitectura Documento/Vista mediante Patrón de Vista Separada
+
 ### Arquitectura
 
 ![image](https://user-images.githubusercontent.com/46433173/196204159-528dd2c0-82d3-4ef3-b484-a7f488fe446e.png)
