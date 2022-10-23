@@ -15,16 +15,11 @@ internal class ColorView
         return initials;
     }
 
-    internal char GetInitial(Color color)
-    {
-        return color.ToString().ToLower()[0];
-    }
-
     internal void Write(Color color)
     {
         if (!color.IsNull())
         {
-            ConsoleIO.GetInstance().Write(GetInitial(color));
+            ConsoleIO.GetInstance().Write(color.GetInitial());
         }
     }
 }
