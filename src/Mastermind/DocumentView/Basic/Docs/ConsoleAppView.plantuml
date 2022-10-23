@@ -18,7 +18,9 @@ namespace ConsoleApp{
 
     class GameView{
         ~GameView(Game) : base(Game)
-        ~Interact()
+        ~Start()
+        ~Play()
+        ~Resume() : bool
     }
     GameView  ..> Models.Game
     GameView *--> StartView
