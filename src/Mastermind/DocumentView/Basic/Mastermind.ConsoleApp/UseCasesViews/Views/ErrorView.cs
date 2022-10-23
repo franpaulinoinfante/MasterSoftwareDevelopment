@@ -1,11 +1,10 @@
 ﻿using Mastermind.ConsoleApp.ConsoleIOs;
-using Mastermind.ConsoleApp.UseCasesViews.Views;
 using Mastermind.Types;
 
 internal class ErrorView
 {
 
-    private static string[] Messages =
+    private static readonly string[] Messages =
     {
         "Repeated colors",
        $"Wrong colors, they must be:  {new ColorView().GetAllInitials()}",
@@ -20,3 +19,5 @@ internal class ErrorView
         }
     }
 }
+
+//GetInitial(colors[i]);

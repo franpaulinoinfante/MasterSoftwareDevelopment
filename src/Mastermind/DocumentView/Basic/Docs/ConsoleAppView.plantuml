@@ -1,12 +1,12 @@
 @startuml ConsoleAppView
 title ConsoleApp View
 namespace ConsoleApp{
-    class Mastermind{
+    class ConsoleApp{
         ~Play()
         ~{static} Main(string)
     }
-    Mastermind *--> Models.Game
-    Mastermind *--> GameView
+    ConsoleApp *--> Models.Game
+    ConsoleApp *--> GameView
 
     abstract WithGameView{
         ~WithGameView(Game)
@@ -41,7 +41,7 @@ namespace ConsoleApp{
     }
     PlayView --> Models.Game
     PlayView ..> ProposedCombinationView
-    PlayView ..> Types.Color
+    PlayView ..> "0...n" Types.Color
     PlayView ..> BoardView
     PlayView ..> MessageView
 
@@ -60,11 +60,15 @@ namespace ConsoleApp{
     BoardView ..> Models.Game
     BoardView ..> Types.Color
     BoardView ..> MessageView
+    BoardView ..> ProposedCombinationView
     BoardView ..> ConsoleIOs.ConsoleIO
 
     class ProposedCombinationView{
         ~ProposedCombinationView()
         ~Read(Game) : Color[]
+        -GetColors(string) : Color[]
+        -GetColor(char) : Color
+        ~Write()
     }
     ProposedCombinationView ..> Models.Game
     ProposedCombinationView ..> Types.Color
@@ -73,6 +77,7 @@ namespace ConsoleApp{
     ProposedCombinationView ..> Types.Error
 
     enum MessageView{
+        -{static} Messages : string
         ~Title,
         ~Attempts,
         ~SecrectCombination,
@@ -81,17 +86,28 @@ namespace ConsoleApp{
         ~Winner,
         ~Lost,
         ~Resume
-        ~ToString()
+        ~GetString(Message) : string
+        ~GetString(Message, int) : string
         ~WriteLine(Message)
-        ~WriteLine(attempts)
-        ~WriteLine(whites, blacks)
+        ~WriteLine(Message, attempts)
+        ~WriteLine(Message, whites, blacks)
     }
     MessageView ..> ConsoleIOs.ConsoleIO
 
+    class ColorView{
+        ~ColorView()
+        ~GetlAllInitials() : string
+        ~Write(Color)
+    }
+    ColorView ..> Types.Color
+    ColorView ..> ConsoleIOs.ConsoleIO
+
     class ErrorView{
+        -{static} Errors : string
         ~WriteLine(Error)
     }
     ErrorView --> Types.Error
+    ErrorView ..> ColorView
     ErrorView ..> ConsoleIOs.ConsoleIO
 
     enum Types.Color{

@@ -44,23 +44,6 @@ internal class ProposedCombinationView
         return colors[i];
     }
 
-    /*
-           private Types.Color GetColorType(char character)
-    {
-        Color[] colorTypes = Enum.GetValues<Color>();
-        int i = 0;
-        while (i < colorTypes.Length && colorTypes[i].ToString().ToLower()[FisrtChar] != character)
-        {
-            i++;
-        }
-        if (i == colorTypes.Length)
-        {
-            --i;
-        }
-        return colorTypes[i];
-    }
-        }*/
-
     internal void Write(Color[] colors)
     {
         foreach (Color color in colors)
