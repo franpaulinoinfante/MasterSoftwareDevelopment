@@ -216,9 +216,12 @@ Do you want to continue? (y/n):
 
 ### Namespace Mastermind.ConsoleApp
 
+![image](https://user-images.githubusercontent.com/46433173/197416281-d2116719-5ba4-43b7-95c1-c32a3d839751.png)
  
 ### Namespace TicTacToe.Models
 
+![image](https://user-images.githubusercontent.com/46433173/197415364-3a9ace59-5658-4116-aca0-cf1c25b9b60a.png)
 
 ### Namespace TicTacToe.Models.Types
 
+![image](https://user-images.githubusercontent.com/46433173/197415463-97fea9ee-2631-4a52-ae0c-91b53f50c5a0.png)
