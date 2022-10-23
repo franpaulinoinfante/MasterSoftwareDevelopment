@@ -1,8 +1,8 @@
 ﻿using Mastermind.ConsoleApp;
-using Mastermind.ConsoleApp.UseCasesViews.ViewModels;
+using Mastermind.ConsoleApp.UseCasesViews.Views;
 using Mastermind.Models;
 
-internal class ResumeView:WithGameView
+internal class ResumeView : WithGameView
 {
     public ResumeView(Game game) : base(game)
     {

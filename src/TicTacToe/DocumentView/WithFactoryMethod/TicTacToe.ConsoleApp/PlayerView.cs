@@ -12,7 +12,7 @@ internal class PlayerView
         _game = game;
     }
 
-   internal protected void Interact()
+    protected internal void Interact()
     {
         if (!_game.AreAllTokenOnBoard())
         {

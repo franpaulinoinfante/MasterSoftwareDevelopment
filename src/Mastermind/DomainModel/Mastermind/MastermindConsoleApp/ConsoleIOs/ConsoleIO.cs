@@ -1,4 +1,4 @@
-﻿namespace MastermindConsoleApp.ConsolesIOs;
+﻿namespace MastermindConsoleApp.ConsoleIOs;
 
 public class ConsoleIO
 {

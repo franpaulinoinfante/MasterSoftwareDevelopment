@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace MastermindConsoleApp.ConsolesIOs;
+namespace MastermindConsoleApp.ConsoleIOs;
 
 public class YesNoDialog
 {

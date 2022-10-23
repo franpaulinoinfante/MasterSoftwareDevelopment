@@ -1,6 +1,5 @@
-﻿using MastermindConsoleApp.ConsolesIOs;
+﻿using MastermindConsoleApp.ConsoleIOs;
 using MastermindConsoleApp.Models.Types;
-using System.Drawing;
 
 namespace MastermindConsoleApp.Models;
 
@@ -84,7 +83,7 @@ internal class ProposedCombination : Combination
         }
     }
 
-    internal protected override void Write()
+    protected internal override void Write()
     {
         for (int i = 0; i < _colorTypes.Length; i++)
         {

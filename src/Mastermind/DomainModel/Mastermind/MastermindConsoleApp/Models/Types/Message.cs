@@ -1,4 +1,4 @@
-﻿using MastermindConsoleApp.ConsolesIOs;
+﻿using MastermindConsoleApp.ConsoleIOs;
 
 namespace MastermindConsoleApp.Models.Types;
 
@@ -16,7 +16,7 @@ internal enum Message
 
 internal static class Extension
 {
-    private static string[] Messages =
+    private static readonly string[] Messages =
     {
         "----- MASTERMIND -----",
         "****",
@@ -36,8 +36,8 @@ internal static class Extension
     internal static void WriteLine(this Message messageType, int blacks, int whites)
     {
         ConsoleIO.GetInstance().WriteLine(Messages[(int)messageType]
-            .Replace("#blacks", $"{ blacks }")
-            .Replace("#whites", $"{ whites }"));
+            .Replace("#blacks", $"{blacks}")
+            .Replace("#whites", $"{whites}"));
     }
 
     internal static void WriteLine(this Message messageType, int attempts)

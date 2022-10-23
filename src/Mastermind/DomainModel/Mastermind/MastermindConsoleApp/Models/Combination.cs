@@ -5,13 +5,13 @@ namespace MastermindConsoleApp.Models;
 internal abstract class Combination
 {
     protected Color[] _colorTypes;
- 
-	protected const int Width = 4;
+
+    protected const int Width = 4;
 
     public Combination()
-	{
-		_colorTypes = new Color[Width];
-	}
+    {
+        _colorTypes = new Color[Width];
+    }
 
-	internal protected abstract void Write();
+    protected internal abstract void Write();
 }

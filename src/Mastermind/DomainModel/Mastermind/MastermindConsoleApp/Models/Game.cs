@@ -1,4 +1,4 @@
-﻿using MastermindConsoleApp.ConsolesIOs;
+﻿using MastermindConsoleApp.ConsoleIOs;
 using MastermindConsoleApp.Models.Types;
 
 namespace MastermindConsoleApp.Models;

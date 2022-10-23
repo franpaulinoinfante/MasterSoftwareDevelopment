@@ -1,5 +1,5 @@
 ﻿using Mastermind.ConsoleApp.ConsoleIOs;
-using Mastermind.ConsoleApp.UseCasesViews.ViewModels;
+using Mastermind.ConsoleApp.UseCasesViews.Views;
 using Mastermind.Models;
 
 internal class BoardView
@@ -12,7 +12,7 @@ internal class BoardView
         for (int i = 0; i < game.Attemps; i++)
         {
             new ProposedCombinationView().Write(game.GetProposedCombination(i));
-            Message.Results.WriteLine(game.GetBlacks(i), game.GetWhites(i));
+            Message.Results.WriteLine(game.GetWhites(i), game.GetBlacks(i));
         }
     }
 }

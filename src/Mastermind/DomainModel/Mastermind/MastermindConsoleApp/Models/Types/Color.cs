@@ -13,7 +13,7 @@ internal enum Color
 
 internal static class ExtensionColorType
 {
-    private static string[] ColorTypes =
+    private static readonly string[] ColorTypes =
     {
         "r",
         "g",

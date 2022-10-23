@@ -1,5 +1,4 @@
 ﻿using MastermindConsoleApp.Models.Types;
-using System.Drawing;
 
 namespace MastermindConsoleApp.Models;
 
@@ -7,7 +6,7 @@ internal class SecrectCombination : Combination
 {
     internal void GenerateSecrectCombination()
     {
-        Color[] colorTypes = Enum.GetValues<Color>();
+        Types.Color[] colorTypes = Enum.GetValues<Types.Color>();
         Random random = new Random();
         int position = random.Next(minValue: 0, colorTypes.Length - 1);
         int colors = 0; ;
@@ -61,7 +60,7 @@ internal class SecrectCombination : Combination
         return _colorTypes[position] == colorType;
     }
 
-    internal protected override void Write()
+    protected internal override void Write()
     {
         Message.SecretCombination.WriteLine();
     }

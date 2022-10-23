@@ -4,20 +4,20 @@ namespace Mastermind.Models
 {
     internal class Result
     {
-        private int _whites;
-        private int _blacks;
-        
-        public Result(int blacks, int whites)
+        private readonly int _whites;
+        private readonly int _blacks;
+
+        public Result(int whites, int blacks)
         {
             Debug.Assert(blacks >= 0 && whites >= 0);
 
-            _whites = blacks;
-            _blacks = whites;
+            _whites = whites;
+            _blacks = blacks;
         }
 
-        public int Whites => _whites;
+        internal int Whites => _whites;
 
-        public int Blacks => _blacks;
+        internal int Blacks => _blacks;
 
         internal bool IsWinner()
         {

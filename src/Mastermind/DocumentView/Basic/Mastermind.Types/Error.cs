@@ -7,3 +7,11 @@ public enum Error
     WrongLength,
     Null
 }
+
+public static class ErrorExtension
+{
+    public static bool IsNull(this Error error)
+    {
+        return error == Error.Null;
+    }
+}

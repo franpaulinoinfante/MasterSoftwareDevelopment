@@ -1,9 +1,9 @@
 ﻿using Mastermind.Models;
 
-class ConsoleApp
+internal class ConsoleApp
 {
-    private Game _game;
-    private GameView _gameView;
+    private readonly Game _game;
+    private readonly GameView _gameView;
 
     public ConsoleApp()
     {

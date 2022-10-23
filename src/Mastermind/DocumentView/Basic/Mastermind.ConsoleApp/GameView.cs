@@ -3,9 +3,9 @@ using Mastermind.Models;
 
 internal class GameView : WithGameView
 {
-    private StartView _startView;
-    private PlayView _playView;
-    private ResumeView _resumeView;
+    private readonly StartView _startView;
+    private readonly PlayView _playView;
+    private readonly ResumeView _resumeView;
 
     public GameView(Game game) : base(game)
     {

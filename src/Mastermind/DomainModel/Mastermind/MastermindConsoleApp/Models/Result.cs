@@ -4,8 +4,8 @@ namespace MastermindConsoleApp.Models
 {
     internal class Result
     {
-        private int _whites;
-        private int _blacks;
+        private readonly int _whites;
+        private readonly int _blacks;
 
         private const int Width = 4;
 
@@ -22,7 +22,7 @@ namespace MastermindConsoleApp.Models
 
         internal void WriteLine()
         {
-            Message.Results.WriteLine( _blacks, _whites - _blacks);
+            Message.Results.WriteLine(_blacks, _whites - _blacks);
         }
     }
 }

@@ -4,14 +4,11 @@ using System.Diagnostics;
 namespace Mastermind.Models;
 
 internal class SecrectCombination : Combination
-{
-    protected int _current;
-
-    internal void Generate()
+{    internal void Generate()
     {
         Random random = new Random();
         Color[] colors = Enum.GetValues<Color>();
-        _current = 0;
+        int _current = 0;
         while (_current < Combination.Width)
         {
             Color color = colors[random.Next(minValue: 0, colors.Length - 1)];
@@ -50,7 +47,7 @@ internal class SecrectCombination : Combination
                 blacks++;
             }
         }
-        return new Result(blacks, whites);
+        return new Result(whites - blacks, blacks);
     }
 
     private bool Constain(Color color, int i)

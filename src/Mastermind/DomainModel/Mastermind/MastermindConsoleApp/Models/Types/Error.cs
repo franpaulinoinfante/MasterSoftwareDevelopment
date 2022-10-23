@@ -1,14 +1,9 @@
-﻿using MastermindConsoleApp.ConsolesIOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MastermindConsoleApp.ConsoleIOs;
 
 namespace MastermindConsoleApp.Models.Types;
 
 internal enum Error
-{   
+{
     Duplicated,
     WrongCharacters,
     WrongLength,
@@ -17,7 +12,7 @@ internal enum Error
 
 internal static class ExtensionErrorType
 {
-    private static string[] Errors =
+    private static readonly string[] Errors =
     {
         "Repeated color",
         "Wrong colors, they must be: #replace",

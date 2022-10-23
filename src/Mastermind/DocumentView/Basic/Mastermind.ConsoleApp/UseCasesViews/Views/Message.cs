@@ -1,14 +1,10 @@
 ﻿using Mastermind.ConsoleApp.ConsoleIOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mastermind.ConsoleApp.UseCasesViews.ViewModels
+namespace Mastermind.ConsoleApp.UseCasesViews.Views
 {
     internal enum Message
-    {   Title,
+    {
+        Title,
         Attempts,
         SecrectCombination,
         ProposedCombination,
@@ -18,9 +14,9 @@ namespace Mastermind.ConsoleApp.UseCasesViews.ViewModels
         Resume
     }
 
-   internal static class MessageExtension
+    internal static class MessageExtension
     {
-        private static string[] Messages =
+        private static readonly string[] Messages =
         {
             "----- MASTERMIND -----",
             "#attempts attempt(s): ",
@@ -42,14 +38,19 @@ namespace Mastermind.ConsoleApp.UseCasesViews.ViewModels
             ConsoleIO.GetInstance().WriteLine(Messages[(int)message].Replace("#attempts", $"{attempts}"));
         }
 
-        internal static void WriteLine(this Message message, int blacks, int whites)
+        internal static void WriteLine(this Message message, int whites, int blacks)
         {
             ConsoleIO.GetInstance().WriteLine(Messages[(int)message]
-                .Replace("#blakcs", $"{blacks}")
-                .Replace("#whites",$"{whites}"));
+                .Replace("#whites", $"{whites}")
+                .Replace("#blacks", $"{blacks}"));
         }
 
-        internal static string ToString(this Message message, int value)
+        internal static string GetString(this Message message)
+        {
+            return Messages[(int)message];
+        }
+
+        internal static string GetString(this Message message, int value)
         {
             return Messages[(int)message].Replace("#replace", $"{value}");
         }

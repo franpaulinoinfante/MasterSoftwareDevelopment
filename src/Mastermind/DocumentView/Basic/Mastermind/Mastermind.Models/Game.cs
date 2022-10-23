@@ -70,7 +70,7 @@ public class Game
 
     public void CheckResult()
     {
-        _results[_resultCount] = _secrectCombination.CheckResults(_proposedCombinations[_attempts]);
+        _results[_resultCount] = _secrectCombination.CheckResults(_proposedCombinations[_attempts - 1]);
         _resultCount++;
     }
 
@@ -81,11 +81,16 @@ public class Game
 
     public bool isWinner()
     {
-        return _results[_resultCount].IsWinner();
+        return _results[_resultCount - 1].IsWinner();
     }
 
     public bool IsLooser()
     {
         return _attempts == MaxAttempts;
+    }
+
+    public Error CheckErrorsToProposedCombination(Color[] colors)
+    {
+        return new ProposedCombination().CheckErrorsToProposedCombination(colors);
     }
 }

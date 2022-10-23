@@ -1,5 +1,5 @@
 ﻿using Mastermind.ConsoleApp;
-using Mastermind.ConsoleApp.UseCasesViews.ViewModels;
+using Mastermind.ConsoleApp.UseCasesViews.Views;
 using Mastermind.Models;
 
 internal class StartView : WithGameView
