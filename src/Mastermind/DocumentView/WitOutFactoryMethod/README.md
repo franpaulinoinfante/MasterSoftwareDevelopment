@@ -5,7 +5,7 @@
 1. [Requisitos](#Requisitos)
 2. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
     - 2.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
-    - 2.2 [Vista de Caso de Uno ShowGame](#Vsita-de-Caso-de-Uso-ShowGame)
+    - 2.2 [Vista de Caso de Uso ShowGame](#Vsita-de-Caso-de-Uso-ShowGame)
     - 2.3 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
     - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
     - 2.5 [Prototipos de Interfaz](#Prototipos-de-Interfaz)
@@ -32,7 +32,7 @@
 ### Vsita de Caso de Uso Start
 
 
-### Vista de Caso de Uno ShowGame
+### Vista de Caso de Uso ShowGame
 
 
 ### Vsita de Caso de Uso Play
