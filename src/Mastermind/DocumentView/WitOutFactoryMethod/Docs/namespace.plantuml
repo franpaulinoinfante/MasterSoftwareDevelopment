@@ -1,0 +1,20 @@
+@startuml  ConsoleMastermind
+title Mastermind Views
+namespace Mastermind{
+    class ConsoleMastermind{
+        ~ConsoleMastermind()
+        ~Start()
+        -Play()
+    }
+    ConsoleMastermind *-down-> ConsoleApp.ConsoleView
+    ConsoleMastermind *-down-> Models.Game
+
+    class GraphicsMastermind{
+        ~GraphicsMastermind()
+        ~Start()
+        -Play()
+    }
+    GraphicsMastermind *-down-> GraphicsApp.GraphicsView
+    GraphicsMastermind *-down-> Models.Game
+}
+@enduml

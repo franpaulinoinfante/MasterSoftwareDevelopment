@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mastermind.Models;
 
-namespace Mastermind.GameViews
+namespace Mastermind.GameViews;
+
+public class WithGameView
 {
-    public class WithGameView
+    protected Game _game;
+
+    public WithGameView(Game game)
     {
+        _game = game;
     }
 }

@@ -1,3 +1,1 @@
-﻿using Mastermind.ConsoleApp;
-
-new ConsoleApp().Run();
+﻿new Mastermind.ConsoleApp.ConsoleMastermind().Execute();

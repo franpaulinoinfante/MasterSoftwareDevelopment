@@ -1,0 +1,117 @@
+@startuml AnalysisConsoleApp
+title Analysis ConsoleApp
+
+namespace ConsoleApp{
+    class ConsoleMastermind{
+        ~Mastermind()
+        ~Run()
+        -Play()
+    }
+    ConsoleMastermind *--> Models.Game
+    ConsoleMastermind *--> ConsoleView
+
+    abstract GameView.GameView{}
+    abstract GameView.WithGameView
+
+    class ConsoleView{
+        #ConsoleView(Game) : super(Game)
+        #{abstract} Start()
+        #{abstract} Play()
+        #{abstract} Resume() : bool
+    }
+    ConsoleView -up-|> GameView.GameView
+    ConsoleView *--> StartView
+    ConsoleView *--> PlayView
+    ConsoleView *--> ResumeView
+    ConsoleView ..> Models.Game
+
+    class StartView{
+        ~StartView(Game)
+        ~Interact()
+        -WriteTitle()
+        -WriteBoard()
+    }
+    StartView -up-|> GameView.WithGameView
+    StartView --> Models.Game
+    StartView ..> View.Message
+    StartView ..> BoardView
+    StartView ..> ConsoleIO
+
+    class PlayView{
+        ~PlayView(Game)
+        ~Interact()
+        -ReadProposedCombination() : Color[]
+        -AddProposedCombination()
+        -WriteBoard()
+        -IsFinished() : bool
+        -DisplaysWinnerOrLooserMessage()
+    }
+    PlayView -up-|> GameView.WithGameView
+    PlayView --> Models.Game
+    PlayView ..> ProposedCombinationView
+    PlayView ..> BoardView
+    PlayView ..> View.Message
+    PlayView ..> Types.Color
+    PlayView ..> ConsoleIO
+
+    class ResumeView{
+        ~ResumeView(Game)
+        ~Interact() : bool
+        -Continue() : bool
+        -NewGame()
+    }
+    ResumeView -up-|> GameView.WithGameView
+    ResumeView --> Models.Game
+    ResumeView ..> YesNotDialog
+    ResumeView ..> View.Message
+    ResumeView ..> ConsoleIO
+
+    class BoardView{
+        ~BoardView()
+        ~Write(Game)
+        -WriteSecrectCombination()
+        -GetAttempts() : int
+        -WriteProposedCombination(position)
+        -GetCombination(position) : Color[]
+        -GetBlacks(position) : int
+        -GetWhites(position) : int
+    }
+    BoardView ..> Models.Game
+    BoardView ..> ProposedCombinationView
+    BoardView ..> View.Message
+    BoardView ..> Types.Color
+    BoardView ..> ConsoleIO
+
+    class ProposedCombinationView{
+        ~ProposedCombinationView()
+        ~ReadProposedCombination(Game) : Color[]
+        ~WriteProposedCombination(Color[])
+    }
+    ProposedCombinationView ..> Models.Game
+    ProposedCombinationView ..> View.Message
+    ProposedCombinationView ..> ColorView
+    ProposedCombinationView ..> Types.Error
+    ProposedCombinationView ..> View.ErrorView
+
+    class ColorView{
+        ~GetAllInitials() : string
+        ~Write(Color)
+    }
+    ColorView ..> Types.Color
+    ColorView ..> ConsoleIO
+
+
+    class YesNotDialog{
+
+    }
+    YesNotDialog ..> ConsoleIO
+
+
+    enum View.Message{}
+    enum Types.Color{}
+    enum Types.Error{}
+
+
+}
+
+@enduml

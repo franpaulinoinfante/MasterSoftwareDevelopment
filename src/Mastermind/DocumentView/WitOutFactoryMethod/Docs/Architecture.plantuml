@@ -1,0 +1,36 @@
+@startuml ArchitectureDocumentViewBasic
+title Architecture Document/View With Out Factory Method
+
+namespace Mastermind #GreenYellow { }
+namespace ConsoleApp #LightBlue { }
+namespace GraphicsApp #SlateBlue {}
+namespace Views #CadetBlue {}
+namespace Models #RoyalBlue { }
+namespace Types #Yellow { }
+namespace Net.IO #DDDDDD { }
+namespace Net.Utils #DDDDDD { }
+namespace Net.Graphics #DDDDDD{}
+
+Mastermind .down.> Models
+Mastermind .down.> Views
+Mastermind .down.> ConsoleApp
+Mastermind .down.> GraphicsApp
+
+ConsoleApp .down.> Models
+ConsoleApp .down.> Views
+ConsoleApp .down.> Types
+ConsoleApp ..> Net.IO
+
+GraphicsApp .down.> Models
+GraphicsApp .down.> Views
+GraphicsApp .down.> Types
+GraphicsApp .down.> Net.Graphics
+
+Views .down.> Models
+
+Models .down.> Types
+Models ..> Net.Utils
+
+Types ..> Net.Utils
+
+@enduml

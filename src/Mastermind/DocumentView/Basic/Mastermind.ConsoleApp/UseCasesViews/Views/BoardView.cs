@@ -7,8 +7,8 @@ internal class BoardView
     internal void Write(Game game)
     {
         ConsoleIO.GetInstance().WriteLine();
-        Message.Attempts.WriteLine(game.Attemps);
         Message.SecrectCombination.WriteLine();
+        Message.Attempts.WriteLine(game.Attemps);
         for (int i = 0; i < game.Attemps; i++)
         {
             new ProposedCombinationView().Write(game.GetProposedCombination(i));
