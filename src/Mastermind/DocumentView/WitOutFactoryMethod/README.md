@@ -5,13 +5,11 @@
 1. [Requisitos](#Requisitos)
 2. [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)
     - 2.1 [Vsita de Caso de Uso Start](#Vsita-de-Caso-de-Uso-Start)
-    - 2.2 [Vista de Caso de Uso ShowGame](#Vsita-de-Caso-de-Uso-ShowGame)
-    - 2.3 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
-    - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
-    - 2.5 [Estructura de Caso de Uso](#Estructura-de-Caso-de-Uso)
-    - 2.6 [Prototipos de Interfaz](#Prototipos-de-Interfaz)
-      - 2.6.1 [Prototipo de Interfaz Console Views](#Prototipo-de-Interfaz-Console-Views)
-      - 2.6.2 [Prototipo de Interfaz Graphics Views](#Prototipo-de-Interfaz-Graphics-Views)
+    - 2.2 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
+    - 2.3 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
+    - 2.4 [Prototipos de Interfaz](#Prototipos-de-Interfaz)
+      - 2.4.1 [Prototipo de Interfaz Console Views](#Prototipo-de-Interfaz-Console-Views)
+      - 2.4.2 [Prototipo de Interfaz Graphics Views](#Prototipo-de-Interfaz-Graphics-Views)
 3. [Vista Lógica-Diseño](#Vista-Lógica-Diseño)
     - 3.1 [Arquitectura](#Arquitectura)
     - 3.2 [Mastermind](#Namespace-Mastermind)
@@ -28,22 +26,19 @@
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
 |---|---|
-| ![image](https://user-images.githubusercontent.com/46433173/197528950-968cd02a-9ede-42ac-9b8a-538fa3e5cee1.png) | ![image](https://user-images.githubusercontent.com/46433173/197531155-4ec2c363-7ca7-45e3-b274-1b7c36c7f8c3.png) |
+| ![image](https://user-images.githubusercontent.com/46433173/197528950-968cd02a-9ede-42ac-9b8a-538fa3e5cee1.png) | ![image](https://user-images.githubusercontent.com/46433173/197537491-052ecd24-cdea-42b9-82ca-e7e7ebeffde7.png) |
 
 ### Vsita de Caso de Uso Start
 
-
-### Vista de Caso de Uso ShowGame
-
+![image](https://user-images.githubusercontent.com/46433173/197537548-1ec8ec13-db5a-40d0-b961-d5cb441d62e9.png)
 
 ### Vsita de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/197546229-3b934853-a0d2-4f6e-94b1-c0bd524192ea.png)
 
 ### Vsita de Caso de Uso Resume
 
-
-### Estructura de Caso de Uso
-
+![image](https://user-images.githubusercontent.com/46433173/197541280-547e59e5-99bd-43bf-9e5a-3d825c4762f7.png)
 
 ### Prototipos de Interfaz 
 
