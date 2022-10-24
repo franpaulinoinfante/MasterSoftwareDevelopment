@@ -14,6 +14,7 @@
     - 3.1 [Arquitectura](#Arquitectura)
     - 3.2 [Mastermind](#Namespace-Mastermind)
     - 3.3 [Mastermind.ConsoleApp](#Namespace-Mastermind.ConsoleApp)
+    - 3.4 [Mastermind.GameViews](#Namespace-Mastermind.GameViews)
     - 3.4 [Mastermind.Models](#Namespace-Mastermind.Models)
     - 3.5 [Mastermind.Types](#Namespace-Mastermind.Types)
 
@@ -215,14 +216,20 @@ Do you want to continue? (y/n):
 
 ### Arquitectura
 
-
-### Namespace Mastermind
+![image](https://user-images.githubusercontent.com/46433173/197648959-f2575128-41bb-48fb-9957-ae1b00563eda.png)
 
 ### Namespace Mastermind.ConsoleApp
 
+![image](https://user-images.githubusercontent.com/46433173/197648885-01bf4551-6407-4ea0-b8d9-a1d4c02d5340.png)
+
+### Namespace Mastermind.GameViews
+
+![image](https://user-images.githubusercontent.com/46433173/197647346-3b66dffb-e7bf-48ad-b35b-996d10ffe175.png)
  
-### Namespace TicTacToe.Models
+### Namespace Mastermind.Models
 
+![image](https://user-images.githubusercontent.com/46433173/197648138-b087b0b6-3727-4f91-8d05-22d841c35b05.png)
 
-### Namespace TicTacToe.Models.Types
+### Namespace Mastermind.Types
 
+![image](https://user-images.githubusercontent.com/46433173/197646785-402d18fd-ad6a-4d33-9c91-c32b7a4fe221.png)
