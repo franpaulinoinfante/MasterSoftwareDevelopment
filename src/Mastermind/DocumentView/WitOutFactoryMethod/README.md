@@ -28,7 +28,7 @@
 
 | Diagrama de Actores y Casos de Uso | Diagrama de Contexto |
 |---|---|
-| ----AQUI---- | ----AQUI---- |
+| ![image](https://user-images.githubusercontent.com/46433173/197528950-968cd02a-9ede-42ac-9b8a-538fa3e5cee1.png) | ![image](https://user-images.githubusercontent.com/46433173/197531155-4ec2c363-7ca7-45e3-b274-1b7c36c7f8c3.png) |
 
 ### Vsita de Caso de Uso Start
 
