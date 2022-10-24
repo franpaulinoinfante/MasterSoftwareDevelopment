@@ -3,6 +3,8 @@ title Use Case View Start
 
 state INITIAL
 state IN_GAME
+state A as " "
+state B as " "
 
 [*] --> INITIAL
 INITIAL --> A : Player request Start a new game

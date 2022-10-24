@@ -9,7 +9,6 @@ state D as " "
 state E as " "
 state F as " "
 state I as " "
-state G as " "
 
 state if1 <<choice>>
 state if2 <<choice>>
