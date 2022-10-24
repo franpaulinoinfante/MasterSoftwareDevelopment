@@ -28,11 +28,11 @@
 
 ### Vsita de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/197358894-88bce971-873f-47c1-9b75-71f29b0a5e12.png)
+![image](https://user-images.githubusercontent.com/46433173/197532784-dca30d07-8b42-478f-9547-159313453150.png)
 
 ### Vsita de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/197359113-08bd84d2-0812-4e6f-9b61-7dca43ad86ec.png)
+![image](https://user-images.githubusercontent.com/46433173/197532759-a52d9eae-e04e-492e-9ffb-2ccadb615d12.png)
 
 ### Vsita de Caso de Uso Resume
 
