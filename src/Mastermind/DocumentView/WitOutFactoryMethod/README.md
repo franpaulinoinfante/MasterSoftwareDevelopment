@@ -8,9 +8,10 @@
     - 2.2 [Vista de Caso de Uso ShowGame](#Vsita-de-Caso-de-Uso-ShowGame)
     - 2.3 [Vsita de Caso de Uso Play](#Vsita-de-Caso-de-Uso-Play)
     - 2.4 [Vsita de Caso de Uso Resume](#Vsita-de-Caso-de-Uso-Resume)
-    - 2.5 [Prototipos de Interfaz](#Prototipos-de-Interfaz)
-      - 2.5.1 [Prototipo de Interfaz Console Views](#Prototipo-de-Interfaz-Console-Views)
-      - 2.5.2 [Prototipo de Interfaz Graphics Views](#Prototipo-de-Interfaz-Graphics-Views)
+    - 2.5 [Estructura de Caso de Uso](#Estructura-de-Caso-de-Uso)
+    - 2.6 [Prototipos de Interfaz](#Prototipos-de-Interfaz)
+      - 2.6.1 [Prototipo de Interfaz Console Views](#Prototipo-de-Interfaz-Console-Views)
+      - 2.6.2 [Prototipo de Interfaz Graphics Views](#Prototipo-de-Interfaz-Graphics-Views)
 3. [Vista Lógica-Diseño](#Vista-Lógica-Diseño)
     - 3.1 [Arquitectura](#Arquitectura)
     - 3.2 [Mastermind](#Namespace-Mastermind)
@@ -39,6 +40,10 @@
 
 
 ### Vsita de Caso de Uso Resume
+
+
+### Estructura de Caso de Uso
+
 
 ### Prototipos de Interfaz 
 
