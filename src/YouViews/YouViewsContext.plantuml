@@ -1,15 +1,15 @@
 @startuml YouViewContext
-title Context
+title Context iViews
 
-YouViews *--> "0..n" User
-YouViews --> "0..n" Video
+iViews *--> "0..n" User
+iViews --> "0..n" Video
 User *--> "0..n" Video
 User ..> Comment
 User *--> Playlist
 Video *--> "1" Detail
 Video *--> "1" Thumbnail
 Video *--> "1" Audience
-Video o--> Comment
+Video o--> "0..n" Comment
 
 Playlist o--> "0..n" Video
 

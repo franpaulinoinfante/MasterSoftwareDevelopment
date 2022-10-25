@@ -4,9 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mastermind.WinFormApp.Views
+namespace Mastermind.WinFormApp.Views;
+
+internal interface IGraphic 
 {
-    internal interface IGameView
-    {
-    }
+    string Title { set; }
+    string SecrectCombination { set; }
+    string ProposedCombination { get; }
+
+
+    event EventHandler GetproposedCombinationEvent;
+
+    void GetProposeCombinationsBindingSource(BindingSource bindingSource);
+    //void DisplaysBoard();
+
 }

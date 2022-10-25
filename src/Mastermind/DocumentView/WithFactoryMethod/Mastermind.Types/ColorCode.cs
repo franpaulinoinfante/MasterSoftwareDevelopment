@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mastermind.WinFormApp.Presenter
+namespace Mastermind.Types;
+
+public class ColorCode
 {
-    internal class BoardPresenter
-    {
-    }
 }
