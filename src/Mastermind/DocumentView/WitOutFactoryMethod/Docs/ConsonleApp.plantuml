@@ -2,9 +2,14 @@
 title Analysis ConsoleApp
 
 namespace ConsoleApp{
+    class Program{
+        -Execute()
+    }
+    Program *--> ConsoleMastermind
+
     class ConsoleMastermind{
-        ~Mastermind()
-        ~Run()
+        ~ConsoleMastermind()
+        ~Execute()
         -Play()
     }
     ConsoleMastermind *--> Models.Game
@@ -14,7 +19,7 @@ namespace ConsoleApp{
     abstract GameView.WithGameView
 
     class ConsoleView{
-        #ConsoleView(Game) : super(Game)
+        #ConsoleView(Game) : base(Game)
         #{abstract} Start()
         #{abstract} Play()
         #{abstract} Resume() : bool
@@ -26,36 +31,31 @@ namespace ConsoleApp{
     ConsoleView ..> Models.Game
 
     class StartView{
-        ~StartView(Game)
+        ~StartView(Game) : base(Game)
         ~Interact()
-        -WriteTitle()
-        -WriteBoard()
     }
     StartView -up-|> GameView.WithGameView
     StartView --> Models.Game
     StartView ..> View.Message
+    StartView ..> View.MessageView
     StartView ..> BoardView
     StartView ..> ConsoleIO
 
     class PlayView{
-        ~PlayView(Game)
+        ~PlayView(Game): base(Game)
         ~Interact()
-        -ReadProposedCombination() : Color[]
-        -AddProposedCombination()
-        -WriteBoard()
-        -IsFinished() : bool
-        -DisplaysWinnerOrLooserMessage()
     }
     PlayView -up-|> GameView.WithGameView
     PlayView --> Models.Game
     PlayView ..> ProposedCombinationView
     PlayView ..> BoardView
+    PlayView ..> View.MessageView
     PlayView ..> View.Message
     PlayView ..> Types.Color
     PlayView ..> ConsoleIO
 
     class ResumeView{
-        ~ResumeView(Game)
+        ~ResumeView(Game): base(Game)
         ~Interact() : bool
         -Continue() : bool
         -NewGame()

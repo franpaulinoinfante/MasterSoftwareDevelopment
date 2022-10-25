@@ -4,6 +4,7 @@ namespace Models{
     class Game{
         -attempts : int
         -resultCount : int
+        -{static}Initial = 0
         -{static}MaxAttempts = 10
         +Game()
         +NewGame
@@ -36,28 +37,29 @@ namespace Models{
     Combination *--> Types.Color
 
     class SecrectCombination{
-        +SecrectCombination()
+        +SecrectCombination() : base()
         ~Generate()
-        ~CheckResult(ProposeCombination) : Result
         -Constain(Color) : bool
+        ~CheckResult(ProposeCombination) : Result
         -Constain(Color, position) : bool
     }
     SecrectCombination ..> ProposedCombination
     SecrectCombination ..> Result
 
     class ProposedCombination{
-        +ProposedCombination()
-        +ProposedCombination(Color[])
-        ~GetProposedCombination() : Color[]
-        ~AddProposedCombination(Color[])
+        +ProposedCombination(Color[]) : base(Color[])
+        ~GetColorCodes() : Color[]
         ~GetErrorToProposedCombination(Color[]) : Error
+        -GetColorCodesNull() : ColorCode[]
     }
     ProposedCombination ..> Types.Error
 
     class Result{
-        -whites : int
         -blacks : int
-        +Result(whites, blacks)
+        -whites : int
+        +Result(blacks, whites)
+        ~GetBlacks() : int
+        ~GetWhites() : int
         ~isWinner() : bool
     }
 

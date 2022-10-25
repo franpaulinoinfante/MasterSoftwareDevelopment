@@ -16,8 +16,9 @@ namespace GameViews{
     GameView ..> Models.Game
 
     abstract ErrorView{
-        +{static}Messages : string[]
-        +ErrorView(Error)
+        #{static}Messages : string[]
+        -GetAllInitialsCodes() : string
+        #{abstract}WriteLine(ErrorCode)
     }
     ErrorView *--> Types.Error
 

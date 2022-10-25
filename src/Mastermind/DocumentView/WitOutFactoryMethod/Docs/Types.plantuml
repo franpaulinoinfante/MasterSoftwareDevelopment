@@ -1,7 +1,7 @@
 @startuml Types
 title Types
 namespace Types{
-    enum Color{
+    enum ColorCode{
         +Red,
         +Green,
         +Yellow,
@@ -9,16 +9,16 @@ namespace Types{
         +Magenta,
         +Cyan,
         +Null
-        +IsNull(Color) : bool
-        +GetInitial(Color) : char
+        +IsNull(ColorCode) : bool
+        +GetInitial(ColorCode) : char
     }
 
-    enum Error{
+    enum ErrorCode{
         +Duplicated,
         +WrongCharacters,
         +WrongLength,
         +Null
-        +IsNull(Error) : bool
+        +IsNull(ErrorCode) : bool
     }
 }
 @enduml
