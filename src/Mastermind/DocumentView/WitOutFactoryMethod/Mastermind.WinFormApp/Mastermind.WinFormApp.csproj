@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mastermind.GameViews\Mastermind.GameViews.csproj" />
+    <ProjectReference Include="..\Mastermind.Models\Mastermind.Models.csproj" />
+    <ProjectReference Include="..\Mastermind.Types\Mastermind.Types.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Presenter\" />
+  </ItemGroup>
+
+</Project>

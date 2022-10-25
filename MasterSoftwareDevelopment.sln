@@ -67,13 +67,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{094895E3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WithOutFactoryMethod", "WithOutFactoryMethod", "{8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.Models", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.Models\Mastermind.Models.csproj", "{2365308E-292B-4E14-9500-C6654345BA2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.Models", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.Models\Mastermind.Models.csproj", "{2365308E-292B-4E14-9500-C6654345BA2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.Types", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.Types\Mastermind.Types.csproj", "{C6EB0003-2D18-4682-BE1F-CBCA077F6703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.Types", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.Types\Mastermind.Types.csproj", "{C6EB0003-2D18-4682-BE1F-CBCA077F6703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.GameViews", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.GameViews\Mastermind.GameViews.csproj", "{2B30E395-DE15-45BB-A396-519637DB1236}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.GameViews", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.GameViews\Mastermind.GameViews.csproj", "{2B30E395-DE15-45BB-A396-519637DB1236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.ConsoleApp", "Mastermind.ConsoleApp\Mastermind.ConsoleApp.csproj", "{E1365545-8B97-4449-94EE-F028BE41C9FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.WinFormApp", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.WinFormApp\Mastermind.WinFormApp.csproj", "{909C660C-6C5C-4DFB-95C8-E9DB2548D2E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.ConsoleApp", "src\Mastermind\DocumentView\WitOutFactoryMethod\Mastermind.ConsoleApp\Mastermind.ConsoleApp.csproj", "{49611F8C-B19D-4DF1-BE48-CD95F84E47FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,10 +159,14 @@ Global
 		{2B30E395-DE15-45BB-A396-519637DB1236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B30E395-DE15-45BB-A396-519637DB1236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B30E395-DE15-45BB-A396-519637DB1236}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1365545-8B97-4449-94EE-F028BE41C9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1365545-8B97-4449-94EE-F028BE41C9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1365545-8B97-4449-94EE-F028BE41C9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1365545-8B97-4449-94EE-F028BE41C9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909C660C-6C5C-4DFB-95C8-E9DB2548D2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909C660C-6C5C-4DFB-95C8-E9DB2548D2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909C660C-6C5C-4DFB-95C8-E9DB2548D2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909C660C-6C5C-4DFB-95C8-E9DB2548D2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49611F8C-B19D-4DF1-BE48-CD95F84E47FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49611F8C-B19D-4DF1-BE48-CD95F84E47FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49611F8C-B19D-4DF1-BE48-CD95F84E47FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49611F8C-B19D-4DF1-BE48-CD95F84E47FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,7 +206,8 @@ Global
 		{2365308E-292B-4E14-9500-C6654345BA2F} = {8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}
 		{C6EB0003-2D18-4682-BE1F-CBCA077F6703} = {8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}
 		{2B30E395-DE15-45BB-A396-519637DB1236} = {8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}
-		{E1365545-8B97-4449-94EE-F028BE41C9FC} = {8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}
+		{909C660C-6C5C-4DFB-95C8-E9DB2548D2E4} = {8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}
+		{49611F8C-B19D-4DF1-BE48-CD95F84E47FA} = {8D466C2E-CD0B-4BC2-99AF-8D1A2D89D18E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AE9947C-D1D2-4C33-B59E-B63A1C009BCE}
