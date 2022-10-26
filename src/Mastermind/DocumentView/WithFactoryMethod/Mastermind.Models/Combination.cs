@@ -8,9 +8,9 @@ namespace Mastermind.Models
 
         protected const int Width = 4;
 
-        public Combination()
-        {
-            _colorCodes = new List<ColorCode>();
-        }
+        //public Combination()
+        //{
+        //    _colorCodes = new List<ColorCode>();
+        //}
     }
 }
