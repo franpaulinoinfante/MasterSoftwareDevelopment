@@ -30,12 +30,15 @@
 
 ### Vsita de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/198087050-56137763-4d43-484f-a6e6-badca7027fc6.png)
 
 ### Vsita de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/198087193-98fb8e9f-5061-40cd-ab0d-83dea6ac99f3.png)
 
 ### Vsita de Caso de Uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/198087129-f31cb035-6b14-4e7f-8bbc-a2ad19bbf6b1.png)
 
 ### Prototipos de Interfaz 
 
