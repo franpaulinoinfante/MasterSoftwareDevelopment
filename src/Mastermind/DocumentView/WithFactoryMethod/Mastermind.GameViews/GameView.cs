@@ -1,6 +1,4 @@
-﻿using Mastermind.Models;
-
-namespace Mastermind.GameViews;
+﻿namespace Mastermind.GameViews;
 
 public interface IGameView
 {

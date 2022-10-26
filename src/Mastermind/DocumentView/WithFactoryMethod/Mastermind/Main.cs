@@ -5,8 +5,8 @@ namespace Mastermind;
 
 public abstract class Main
 {
-    private Game _game;
-    private IGameView _gameView;
+    private readonly Game _game;
+    private readonly IGameView _gameView;
 
     public Main()
     {
@@ -20,7 +20,8 @@ public abstract class Main
     {
         do
         {
-
-        } while (true);
+            _gameView.Start();
+            _gameView.Play();
+        } while (_gameView.Resume());
     }
 }

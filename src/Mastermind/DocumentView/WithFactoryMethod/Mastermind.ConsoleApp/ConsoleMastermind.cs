@@ -10,7 +10,6 @@ internal class ConsoleMastermind : Main
         Play();
     }
 
-
     protected override IGameView CreateGameView(Game game)
     {
         return new ConsoleView(game);

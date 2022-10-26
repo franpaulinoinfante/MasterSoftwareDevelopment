@@ -1,29 +1,34 @@
-﻿using Mastermind.GameViews;
+﻿using Mastermind.ConsoleApp.UseCaseViews;
+using Mastermind.GameViews;
 using Mastermind.Models;
 
 namespace Mastermind.ConsoleApp;
 
 internal class ConsoleView : IGameView
 {
-    private StartView _startView;
+    private readonly StartView _startView;
+    private readonly PlayView _playView;
+    private readonly ResumeView _resumeView;
 
     public ConsoleView(Game game)
     {
         _startView = new StartView(game);
-    }
-
-    public void Play()
-    {
-        _startView.Interact();
-    }
-
-    public bool Resume()
-    {
-        throw new NotImplementedException();
+        _playView = new PlayView(game);
+        _resumeView = new ResumeView(game);
     }
 
     public void Start()
     {
-        throw new NotImplementedException();
+        _startView.Interact();
+    }
+
+    public void Play()
+    {
+        _playView.Interact();
+    }
+
+    public bool Resume()
+    {
+        return _resumeView.Interact();
     }
 }

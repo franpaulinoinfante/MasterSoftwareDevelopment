@@ -4,9 +4,9 @@ namespace Mastermind.Models;
 
 public class Game
 {
-	private SecrectCombination _secrectCombination;
-	private ProposedCombination[] _proposedCombinations;
-	private Result[] _results;
+	private readonly SecrectCombination _secrectCombination;
+	private readonly ProposedCombination[] _proposedCombinations;
+	private readonly Result[] _results;
 
 	private int _attempts;
 	private int _resultCount;
@@ -22,28 +22,30 @@ public class Game
 		NewGame();
 	}
 
+	public int Attempts => _attempts;
+
 	public void NewGame()
-    {
-        _secrectCombination.Generate();
-        for (int i = 0; i < _attempts; i++)
-        {
-            _proposedCombinations[i] = null;
-            _results[i] = null;
-        }
-        _attempts = Initial;
+	{
+		_secrectCombination.Generate();
+		for (int i = 0; i < _attempts; i++)
+		{
+			_proposedCombinations[i] = null;
+			_results[i] = null;
+		}
+		_attempts = Initial;
 		_resultCount = Initial;
 	}
 
-	public void AddProposeCombination(ColorCode[] colorCodes)
+	public void AddProposeCombination(List<ColorCode> colorCodes)
 	{
 		_proposedCombinations[_attempts] = new ProposedCombination(colorCodes);
 		_attempts++;
 	}
 
-	public ErrorCode GetErrorCodeToProposedCombination(ColorCode[] colorCodes)
+	public ErrorCode GetErrorCodeToProposedCombination(List<ColorCode> colorCodes)
 	{
 		return new ProposedCombination(colorCodes).GetErrorCodeToProposedCombination();
-    }
+	}
 
 	public void CheckResult()
 	{
@@ -51,9 +53,9 @@ public class Game
 		_resultCount++;
 	}
 
-	public ColorCode[] GetProposedCombination(int position)
+	public List<ColorCode> GetProposedCombination(int position)
 	{
-		return _proposedCombinations[position].Combination;
+		return _proposedCombinations[position].ProposedCombinations;
 	}
 
 	public int GetBlacks(int position)
@@ -71,12 +73,12 @@ public class Game
 		return IsWinner() || IsLooser();
 	}
 
-	private bool IsWinner()
+    public bool IsWinner()
 	{
 		return _results[_resultCount - 1].IsWinner();
 	}
 
-	private bool IsLooser()
+	public bool IsLooser()
 	{
 		return _attempts == MaxAttempts;
 	}
