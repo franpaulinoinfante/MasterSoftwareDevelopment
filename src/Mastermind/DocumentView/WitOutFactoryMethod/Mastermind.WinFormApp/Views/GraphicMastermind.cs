@@ -8,24 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mastermind.WinFormApp.Views
+namespace Mastermind.WinFormApp.Views;
+
+internal class GraphicMastermind
 {
-    internal class GraphicMastermind
+    private Game _game;
+    private GameView _gameView;
+    private IGraphic _iGameView;
+
+    public GraphicMastermind()
     {
-        private Game _game;
-        private GameView _gameView;
-        private IGraphic _iGameView;
+        _game = new Game();
+        _iGameView = new WinFormView();
+        _gameView = new GraphicsPresenter(_iGameView, _game);
+    }
 
-        public GraphicMastermind()
-        {
-            _game = new Game();
-            _iGameView = new WinFormView();
-            _gameView = new GraphicsPresenter(_iGameView, _game);
-        }
-
-        internal Form Execute()
-        {
-            return (Form)_iGameView;
-        }
+    internal Form Execute()
+    {
+        return (Form)_iGameView;
     }
 }
