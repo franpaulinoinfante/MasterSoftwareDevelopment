@@ -215,7 +215,7 @@ Do you want to continue? (y/n):
 
 ### Arquitectura
 
-![image](https://user-images.githubusercontent.com/46433173/197648959-f2575128-41bb-48fb-9957-ae1b00563eda.png)
+![image](https://user-images.githubusercontent.com/46433173/198123598-2e1373aa-10c9-4b4c-8bcb-542e1e607e41.png)
 
 ### Namespace Mastermind.ConsoleApp
 
