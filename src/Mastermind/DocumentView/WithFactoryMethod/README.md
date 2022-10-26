@@ -215,18 +215,25 @@ Do you want to continue? (y/n):
 
 ### Arquitectura
 
+![image](https://user-images.githubusercontent.com/46433173/198138597-a8e484c2-72dc-4865-8fe2-7f111531c8c8.png)
+
 
 ### Namespace Mastermind
 
+![image](https://user-images.githubusercontent.com/46433173/198138761-04290be0-ebf5-4cbf-b227-446f14cad819.png)
 
 ### Namespace Mastermind.ConsoleApp
 
+![image](https://user-images.githubusercontent.com/46433173/198138675-b4260164-8a26-4724-bb49-28e6d50902cc.png)
 
 ### Namespace Mastermind.GameViews
 
- 
+ ![image](https://user-images.githubusercontent.com/46433173/198138727-b3c57cbd-252d-45de-a259-03eaf28c8698.png)
+
 ### Namespace Mastermind.Models
 
+![image](https://user-images.githubusercontent.com/46433173/198138534-f09ab6de-40fd-4a33-8fbb-4070bf472f3d.png)
 
 ### Namespace Mastermind.Types
 
+![image](https://user-images.githubusercontent.com/46433173/198138901-589e7167-7255-4cb7-8e49-a6148cff5614.png)
