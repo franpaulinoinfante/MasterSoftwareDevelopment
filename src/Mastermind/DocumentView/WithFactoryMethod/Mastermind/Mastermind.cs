@@ -3,12 +3,12 @@ using Mastermind.Models;
 
 namespace Mastermind;
 
-public abstract class Main
+public abstract class Mastermind
 {
     private readonly Game _game;
     private readonly IGameView _gameView;
 
-    public Main()
+    public Mastermind()
     {
         _game = new Game();
         _gameView = CreateGameView(_game);
@@ -16,7 +16,7 @@ public abstract class Main
 
     protected abstract IGameView CreateGameView(Game game);
 
-    public void Play()
+    protected void Play()
     {
         do
         {

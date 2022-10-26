@@ -3,7 +3,7 @@ using Mastermind.Models;
 
 namespace Mastermind.ConsoleApp;
 
-internal class ConsoleMastermind : Main
+internal class ConsoleMastermind : Mastermind
 {
     public ConsoleMastermind()
     {

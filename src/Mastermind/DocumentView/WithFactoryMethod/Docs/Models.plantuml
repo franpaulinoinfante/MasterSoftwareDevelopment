@@ -1,0 +1,69 @@
+@startuml Models
+title Models
+namespace Models{
+    class Game{
+        -attempts : int
+        -resultCount : int
+        -{static}Initial = 0
+        -{static}MaxAttempts = 10
+        +Game()
+        +NewGame
+        +AddProposedCombination(Color[])
+        +GetErrorToProposedCombination(Color[]) : Error
+        +CheckResult()
+        +GetAttempts() : int
+        +GetProposedCombination(position) : Color[]
+        +GetBlacks(position) : int
+        +GetWhites(position) : int
+        +IsFinished() : bool
+        +IsWinner() : bool
+        +IsLooser() : bool
+    }
+    Game *--> "1" SecrectCombination
+    Game o--> "0..10" ProposedCombination
+    Game o--> "0..10" Result
+    Game ..> Types.Color
+    Game ..> Types.Error
+
+    abstract Combination{
+        #colors : Color[]
+        #index : int
+        ~{static} Width = 4
+        +Combination()
+        +Combination(Color[])
+    }
+    Combination <|-- SecrectCombination
+    Combination <|-- ProposedCombination
+    Combination *--> Types.Color
+
+    class SecrectCombination{
+        +SecrectCombination() : base()
+        ~Generate()
+        -Constain(Color) : bool
+        ~CheckResult(ProposeCombination) : Result
+        -Constain(Color, position) : bool
+    }
+    SecrectCombination ..> ProposedCombination
+    SecrectCombination ..> Result
+
+    class ProposedCombination{
+        +ProposedCombination(Color[]) : base(Color[])
+        ~GetColorCodes() : Color[]
+        ~GetErrorToProposedCombination(Color[]) : Error
+        -GetColorCodesNull() : ColorCode[]
+    }
+    ProposedCombination ..> Types.Error
+
+    class Result{
+        -blacks : int
+        -whites : int
+        +Result(blacks, whites)
+        ~GetBlacks() : int
+        ~GetWhites() : int
+        ~isWinner() : bool
+    }
+
+    enum Types.Color{}
+    enum Types.Error{}
+}
+@enduml

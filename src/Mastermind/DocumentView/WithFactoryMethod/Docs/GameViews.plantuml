@@ -1,0 +1,33 @@
+@startuml GameViews
+title GameViews
+namespace GameViews{    
+    abstract WithGameView{
+        +WithGameView(Game)
+    }
+    WithGameView *--> Models.Game
+
+    interface IGameView{
+        +Start()
+        +Play()
+        +Resume() : bool
+    }
+
+    enum MessageCode{
+        -{static}Messages : string[]
+        +Title,
+        +SecrectCombination,
+        +ProposedCombination,
+        +Attempts,
+        +Result,
+        +Winner,
+        +Looser,
+        +Resume
+        +GetString(MessageCode)
+    }
+
+    abstract ErrorView{
+        #{static} Errors : string[]
+        +{abstract}WriteLine(ErrorCode)
+    }
+    ErrorView --> Types.ErrorCode
+}
