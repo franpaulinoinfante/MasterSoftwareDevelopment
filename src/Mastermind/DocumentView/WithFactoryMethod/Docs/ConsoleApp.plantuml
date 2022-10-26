@@ -1,0 +1,116 @@
+@startuml ConsoleApp
+title ConsoleApp Design
+namespace ConsoleApp{    
+    class Program{
+        ~{static}Main(string[])
+    }
+    Program *--> ConsoleMastermind
+
+    class ConsoleMastermind{
+        +ConsoleMastermind()
+        -Execute()
+        #Play()
+        #CreateGameView(Game) : GameView
+    }
+    ConsoleMastermind -up-|> Mastermind.Mastermind
+    ConsoleMastermind *--> ConsoleView
+
+    class ConsoleView{
+        +ConsoleView(Game)
+        ~Start()
+        ~Play()
+        ~Resume() : bool
+    }
+    ConsoleView -up-|> GameViews.GameView
+    ConsoleView *--> StartView
+    ConsoleView *--> PlayView
+    ConsoleView *--> ResumeView
+
+    class StartView{
+        +StartView(Game) : base(Game)
+        ~Interact()
+    }
+    StartView -up-|> GameViews.WithGameView
+    StartView --> Models.Game
+    StartView ..> MessageView
+    StartView ..> GameViews.MessageCode
+    StartView ..> BoardView
+
+    class PlayView{
+        +PlayView(Game) : base(Game)
+        ~Interact()
+    }
+    PlayView -up-|> GameViews.WithGameView
+    PlayView --> Models.Game
+    PlayView ..> Types.ColorCode
+    PlayView ..> MessageView
+    PlayView ..> GameViews.MessageCode
+    PlayView ..> BoardView
+
+    class ResumeView{
+        +ResumeView(Game) : base(Game)
+        -Interact() : bool
+    }
+    ResumeView -up-|> GameViews.WithGameView
+    ResumeView --> Models.Game
+    ResumeView ..> YesNotDialog
+
+    class BoardView{
+        +BoardView()
+        ~Wtite(Game)
+    }
+    BoardView ..> Models.Game
+    BoardView ..> ConsoleIO
+    BoardView ..> ProposedCombinationView
+    BoardView ..> ResultView
+
+    class ProposedCombinationView{
+        +ProposedCombinationView(Game) : base(Game)
+        ~Read() : List<ColorCode>
+        -GetColorCodes(characters) : List<ColorCode>
+        -GetColor(character) : ColorCode
+    }
+    ProposedCombinationView -up-|> GameViews.WithGameView
+    ProposedCombinationView --> Models.Game
+    ProposedCombinationView ..> Types.ColorCode
+    ProposedCombinationView ..> ColorCodeView
+    ProposedCombinationView ..> Types.ErrorCode
+    ProposedCombinationView ..> ErrorView
+    ProposedCombinationView ..> ColorView
+    ProposedCombinationView ..> ConsoleIO
+
+    class ResultView{
+        ~WriteLine(Game, position)
+    }
+    ResultView ..> MessageView
+    ResultView ..> GameViews.MessageCode
+
+    class MessageView{
+        ~WriteLine(MessageCode)
+        ~WriteLine(MessageCode, attempts)
+        ~WriteLine(MessageCode, blacks, whites)
+    }
+    MessageView ..> GameViews.MessageCode
+    MessageView ..> ConsoleIO
+
+    class ErrorView{
+        #WtiteLine(ErrorCode)
+        ~GetInitials() : string
+    }
+    ErrorView --> GameViews.ErrorView
+    ErrorView ..> Types.ColorCode
+    ErrorView ..> ColorCodeView
+
+    class ColorCodeView{
+        -{static} Colorcode : char[]
+        ~GetInitial(ColorCode) : char
+        ~GetInitials() : string
+        ~Write(colorCode) 
+    }
+    ColorCodeView --> Types.ColorCode
+    ColorCodeView ..> ConsoleIO
+
+
+}
+
+@enduml

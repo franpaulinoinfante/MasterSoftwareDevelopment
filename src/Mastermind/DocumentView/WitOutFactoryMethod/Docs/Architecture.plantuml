@@ -1,36 +1,32 @@
 @startuml ArchitectureDocumentViewBasic
 title Architecture Document/View With Out Factory Method
 
-namespace Mastermind #GreenYellow { }
-namespace ConsoleApp #LightBlue { }
-namespace GraphicsApp #SlateBlue {}
-namespace Views #CadetBlue {}
-namespace Models #RoyalBlue { }
-namespace Types #Yellow { }
-namespace Net.IO #DDDDDD { }
-namespace Net.Utils #DDDDDD { }
-namespace Net.Graphics #DDDDDD{}
+namespace Mastermind #DDDDDD {
+    namespace Mastermind.ConsoleApp #LightBlue { }
+    namespace Mastermind.GraphicsApp #SlateBlue {}
+    namespace Mastermind.Views #CadetBlue {}
+    namespace Mastermind.Models #RoyalBlue { }
+    namespace Mastermind.Types #Yellow { }
+    namespace Net.IO #DDDDDD { }
+    namespace Net.Utils #DDDDDD { }
+    namespace Net.Graphics #DDDDDD{}
 
-Mastermind .down.> Models
-Mastermind .down.> Views
-Mastermind .down.> ConsoleApp
-Mastermind .down.> GraphicsApp
 
-ConsoleApp .down.> Models
-ConsoleApp .down.> Views
-ConsoleApp .down.> Types
-ConsoleApp ..> Net.IO
+    Mastermind.ConsoleApp .down.> Mastermind.Models
+    Mastermind.ConsoleApp .down.> Mastermind.Views
+    Mastermind.ConsoleApp .down.> Mastermind.Types
+    Mastermind.ConsoleApp ..> Net.IO
 
-GraphicsApp .down.> Models
-GraphicsApp .down.> Views
-GraphicsApp .down.> Types
-GraphicsApp .down.> Net.Graphics
+    Mastermind.GraphicsApp .down.> Mastermind.Models
+    Mastermind.GraphicsApp .down.> Mastermind.Views
+    Mastermind.GraphicsApp .down.> Mastermind.Types
+    Mastermind.GraphicsApp .down.> Net.Graphics
 
-Views .down.> Models
+    Mastermind.Views .down.> Mastermind.Models
 
-Models .down.> Types
-Models ..> Net.Utils
+    Mastermind.Models .down.> Mastermind.Types
+    Mastermind.Models ..> Net.Utils
 
-Types ..> Net.Utils
-
+    Mastermind.Types ..> Net.Utils
+ }
 @enduml

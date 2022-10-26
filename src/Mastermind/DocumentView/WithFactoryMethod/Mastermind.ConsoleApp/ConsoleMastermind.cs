@@ -7,6 +7,11 @@ internal class ConsoleMastermind : Main
 {
     public ConsoleMastermind()
     {
+        Execute();
+    }
+
+    private void Execute()
+    {
         Play();
     }
 
