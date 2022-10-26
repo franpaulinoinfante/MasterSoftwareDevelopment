@@ -1,1 +1,1 @@
-# - - - - - Mastermind - Document\View Basic - Practice - - - - -
+# - - - - - Mastermind - Document\View With Factory Method - Practice - - - - -
