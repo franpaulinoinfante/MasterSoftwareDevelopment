@@ -213,6 +213,9 @@ Do you want to continue? (y/n):
 ### Arquitectura
 
 
+### Namespace Mastermind
+
+
 ### Namespace Mastermind.ConsoleApp
 
 
