@@ -9,12 +9,12 @@
     - 2.4 [Prototipo de Interfaz Console Views](#Prototipo-de-Interfaz-Console-Views)
 3. [Vista Lógica-Diseño](#Vista-Lógica-Diseño)
     - 3.1 [Arquitectura](#Arquitectura)
-    - 3.2 [Mastermind](#Namespace-Mastermind)
-    - 3.3 [Mastermind.ConsoleApp](#Namespace-Mastermind.ConsoleApp)
-    - 3.4 [Mastermind.GameViews](#Namespace-Mastermind.GameViews)
-    - 3.5 [Mastermind.Controllers](#Namespace-Mastermind.Controllers)
-    - 3.4 [Mastermind.Models](#Namespace-Mastermind.Models)
-    - 3.5 [Mastermind.Types](#Namespace-Mastermind.Types)
+    - 3.2 [Mastermind](#Mastermind)
+    - 3.3 [Mastermind.ConsoleApp](#Mastermind.ConsoleApp)
+    - 3.4 [Mastermind.GameViews](#Mastermind.GameViews)
+    - 3.5 [Mastermind.Controllers](#Mastermind.Controllers)
+    - 3.6 [Mastermind.Models](#Mastermind.Models)
+    - 3.7 [Mastermind.Types](#Mastermind.Types)
 
 ### Requisitos
 
@@ -214,25 +214,25 @@ Do you want to continue? (y/n):
 
 
 
-### Namespace Mastermind
+### Mastermind
 
 
 
-### Namespace Mastermind.ConsoleApp
+### Mastermind.ConsoleApp
 
 
 
-### Namespace Mastermind.GameViews
+### Mastermind.GameViews
 
 
 
-### Namespace-Mastermind.Controllers
+### Mastermind.Controllers
 
 
 
-### Namespace Mastermind.Models
+### Mastermind.Models
 
 
 
-### Namespace Mastermind.Types
+### Mastermind.Types
 
