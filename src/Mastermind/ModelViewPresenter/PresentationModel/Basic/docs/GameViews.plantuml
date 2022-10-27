@@ -1,0 +1,35 @@
+@startuml GameViews
+title Game Views
+namespace GameViews{
+    abstract GameView{
+        +GameView(StartController, PlayController, ResumeController)
+        +{abstract} Start();
+        ++{abstract} Play();
+        ++{abstract} Resume();
+    }
+    GameView --> Controllers.StartController
+    GameView --> Controllers.PlayController
+    GameView --> Controllers.ResumeController
+
+    enum MessageCode{
+        -{static}Messages : string[]
+        +Title
+        +SecrectCombination
+        +ProposedCombination
+        +Attempts
+        +Result
+        +Winner
+        +Looser
+        +Resume
+        +GetMessage(MessageCode)
+    }
+
+    abstract ErrorView{
+        #{static}Errors : string[]
+        #{abstract}WriteLine(ErrorCode)
+    }
+    ErrorView --> Types.ErrorCode
+
+    enum Types.ErrorCode{}
+}
+@enduml

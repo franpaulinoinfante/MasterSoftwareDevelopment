@@ -1,0 +1,59 @@
+@startuml Models
+title Models
+namespace Models{
+    class Game{
+        -attepmts : int
+        -resultCount : int
+        -{static}MaxAttempts : int
+        +Game()
+        +NewGame()
+        +GetAttempts() : int
+        +AddProposeCombination(List<ColorCode>)
+        +GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
+        +CheckResults()
+        +GetProposedCombination(position) : List<ColorCode>
+        +GetBlacks(position) : int
+        +GetWhites(position) : int
+        +IsFinished(): bool
+        +IsWinner() : bool
+        +IsLooser() : bool
+    }
+    Game *--> SecrectCombination
+    Game o--> "0..10" ProposedCombination
+    Game o--> "0..10" Result
+    Game ..> Types.ColorCode
+    Game ..> Types.ErrorCode
+
+    abstract Combination{
+        #colorCodes : List<ColorCode>
+        #Combination(List<ColorCode>)
+    }
+    Combination <|-- SecrectCombination
+    Combination <|-- ProposedCombination
+
+    class SecrectCombination{
+        ~SecrectCombination()
+        ~Generate()
+        ~CheckResults(ProposedCombination) : Result
+    }
+    SecrectCombination ..> Result
+    SecrectCombination ..> ProposedCombination
+    SecrectCombination ..> Types.ColorCode
+
+    class ProposedCombination{
+        ~ProposedCombination(List<ColorCode>) : base(List<ColorCode>)
+        ~GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
+    }
+    ProposedCombination ..> Result
+    ProposedCombination ..> Types.ColorCode
+    ProposedCombination ..> Types.ErrorCode
+
+    class Result{
+        -blakcs : int
+        -whites : int
+        ~{static} Width : int
+        ~Result(blacks, whites)
+        ~IsWinner() : bool
+    }
+
+}

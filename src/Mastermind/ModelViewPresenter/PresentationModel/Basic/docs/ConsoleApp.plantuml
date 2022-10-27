@@ -1,0 +1,116 @@
+@startuml ConsoleApp
+title ConsoleApp
+namespace ConsoleApp{    
+    class Program{
+        +{static} Main(string[])
+    }
+    Program ..> ConsoleMastermind
+
+    class ConsoleMastermind{
+        ~ConsoleMastermind()
+        -Start()
+        #CreateGameView()
+    }
+    ConsoleMastermind -up-|> Mastermind.Mastermind
+    ConsoleMastermind ..> ConsoleView
+
+    abstract Mastermind.Mastermind{        
+    }
+    Mastermind.Mastermind *--> Models.Game
+    Mastermind.Mastermind *--> Controllers.StartController
+    Mastermind.Mastermind *--> Controllers.PlayController
+    Mastermind.Mastermind *--> Controllers.ResumeControle
+    Mastermind.Mastermind *--> GameViews.GameView
+
+    class ConsoleView{
+        ~ConsoleView(StartController, PlayController, ResumeControle)
+        +Start()
+        +Play()
+        +Resume()
+    }
+    ConsoleView -up-|> GameViews.GameView
+    ConsoleView ..> Controllers.StartController
+    ConsoleView ..> Controllers.PlayController
+    ConsoleView ..> Controllers.ResumeControle
+    ConsoleView *--> StartView
+    ConsoleView *--> PlayView
+    ConsoleView *--> ResumeView
+
+    class StartView{
+        +StartView(StartController)
+        ~Interact()
+        -WriteTitle()
+        -WriteBoard()
+    }
+    StartView --> Controllers.StartController
+    StartView ..> MessageView
+    StartView ..> BoardView
+
+    class MessageView{
+        ~Write(Message)
+    }
+    MessageView --> GViews.Message
+    MessageView ..> ConsoleIO
+
+    class BoardView{
+        +BoardView()
+        -Write(Controller)
+        -WriteLineSecrectCombination()
+        -WriteLineAttepmts()
+        -WriteProposedCombination(atttemptNumber)
+        -WriteResults(resultNumber, blacks, whites)        
+    }
+    BoardView ..> Controllers.Controller
+    BoardView ..> ProposedCombinationView
+    BoardView ..> MessageView
+    BoardView ..> GViews.Message
+    BoardView ..> ConsoleIO
+
+    class ProposedCombinationView{
+        ~Read(PlayController) : List<Color>
+        ~GetErrorCodeToProposedCombination(List<Color>) : ErrorCode
+        ~Write(List<Color>)
+    }
+    ProposedCombinationView ..> Controllers.PlayController
+    ProposedCombinationView ..> Types.Color
+    ProposedCombinationView ..> MessageView
+    ProposedCombinationView ..> GViews.Message
+
+    class PlayView{
+        +PlayView(PlayController)
+        ~Interact()
+        -ReadProposedCombination() : List<Color>
+        -CheckResults()
+        -WriteBoard()
+    }
+    PlayView --> Controllers.PlayController
+    PlayView ..> ProposedCombinationView
+    PlayView ..> BoardView
+
+    class ResumeView{
+        +ResumeView(ResumeController)
+        ~Interact()
+        -ReadAnswer() : bool
+        -NewGame()
+    }
+    ResumeView --> Controllers.ResumeControle
+    ResumeView ..> MessageView
+    ResumeView ..> GViews.Message
+    ResumeView ..> YesNotDialog
+
+    class YesNotDialog {
+
+    }
+    YesNotDialog ..> ConsoleIO
+
+    
+
+    abstract Mastermind.Mastermind{}
+
+    abstract GameViews.GameView{}
+
+    enum GViews.Message{}
+    
+    enum Types.Color{}
+}
+@enduml

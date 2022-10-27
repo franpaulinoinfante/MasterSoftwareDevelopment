@@ -20,7 +20,6 @@ ConsoleApp .down.> GameViews
 ConsoleApp .down.> Types
 ConsoleApp ..> Net.IO
 
-GameViews .down.> Models
 GameViews .down.> Types
 GameViews .down.> Controllers
 

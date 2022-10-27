@@ -1,0 +1,33 @@
+@startuml Controllers
+title Controllers
+namespace Controllers{    
+    abstract Controller{
+    }
+    Controller --> Models.Game    
+    Controller <|-- StartController
+    Controller <|-- PlayController
+    Controller <|-- ResumeController
+
+    class StartController{
+        +StartController(Game) : base(Game)
+    }
+
+    class PlayController{
+        +PlayController(Game) : base(Game)
+        +AddProposedCombination(List<Color>)
+        +GetErrorCodeToProposedCombination(List<Color>) : ErrorCode
+        +CheckResult()
+        +GetAttempts() : int
+        +GetProposedCombination(proposedNumber) : List<Color>
+        +GetBlakcs(resultNumber) : int
+        +GetWhites(resultNumber) : int
+        +IsFinished() : bool
+        +IsWinner() : bool
+    }
+
+    class ResumeController{
+        +ResumeController(Game) : base(game)
+        +NewGame()
+    }
+}
+@enduml
