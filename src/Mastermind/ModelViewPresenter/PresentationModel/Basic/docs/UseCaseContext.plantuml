@@ -1,0 +1,21 @@
+@startuml UseCaseContext
+title Cuse Cases caption 
+
+state INITIAL
+state IN_GAME
+state OUT_GAME
+state if1 <<choice>>
+state if2 <<choice>>
+
+
+[*]--> INITIAL
+INITIAL --> IN_GAME : Start
+IN_GAME --> if1 : Play
+    if1 --> IN_GAME 
+if1 --> OUT_GAME : [Finished]
+    OUT_GAME --> if2 
+    if2 --> INITIAL : Resume
+if2 --> [*]
+
+@enduml
+

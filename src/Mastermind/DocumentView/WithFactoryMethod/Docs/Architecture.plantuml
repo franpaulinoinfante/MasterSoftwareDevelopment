@@ -34,7 +34,3 @@ Models ..> Net.Utils
 Types ..> Net.Utils
 
 @enduml
-
-
-Mastermind .down.> ConsoleApp
-Mastermind .down.> GraphicsApp

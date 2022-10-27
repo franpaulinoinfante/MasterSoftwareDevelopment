@@ -1,0 +1,35 @@
+@startuml ModelViewPresentationBasic
+title Model View Presentation-Presentation Models Architecture - Basic 
+
+namespace Mastermind #GreenYellow { }
+namespace ConsoleApp #LightBlue { }
+namespace GameViews #CadetBlue {}
+namespace Controllers #DarkSlateBlue {}
+namespace Models #RoyalBlue { }
+namespace Types #Yellow { }
+namespace Net.IO #DDDDDD { }
+namespace Net.Utils #DDDDDD { }
+
+Mastermind .down.> Models
+Mastermind .down.> GameViews
+Mastermind .down.> Controllers
+
+ConsoleApp .down.> Mastermind
+ConsoleApp .down.> Controllers
+ConsoleApp .down.> GameViews
+ConsoleApp .down.> Types
+ConsoleApp ..> Net.IO
+
+GameViews .down.> Models
+GameViews .down.> Types
+GameViews .down.> Controllers
+
+Controllers .down.> Models
+Controllers .down.> Types
+
+Models .down.> Types
+Models ..> Net.Utils
+
+Types ..> Net.Utils
+
+@enduml
