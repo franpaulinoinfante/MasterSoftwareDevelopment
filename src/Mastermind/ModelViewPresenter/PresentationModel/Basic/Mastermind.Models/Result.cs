@@ -4,12 +4,11 @@ internal class Result
 {
     private int _blacks;
     private int _whites;
+    public static int Width = 4;
 
-    private const int WinnerResult = 4;
-
-    public Result(int blacks, int whites)
+    public Result(int blakcs, int whites)
     {
-        _blacks = blacks;
+        _blacks = blakcs;
         _whites = whites;
     }
 
@@ -17,8 +16,5 @@ internal class Result
 
     public int Whites => _whites;
 
-    internal bool IsWinner()
-    {
-        return _blacks == WinnerResult;
-    }
+    public bool IsWinner => Blacks == Width;
 }

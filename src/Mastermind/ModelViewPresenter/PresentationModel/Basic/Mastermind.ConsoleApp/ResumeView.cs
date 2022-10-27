@@ -1,13 +1,14 @@
 ﻿using Mastermind.ConsoleApp.ConsoleIOs;
+using Mastermind.Controllers;
 using Mastermind.GameViews;
-using Mastermind.Models;
 
-namespace Mastermind.ConsoleApp.UseCaseViews;
-
-internal class ResumeView : WithGameView
+internal class ResumeView
 {
-    public ResumeView(Game game): base(game)
+    private ResumeController _resumeController;
+
+    public ResumeView(ResumeController resumeController)
     {
+        _resumeController = resumeController;
     }
 
     internal bool Interact()
@@ -16,7 +17,7 @@ internal class ResumeView : WithGameView
         yesNoDialog.Read(MessageCode.Resume.GetMessage());
         if (yesNoDialog.IsAffirmative())
         {
-            _game.NewGame();
+            _resumeController.NewGame();
         }
         return yesNoDialog.IsAffirmative();
     }

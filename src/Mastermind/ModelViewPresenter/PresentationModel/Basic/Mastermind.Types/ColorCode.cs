@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mastermind.Types;
+﻿namespace Mastermind.Types;
 
 public enum ColorCode
 {
@@ -19,8 +13,15 @@ public enum ColorCode
 
 public static class ColorExtension
 {
+    private const int Initial = 0;
+
     public static bool IsNull(this ColorCode color)
     {
         return color == ColorCode.Null;
+    }
+
+    public static char GetInitial(this ColorCode color)
+    {
+        return color.ToString().ToLower()[Initial];
     }
 }

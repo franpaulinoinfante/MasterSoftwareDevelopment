@@ -91,15 +91,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.ConsoleApp", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationModel", "PresentationModel", "{9896ED1B-E4B6-4557-8E58-954B192357C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind\Mastermind.csproj", "{BBB9CADA-F27C-457B-9424-743332D69885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind\Mastermind.csproj", "{BBB9CADA-F27C-457B-9424-743332D69885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.Models", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.Models\Mastermind.Models.csproj", "{8037FFEB-A6CC-4C58-ABD4-010C43570A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.Models", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.Models\Mastermind.Models.csproj", "{8037FFEB-A6CC-4C58-ABD4-010C43570A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.Types", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.Types\Mastermind.Types.csproj", "{C1ECD019-682E-4525-8396-8B5411F44D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.Types", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.Types\Mastermind.Types.csproj", "{C1ECD019-682E-4525-8396-8B5411F44D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.GameViews", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.GameViews\Mastermind.GameViews.csproj", "{1197541C-A589-45E3-854D-BFD942AEB6FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.GameViews", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.GameViews\Mastermind.GameViews.csproj", "{1197541C-A589-45E3-854D-BFD942AEB6FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.ConsoleApp", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.ConsoleApp\Mastermind.ConsoleApp.csproj", "{195CB9A1-2BD4-4980-B14C-0E6E128C0689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.ConsoleApp", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.ConsoleApp\Mastermind.ConsoleApp.csproj", "{195CB9A1-2BD4-4980-B14C-0E6E128C0689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.Controllers", "src\Mastermind\ModelViewPresenter\PresentationModel\Basic\Mastermind.Controllers\Mastermind.Controllers.csproj", "{2A08C87F-1AC5-4429-A421-008B899ABD97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,10 @@ Global
 		{195CB9A1-2BD4-4980-B14C-0E6E128C0689}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{195CB9A1-2BD4-4980-B14C-0E6E128C0689}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{195CB9A1-2BD4-4980-B14C-0E6E128C0689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A08C87F-1AC5-4429-A421-008B899ABD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A08C87F-1AC5-4429-A421-008B899ABD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A08C87F-1AC5-4429-A421-008B899ABD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A08C87F-1AC5-4429-A421-008B899ABD97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -284,6 +290,7 @@ Global
 		{C1ECD019-682E-4525-8396-8B5411F44D5B} = {9896ED1B-E4B6-4557-8E58-954B192357C0}
 		{1197541C-A589-45E3-854D-BFD942AEB6FD} = {9896ED1B-E4B6-4557-8E58-954B192357C0}
 		{195CB9A1-2BD4-4980-B14C-0E6E128C0689} = {9896ED1B-E4B6-4557-8E58-954B192357C0}
+		{2A08C87F-1AC5-4429-A421-008B899ABD97} = {9896ED1B-E4B6-4557-8E58-954B192357C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AE9947C-D1D2-4C33-B59E-B63A1C009BCE}

@@ -6,7 +6,7 @@ public enum MessageCode
     SecrectCombination,
     ProposedCombination,
     Attempts,
-    Result,
+    Results,
     Winner,
     Looser,
     Resume

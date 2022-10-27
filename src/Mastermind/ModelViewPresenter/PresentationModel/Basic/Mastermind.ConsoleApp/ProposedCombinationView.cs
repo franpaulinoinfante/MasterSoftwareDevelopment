@@ -1,17 +1,15 @@
 ﻿using Mastermind.ConsoleApp.ConsoleIOs;
+using Mastermind.Controllers;
 using Mastermind.GameViews;
-using Mastermind.Models;
 using Mastermind.Types;
 
-namespace Mastermind.ConsoleApp.UseCaseViews.UseCaseHelpsViews;
-
-internal class ProposedCombinationView : WithGameView
+internal class ProposedCombinationView
 {
-    public ProposedCombinationView(Game game) : base(game)
+    public ProposedCombinationView()
     {
     }
 
-    internal List<ColorCode> Read()
+    internal List<ColorCode> Read(PlayController playController)
     {
         List<ColorCode> colorCodes;
         ErrorCode errorCode;
@@ -19,8 +17,8 @@ internal class ProposedCombinationView : WithGameView
         {
             string characters = ConsoleIO.GetInstance().ReadString(MessageCode.ProposedCombination.GetMessage());
             colorCodes = GetColorCodes(characters);
-            errorCode = _game.GetErrorCodeToProposedCombination(colorCodes);
-            new ErrorView().WriteLine(errorCode);
+            errorCode = playController.GetErrorCodeToProposedCombination(colorCodes);
+            new Mastermind.ConsoleApp.ErrorView().WriteLine(errorCode);
         } while (!errorCode.IsNull());
         return colorCodes;
     }
@@ -37,21 +35,20 @@ internal class ProposedCombinationView : WithGameView
 
     private ColorCode GetColorCode(char character)
     {
-        ColorCode[] allColor = Enum.GetValues<ColorCode>();
+        List<ColorCode> colorCodes = Enum.GetValues<ColorCode>().ToList();
         int i = 0;
-        while (i < allColor.Length - 1 && new ColorCodeView().GetInitital(allColor[i]) != character)
+        while ((i < colorCodes.Count - 1) && !colorCodes[i].GetInitial().Equals(character))
         {
             i++;
         }
-        return allColor[i];
+        return colorCodes[i];
     }
 
-    internal void Write(int position)
+    internal void Write(IEnumerable<ColorCode> colorCodes)
     {
-        List<ColorCode> colorCodes = _game.GetProposedCombination(position);
         foreach (ColorCode colorCode in colorCodes)
         {
-            new ColorCodeView().Write(colorCode);
+            ConsoleIO.GetInstance().Write(colorCode.GetInitial());
         }
     }
 }

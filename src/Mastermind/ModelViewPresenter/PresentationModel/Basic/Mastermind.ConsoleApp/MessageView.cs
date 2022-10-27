@@ -1,8 +1,6 @@
 ﻿using Mastermind.ConsoleApp.ConsoleIOs;
 using Mastermind.GameViews;
 
-namespace Mastermind.ConsoleApp.UseCaseViews.UseCaseHelpsViews;
-
 internal class MessageView
 {
     internal void WriteLine(MessageCode messageCode)
