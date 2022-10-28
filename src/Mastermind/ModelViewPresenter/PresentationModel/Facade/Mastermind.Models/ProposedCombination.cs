@@ -4,16 +4,16 @@ namespace Mastermind.Models;
 
 internal class ProposedCombination : Combination
 {
-    public ProposedCombination(List<ColorCode> colorCodes)
+    public ProposedCombination(IEnumerable<ColorCode> colorCodes)
     {
-        _colorCodes = colorCodes;
+        _colorCodes = colorCodes.ToList();
     }
 
-    public IReadOnlyList<ColorCode> ColorCode => _colorCodes;
+    public IEnumerable<ColorCode> Codecolors => _colorCodes;
 
     internal ErrorCode GetErrorCodeToProposedCombination()
     {
-        if (_colorCodes.Count != Result.Width)
+        if (_colorCodes.Count > Result.Width)
         {
             return ErrorCode.WrongLength;
         }

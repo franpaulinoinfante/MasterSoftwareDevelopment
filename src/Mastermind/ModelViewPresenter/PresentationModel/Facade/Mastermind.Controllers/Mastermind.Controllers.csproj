@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mastermind.GameViews\Mastermind.GameViews.csproj" />
     <ProjectReference Include="..\Mastermind.Models\Mastermind.Models.csproj" />
     <ProjectReference Include="..\Mastermind.Types\Mastermind.Types.csproj" />
   </ItemGroup>

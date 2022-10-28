@@ -5,9 +5,10 @@ namespace GameViews{
         +WithLogicView(Logic)
     }
     WithLogicView --> Controllers.Logic
+    WithLogicView <|-- GameView
 
     abstract GameView{
-        +GameView(Logic)
+        +GameView(Logic) : base(Logic)
         #{abstract}Start()
         #{abstract}Play()
         #{abstract}Resume() : bool
