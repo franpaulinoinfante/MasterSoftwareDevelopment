@@ -29,15 +29,15 @@
 
 ### Vsita de Caso de Uso Start
 
-
+![image](https://user-images.githubusercontent.com/46433173/198680136-79c7afb0-3b27-4a7f-9edf-e2d410c1f685.png)
 
 ### Vsita de Caso de Uso Play
 
-
+![image](https://user-images.githubusercontent.com/46433173/198680032-de7ee099-489d-4c9b-ad45-bc3c6a06fa02.png)
 
 ### Vsita de Caso de Uso Resume
 
-
+![image](https://user-images.githubusercontent.com/46433173/198680083-71df504f-73d1-4306-803e-8cf9f62d1306.png)
 
 ### Prototipos de Interfaz 
 
@@ -212,27 +212,28 @@ Do you want to continue? (y/n):
 
 ### Arquitectura
 
-
+![image](https://user-images.githubusercontent.com/46433173/198673153-cbdf93e6-09a5-4188-b2f5-57e5a2bb5237.png)
 
 ### Mastermind
 
-
+![image](https://user-images.githubusercontent.com/46433173/198673252-a628d3ee-2803-4744-ba9c-862ed9695848.png)
 
 ### Mastermind.ConsoleApp
 
-
+![image](https://user-images.githubusercontent.com/46433173/198678287-7cb6d4cd-9c1b-4f3c-8366-041ed91a53e3.png)
 
 ### Mastermind.GameViews
 
-
+![image](https://user-images.githubusercontent.com/46433173/198678490-5bb8c674-7957-4b7b-8b8a-885bf15d5683.png)
 
 ### Mastermind.Controllers
 
-
+![image](https://user-images.githubusercontent.com/46433173/198679309-5bd18eea-41ac-4214-b5fd-c43920384796.png)
 
 ### Mastermind.Models
 
-
+![image](https://user-images.githubusercontent.com/46433173/198679900-f0cac6aa-2993-4d6b-9c87-92a6013e2e62.png)
 
 ### Mastermind.Types
 
+![image](https://user-images.githubusercontent.com/46433173/198679947-0ee834b6-f513-4b4b-857b-c5359393a33e.png)
