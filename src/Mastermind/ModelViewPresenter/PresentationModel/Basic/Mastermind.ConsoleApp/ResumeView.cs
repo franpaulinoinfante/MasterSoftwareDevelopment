@@ -4,7 +4,7 @@ using Mastermind.GameViews;
 
 internal class ResumeView
 {
-    private ResumeController _resumeController;
+    private readonly ResumeController _resumeController;
 
     public ResumeView(ResumeController resumeController)
     {

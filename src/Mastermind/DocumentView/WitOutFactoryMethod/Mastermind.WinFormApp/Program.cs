@@ -1,5 +1,3 @@
-using Mastermind.GameViews;
-using Mastermind.Models;
 using Mastermind.WinFormApp.Views;
 
 namespace Mastermind.WinFormApp;

@@ -1,4 +1,4 @@
-﻿namespace Mastermind.WinFormApp.Presenter;
+﻿namespace Mastermind.WinFormApp.Presenters;
 
 internal class BoardPresenter
 {

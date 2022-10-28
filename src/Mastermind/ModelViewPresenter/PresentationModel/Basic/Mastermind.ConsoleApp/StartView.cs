@@ -3,7 +3,7 @@ using Mastermind.GameViews;
 
 internal class StartView
 {
-    private StartController _startController;
+    private readonly StartController _startController;
 
     public StartView(StartController startController)
     {

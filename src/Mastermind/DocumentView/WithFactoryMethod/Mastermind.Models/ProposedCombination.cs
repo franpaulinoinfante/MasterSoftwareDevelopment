@@ -4,7 +4,7 @@ namespace Mastermind.Models
 {
     internal class ProposedCombination : Combination
     {
-        public ProposedCombination(List<ColorCode> colorCodes) 
+        public ProposedCombination(List<ColorCode> colorCodes)
         {
             _colorCodes = colorCodes;
         }

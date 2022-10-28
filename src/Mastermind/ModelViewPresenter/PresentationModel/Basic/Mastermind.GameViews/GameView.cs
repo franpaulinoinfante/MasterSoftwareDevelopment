@@ -4,9 +4,9 @@ namespace Mastermind.GameViews;
 
 public abstract class GameView
 {
-    private StartController _startController;
-    private PlayController _playController;
-    private ResumeController _resumeController;
+    private readonly StartController _startController;
+    private readonly PlayController _playController;
+    private readonly ResumeController _resumeController;
 
     public GameView(StartController startController, PlayController playController, ResumeController resumeController)
     {

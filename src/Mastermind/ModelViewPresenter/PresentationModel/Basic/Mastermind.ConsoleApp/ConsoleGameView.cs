@@ -3,9 +3,9 @@ using Mastermind.GameViews;
 
 internal class ConsoleGameView : GameView
 {
-    private StartView _startView;
-    private PlayView _playView;
-    private ResumeView _resumeView;
+    private readonly StartView _startView;
+    private readonly PlayView _playView;
+    private readonly ResumeView _resumeView;
 
     public ConsoleGameView(StartController startController, PlayController playController, ResumeController resumeController) : base(startController, playController, resumeController)
     {

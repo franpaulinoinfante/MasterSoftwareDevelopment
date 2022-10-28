@@ -18,7 +18,7 @@ internal class ProposedCombination : Combination
             return ErrorCode.WrongLength;
         }
 
-        List<ColorCode> colorCodes = new List<ColorCode>();
+        List<ColorCode> allColorCodes = new List<ColorCode>();
         for (int i = 0; i < _colorCodes.Count; i++)
         {
             ColorCode colorCode = _colorCodes[i];
@@ -28,12 +28,12 @@ internal class ProposedCombination : Combination
             }
             for (int j = 0; j < i; j++)
             {
-                if (colorCodes.Contains(colorCode))
+                if (allColorCodes.Contains(colorCode))
                 {
                     return ErrorCode.Duplicated;
                 }
             }
-            colorCodes.Add(colorCode);
+            allColorCodes.Add(colorCode);
         }
         return ErrorCode.Null;
     }

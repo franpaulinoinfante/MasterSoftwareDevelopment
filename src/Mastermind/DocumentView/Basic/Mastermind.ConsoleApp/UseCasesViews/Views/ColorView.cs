@@ -10,7 +10,7 @@ internal class ColorView
         for (int i = 0; i < colors.Length; i++)
         {
             initials += colors[i].GetInitial();
-                
+
         }
         return initials;
     }

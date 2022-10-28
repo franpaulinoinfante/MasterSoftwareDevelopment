@@ -6,7 +6,7 @@ namespace Mastermind.ConsoleApp.UseCaseViews;
 
 internal class ResumeView : WithGameView
 {
-    public ResumeView(Game game): base(game)
+    public ResumeView(Game game) : base(game)
     {
     }
 

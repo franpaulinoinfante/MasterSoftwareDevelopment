@@ -4,7 +4,8 @@ using System.Diagnostics;
 namespace Mastermind.Models;
 
 internal class SecrectCombination : Combination
-{    internal void Generate()
+{
+    internal void Generate()
     {
         Random random = new Random();
         Color[] colors = Enum.GetValues<Color>();

@@ -13,7 +13,7 @@ public enum Color
 
 public static class ColorExtension
 {
-    private static int First = 0;
+    private static readonly int First = 0;
 
     public static bool IsNull(this Color color)
     {
@@ -22,6 +22,6 @@ public static class ColorExtension
 
     public static char GetInitial(this Color color)
     {
-        return color.ToString().ToLower()[First]; 
+        return color.ToString().ToLower()[First];
     }
 }

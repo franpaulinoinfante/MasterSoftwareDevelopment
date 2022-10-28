@@ -2,8 +2,8 @@
 
 internal class Result
 {
-    private int _blacks;
-    private int _whites;
+    private readonly int _blacks;
+    private readonly int _whites;
 
     private const int WinnerResult = 4;
 

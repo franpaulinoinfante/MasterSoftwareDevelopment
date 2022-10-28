@@ -5,7 +5,7 @@ namespace Mastermind.Models;
 
 internal class ProposedCombination : Combination
 {
-    public ProposedCombination(){ }
+    public ProposedCombination() { }
 
     public ProposedCombination(Color[] colors)
     {
@@ -15,7 +15,7 @@ internal class ProposedCombination : Combination
     }
 
     internal Color[] Colors => _colors;
-    
+
     internal Error CheckErrorsToProposedCombination(Color[] colors)
     {
         if (colors.Length != Combination.Width)
@@ -38,7 +38,7 @@ internal class ProposedCombination : Combination
                     return Error.Duplicated;
                 }
             }
-            correctColors[i] = color;        
+            correctColors[i] = color;
         }
         return Error.Null;
     }

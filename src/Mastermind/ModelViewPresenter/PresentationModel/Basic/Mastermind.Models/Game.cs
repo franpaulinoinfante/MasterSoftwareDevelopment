@@ -4,9 +4,9 @@ namespace Mastermind.Models;
 
 public class Game
 {
-    private SecrectCombination _secrectCombination;
-    private ProposedCombination[] _proposedCombinations;
-    private Result[] _result;
+    private readonly SecrectCombination _secrectCombination;
+    private readonly ProposedCombination[] _proposedCombinations;
+    private readonly Result[] _result;
 
     private int _attempts;
     private int _resultCount;

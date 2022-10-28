@@ -5,7 +5,7 @@ using Mastermind.Types;
 
 internal class PlayView
 {
-    private PlayController _playController;
+    private readonly PlayController _playController;
 
     public PlayView(PlayController playController)
     {

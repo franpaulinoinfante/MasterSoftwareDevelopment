@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Mastermind.WinFormApp.Views;
+﻿namespace Mastermind.WinFormApp.Views;
 
 public partial class WinFormView : Form, IGraphic
 {
-    private string _proposedCombination;
-    private string _title;
-    private string _secrectCombination;
+    private readonly string _proposedCombination;
+    private readonly string _title;
+    private readonly string _secrectCombination;
 
     public WinFormView()
     {

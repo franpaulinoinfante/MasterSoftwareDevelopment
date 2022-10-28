@@ -7,7 +7,7 @@ namespace Mastermind.WinFormApp.Presenters;
 internal class GraphicsPresenter : GameView
 {
     private readonly IGraphic _graphic;
-    private BindingSource _proposedCombinationSource;
+    private readonly BindingSource _proposedCombinationSource;
 
     public GraphicsPresenter(IGraphic graphic, Game game) : base(game)
     {

@@ -1,5 +1,4 @@
-﻿using Mastermind.ConsoleApp.ConsoleIOs;
-using Mastermind.GameViews;
+﻿using Mastermind.GameViews;
 using Mastermind.Models;
 
 namespace Mastermind.ConsoleApp.UseCaseViews.UseCaseHelpsViews;

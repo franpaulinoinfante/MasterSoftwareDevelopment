@@ -2,8 +2,8 @@
 
 internal class Result
 {
-    private int _blacks;
-    private int _whites;
+    private readonly int _blacks;
+    private readonly int _whites;
     public static int Width = 4;
 
     public Result(int blakcs, int whites)
@@ -16,5 +16,5 @@ internal class Result
 
     public int Whites => _whites;
 
-    public bool IsWinner => Blacks == Width;
+    public bool IsWinner => Blacks == Result.Width;
 }

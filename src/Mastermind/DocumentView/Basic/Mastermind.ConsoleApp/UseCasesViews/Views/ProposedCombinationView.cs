@@ -8,7 +8,7 @@ internal class ProposedCombinationView
     internal Color[] Read(Game game)
     {
         Color[] colors;
-        Error error;        
+        Error error;
         do
         {
             string characters = ConsoleIO.GetInstance().ReadString(Message.ProposedCombination.GetString()).ToLower();

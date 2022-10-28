@@ -1,10 +1,5 @@
 ﻿using Mastermind.Models;
 using Mastermind.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mastermind.Controllers;
 
@@ -12,10 +7,10 @@ public abstract class Controller
 {
     protected internal Game _game;
 
-	public Controller(Game game)
-	{
-		_game = game;
-	}
+    public Controller(Game game)
+    {
+        _game = game;
+    }
 
     public int Attempts => _game.Attempts;
 
