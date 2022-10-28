@@ -2,23 +2,23 @@
 title Models
 namespace Models{
     class Game{
-        -attepmts : int
+        -attempts : int
         -resultCount : int
-        -{static}MaxAttempts : int
+        -{static} MaxAttempts = 10
         +Game()
         +NewGame()
         +GetAttempts() : int
-        +AddProposeCombination(List<ColorCode>)
+        +AddProposedCombination(List<ColorCode>)
         +GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
-        +CheckResults()
+        +CheckResult()
         +GetProposedCombination(position) : List<ColorCode>
         +GetBlacks(position) : int
         +GetWhites(position) : int
-        +IsFinished(): bool
+        +IsFinished() : bool
         +IsWinner() : bool
-        +IsLooser() : bool
+        -IsLooser() : bool
     }
-    Game *--> SecrectCombination
+    Game *--> "1" SecrectCombination
     Game o--> "0..10" ProposedCombination
     Game o--> "0..10" Result
     Game ..> Types.ColorCode
@@ -26,35 +26,34 @@ namespace Models{
 
     abstract Combination{
         #colorCodes : List<ColorCode>
-        ~Combination(List<ColorCode>)
+        ~Combination()
     }
     Combination <|-- SecrectCombination
     Combination <|-- ProposedCombination
 
     class SecrectCombination{
-        ~SecrectCombination()
         ~Generate()
-        ~CheckResults(ProposedCombination) : Result
+        ~CheckResult(ProposedCombination) : Result
     }
-    SecrectCombination ..> Result
     SecrectCombination ..> ProposedCombination
+    SecrectCombination ..> Result
     SecrectCombination ..> Types.ColorCode
 
     class ProposedCombination{
-        ~ProposedCombination(List<ColorCode>) : base(List<ColorCode>)
-        ~ColorCodes : List<ColorCode>
-        ~GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
+        ~ProposedCombination(List<ColorCode>)
+        ~GetErrorCodeToProposedCombination() : ErrorCode
     }
-    ProposedCombination ..> Result
     ProposedCombination ..> Types.ColorCode
     ProposedCombination ..> Types.ErrorCode
+    ProposedCombination ..> Result
 
     class Result{
-        -blakcs : int
-        -whites : int
-        ~{static} Width : int
+        -blacks : int
+        -Whites : int
+        ~{static}Width = 4
         ~Result(blacks, whites)
         ~IsWinner() : bool
     }
 
 }
+@enduml

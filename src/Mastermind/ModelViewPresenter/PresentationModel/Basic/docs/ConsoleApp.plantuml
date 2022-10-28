@@ -4,26 +4,21 @@ namespace ConsoleApp{
     class Program{
         +{static} Main(string[])
     }
-    Program ..> ConsoleMastermind
+    Program *--> ConsoleMastermind
 
     class ConsoleMastermind{
         ~ConsoleMastermind()
         -Start()
-        #CreateGameView()
+        #CreateGameView(StartController, PlayController, ResumeController) : GameView
     }
     ConsoleMastermind -up-|> Mastermind.Mastermind
-    ConsoleMastermind ..> ConsoleView
+    ConsoleMastermind *-right-> ConsoleView
 
     abstract Mastermind.Mastermind{        
     }
-    Mastermind.Mastermind *--> Models.Game
-    Mastermind.Mastermind *--> Controllers.StartController
-    Mastermind.Mastermind *--> Controllers.PlayController
-    Mastermind.Mastermind *--> Controllers.ResumeControle
-    Mastermind.Mastermind *--> GameViews.GameView
 
     class ConsoleView{
-        ~ConsoleView(StartController, PlayController, ResumeControle)
+        ~ConsoleView(StartController, PlayController, ResumeControle) : base
         +Start()
         +Play()
         +Resume()
@@ -39,53 +34,62 @@ namespace ConsoleApp{
     class StartView{
         +StartView(StartController)
         ~Interact()
-        -WriteTitle()
-        -WriteBoard()
     }
     StartView --> Controllers.StartController
     StartView ..> MessageView
+    StartView ..> GViews.MessageCode
     StartView ..> BoardView
 
     class MessageView{
-        ~Write(Message)
+        ~WriteLine(MessageCode)
+        ~WriteLine(MessageCode, attempts)
+        ~WriteLine(MessageCode, blacks, whites)        
     }
-    MessageView --> GViews.Message
+    MessageView --> GViews.MessageCode
     MessageView ..> ConsoleIO
 
     class BoardView{
         +BoardView()
-        -Write(Controller)
-        -WriteLineSecrectCombination()
-        -WriteLineAttepmts()
-        -WriteProposedCombination(atttemptNumber)
-        -WriteResults(resultNumber, blacks, whites)        
+        ~Write(Controller)
     }
     BoardView ..> Controllers.Controller
     BoardView ..> ProposedCombinationView
     BoardView ..> MessageView
-    BoardView ..> GViews.Message
+    BoardView ..> GViews.MessageCode
     BoardView ..> ConsoleIO
 
     class ProposedCombinationView{
-        ~Read(PlayController) : List<Color>
-        ~GetErrorCodeToProposedCombination(List<Color>) : ErrorCode
-        ~Write(List<Color>)
+        ~Read(PlayController) : List<ColorCode>
+        -GetColorCodes(characters) : List<ColorCode>
+        -GetColorCodeBy(char) : ColorCode
+        ~GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
+        ~Write(List<ColorCode>)
     }
     ProposedCombinationView ..> Controllers.PlayController
-    ProposedCombinationView ..> Types.Color
+    ProposedCombinationView ..> Types.ColorCode
+    ProposedCombinationView ..> ErrorView
+    ProposedCombinationView ..> Types.ErrorCode
     ProposedCombinationView ..> MessageView
-    ProposedCombinationView ..> GViews.Message
+    ProposedCombinationView ..> GViews.MessageCode
+    ProposedCombinationView ..> ConsoleIO
+
+    class ErrorView {
+        ~WriteLine(ErrorCode)
+    }
+    ErrorView -up-|> GameViews.ErrorView
+    ErrorView --> Types.ErrorCode
+    ErrorView ..> ConsoleIO
 
     class PlayView{
         +PlayView(PlayController)
         ~Interact()
-        -ReadProposedCombination() : List<Color>
-        -CheckResults()
-        -WriteBoard()
     }
     PlayView --> Controllers.PlayController
     PlayView ..> ProposedCombinationView
+    PlayView ..> Types.ColorCode
+    PlayView ..> GViews.MessageCode
     PlayView ..> BoardView
+    PlayView ..> ConsoleIO
 
     class ResumeView{
         +ResumeView(ResumeController)
@@ -95,7 +99,7 @@ namespace ConsoleApp{
     }
     ResumeView --> Controllers.ResumeControle
     ResumeView ..> MessageView
-    ResumeView ..> GViews.Message
+    ResumeView ..> GViews.MessageCode
     ResumeView ..> YesNotDialog
 
     class YesNotDialog {
@@ -109,8 +113,10 @@ namespace ConsoleApp{
 
     abstract GameViews.GameView{}
 
-    enum GViews.Message{}
+    enum GViews.MessageCode{}
     
-    enum Types.Color{}
+    enum Types.ColorCode{}
+
+    enum Types.ErrorCode{}
 }
 @enduml

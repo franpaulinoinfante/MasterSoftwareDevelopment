@@ -2,32 +2,42 @@
 title Controllers
 namespace Controllers{    
     abstract Controller{
+        +Controller(Game)
+        +GetAttempts() : int
+        +GetProposedCombination(proposedNumber) : List<ColorCode>
+        +GetBlakcs(resultNumber) : int
+        +GetWhites(resultNumber) : int
     }
     Controller --> Models.Game    
     Controller <|-- StartController
     Controller <|-- PlayController
     Controller <|-- ResumeController
+    Controller ..> Types.ColorCode
 
     class StartController{
         +StartController(Game) : base(Game)
     }
+    StartController --> Models.Game    
 
     class PlayController{
         +PlayController(Game) : base(Game)
-        +AddProposedCombination(List<Color>)
-        +GetErrorCodeToProposedCombination(List<Color>) : ErrorCode
+        +AddProposedCombination(List<ColorCode>)
+        +GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
         +CheckResult()
-        +GetAttempts() : int
-        +GetProposedCombination(proposedNumber) : List<Color>
-        +GetBlakcs(resultNumber) : int
-        +GetWhites(resultNumber) : int
         +IsFinished() : bool
         +IsWinner() : bool
     }
+    PlayController --> Models.Game    
+    PlayController ..> Types.ColorCode
+    PlayController ..> Types.ErrorCode
 
     class ResumeController{
         +ResumeController(Game) : base(game)
         +NewGame()
     }
+    ResumeController --> Models.Game    
+
+    enum Types.ErrorCode{}
+    enum Types.ColorCode{}
 }
 @enduml
