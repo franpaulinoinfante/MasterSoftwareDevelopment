@@ -1,4 +1,4 @@
-# - - - - - Mastermind - Model View Presentation-Presentation Models Architecture - Basic - Practice - - - - -
+# - - - - - Mastermind - Model View Presentation-Presentation Models Architecture - with out double dispatching - Practice - - - - -
 
 **índice**
 1. [Requisitos](#Requisitos)
