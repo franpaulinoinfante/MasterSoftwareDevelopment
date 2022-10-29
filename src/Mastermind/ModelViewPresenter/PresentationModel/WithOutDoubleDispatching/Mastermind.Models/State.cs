@@ -1,26 +1,25 @@
 ﻿using Mastermind.Types;
 
-namespace Mastermind.Models
+namespace Mastermind.Models;
+
+internal class State
 {
-    internal class State
+    private StateCode _stateCode;
+
+    public State()
     {
-        private StateCode _stateCode;
+        Reset();
+    }
 
-        public State()
-        {
-            Reset();
-        }
+    internal StateCode StateCode { get => _stateCode; }
 
-        internal StateCode StateCode { get => _stateCode; }
+    internal void Reset()
+    {
+        _stateCode = StateCode.Initial;
+    }
 
-        internal void Reset()
-        {
-            _stateCode = StateCode.Initial;
-        }
-
-        internal void Next()
-        {
-            _stateCode++;
-        }
+    internal void Next()
+    {
+        _stateCode++;
     }
 }

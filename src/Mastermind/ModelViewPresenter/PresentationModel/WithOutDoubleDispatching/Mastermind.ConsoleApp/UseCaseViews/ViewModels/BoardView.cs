@@ -9,9 +9,9 @@ internal class BoardView
     internal void Write(Controller controller)
     {
         ConsoleIO.GetInstance().WriteLine();
-        new MessageView().WriteLine(GameViews.MessageCode.SecrectCombination);
+        new MessageView().WriteLine(MessageCode.SecrectCombination);
         int attempts = controller.GetAttempts();
-        new MessageView().WriteLine(GameViews.MessageCode.Attempts, attempts);
+        new MessageView().WriteLine(MessageCode.Attempts, attempts);
         for (int i = 0; i < attempts; i++)
         {
             new ProposedCombinationView().Write(controller.GetProposedCombination(i));

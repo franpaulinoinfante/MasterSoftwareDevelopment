@@ -1,17 +1,17 @@
 ﻿using Mastermind.ConsoleApp;
 using Mastermind.GameViews;
 
-new ConsoleMastermind();
+new ConsoleMastermind().Execute();
 
 internal class ConsoleMastermind : Mastermind.Mastermind
 {
-    public ConsoleMastermind()
-    {
-        Play();
-    }
-
     protected override IGameView CreateGameView()
     {
         return new ConsoleView();
+    }
+
+    internal void Execute()
+    {
+        Play();
     }
 }

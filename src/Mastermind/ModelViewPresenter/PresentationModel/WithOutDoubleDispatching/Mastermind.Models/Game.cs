@@ -37,7 +37,6 @@ public class Game
     }
 
     public int Attempts => _attempts;
-
     public StateCode StateCode => _state.StateCode;
 
     public void ResetSate()

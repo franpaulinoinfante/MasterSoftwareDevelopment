@@ -13,6 +13,10 @@ public abstract class Controller
         _game = game;
         _stateCode = stateCode;
     }
+    public void NextState()
+    {
+        _game.NextState();
+    }
 
     public int GetAttempts()
     {
@@ -32,10 +36,5 @@ public abstract class Controller
     public int GetWhites(int position)
     {
         return _game.GetWhites(position);
-    }
-
-    public void NextState()
-    {
-        _game.NextState();
     }
 }
