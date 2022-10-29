@@ -212,25 +212,28 @@ Do you want to continue? (y/n):
 
 ### Arquitectura
 
-
+![image](https://user-images.githubusercontent.com/46433173/198832643-f4e81722-83d9-4987-aa64-307fc1893d42.png)
 
 ### Mastermind
 
-
+![image](https://user-images.githubusercontent.com/46433173/198833153-ed7ab72f-4db5-4710-91f3-aeec7b791816.png)
 
 ### Mastermind.ConsoleApp
 
+![image](https://user-images.githubusercontent.com/46433173/198832668-f9adc353-0687-4f9e-a230-0858b3102c9f.png)
 
 ### Mastermind.GameViews
 
-
+![image](https://user-images.githubusercontent.com/46433173/198832684-545bcd3c-b4d2-43f4-94ec-d134638e0cdd.png)
 
 ### Mastermind.Controllers
 
+![image](https://user-images.githubusercontent.com/46433173/198832895-2f011889-4f60-4625-8c86-e778fe34c850.png)
 
 ### Mastermind.Models
 
-
+![image](https://user-images.githubusercontent.com/46433173/198833014-3f936632-0450-4e6e-9d03-772390c1bcd0.png)
 
 ### Mastermind.Types
 
+![image](https://user-images.githubusercontent.com/46433173/198833058-0ec578e1-7b3d-4273-aa62-f46e28ea32ad.png)
