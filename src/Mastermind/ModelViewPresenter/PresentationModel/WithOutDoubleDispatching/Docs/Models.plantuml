@@ -1,0 +1,74 @@
+@startuml Models
+title Models
+namespace Models{
+    class Game{
+        -attempts : int
+        -resultCount : int
+        -{static} MaxAttempts = 10
+        +Game()
+        +NewGame()
+        +GetAttempts() : int
+        +GetStateCode() : StateCode
+        +ResetState()
+        +NextState()
+        +AddProposedCombination(List<ColorCode>)
+        +GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
+        +CheckResult()
+        +GetProposedCombination(position) : List<ColorCode>
+        +GetBlacks(position) : int
+        +GetWhites(position) : int
+        +IsFinished() : bool
+        +IsWinner() : bool
+        -IsLooser() : bool
+    }
+    Game *--> State
+    Game *--> "1" SecrectCombination
+    Game o--> "0..10" ProposedCombination
+    Game o--> "0..10" Result
+    Game ..> Types.ColorCode
+    Game ..> Types.ErrorCode
+
+    abstract Combination{
+        #colorCodes : List<ColorCode>
+        ~Combination()
+        ~Combination(List<ColorCode>)
+    }
+    Combination <|-- SecrectCombination
+    Combination <|-- ProposedCombination
+
+    class SecrectCombination{
+        ~Generate()
+        ~CheckResult(ProposedCombination) : Result
+    }
+    SecrectCombination ..> ProposedCombination
+    SecrectCombination ..> Result
+    SecrectCombination ..> Types.ColorCode
+
+    class ProposedCombination{
+        ~ProposedCombination(List<ColorCode>) : base(List<ColorCode>)
+        ~GetProposedCombinations() : List<ColorCode>
+        ~GetErrorCodeToProposedCombination() : ErrorCode
+    }
+    ProposedCombination ..> Types.ColorCode
+    ProposedCombination ..> Types.ErrorCode
+    ProposedCombination ..> Result
+
+    class Result{
+        -blacks : int
+        -Whites : int
+        ~{static}Width = 4
+        ~Result(blacks, whites)
+        ~GetBlacks()
+        ~GetWhites()
+        ~IsWinner() : bool
+    }
+
+    class State{
+        ~State()
+        ~GetStateCode() : StateCode
+        ~Reset()
+        ~Next()
+    }
+    State *--> Types.StateCode
+}
+@enduml

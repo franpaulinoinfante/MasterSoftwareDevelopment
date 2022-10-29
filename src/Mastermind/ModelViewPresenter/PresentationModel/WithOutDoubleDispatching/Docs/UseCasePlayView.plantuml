@@ -1,0 +1,37 @@
+@startuml UseCasePlayView
+title Use Case Play View
+
+state IN_GAME
+state OUT_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state G as " "
+state H as " "
+state if1 <<choice>>
+state if2 <<choice>>
+
+[*] --> IN_GAME
+IN_GAME --> A : Player requests Play
+A --> B : System requests  to introduce a Combination
+B --> C : Player introduce a Combination
+C --> if1
+    if1 --> D : [error!!]
+    note on link
+        Wrong charaters' length
+        Wrong Characters
+        Duplicated Color
+    endnote 
+    D --> E : System show Error Message
+    E --> [*] : System allows Play
+if1 --> F 
+F --> G : System show Results on Board
+G --> if2
+    if2 --> E
+if2 --> H : [finished]
+H --> OUT_GAME : System show Results Message
+OUT_GAME --> [*] : System allows Resume
+@enduml

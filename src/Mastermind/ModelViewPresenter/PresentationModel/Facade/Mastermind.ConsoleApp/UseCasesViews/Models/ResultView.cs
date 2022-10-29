@@ -14,7 +14,7 @@ namespace Mastermind.ConsoleApp.UseCasesViews.Models
 
         internal void WriteLine(int position)
         {
-            new MessageView(GameViews.MessageCode.Results).WriteLine(_logic.GetBlacks(position), _logic.GetWhites(position));
+            new MessageView(MessageCode.Results).WriteLine(_logic.GetBlacks(position), _logic.GetWhites(position));
         }
 
         internal void WriteLine()
