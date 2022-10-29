@@ -10,7 +10,8 @@ namespace Types{
         +Cyan,
         +Null
         +IsNull(Color) : bool
-        +GetInitialChar(Color) : char
+        +GetInitials(List<ColorCode>)
+        +GetInitialChar(ColorCode) : char
     }
 
     enum ErrorCode{

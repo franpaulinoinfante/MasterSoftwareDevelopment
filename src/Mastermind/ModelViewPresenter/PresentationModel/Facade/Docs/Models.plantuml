@@ -52,6 +52,8 @@ namespace Models{
         -Whites : int
         ~{static}Width = 4
         ~Result(blacks, whites)
+        ~GetBlacks()
+        ~GetWhites()
         ~IsWinner() : bool
     }
 

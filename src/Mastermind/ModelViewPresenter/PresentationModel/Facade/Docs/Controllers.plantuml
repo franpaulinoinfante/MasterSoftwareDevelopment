@@ -21,6 +21,7 @@ namespace Controllers{
         ~AddProposedCombination(List<ColorCode>)
         ~GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
         ~GetProposedCombination(position) : List<ColorCode>
+        ~CheckResult()
         ~GetBlacks(position) : int
         ~GetWhites(position) : int
         ~IsFinished() : bool
@@ -31,7 +32,6 @@ namespace Controllers{
 
     class ResumeController{
         ~ResumeController(Game) : base(Game)
-        ~NewGame()
     }
     ResumeController --> Models.Game
 
@@ -41,6 +41,7 @@ namespace Controllers{
         +GetAttempts() : int
         +AddProposedCombination(List<ColorCode>)
         +GetErrorCodeToProposedCombination(List<ColorCode>) : ErrorCode
+        +CheckResult()
         +GetProposedCombination(position) : List<ColorCode>
         +GetBlacks(position) : int
         +GetWhites(position) : int

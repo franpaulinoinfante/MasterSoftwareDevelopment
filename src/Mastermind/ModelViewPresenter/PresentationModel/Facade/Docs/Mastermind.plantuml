@@ -1,0 +1,13 @@
+@startuml Mastermind
+title Mastermind
+namespace Mastermind{
+    abstract Mastermind{
+        +Mastermind()
+        #{abstract}CreateGameView(Logic) : GameView
+        #Play()
+    }
+    Mastermind *--> Controllers.Logic
+    Mastermind *--> GameViews.GameView
+    Mastermind *--> Models.Game
+}
+@enduml
