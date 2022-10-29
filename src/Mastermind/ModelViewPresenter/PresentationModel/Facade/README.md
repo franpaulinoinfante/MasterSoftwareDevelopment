@@ -220,7 +220,7 @@ Do you want to continue? (y/n):
 
 ### Mastermind.ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/198832668-f9adc353-0687-4f9e-a230-0858b3102c9f.png)
+![image](https://user-images.githubusercontent.com/46433173/198836638-413597c8-c12a-4a34-ac42-f34fa59573f6.png)
 
 ### Mastermind.GameViews
 
