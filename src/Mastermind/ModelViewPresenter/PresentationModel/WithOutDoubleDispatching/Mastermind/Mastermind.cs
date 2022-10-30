@@ -5,8 +5,8 @@ namespace Mastermind;
 
 public abstract class Mastermind
 {
-    private readonly Logic _logic;
-    private readonly IGameView _gameView;
+    protected readonly Logic _logic;
+    protected readonly IGameView _gameView;
 
     public Mastermind()
     {
@@ -14,7 +14,7 @@ public abstract class Mastermind
         _gameView = CreateGameView();
     }
 
-    protected abstract IGameView CreateGameView();
+    public abstract IGameView CreateGameView();
 
     protected void Play()
     {
@@ -37,4 +37,5 @@ public abstract class Mastermind
             }
         } while (_logic.Controller != null);
     }
+
 }

@@ -5,7 +5,7 @@ new ConsoleMastermind().Execute();
 
 internal class ConsoleMastermind : Mastermind.Mastermind
 {
-    protected override IGameView CreateGameView()
+    public override IGameView CreateGameView()
     {
         return new ConsoleView();
     }
