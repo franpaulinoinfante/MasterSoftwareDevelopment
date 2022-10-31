@@ -2,15 +2,25 @@
 title Context iViews
 
 iViews *--> "0..n" User
-iViews --> "0..n" Video
+iViews ..> Video
+
+User <|-- Creator
+User <|-- Visitor
 User *--> "0..n" Video
 User ..> Comment
 User *--> Playlist
+
 Video *--> "1" Detail
 Video *--> "1" Thumbnail
 Video *--> "1" Audience
 Video o--> "0..n" Comment
+Video *--> "0..n" Tags
+Video *--> Category
+Video *--> Rating
 
 Playlist o--> "0..n" Video
+
+Audience <|-- Childish
+Audience <|-- Adult
 
 @enduml

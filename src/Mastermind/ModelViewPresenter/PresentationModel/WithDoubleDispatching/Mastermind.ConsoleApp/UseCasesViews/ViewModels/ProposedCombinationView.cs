@@ -5,10 +5,6 @@ using Mastermind.Types;
 
 internal class ProposedCombinationView
 {
-    public ProposedCombinationView()
-    {
-    }
-
     internal IEnumerable<ColorCode> Read(PlayController playController)
     {
         IEnumerable<ColorCode> colorCodes;
