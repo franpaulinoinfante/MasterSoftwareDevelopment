@@ -1,9 +1,16 @@
-﻿new MastermindConsoleApp().Execute();
+﻿using Mastermind.GameViews;
 
-internal class MastermindConsoleApp
+new MastermindConsoleApp().Start();
+
+internal class MastermindConsoleApp : Mastermind.Mastermind
 {
-    internal void Execute()
+    protected override IGameVIew CreateGameView()
     {
-        Console.WriteLine("Hello World!!");
+        return new ConsoleView();
+    }
+
+    internal void Start()
+    {
+        Play();
     }
 }

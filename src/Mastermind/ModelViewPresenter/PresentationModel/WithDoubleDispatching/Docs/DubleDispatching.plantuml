@@ -1,0 +1,70 @@
+@startuml DoubleDispatching
+title Double Dispatching
+namespace Scenario{
+    abstract Client{
+        #{abstract}CreateView()
+        #Start()
+    }
+    Client *--> Views.View
+    Client *--> Controllers.Logic
+    Client ..> Controllers.Controller
+}
+
+namespace Views{
+    interface View{
+    }
+    View -up-|> Controllers.ControllersVisitor
+}
+
+namespace ConsoleApp{
+    class ConsoleView{
+        +Visit(StartController)
+        +Visit(PlayController)
+        +Visit(ResumeController)
+    }
+    ConsoleView .up.|> Views.View
+    ConsoleView *--> StartView
+    ConsoleView *--> PlayView
+    ConsoleView *--> ResumeView
+}
+
+namespace Controllers{
+    interface ControllersVisitor{
+        +Visit(StartController)
+        +Visit(PlayController)
+        +Visit(ResumeController)
+    }
+
+    abstract Controller{
+        +Controller(Game, State)
+        +NextState()
+        +{abstract}Accept(ControllersVisitor)
+    }
+    Controller ..> ControllersVisitor
+    Controller <|-- StartController
+    Controller <|-- PlayController
+    Controller <|-- ResumeController
+
+    class StartController{
+        +StartController(Game, State)
+        +Accept(ControllersVisitor)
+    }
+
+    class PlayController{
+        +PlayController(Game, State)
+        +Accept(ControllersVisitor)
+    }
+
+    class ResumeController{
+        +ResumeController(Game, State)
+        +Accept(ControllersVisitor)
+    }
+
+    class Logic{
+        -Controllers : Map<StateCode, Controller>
+        +Logic
+        +GetController() : Controller
+    }
+    Logic *--> "0..n" Controller
+}
+@enduml

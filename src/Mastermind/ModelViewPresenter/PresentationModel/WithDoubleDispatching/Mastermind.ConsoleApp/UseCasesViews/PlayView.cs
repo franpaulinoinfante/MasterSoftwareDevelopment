@@ -1,8 +1,5 @@
-﻿using Mastermind.ConsoleApp.UseCaseViews.ViewModels;
-using Mastermind.Controllers;
+﻿using Mastermind.Controllers;
 using Mastermind.Types;
-
-namespace Mastermind.ConsoleApp.UseCaseViews;
 
 internal class PlayView
 {

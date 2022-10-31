@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mastermind.Models\Mastermind.Models.csproj" />
+  </ItemGroup>
+
 </Project>

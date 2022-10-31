@@ -1,0 +1,114 @@
+@startuml ConsoleApp
+title ConsoleApp
+namespace ConsoleApp{
+    class Program{
+        +{static} Main(string[])
+    }
+    Program *-right-> ConsoleMastermind
+
+    class ConsoleMastermind{
+        ~ConsoleMastermind()
+        ~CreateGameView() : GameView
+        ~Execute()
+    }
+    ConsoleMastermind -up-|> Mastermind.Mastermind
+    ConsoleMastermind *-right-> ConsoleView
+
+    class ConsoleView{
+        ~ConsoleView()
+        ~Start(StartController)
+        ~Play(PlayController)
+        ~Resume(ResumeController): bool
+    }
+    ConsoleView -up-|> GameViews.GameView
+    ConsoleView *--> StartView
+    ConsoleView *--> PlayView
+    ConsoleView *--> ResumeView
+    ConsoleView ...> Controllers.StartController
+    ConsoleView ...> Controllers.PlayController
+    ConsoleView ...> Controllers.ResumeController
+
+    class StartView{
+        ~StartView()
+        ~Interact(StartController)
+    }
+    StartView --> Controllers.StartController
+    StartView ..> MessageView
+    StartView ..> GViews.MessageCode
+    StartView ..> BoardView
+
+    class MessageView{
+        ~MessageView(MessageCode)
+        ~WriteLine()
+        ~WriteLine(attempts)
+        ~WriteLine(blacks, whites)
+    }
+    MessageView --> GViews.MessageCode
+    MessageView ..> ConsoleIO
+
+    class BoardView{
+        ~Write(Controller)
+    }
+    BoardView ..> Controllers.Controller
+    BoardView ..> MessageView
+    BoardView ..> GViews.MessageCode
+    BoardView ..> ProposedCombinationView
+    BoardView ..> Types.ColorCode
+    BoardView ..> ResultView
+    BoardView ..> ConsoleIO
+
+    class ProposedCombinationView{
+        ~ReadProposedCombination(PlayController) : List<Color>
+        -GetColorCodes(characters) : List<ColorCode>
+        -GetColorCode(character) : ColorCode
+        
+        ~Write(List<Color>)
+    }
+    ProposedCombinationView ..> Controllers.Controller
+    ProposedCombinationView ..> GViews.MessageCode
+    ProposedCombinationView ..> Types.ColorCode
+    ProposedCombinationView ..> Types.ErrorCode    
+    ProposedCombinationView ..> ErrorView
+    ProposedCombinationView ..> ConsoleIO
+
+    class ErrorView{
+        ~Write(ErrorCode)
+    }
+    ErrorView -up-|> GameViews.ErrorView
+    ErrorView --> Types.ErrorCode
+    ErrorView ..> ConsoleIO
+
+    class ResultView{
+        ~WriteResult(MessageCode, blacks, whites)
+        ~WriteWinnerOLooserMessage(isWinner)
+    }
+    ResultView ..> ConsoleIO
+
+    class PlayView{
+        ~PlayView()
+        ~Interact(PlayController)
+    }
+    PlayView --> Controllers.PlayController
+    PlayView ..> ProposedCombinationView
+    PlayView ..> Types.ColorCode
+    PlayView ..> BoardView
+    PlayView ..> ResultView
+
+    class ResumeView{
+        ~ResumeView()
+        ~Interact(ResumeController) : bool
+    }
+    ResumeView --> Controllers.ResumeController
+    ResumeView ..> YesNotDialog
+
+    YesNotDialog ..> ConsoleIO
+    enum GViews.MessageCode{}
+    enum Types.ErrorCode{}
+    enum Types.ColorCode{}
+
+    abstract Mastermind.Mastermind
+    interface GameViews.GameView
+    abstract GameViews.ErrorView
+
+}
+@enduml
