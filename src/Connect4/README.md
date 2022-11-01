@@ -35,7 +35,6 @@
    3.2. [Rediseño](#rediseño)
 4. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
 5. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
-6. [Vista de Procesos](#vista-de-procesos)
 
 ## Modelo del dominio
 
@@ -61,11 +60,15 @@
 | * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | --aqui-- | 
 | :------- | :------: |  
 
+## Casos de Uso
+
 ## Vista de Caso de Uso Start
 
 ## Vista de Caso de Uso Play
 
 ## Vista de Caso de Uso Resume
+
+## Prototipo de Interfaz
 
 ## Analisis
 
@@ -108,4 +111,6 @@
 ## Calidad del Software
 
 ## Vista de Dessarrollo/Implementación
+
+## Vista de Despliegue/Física
 
