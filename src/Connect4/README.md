@@ -25,4 +25,6 @@
 
 ![image](https://user-images.githubusercontent.com/46433173/199270935-5a2401dd-8986-41c6-b3b5-57c41d5a2fce.png)
 
+![image](https://user-images.githubusercontent.com/46433173/199283782-cb12d794-ff82-40a8-a02f-5fbcdd6e72f7.png)
+
 ## Versiones
