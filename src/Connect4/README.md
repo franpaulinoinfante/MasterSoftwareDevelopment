@@ -1,7 +1,6 @@
 # Connect-4
 
 **Índice**
-
 1. [Modelo del dominio](#modelo-del-dominio)  
     1.1. [Vocabulario](#vocabulario)  
     1.2. [Estado inicial](#estado-inicial)  
@@ -26,8 +25,8 @@
 4. [Vista de Lógica/Diseño](#vista-de-lógicadiseño)  
    4.1. [Arquitectura](#arquitectura)  
    4.2. [namespace connectfour](#namespace-connectFour)  
-   4.3. [namespace connectfour.gameviews](#namespace-connectfourgameviews)  
-   4.4. [namespace connectfour.views.console](#namespace-connectfourviewsconsole) 
+   4.3. [namespace connectfour.gameviews](#namespace-connectfourgameviews) 
+   4.4. [namespace connectfour.views.console](#namespace-connectfourviewsconsole)   
    4.5. [namespace connectfour.controllers](#namespace-connectfourcontrollers) 
    4.6. [namespace connectfour.types](#namespace-connectfourtypes)  
    4.7. [namespace connectfour.models](#namespace-connectfourmodels)  
