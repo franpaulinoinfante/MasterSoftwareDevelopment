@@ -223,6 +223,8 @@ Do you want to continue? (y/n):
 
 ## Analisis
 
+![image](https://user-images.githubusercontent.com/46433173/199352608-589ff634-228d-4ef3-a67b-7c9b3bdaa84a.png)
+
 ## Caso de Uso
 
 ## Analisis Start
