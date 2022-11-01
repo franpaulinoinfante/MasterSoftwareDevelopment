@@ -62,7 +62,7 @@ namespace Controllers{
 
     class Logic{
         -Controllers : Map<StateCode, Controller>
-        +Logic
+        +Logic()
         +GetController() : Controller
     }
     Logic *--> "0..n" Controller
