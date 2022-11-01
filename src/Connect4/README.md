@@ -2,13 +2,13 @@
 
 **Índice** 
 
-1. [Modelo del dominio](#Modelo-del-dominio)
-1.1. [Vocabulario](#Vocabulario)
-1.2. [Estados](#Estados)
-1.2.1. [Estado inicial](#Estado-inicial)
-1.2.2. [Estado final Ganador](#Estado-final-Ganador)
-1.3. [Instrucciones](#Instrucciones)
-2. [Versiones](#Versiones)
+- 1. [Modelo del dominio](#Modelo-del-dominio)
+- 1.1. [Vocabulario](#Vocabulario)
+- 1.2. [Estados](#Estados)
+- 1.2.1. [Estado inicial](#Estado-inicial)
+- 1.2.2. [Estado final Ganador](#Estado-final-Ganador)
+- 1.3. [Instrucciones](#Instrucciones)
+- 2. [Versiones](#Versiones)
 
 ## Modelo del dominio
 
