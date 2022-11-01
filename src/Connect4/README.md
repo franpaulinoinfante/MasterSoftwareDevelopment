@@ -23,18 +23,16 @@
 3.2.3. [Controladores](#controladores)  
 3.2.4. [Modelos](#modelos)  
 3.2.5. [Types](#types)  
-4. [Lógica/Diseño](#Lógica/Diseño)
-4.1. [Arquitectura](#Arquitectura)
-4.2. [namespace ConnectFour](#namespace-ConnectFour)
-4.3. [namespace ConnectFour.GameViews](#namespace-ConnectFour-GameViews)
-4.4. [namespace ConnectFour.ConsoleApp](#namespace-ConnectFour-ConsoleApp)
-4.5. [namespace ConnectFour.Controllers](#namespace-ConnectFour-Controllers)
-4.6. [namespace ConnectFour.Models](#namespace-ConnectFour-Models)
-4.7. [namespace ConnectFour.Types](#namespace-ConnectFour-Types)
-5. [Calidad del Software](#Calidad-del-Software)
-6. [Vista de Dessarrollo/Implementación](#Vista-de-Dessarrollo-Implementación)
-
-
+4. [Lógica/Diseño](#lógica/diseño)
+4.1. [Arquitectura](#arquitectura)
+4.2. [namespace ConnectFour](#namespace-connectFour)
+4.3. [namespace ConnectFour.GameViews](#namespace-connectFour-gameViews)
+4.4. [namespace ConnectFour.ConsoleApp](#namespace-connectFour-consoleApp)
+4.5. [namespace ConnectFour.Controllers](#namespace-connectFour-controllers)
+4.6. [namespace ConnectFour.Models](#namespace-vonnectFour-models)
+4.7. [namespace ConnectFour.Types](#namespace-connectFour-types)
+5. [Calidad del Software](#calidad-del-software)
+6. [Vista de Dessarrollo/Implementación](#vista-de-dessarrollo-implementación)
 
 ## Modelo del dominio
 
