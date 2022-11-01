@@ -23,4 +23,6 @@
 
 ## Instrucciones
 
+![image](https://user-images.githubusercontent.com/46433173/199270935-5a2401dd-8986-41c6-b3b5-57c41d5a2fce.png)
+
 ## Versiones
