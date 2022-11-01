@@ -95,9 +95,9 @@
 
 ## namespace connectfour
 
-## namespace connectfour.gameViews
+## namespace connectfour.gameviews
 
-## namespace connectfour.consoleApp
+## namespace connectfour.consoleapp
 
 ## namespace connectfour.controllers
 
