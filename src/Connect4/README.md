@@ -93,17 +93,17 @@
 
 ## Arquitectura
 
-## namespace connectFour
+## namespace connectfour
 
-## namespace connectFour.gameViews
+## namespace connectfour.gameViews
 
-## namespace connectFour.consoleApp
+## namespace connectfour.consoleApp
 
-## namespace connectFour.controllers
+## namespace connectfour.controllers
 
-## namespace connectFour.models
+## namespace connectfour.models
 
-## namespace connectFour.types
+## namespace connectfour.types
 
 ## Calidad del Software
 
