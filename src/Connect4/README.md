@@ -26,7 +26,7 @@
    4.1. [Arquitectura](#arquitectura)  
    4.2. [namespace connectfour](#namespace-connectFour)  
    4.3. [namespace connectfour.gameviews](#namespace-connectfourgameviews)<br>
-   4.4. [namespace connectfour.views.console](#namespace-connectfourviewsconsole)<br> 
+   4.4. [namespace connectfour.views.consoleapp](#namespace-connectfourviewsconsoleapp)<br> 
    4.5. [namespace connectfour.controllers](#namespace-connectfourcontrollers) <br>
    4.6. [namespace connectfour.types](#namespace-connectfourtypes)  
    4.7. [namespace connectfour.models](#namespace-connectfourmodels)  
@@ -93,18 +93,19 @@
 
 ## Arquitectura
 
-## namespace ConnectFour
+## namespace connectFour
 
-## namespace ConnectFour.GameViews
+## namespace connectFour.gameViews
 
-## namespace ConnectFour.ConsoleApp
+## namespace connectFour.consoleApp
 
-## namespace ConnectFour.Controllers
+## namespace connectFour.controllers
 
-## namespace ConnectFour.Models
+## namespace connectFour.models
 
-## namespace ConnectFour.Types
+## namespace connectFour.types
 
 ## Calidad del Software
 
 ## Vista de Dessarrollo/Implementación
+
