@@ -62,15 +62,20 @@
 
 ## Casos de Uso
 
-|   ----   | -------- | 
+|   ![image](https://user-images.githubusercontent.com/46433173/199312534-1b0b7c04-2e8e-47dc-8312-a3ab93868e17.png)   | ![image](https://user-images.githubusercontent.com/46433173/199313770-e5feb014-6a7b-4865-a993-e0246f7ad5d1.png) | 
 | :------- | :------: |  
-
 
 ## Vista de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/199314660-3b7ca1e8-b789-4ec9-bc80-41d1fa3e085d.png)
+
 ## Vista de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/199318233-1e973c44-0c29-4ae0-a45c-77b233220ee0.png)
+
 ## Vista de Caso de Uso Resume
+
+![image](https://user-images.githubusercontent.com/46433173/199319016-d86605be-6774-4e75-9580-c3e5438b4ab1.png)
 
 ## Prototipo de Interfaz
 
