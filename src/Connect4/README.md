@@ -1,6 +1,7 @@
 # Connect-4
 
 **Índice** 
+
 1. [Modelo del dominio](#Modelo-del-dominio)
 1.1. [Vocabulario](#Vocabulario)
 1.2. [Estados](#Estados)
