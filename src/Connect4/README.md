@@ -25,9 +25,9 @@
 4. [Vista de Lógica/Diseño](#vista-de-lógicadiseño)  
    4.1. [Arquitectura](#arquitectura)  
    4.2. [namespace connectfour](#namespace-connectFour)  
-   4.3. [namespace connectfour.gameviews](#namespace-connectfourgameviews)
-   4.4. [namespace connectfour.consoleapp](#namespace-connectfour.consoleapp)
-   4.5. [namespace connectfour.controllers](#namespace-connectfourcontrollers)
+   4.3. [namespace connectfour.gameviews](#namespace-connectfourgameviews)<br>
+   4.4. [namespace connectfour.consoleapp](#namespace-connectfour.consoleapp)<br>
+   4.5. [namespace connectfour.controllers](#namespace-connectfourcontrollers)<br>
    4.6. [namespace connectfour.types](#namespace-connectfourtypes)  
    4.7. [namespace connectfour.models](#namespace-connectfourmodels)  
 3. [Calidad del Software](#calidad-del-software)  
@@ -36,9 +36,6 @@
 4. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
 5. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
 6. [Vista de Procesos](#vista-de-procesos)
-
-
-
 
 ## Modelo del dominio
 
@@ -60,6 +57,9 @@
 
 
 ## Requisitos
+
+| * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | --aqui-- | 
+| :------- | :------: |  
 
 ## Vista de Caso de Uso Start
 
