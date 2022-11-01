@@ -23,16 +23,23 @@
 3.2.3. [Controladores](#controladores)  
 3.2.4. [Modelos](#modelos)  
 3.2.5. [Types](#types)  
-4. [Lógica/Diseño](#lógica/diseño)
-4.1. [Arquitectura](#arquitectura)
-4.2. [namespace ConnectFour](#namespace-connectFour)
-4.3. [namespace ConnectFour.GameViews](#namespace-connectFour-gameViews)
-4.4. [namespace ConnectFour.ConsoleApp](#namespace-connectFour-consoleApp)
-4.5. [namespace ConnectFour.Controllers](#namespace-connectFour-controllers)
-4.6. [namespace ConnectFour.Models](#namespace-vonnectFour-models)
-4.7. [namespace ConnectFour.Types](#namespace-connectFour-types)
-5. [Calidad del Software](#calidad-del-software)
-6. [Vista de Dessarrollo/Implementación](#vista-de-dessarrollo-implementación)
+4. [Vista de Lógica/Diseño](#vista-de-lógicadiseño)  
+   4.1. [Arquitectura](#arquitectura)  
+   4.2. [namespace connectfour](#namespace-connectFour)  
+   4.3. [namespace connectfour.gameviews](#namespace-connectfourgameviews)  
+   4.4. [namespace connectfour.views.console](#namespace-connectfourviewconsole) 
+   4.5. [namespace Connectfour.controllers](#namespace-connectfourcontrollers) 
+   4.5. [namespace connectfour.types](#namespace-connectfourtypes)  
+   4.6. [namespace connectfour.models](#namespace-connectfourmodels)  
+3. [Calidad del Software](#calidad-del-software)  
+   3.1. [Diseño](#diseño)  
+   3.2. [Rediseño](#rediseño)
+4. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
+5. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
+6. [Vista de Procesos](#vista-de-procesos)
+
+
+
 
 ## Modelo del dominio
 
