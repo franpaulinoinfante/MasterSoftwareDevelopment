@@ -12,7 +12,7 @@
 
 ## Modelo del dominio
 
-[!Connect4](./src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg
+[!Connect4](src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg
 
 ## Vocabulario
 
