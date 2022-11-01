@@ -2,20 +2,10 @@
 
 **Índice**
 
-1. [Modelo del dominio](#Modelo-del-dominio)
-1.1. [Vocabulario](#Vocabulario)
-1.2. [Estado inicial](#Estado-inicial)
-1.3. [Estado final Ganador](#Estado-final-Ganador)
-1.4. [Instrucciones](#Instrucciones)
-2. [Versiones](#Versiones)
-
-
-**Índice**
-
 1. [Modelo del dominio](#modelo-del-dominio)  
 1.1. [Vocabulario](#vocabulario)  
 1.2. [Estado inicial](#estado-inicial)  
-1.3. [Estado final. Objetivo TicTacToe en 3ª fila](#estado-final-objetivo-tictactoe-en-3ª-fila)  
+1.3. [Estado final. Ganador](#estado-final-Ganador)  
 1.4. [Instrucciones](#instrucciones)  
 2. [Versiones](#versiones)
 
