@@ -8,10 +8,11 @@
 1.2.2 [Estado final Ganador](#Estado-final-Ganador)
 1.2.3 [Estado final Perdedor](#Estado-final-Perdedor)
 1.4 [Instrucciones](#Instrucciones)
-1.5 [Versiones](#Versiones)
+2. [Versiones](#Versiones)
 
 ## Modelo del dominio
 
+[!Connect4](./src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg
 
 ## Vocabulario
 
