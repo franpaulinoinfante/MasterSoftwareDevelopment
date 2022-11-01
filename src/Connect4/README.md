@@ -62,6 +62,10 @@
 
 ## Casos de Uso
 
+|   ----   | -------- | 
+| :------- | :------: |  
+
+
 ## Vista de Caso de Uso Start
 
 ## Vista de Caso de Uso Play
