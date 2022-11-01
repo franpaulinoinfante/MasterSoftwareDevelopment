@@ -1,0 +1,36 @@
+@startuml Instructions
+title Instructions
+
+state A as " "
+state B as " "
+state C as " "
+
+[*] --> A
+A --> B : InsertX
+B --> A : InsertO
+B --> C : InsertO
+C --> D : InsertX
+D --> C : InsertO
+B --> [*] : [IsWinnerX]
+D --> [*] : [IsWinnerX]
+C --> [*] : [IsWinnerO]
+@enduml
+
+
+@startuml InstructionsD
+title Insert Token
+start
+    : Coordinate to Insert;
+    repeat
+        repeat
+            :Enter Row;
+            :Enter Colunm;
+        repeat while(coordinate is not valid or Colunm is full)
+        : Insert Token in Colunm;
+        : Token = Token - 1;
+        : Turn Change;
+        : Show board;
+    repeat while(Goal has not been reached)    
+        :Displays message results;
+stop
+@enduml
