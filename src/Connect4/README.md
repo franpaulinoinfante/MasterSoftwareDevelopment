@@ -12,7 +12,7 @@
 
 ## Modelo del dominio
 
-[!Connect4]([src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg](https://github.com/franpaulinoinfante/MasterSoftwareDevelopment/blob/97a79243650637ccd563c5e62fee6f7f3e61f528/src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg)
+[src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg](https://github.com/franpaulinoinfante/MasterSoftwareDevelopment/blob/97a79243650637ccd563c5e62fee6f7f3e61f528/src/Connect4/Docs/pics/connect-4-grab-and-go-game-free.svg)
 
 ## Vocabulario
 
