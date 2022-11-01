@@ -79,6 +79,179 @@
 
 ## Prototipo de Interfaz
 
+```
+----- Connect-4 -----
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+----------------------------
+Enter the column to insert a token:
+Colunm: -1
+The column is wrong
+Enter the column to insert a token:
+Colunm: 5
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 8
+The column is wrong
+Enter the column to insert a token:
+Column: 4
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 1
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   |   | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   |   | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   |   | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+----------------------------
+|   |   |   |   |   |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   |   | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   |   | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 5
+The colunm is full
+Enter the column to insert a token:
+Column: 4
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   | X | X |   |   |
+| O |   |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 2
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
+|   |   |   | X | X |   |   |
+| O | O |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 4
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   | X | X |   |   |
+|   |   |   | X | X |   |   |
+| O | O |   | O | X |   |   |
+----------------------------
+Enter the column to insert a token:
+Column: 7
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   | X | X |   |   |
+|   |   |   | X | X |   |   |
+| O | O |   | O | X |   | O |
+----------------------------
+Enter the column to insert a token:
+Column: 4
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   | X | O |   |   |
+|   |   |   | X | X |   |   |
+|   |   |   | X | X |   |   |
+| O | O |   | O | X |   | O |
+----------------------------
+Enter the column to insert a token:
+Column: 3
+----------------------------
+|   |   |   |   | X |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   | X | O |   |   |
+|   |   |   | X | X |   |   |
+|   |   |   | X | X |   |   |
+| O | O | O | O | X |   | O |
+----------------------------
+O Player: You win!!! :-)
+Do you want to continue? (y/n):
+```
+
 ## Analisis
 
 ## Caso de Uso
