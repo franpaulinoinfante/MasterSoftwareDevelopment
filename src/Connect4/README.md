@@ -168,18 +168,8 @@ Column: 5
 Enter the column to insert a token:
 Column: 5
 ----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   | O |   |   |
 |   |   |   |   | O |   |   |
 |   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
 |   |   |   |   | O |   |   |
 |   |   |   |   | X |   |   |
 |   |   |   |   | X |   |   |
@@ -209,44 +199,24 @@ Column: 2
 | O | O |   | O | X |   |   |
 ----------------------------
 Enter the column to insert a token:
-Column: 4
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   | X | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
 Column: 7
 ----------------------------
 |   |   |   |   | X |   |   |
 |   |   |   |   | O |   |   |
 |   |   |   |   | O |   |   |
-|   |   |   | X | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   | O |
-----------------------------
-Enter the column to insert a token:
-Column: 4
-----------------------------
 |   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   | X | O |   |   |
 |   |   |   | X | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   | O |
+| O | O |   | O | X |   | X |
 ----------------------------
 Enter the column to insert a token:
 Column: 3
 ----------------------------
 |   |   |   |   | X |   |   |
 |   |   |   |   | O |   |   |
-|   |   |   | X | O |   |   |
+|   |   |   |   | O |   |   |
+|   |   |   |   | X |   |   |
 |   |   |   | X | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O | O | O | X |   | O |
+| O | O | O | O | X |   | X |
 ----------------------------
 O Player: You win!!! :-)
 Do you want to continue? (y/n):
