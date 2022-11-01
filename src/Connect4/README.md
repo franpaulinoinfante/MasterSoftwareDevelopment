@@ -12,7 +12,8 @@
 
 ## Modelo del dominio
 
-| ![connect-4-grab-and-go-game-free](https://user-images.githubusercontent.com/46433173/199242004-070b69e3-0bfd-4132-ac91-3b189cb899da.svg) | | :------- |
+![Screenshot 2022-11-01 092020](https://user-images.githubusercontent.com/46433173/199242919-550c3616-9585-472f-b9b2-d4af46882528.png)
+
 
 
 ## Vocabulario
