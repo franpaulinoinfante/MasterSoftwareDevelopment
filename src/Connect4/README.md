@@ -71,7 +71,7 @@
 
 ## Vista de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/199318233-1e973c44-0c29-4ae0-a45c-77b233220ee0.png)
+![image](https://user-images.githubusercontent.com/46433173/199346389-1e79d0bf-c2a7-4672-a1d9-56c89463cfbb.png)
 
 ## Vista de Caso de Uso Resume
 
