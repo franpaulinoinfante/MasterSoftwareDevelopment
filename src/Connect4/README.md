@@ -17,11 +17,6 @@
     3.1.2. [Analisis Play](#analisis-play)  
     3.1.3. [Analisis Resume](#analisis-resume)  
     3.2. [Namespaces](#namespaces)  
-    3.2.1. [Vistas](#vistas)  
-    3.2.2. [Vistas del juego](#vistas-del-juegos)  
-    3.2.3. [Controladores](#controladores)  
-    3.2.4. [Modelos](#modelos)  
-    3.2.5. [Types](#types)  
 4. [Vista de Lógica/Diseño](#vista-de-lógicadiseño)  
    4.1. [Arquitectura](#arquitectura)  
    4.2. [namespace connectfour](#namespace-connectFour)  
@@ -245,19 +240,7 @@ Do you want to continue? (y/n):
 
 ![image](https://user-images.githubusercontent.com/46433173/199493300-132dec50-460a-4711-a303-2fe1cf54bd37.png)
 
-## Vistas
-
-## Vistas del Juego
-
-## Controladores
-
-## Modelos
-
-## Types
-
-## Lógica/Diseño
-
-## Arquitectura
+## Vista de Lógica/Diseño
 
 ## namespace connectfour
 
@@ -270,6 +253,8 @@ Do you want to continue? (y/n):
 ## namespace connectfour.models
 
 ## namespace connectfour.types
+
+## Arquitectura
 
 ## Calidad del Software
 
