@@ -16,7 +16,7 @@
     3.1.1. [Analisis Start](#analisis-start)  
     3.1.2. [Analisis Play](#analisis-play)  
     3.1.3. [Analisis Resume](#analisis-resume)  
-    3.2. [Paquetes](#paquetes)  
+    3.2. [Namespaces](#namespaces)  
     3.2.1. [Vistas](#vistas)  
     3.2.2. [Vistas del juego](#vistas-del-juegos)  
     3.2.3. [Controladores](#controladores)  
@@ -45,6 +45,8 @@
 ![image](https://user-images.githubusercontent.com/46433173/199251331-af761325-ccc6-4ddd-818b-453f491f779d.png)
 
 ## Estado inicial
+
+![image](https://user-images.githubusercontent.com/46433173/199464679-5cc55282-0307-4ff8-bd3c-676c857cf9b4.png)
 
 ## Estado final Ganador
 
@@ -229,11 +231,19 @@ Do you want to continue? (y/n):
 
 ## Analisis Start
 
+![image](https://user-images.githubusercontent.com/46433173/199470462-cd599dde-1c29-4ac7-9622-cc63e096ecd1.png)
+
 ## Analisis Play
+
+![image](https://user-images.githubusercontent.com/46433173/199480071-24de8ffc-f027-44fc-a94f-f16b8dd43b63.png)
 
 ## Analisis Resume
 
-## Paquetes
+![image](https://user-images.githubusercontent.com/46433173/199481856-56dd955e-dc45-4dd2-bf05-a25c40789c1a.png)
+
+## Namespaces
+
+![image](https://user-images.githubusercontent.com/46433173/199493300-132dec50-460a-4711-a303-2fe1cf54bd37.png)
 
 ## Vistas
 
