@@ -17,13 +17,13 @@ state if2 <<choice>>
 
 [*] --> IN_GAME
 IN_GAME --> A : Player requests Insert a Token
-A --> B : System requests a coordinate
-B --> C : Player enter the coordinate
+A --> B : System requests a colunm
+B --> C : Player enter the colunm
 C --> if1
     if1 --> D : [error]
     note on link
         Colunm is full
-        Wrong Coordinate
+        Wrong colunm
     endnote
     D --> E : System shows Error Message
     E --> F 

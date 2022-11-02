@@ -20,17 +20,16 @@ C --> [*] : [IsWinnerO]
 @startuml InstructionsD
 title Insert Token
 start
-    : Coordinate to Insert;
+    : Colunm to Insert;
     repeat
         repeat
-            :Enter Row;
-            :Enter Colunm;
-        repeat while(coordinate is not valid or Colunm is full)
+            : Enter Colunm;
+        repeat while(Colunm is worng or Colunm is full)
         : Insert Token in Colunm;
         : Token = Token - 1;
         : Turn Change;
         : Show board;
     repeat while(Goal has not been reached)    
-        :Displays message results;
+        : Shows message results;
 stop
 @enduml

@@ -1,0 +1,69 @@
+@startuml Analysis
+title Analysis
+namespace ConsoleApp{
+    GameView *--> StartView
+    GameView *--> PlayView
+    GameView *--> ResumeView
+
+    StartView ..> MessageView
+    StartView ..> BoardView
+
+    PlayView ..> MessageView
+    PlayView ..> InsertionView
+    PlayView ..> BoardView
+
+    ResumeView ..> MessageView
+
+    BoardView ..> MessageView
+    BoardView ..> TokenView
+
+    InsertionView ..> MessageView
+    InsertionView ..> TokenView
+    InsertionView ..> ErrorView
+}
+
+namespace GameViews{
+    abstract ErrorView{}
+    interface IGameView
+    enum MessageCode
+
+}
+namespace Controllers{
+    abstract Controller{
+    }
+    Controller <|-- StartController
+    Controller <|-- PlayController
+    Controller <|-- ResumeController
+}
+
+namespace Models{
+    Game *-down-> "1" Board
+    Game *-down-> "State"
+    Game *-down-> "1" Turn
+
+    Turn *-down-> "2" Player
+
+    Player -down-> Board
+}
+
+namespace Types{
+    enum Token{}
+    enum StateCode{}
+    enum Error
+}
+
+
+ConsoleApp ..> GameViews
+ConsoleApp ..> Controllers
+GameViews ..> Controllers
+Controllers ..> Models
+
+ConsoleApp ..> Types
+GameViews ..> Types
+Controllers ..> Types
+Models ..> Types
+
+@enduml
+
+
+
