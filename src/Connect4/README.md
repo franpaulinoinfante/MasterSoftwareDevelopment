@@ -52,8 +52,7 @@
 
 ![image](https://user-images.githubusercontent.com/46433173/199270935-5a2401dd-8986-41c6-b3b5-57c41d5a2fce.png)
 
-![image](https://user-images.githubusercontent.com/46433173/199284254-23be1db8-166f-4bd7-aa1d-a8991747edb5.png)
-
+![image](https://user-images.githubusercontent.com/46433173/199346771-45304715-327c-43bf-88a5-ae061e6d578e.png)
 
 ## Requisitos
 
@@ -71,7 +70,7 @@
 
 ## Vista de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/199318233-1e973c44-0c29-4ae0-a45c-77b233220ee0.png)
+![image](https://user-images.githubusercontent.com/46433173/199346389-1e79d0bf-c2a7-4672-a1d9-56c89463cfbb.png)
 
 ## Vista de Caso de Uso Resume
 
@@ -223,6 +222,8 @@ Do you want to continue? (y/n):
 ```
 
 ## Analisis
+
+![image](https://user-images.githubusercontent.com/46433173/199352608-589ff634-228d-4ef3-a67b-7c9b3bdaa84a.png)
 
 ## Caso de Uso
 
