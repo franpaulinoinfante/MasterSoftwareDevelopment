@@ -2,4 +2,4 @@
 
 ### Models
 
-![image](https://user-images.githubusercontent.com/46433173/200580204-71dfd104-653a-4b9c-ba32-49054dae9663.png)
+![image](https://user-images.githubusercontent.com/46433173/200582225-065f9e70-801d-406d-8449-b334773406d2.png)
