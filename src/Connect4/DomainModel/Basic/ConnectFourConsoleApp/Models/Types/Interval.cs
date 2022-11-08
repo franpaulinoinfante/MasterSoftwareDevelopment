@@ -2,8 +2,8 @@
 
 internal class Interval
 {
-    private int _min;
-    private int _max;
+    private readonly int _min;
+    private readonly int _max;
 
     public Interval(int min, int max)
     {

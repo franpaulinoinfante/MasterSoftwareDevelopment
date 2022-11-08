@@ -5,6 +5,9 @@ namespace Mastermind.Models;
 
 public class Game
 {
+    private const int Initial = 0;
+    private const int MaxAttempts = 10;
+
     private readonly SecrectCombination _secrectCombination;
     private readonly ProposedCombination[] _proposedCombinations;
     private readonly Result[] _results;
@@ -13,9 +16,6 @@ public class Game
     private int _attempts;
     private int _resultCount;
 
-    private const int Initial = 0;
-    private const int MaxAttempts = 10;
-
     public Game()
     {
         _secrectCombination = new SecrectCombination();
@@ -23,7 +23,6 @@ public class Game
         _results = new Result[MaxAttempts];
         _state = new State();
         NewGame();
-
     }
 
     public int Attempts => _attempts;

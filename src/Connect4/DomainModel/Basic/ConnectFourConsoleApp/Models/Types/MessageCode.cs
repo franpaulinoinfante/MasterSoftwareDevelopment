@@ -15,15 +15,15 @@ internal enum MessageCode
 
 internal static class MessageCodeExtension
 {
-    private static string[] Messages =
+    private static readonly string[] Messages =
     {
         "Connect-4",
         " -----------------------------",
         " | ",
         "Enter the colunm: ",
-        "#player player is the best!!!",
+        "#player player win!!!",
         "The game has ended in a draw",
-        "Do you want conitnue? "
+        "Do you want conitnue"
     };
 
     internal static void Write(this MessageCode messageCode)
@@ -38,13 +38,11 @@ internal static class MessageCodeExtension
 
     internal static void WriteLine(this MessageCode messageCode, string token)
     {
-        ConsoleIO.GetInstance().Write(Messages[(int)messageCode].Replace("#player", token));
+        ConsoleIO.GetInstance().WriteLine(Messages[(int)messageCode].Replace("#player", token));
     }
 
     internal static string GetMessage(this MessageCode messageCode)
     {
         return Messages[(int)messageCode];
     }
-
-
 }

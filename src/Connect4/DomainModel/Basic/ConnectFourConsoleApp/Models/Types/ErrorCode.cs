@@ -5,13 +5,13 @@ namespace ConnectFourConsoleApp.Types;
 internal enum ErrorCode
 {
     WrongColunm,
-    ColunmIsFull,
+    ColunmIsComplete,
     Null
 }
 
 internal static class ErrorCodeExtension
 {
-    private static string[] Errors =
+    private static readonly string[] Errors =
     {
         "Wrong colunm",
         "The colunm is full"

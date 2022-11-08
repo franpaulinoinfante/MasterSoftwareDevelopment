@@ -2,7 +2,7 @@
 {
     public static int Players = 2;
 
-    private Player[] _players;
+    private readonly Player[] _players;
     private int _current;
 
     public Turn(Player[] players)

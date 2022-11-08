@@ -1,13 +1,13 @@
 ﻿using System.Diagnostics;
 
-namespace ConnectFourConsoleApp.ConsoleIOs;
+namespace Connect4.ConsoleIOs;
 
 public class YesNoDialog
 {
     private const char AFFIRMATIVE = 'y';
     private const char NEGATIVE = 'n';
-    private static readonly string SUFFIX = $"? [{AFFIRMATIVE}/{NEGATIVE}] ";
-    private static readonly string MESSAGE = $"The value must be: [{AFFIRMATIVE} or {NEGATIVE}] ";
+    private static readonly string SUFFIX = $"? ({AFFIRMATIVE}/{NEGATIVE})";
+    private static readonly string MESSAGE = $"The value must be: ({AFFIRMATIVE} or {NEGATIVE})";
 
     private string _answer;
 
@@ -15,7 +15,7 @@ public class YesNoDialog
     {
         Debug.Assert(message != null);
 
-        ConsoleIO consoleIO = ConsoleIO.GetInstance();
+        ConsoleIO consoleIO = ConsoleIO.Instance;
         bool ok;
         do
         {

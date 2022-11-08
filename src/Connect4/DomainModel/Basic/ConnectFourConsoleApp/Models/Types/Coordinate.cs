@@ -1,4 +1,5 @@
 ﻿using ConnectFourConsoleApp.Models.Types;
+
 namespace ConnectFourConsoleApp.Types;
 
 internal class Coordinate
@@ -37,11 +38,11 @@ internal class Coordinate
         {
             return Direction.Vertical;
         }
-        if (InMainDiagonal() && coordinate.InMainDiagonal())
+        if (InMainDiagonal() && coordinate.InMainDiagonal() && _colunm == coordinate._colunm + 1)
         {
             return Direction.MainDiagonal;
         }
-        if (InInverseDiagonal() && coordinate.InInverseDiagonal())
+        if (InInverseDiagonal() && coordinate.InInverseDiagonal() && _colunm == coordinate._colunm - 1)
         {
             return Direction.InverseDiagonal;
         }
@@ -50,23 +51,33 @@ internal class Coordinate
 
     private bool InHorizonal(Coordinate coordinate)
     {
-        return _row == coordinate._row;
+        return _row == coordinate._row ;
     }
 
     private bool InVertical(Coordinate coordinate)
     {
-        return _colunm == coordinate._colunm;
+        return _colunm == coordinate._colunm ;
     }
 
     private bool InMainDiagonal()
     {
-        return _row - _colunm == 0 || _row - _colunm == 1 || _row - _colunm == 2 ||
-            _row - _colunm == -1 || _row - _colunm == -2 || _row - _colunm == -3 ;
+        return
+            _row - _colunm == -1 ||
+            _row - _colunm == -2 ||
+            _row - _colunm == -3 ||
+            _row - _colunm == 0 ||
+            _row - _colunm == 1 ||
+            _row - _colunm == 2;
     }
 
     private bool InInverseDiagonal()
     {
-        return _row + _colunm == COLUNM - 1 || _row + _colunm == COLUNM + 1 || 
-            _row + _colunm == ROW - 1 || _row + _colunm == ROW + 1;
+        return
+            _row + _colunm == ROW - 1 ||
+            _row + _colunm == ROW - 2 ||
+            _row + _colunm == ROW - 3 ||
+            _row + _colunm == ROW ||
+            _row + _colunm == COLUNM ||
+            _row + _colunm == COLUNM + 1;
     }
 }

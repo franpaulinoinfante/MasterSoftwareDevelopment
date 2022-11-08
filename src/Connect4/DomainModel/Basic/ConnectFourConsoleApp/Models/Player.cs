@@ -4,8 +4,8 @@ using ConnectFourConsoleApp.Types;
 
 internal class Player
 {
-    private Token _token;
-    private Board _board;
+    private readonly Token _token;
+    private readonly Board _board;
 
     public Player(Board board, Token token)
     {
@@ -36,7 +36,7 @@ internal class Player
         }
         if (_board.IsOccupied(colunmToInsert))
         {
-            return ErrorCode.ColunmIsFull;
+            return ErrorCode.ColunmIsComplete;
         }
         return ErrorCode.Null;
     }

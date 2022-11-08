@@ -1,0 +1,38 @@
+@startuml Context
+title Context
+
+Shop *--> "1..n" SalePoint : constain
+Shop *--> "1..n" Product : store
+
+SalePoint "1" *--> "1" Sale : do
+
+Sale "1" --> "1" Invoce : has
+Sale *--> "1..n" SaleLine : constain
+
+Invoce ..> Money : paid with
+SaleLine "1" --> "1" Product : record sale
+
+class Shop{
+    name
+    direction
+}
+
+class Product{
+    description
+    price
+}
+
+class Sale{
+    total
+}
+
+class SaleLine{
+    subTotal
+}
+
+class Invoce{
+    date
+    hour
+    amount
+}
+@enduml

@@ -14,11 +14,6 @@
 
         internal Player CurrentPlayer => _players[_current];
 
-        internal Player GetLast()
-        {
-            return _players[Current()];
-        }
-
         internal void Next()
         {
             _current = Current();

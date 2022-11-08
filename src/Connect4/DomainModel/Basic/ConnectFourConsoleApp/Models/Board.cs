@@ -7,7 +7,6 @@ using System.Diagnostics;
 internal class Board
 {
     private const int Row = 0;
-    private const int Width = 4;
 
     private readonly Token[,] _tokens;
 
@@ -32,25 +31,23 @@ internal class Board
     {
         Debug.Assert(!token.IsNull() && !IsOccupied(colunmToInsert));
 
-        Coordinate coordinate = GetCoordinate(colunmToInsert);
-        _tokens[coordinate.Row, colunmToInsert] = token;
+        _tokens[GetRowToInsert(colunmToInsert), colunmToInsert] = token;
     }
 
-    private Coordinate GetCoordinate(int colunmToInsert)
+    private int GetRowToInsert(int colunmToInsert)
     {
         Debug.Assert(!IsOccupied(colunmToInsert));
 
-        int i = 0;
+       int i = 0;
         while ((i < Coordinate.ROW - 1) && (_tokens[i, colunmToInsert] == Token.Null))
         {
             i++;
         }
-
         if (_tokens[i, colunmToInsert] != Token.Null)
         {
             i--;
         }
-        return new Coordinate(i, colunmToInsert);
+        return i;
     }
 
     internal bool IsOccupied(int colunmToInsert)
@@ -77,7 +74,6 @@ internal class Board
     {
         Debug.Assert(!token.IsNull());
 
-        int count = 0;
         List<Direction> directions = GetDirections(token);
         if (directions.Count < 3)
         {
@@ -89,11 +85,11 @@ internal class Board
             {
                 if (directions[i] == directions[i + 1])
                 {
-                    count++;
+
                 }
             }
         }
-        return count == 20;
+        return false;
     }
 
     private List<Direction> GetDirections(Token token)
@@ -106,10 +102,9 @@ internal class Board
         {
             for (int i = 0; i < coordinates.Count - 1; i++)
             {
-
                 for (int j = i + 1; j < coordinates.Count - 1; j++)
                 {
-                    directions.Add(coordinates[i].GetDirection(coordinates[i + 1]));
+                    directions.Add(coordinates[i].GetDirection(coordinates[j]));
                 }
             }
         }
