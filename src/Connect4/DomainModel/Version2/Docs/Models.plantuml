@@ -2,7 +2,7 @@
 title Connect-4 ConsoleApp
 namespace Connect4{
     class Program{
-        +Run()
+        +{static}MAIN(string[])
     }
     Program *--> ConnectFour
 
@@ -38,6 +38,7 @@ namespace Connect4{
     Board --> Types.Coordinate
     Board ..> Types.Line
     Board ..> Types.Message
+    Board ..> ConsoleIOS.ConsoleIO
 
     class Turn{
         -{static}NUMBER_OF_PLAYERS : int
@@ -50,6 +51,7 @@ namespace Connect4{
     Turn *--> "2" Player
     Turn --> Board
     Turn ..> Types.Token
+    Turn ..> ConsoleIOS.ConsoleIO
 
     class Player{
         ~Player(Token, Board)
