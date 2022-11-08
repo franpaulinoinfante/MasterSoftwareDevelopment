@@ -1,0 +1,19 @@
+@startuml Connect4DomainModelsWithMachine
+title Connect4 Domain Models with Machine
+namespace Connect4ConsoleApp{
+    class Program{
+        +{static}Main(string[])
+        -Run()
+    }
+    Program *--> ConnectFour
+
+    class ConnectFour{
+        ~Run()
+        -Start()
+        -Play()
+        -Resume() : bool
+    }
+    ConnectFour *--> "1" Board 
+    ConnectFour *--> "1" Turn
+}
+@enduml
