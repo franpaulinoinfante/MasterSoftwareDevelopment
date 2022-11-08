@@ -18,11 +18,15 @@
    4.6. [Namespace Models](#Namespace-Models)  
    4.7. [namespace Types](#Namespace-Types)  
    4.8. [Arquitectura](#Arquitectura)
-3. [Calidad del Software](#alidad-del-software)  
-   3.1. [Diseño](#diseño)  
-   3.2. [Rediseño](#rediseño)
-4. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
-5. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
+5. [Calidad del Software](#alidad-del-software)  
+   4.1. [Diseño](#Diseño)  
+   4.2. [Rediseño](#Rediseño)
+6. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
+7. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
+
+## Modelo del Dominio
+
+
 
 ## Requisitos
 
