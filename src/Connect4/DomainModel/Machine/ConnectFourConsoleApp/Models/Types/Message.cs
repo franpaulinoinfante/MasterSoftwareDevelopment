@@ -1,6 +1,6 @@
-﻿using Connect4.ConsoleIOs;
+﻿using ConnectFourConsoleApp.ConsoleIOs;
 
-namespace Connect4.Models.Types;
+namespace ConnectFourConsoleApp.Models.Types;
 
 internal enum Message
 {
@@ -8,6 +8,8 @@ internal enum Message
     HorizontalLine,
     VerticalLine,
     Turn,
+    Players,
+    Random,
     EnterColunmToDrop,
     InvalidColunm,
     CompleteColunm,
@@ -24,6 +26,8 @@ internal static class MessageExtension
         "-",
         " | ",
         "Turn: ",
+        "Enter the players' number",
+        "Aleatoriamente en la columna: #columna",
         "Enter a colunm to drop a token: ",
         "Invalid columnn!!! Values [1-7]",
         "Invalid column!!! It's completed",
@@ -40,6 +44,11 @@ internal static class MessageExtension
     internal static void WriteLine(this Message message)
     {
         ConsoleIO.Instance.WriteLine(Messages[(int)message]);
+    }
+
+    internal static void WriteLine(this Message message, int value)
+    {
+        ConsoleIO.Instance.WriteLine(Messages[(int)message].Replace("#columna", $"{value}"));
     }
 
     internal static string GetMessage(this Message message)

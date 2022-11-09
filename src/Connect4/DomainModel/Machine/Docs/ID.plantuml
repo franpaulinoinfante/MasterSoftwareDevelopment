@@ -1,0 +1,51 @@
+@startuml DependencyInversion
+title Inversion de Dependencia
+class Copier{
+    +reader : Reader
+    +writer : Writer
+    +Copier()
+    +Copy()
+}
+Copier --> Writer
+Copier --> Reader
+Copier ..> StremFactory
+
+interface Writer{
+    +write(char[])
+}
+
+interface Reader{
+    +Reader() : char[]
+}
+
+class StremFactory{
+    +GetReader() : Reader
+    +GetWriter() : Writer
+}
+StremFactory ..> Reader
+StremFactory ..> Writer
+StremFactory ..> XWriter
+StremFactory ..> PrintWriter
+StremFactory ..> XReader
+StremFactory ..> KeybboardReader
+
+class XWriter{
+    +write(char[])
+}
+XWriter .up.|> Writer
+
+class PrintWriter{
+    +write(char[])
+}
+PrintWriter .up.|> Writer
+
+class XReader{
+    +Reader() : char[]
+}
+XReader .up.|> Reader
+
+class KeybboardReader{
+    +Reader() : char[]
+}
+KeybboardReader .up.|> Reader
+@enduml

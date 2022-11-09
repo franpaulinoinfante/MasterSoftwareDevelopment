@@ -15,5 +15,93 @@ namespace Connect4ConsoleApp{
     }
     ConnectFour *--> "1" Board 
     ConnectFour *--> "1" Turn
+    ConnectFour ..> Types.Message
+    ConnectFour ..> ConsoleIOs.ConsoleIO
+
+    class Turn{
+        -current : int
+        ~Turn(Board)
+        ~Reset()
+        ~Play()
+        ~Write()
+    }
+    Turn *--> "2" Player
+    Turn --> Board
+    Turn ..> Types.Token
+    Turn ..> ConsoleIOs.ConsoleIO
+    Turn ..> Types.Message
+
+    abstract Player{
+        ~Player(Board)
+        #Play()
+        #{abstract}ReadColunm() : int
+        #Write()
+    }
+    Player <|-- UserPlayer
+    Player <|-- MachinePlayer
+    Player --> Board
+    Player ..> Types.Token
+    Player ..> ConsoleIOs.ConsoleIO
+    Player ..> Types.Message
+
+    class UserPlayer{
+        ~Player(Board) : base(Board)
+        ~ReadColunm() : int
+    }
+
+    class MachinePlayer{
+        ~MachinePlayer(Board) : base(Board)
+        ~ReadColunm() : int
+    }
+
+    class Board{
+        ~Board()
+        ~Reset()
+        ~Drop(colunm, Token)
+        -GetLastDrop(colunm) : Coordinate
+        -IsOccupied(Coordinate, Token) : bool
+        -GetToken(Coordinate) : Token
+        ~IsComplete(colunm) : bool
+        ~IsFinished() : bool
+        -IsComplete() : bool
+        ~IsWinner() : bool
+        -IsConnectFour() : bool
+        -Write()
+    }
+    Board *--> "6x7" Types.Token
+    Board --> Types.Coordinate 
+    Board ..> Types.Message
+}
+
+namespace Types{
+    enum Token{
+        ~X,
+        ~O,
+        ~Null
+        ~Write(Token)
+        ~IsNull(Token) : bool
+    }
+
+    enum Types.Message{
+        +Titile
+        +HorizontalLine
+        +VerticalLine
+        +Turn
+        +EnterColunmToDrop
+        +InvalidColunm
+        +CompleteColunm
+        +PlayerWin
+        +PlayersTied
+        +Resume    
+        -{static}MESSAGES : string[]
+        ~{static}Write(Message)
+        ~{static}WriteLine(Message)
+        ~{static}GetMessage(Message)
+    }
+
+    class Coordinate{
+        
+    }
+
 }
 @enduml

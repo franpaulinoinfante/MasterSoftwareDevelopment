@@ -11,7 +11,6 @@ internal class Coordinate
     private int _row;
     private int _colunm;
 
-
     public Coordinate(int row, int colunm)
     {
         _row = row;

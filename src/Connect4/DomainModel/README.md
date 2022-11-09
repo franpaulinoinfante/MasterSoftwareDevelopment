@@ -1,8 +1,8 @@
 # Modelo del Dominio
 
 **Índice**
-- [Modelo del Dominio](#modelo-del-dominio)  
-    - [Estrategias de Clasificación](#estrategias-de-clasificación)  
+- [Modelo del Dominio](#Modelo-del-dominio)  
+    - [Estrategias de Clasificación](#Estrategias-de-clasificación)  
     - [Descripción Informal](#Descripción-Informal)  
     - [Análisis Clásico](#Análisis-Clásico)  
     - [Análisis del Dominio](#Análisis-del-Dominio)  
@@ -14,7 +14,10 @@
         - [Relación de Agregación](#Relación-de-Agregación)  
         - [Relación de Asociación](#Relación-de-Asociación)  
         - [Relación de Uso](#Relación-de-Uso)  
-- [Relaciones de Dependencia por Transmisión entre Clases](#Relación-de-Dependencia-por-Transmisión-entre-Clases)  
+- [Relaciones de Dependencia por Transmisión entre Clases](#Relaciones-de-Dependencia-por-Transmisión-entre-Clases)  
+    - [Herencia por especialización](#Herencia-por-especialización)
+    - [Herencia por extensión](#Herencia-por-extensión)
+
 
 ## Modelo del Dominio
 
@@ -43,3 +46,7 @@
 ## Relación de Uso
 
 ## Relaciones de Dependencia por Transmisión entre Clases
+
+## Herencia por especialización
+
+## Herencia por extensión
