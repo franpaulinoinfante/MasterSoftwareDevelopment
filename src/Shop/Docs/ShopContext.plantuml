@@ -10,7 +10,7 @@ Sale "1" --> "1" Invoce : has
 Sale *--> "1..n" SaleLine : constain
 
 Invoce ..> Money : paid with
-SaleLine "1" --> "1" Product : record sale
+SaleLine "1" --> "1" Product : record
 
 class Shop{
     name

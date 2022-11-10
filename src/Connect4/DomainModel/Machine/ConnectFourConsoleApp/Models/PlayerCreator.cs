@@ -25,9 +25,9 @@ internal class PlayerCreator
         }
     }
 
-    internal Player CreatePlayers(int position, Board board)
+    internal Player CreatePlayers(int position, int players, Board board)
     {
-        if (position < ReadNumberOfPlayer())
+        if (position < players)
         {
             return new UserPlayer(board, Enum.GetValues<Token>()[position]);
         }
@@ -35,20 +35,5 @@ internal class PlayerCreator
         {
             return new MachinePlayer(board, Enum.GetValues<Token>()[position]);
         }
-    }
-
-    private int ReadNumberOfPlayer()
-    {
-        int players;
-        bool valid = false;
-        do
-        {
-            players = ConsoleIO.Instance.ReadInt(Message.Players.GetMessage());
-            if (players >= 0 || players <= PlayerCreator.MaxPlayers)
-            {
-                valid = true;
-            }
-        } while (!valid);
-        return players;
     }
 }

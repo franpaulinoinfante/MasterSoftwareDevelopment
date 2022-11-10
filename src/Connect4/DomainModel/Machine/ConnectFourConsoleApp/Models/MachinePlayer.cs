@@ -4,7 +4,7 @@ namespace ConnectFourConsoleApp.Models;
 
 internal class MachinePlayer : Player
 {
-    public MachinePlayer(Token token, Board board) : base(token, board)
+    public MachinePlayer(Board board, Token token) : base(token, board)
     {
     }
 
@@ -13,9 +13,9 @@ internal class MachinePlayer : Player
         int colunm;
         do
         {
-            colunm = new Random().Next(minValue: 0, Coordinate.Colunms);
+            colunm = new Random().Next(minValue: 0, Coordinate.MaxColunms);
         } while (!Board.IsComplete(colunm));
-        Message.Random.WriteLine(colunm);
+        Message.Random.WriteLine();
         return colunm;
     }
 }

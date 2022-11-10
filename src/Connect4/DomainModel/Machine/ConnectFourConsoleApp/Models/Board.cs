@@ -1,4 +1,6 @@
-﻿using ConnectFourConsoleApp.Models.Types;
+﻿using Connect4.Models.Types;
+using ConnectFourConsoleApp.ConsoleIOs;
+using ConnectFourConsoleApp.Models.Types;
 
 namespace ConnectFourConsoleApp.Models;
 
@@ -9,15 +11,15 @@ internal class Board
 
     public Board()
     {
-        _tokens = new Token[Coordinate.Rows, Coordinate.Colunms];
+        _tokens = new Token[Coordinate.MaxRows, Coordinate.MaxColunms];
         Reset();
     }
 
     internal void Reset()
     {
-        for (int i = 0; i < Coordinate.Rows; i++)
+        for (int i = 0; i < Coordinate.MaxRows; i++)
         {
-            for (int j = 0; j < Coordinate.Colunms; j++)
+            for (int j = 0; j < Coordinate.MaxColunms; j++)
             {
                 _tokens[i, j] = Token.Null;
             }
@@ -37,7 +39,7 @@ internal class Board
     private Coordinate GetLastDrop(int colunm)
     {
         Coordinate coordinate = new Coordinate(rows: 0, colunm);
-        while ((coordinate.Row < Coordinate.Colunms) && !IsOccupied(coordinate, Token.Null))
+        while ((coordinate.Row < Coordinate.MaxColunms) && !IsOccupied(coordinate, Token.Null))
         {
             coordinate = coordinate.Shifted(new Coordinate(rows: 1, colunms: 0));
         }
@@ -66,9 +68,9 @@ internal class Board
 
     private bool IsComplete()
     {
-        for (int i = 0; i < Coordinate.Rows; i++)
+        for (int i = 0; i < Coordinate.MaxRows; i++)
         {
-            for (int j = 0; j < Coordinate.Colunms; j++)
+            for (int j = 0; j < Coordinate.MaxColunms; j++)
             {
                 if (IsOccupied(new Coordinate(i,j), Token.Null))
                 {
@@ -91,7 +93,7 @@ internal class Board
                 {
                     return true;
                 }
-                line.Shift()
+                line.Shift();
             }
         }
         return false;
@@ -106,7 +108,7 @@ internal class Board
             {
                 return false;
             }
-            if ((i>0) && GetToken(coordiantes[i - 1] != GetToken(coordinates[i])))
+            if ((i>0) && GetToken(coordinates[i - 1]) != GetToken(coordinates[i]))
             {
                 return false;
             }
@@ -117,10 +119,10 @@ internal class Board
     internal void Write()
     {
         WriteHorizontal();
-        for (int i = 0; i < Coordinate.NumberRows; i++)
+        for (int i = 0; i < Coordinate.MaxRows; i++)
         {
             Message.VerticalLine.Write();
-            for (int j = 0; j < Coordinate.NumberColunms; j++)
+            for (int j = 0; j < Coordinate.MaxColunms; j++)
             {
                 GetToken(new Coordinate(i, j)).Write();
                 Message.VerticalLine.Write();
@@ -132,7 +134,7 @@ internal class Board
 
     private void WriteHorizontal()
     {
-        for (int i = 0; i < 3 * Coordinate.NumberColunms; i++)
+        for (int i = 0; i < 3 * Coordinate.MaxColunms; i++)
         {
             Message.HorizontalLine.Write();
         }

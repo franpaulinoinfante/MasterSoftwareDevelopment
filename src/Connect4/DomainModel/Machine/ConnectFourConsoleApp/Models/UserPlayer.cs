@@ -5,7 +5,7 @@ namespace ConnectFourConsoleApp.Models;
 
 internal class UserPlayer : Player
 {
-    public UserPlayer(Token token, Board board) : base(token, board)
+    public UserPlayer(Board board, Token token) : base(token, board)
     {
     }
 
@@ -16,7 +16,7 @@ internal class UserPlayer : Player
         do
         {
             colunm = ConsoleIO.Instance.ReadInt(Message.EnterColunmToDrop.GetMessage()) - 1;
-            isValid = new Coordinate(Coordinate.Rows, Coordinate.Colunms).IsValid(colunm);
+            isValid = new Coordinate(Coordinate.MaxRows, Coordinate.MaxColunms).IsValid(colunm);
             if (!isValid)
             {
                 Message.InvalidColunm.WriteLine();

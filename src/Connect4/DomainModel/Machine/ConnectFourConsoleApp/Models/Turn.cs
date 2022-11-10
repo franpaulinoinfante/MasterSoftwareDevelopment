@@ -6,19 +6,19 @@ internal class Turn
     private readonly Board _board;
 
     private int _current;
+    private int _numOfPlayer;
 
     public Turn(Board board)
     {
         _board = board;
         _players = new Player[PlayerCreator.MaxPlayers];
-        Reset();
     }
 
-    internal void Reset()
+    internal void ConfigurePlayers(int numOfPlayer)
     {
         for (int i = 0; i < PlayerCreator.MaxPlayers; i++)
         {
-            _players[i] = PlayerCreator.Instance.CreatePlayers(i, _board);
+            _players[i] = PlayerCreator.Instance.CreatePlayers(i, numOfPlayer, _board);
         }
 
         _current = new Random().Next(minValue: 0, PlayerCreator.MaxPlayers);

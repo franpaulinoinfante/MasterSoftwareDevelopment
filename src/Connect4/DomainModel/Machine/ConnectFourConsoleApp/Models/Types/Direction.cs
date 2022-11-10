@@ -32,7 +32,7 @@ internal class Direction
         {
             foreach (Direction direction in Directions)
             {
-                if (direction._coordinate.Shifted(_coordinate).Equals(Coordinate.Origin))
+                if (direction._coordinate.Shifted(_coordinate).Equals(new Coordinate()))
                 {
                     return direction;
                 }

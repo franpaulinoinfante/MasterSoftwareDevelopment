@@ -119,9 +119,4 @@ public class ConsoleIO
     {
         WriteLine($"ERROR DE FORMATO.\tIntroduzca un valor con formato: {format}");
     }
-
-    internal int ReadInt(object )
-    {
-        throw new NotImplementedException();
-    }
 }

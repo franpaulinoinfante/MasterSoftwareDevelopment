@@ -18,6 +18,7 @@ internal class ConnectFour
     {
         do
         {
+            ConfigurePlayers();
             Start();
             Play();
         } while (IsResume());
@@ -29,6 +30,21 @@ internal class ConnectFour
         _board.Write();
     }
 
+    private void ConfigurePlayers()
+    {
+        int players;
+        bool valid = false;
+        do
+        {
+            players = ConsoleIO.Instance.ReadInt(Message.Players.GetMessage());
+            if (players >= 0 || players <= PlayerCreator.MaxPlayers)
+            {
+                valid = true;
+            }
+        } while (!valid);
+        _turn.ConfigurePlayers(players);
+    }
+
     private void Play()
     {
         do
@@ -36,7 +52,6 @@ internal class ConnectFour
             _turn.Play();
             _board.Write();
         } while (!_board.IsFinished());
-
         _turn.WriteResult();
     }
 
@@ -47,7 +62,6 @@ internal class ConnectFour
         if (yesNoDialog.IsAffirmative())
         {
             _board.Reset();
-            _turn.Reset();
         }
         return yesNoDialog.IsAffirmative();
     }

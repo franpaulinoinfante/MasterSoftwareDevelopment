@@ -4,8 +4,6 @@ title Context iViews
 iViews *--> "0..n" User
 iViews ..> Video
 
-User <|-- Creator
-User <|-- Visitor
 User *--> "0..n" Video
 User ..> Comment
 User *--> Playlist

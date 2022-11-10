@@ -26,8 +26,8 @@ internal static class MessageExtension
         "-",
         " | ",
         "Turn: ",
-        "Enter the players' number",
-        "Aleatoriamente en la columna: #columna",
+        "Enter the players: ",
+        "Aleatoriamente en la columna: ",
         "Enter a colunm to drop a token: ",
         "Invalid columnn!!! Values [1-7]",
         "Invalid column!!! It's completed",
@@ -44,11 +44,6 @@ internal static class MessageExtension
     internal static void WriteLine(this Message message)
     {
         ConsoleIO.Instance.WriteLine(Messages[(int)message]);
-    }
-
-    internal static void WriteLine(this Message message, int value)
-    {
-        ConsoleIO.Instance.WriteLine(Messages[(int)message].Replace("#columna", $"{value}"));
     }
 
     internal static string GetMessage(this Message message)

@@ -1,3 +1,5 @@
+using ConnectFourConsoleApp.Models.Types;
+
 namespace Connect4.Models.Types;
 
 internal class Line
@@ -20,10 +22,10 @@ internal class Line
         set
         {
             _coordinates = new Coordinate[Length];
-            _coordinate[0] = _origin;
-            for (int i = 0; i < Line.Length; i++)
+            _coordinates[0] = _origin;
+            for (int i = 1; i < Line.Length; i++)
             {
-                _coordinate[i] = _coordinate[i -1].Shifted(value.Coordinate);
+                _coordinates[i] = _coordinates[i -1].Shifted(value.Coordinate);
             }
             _oppositeDirection = value.OppositeDirection;
         }

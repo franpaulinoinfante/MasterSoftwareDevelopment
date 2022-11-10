@@ -1,0 +1,41 @@
+@startuml UseCaseViewSale
+title Use Case Sale
+
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state G as " "
+state H as " "
+state I as " "
+state J as " "
+state K as " "
+state L as " "
+state M as " "
+state N as " "
+
+state if1 <<choice>> 
+
+[*] --> A
+A --> B : Cashier requests Start a new sale
+B --> C : System requests introduces a product id
+C --> if1
+    if1 --> M : [error]
+    note on link
+        product not found
+    endnote
+    M -up-> N : System shows error message
+    N -right-> B
+if1 --> D : System add the line sale and shows the description and subtotal
+D --> E : Cashier requests Calculate total to pay
+E --> F : System shows total
+F --> G : System requests the pay
+G --> H : Cashier introduces the pay
+H --> I : System Calculate the pay and total
+I --> J : System shows receipt
+J --> K : Cashier requests Complete the sale
+K --> L : System prints the invoce
+L --> [*]
+@enduml
