@@ -1,3 +1,1 @@
-﻿using ConnectFourConsoleApp.Models;
-
-new ConnectFour().Run();
+﻿new ConnectFourConsoleApp.Models.ConnectFour().Init();

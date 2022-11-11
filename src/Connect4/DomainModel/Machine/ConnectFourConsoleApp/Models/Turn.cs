@@ -1,29 +1,31 @@
-﻿using ConnectFourConsoleApp.Models.Types;
+﻿using ConnectFourConsoleApp.Models.Players;
+using ConnectFourConsoleApp.Types;
 
 namespace ConnectFourConsoleApp.Models;
 
 internal class Turn
 {
+    internal const int MaxPlayers = 2;
+
     private readonly Player[] _players;
     private readonly Board _board;
 
     private int _current;
-    private readonly int _numOfPlayer;
 
     public Turn(Board board)
     {
         _board = board;
-        _players = new Player[PlayerCreator.MaxPlayers];
+        _players = new Player[Turn.MaxPlayers];
     }
 
-    internal void ConfigurePlayers(int numOfPlayer)
+    internal void SetUp(int numOfPlayers)
     {
-        for (int i = 0; i < PlayerCreator.MaxPlayers; i++)
+        for (int i = 0; i < Turn.MaxPlayers; i++)
         {
-            _players[i] = PlayerCreator.Instance.CreatePlayers(i, numOfPlayer, _board);
+            _players[i] = PlayerCreator.Instance.CreatePlayers(i, numOfPlayers, _board);
         }
 
-        _current = new Random().Next(minValue: 0, PlayerCreator.MaxPlayers);
+        _current = new Random().Next(minValue: 0, Turn.MaxPlayers);
     }
 
     internal void Play()
@@ -31,7 +33,7 @@ internal class Turn
         _players[_current].Play();
         if (!_board.IsFinished())
         {
-            _current = (_current + 1) % PlayerCreator.MaxPlayers;
+            _current = (_current + 1) % Turn.MaxPlayers;
         }
     }
 
@@ -43,7 +45,7 @@ internal class Turn
         }
         else
         {
-            Message.Titile.WriteLine();
+            Message.PlayersTied.WriteLine();
         }
     }
 }

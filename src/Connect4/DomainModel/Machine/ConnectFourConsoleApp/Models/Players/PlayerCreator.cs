@@ -1,11 +1,9 @@
-﻿using ConnectFourConsoleApp.Models.Types;
+﻿using ConnectFourConsoleApp.Types;
 
-namespace ConnectFourConsoleApp.Models;
+namespace ConnectFourConsoleApp.Models.Players;
 
 internal class PlayerCreator
 {
-    internal static int MaxPlayers = 2;
-
     private static PlayerCreator? _instance;
 
     private PlayerCreator()

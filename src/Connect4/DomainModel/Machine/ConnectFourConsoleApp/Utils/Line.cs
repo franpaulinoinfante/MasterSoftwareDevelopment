@@ -1,4 +1,6 @@
-namespace ConnectFourConsoleApp.Models.Types;
+using ConnectFourConsoleApp.Types;
+
+namespace ConnectFourConsoleApp.Utils;
 
 internal class Line
 {

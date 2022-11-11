@@ -1,4 +1,4 @@
-﻿namespace ConnectFourConsoleApp.Models.Types;
+﻿namespace ConnectFourConsoleApp.Utils;
 
 internal class ClosedInterval
 {

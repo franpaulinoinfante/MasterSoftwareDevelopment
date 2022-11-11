@@ -1,7 +1,7 @@
 ﻿using ConnectFourConsoleApp.ConsoleIOs;
-using ConnectFourConsoleApp.Models.Types;
+using ConnectFourConsoleApp.Types;
 
-namespace ConnectFourConsoleApp.Models;
+namespace ConnectFourConsoleApp.Models.Players;
 
 internal abstract class Player
 {
@@ -19,8 +19,7 @@ internal abstract class Player
 
     internal void Play()
     {
-        Message.Turn.Write();
-        ConsoleIO.Instance.WriteLine(_token.ToString());
+        Message.Turn.WriteLine(_token.ToString());
         int colunm = ReadColunm();
         _board.Drop(colunm, _token);
     }

@@ -1,5 +1,5 @@
 ﻿using ConnectFourConsoleApp.ConsoleIOs;
-using ConnectFourConsoleApp.Models.Types;
+using ConnectFourConsoleApp.Types;
 
 namespace ConnectFourConsoleApp.Models;
 
@@ -14,35 +14,35 @@ internal class ConnectFour
         _turn = new Turn(_board);
     }
 
-    internal void Run()
+    internal void Init()
     {
         do
         {
-            ConfigurePlayers();
+            SetUp();
             Start();
             Play();
         } while (IsResume());
+    }
+
+    private void SetUp()
+    {
+        int players;
+        bool valid = false;
+        do
+        {
+            players = ConsoleIO.Instance.ReadInt(Message.NumOfPlayers.GetMessage());
+            if (players >= 0 || players <= Turn.MaxPlayers)
+            {
+                valid = true;
+            }
+        } while (!valid);
+        _turn.SetUp(players);
     }
 
     private void Start()
     {
         Message.Titile.WriteLine();
         _board.Write();
-    }
-
-    private void ConfigurePlayers()
-    {
-        int players;
-        bool valid = false;
-        do
-        {
-            players = ConsoleIO.Instance.ReadInt(Message.Players.GetMessage());
-            if (players >= 0 || players <= PlayerCreator.MaxPlayers)
-            {
-                valid = true;
-            }
-        } while (!valid);
-        _turn.ConfigurePlayers(players);
     }
 
     private void Play()

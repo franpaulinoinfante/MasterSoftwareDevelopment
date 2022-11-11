@@ -1,6 +1,6 @@
 ﻿using ConnectFourConsoleApp.ConsoleIOs;
 
-namespace ConnectFourConsoleApp.Models.Types;
+namespace ConnectFourConsoleApp.Types;
 internal enum Token
 {
     X,

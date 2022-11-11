@@ -1,6 +1,7 @@
-﻿using ConnectFourConsoleApp.Models.Types;
+﻿using ConnectFourConsoleApp.Types;
+using ConnectFourConsoleApp.Utils;
 
-namespace ConnectFourConsoleApp.Models;
+namespace ConnectFourConsoleApp.Models.Players;
 
 internal class MachinePlayer : Player
 {
@@ -15,8 +16,8 @@ internal class MachinePlayer : Player
         {
             colunm = new Random().Next(minValue: 0, Coordinate.MaxColunms);
         } while (Board.IsComplete(colunm));
-        Message.Random.WriteLine();
-        Task.Delay(800).Wait();
+        Message.Random.WriteLine(colunm);
+        //Task.Delay(800).Wait();
         return colunm;
     }
 }

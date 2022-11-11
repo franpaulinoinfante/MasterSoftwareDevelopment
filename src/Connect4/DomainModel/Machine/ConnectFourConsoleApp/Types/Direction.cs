@@ -1,4 +1,6 @@
-﻿namespace ConnectFourConsoleApp.Models.Types;
+﻿using ConnectFourConsoleApp.Utils;
+
+namespace ConnectFourConsoleApp.Types;
 
 internal class Direction
 {
@@ -41,8 +43,8 @@ internal class Direction
         {
             return new List<Direction>()
             {
-                Direction.North, Direction.NorthEast, Direction.East, Direction.SouthEast,
-                Direction.South, Direction.SouthWest, Direction.West, Direction.NorthWest
+                North, NorthEast, East, SouthEast,
+                South, SouthWest, West, NorthWest
             };
         }
     }

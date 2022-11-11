@@ -1,4 +1,4 @@
-﻿namespace ConnectFourConsoleApp.Models.Types;
+﻿namespace ConnectFourConsoleApp.Utils;
 
 internal class Coordinate
 {
@@ -31,13 +31,13 @@ internal class Coordinate
     internal bool IsValid()
     {
         return
-            new ClosedInterval(min: 0, Coordinate.MaxRows - 1).IsValid(_row) &&
-            new ClosedInterval(min: 0, Coordinate.MaxColunms - 1).IsValid(_colunm);
+            new ClosedInterval(min: 0, MaxRows - 1).IsValid(_row) &&
+            new ClosedInterval(min: 0, MaxColunms - 1).IsValid(_colunm);
     }
 
     internal bool IsValid(int value)
     {
-        return new ClosedInterval(min: 0, Coordinate.MaxColunms).IsValid(value);
+        return new ClosedInterval(min: 0, MaxColunms).IsValid(value);
     }
 
     internal bool Equals(Coordinate coordinate)
