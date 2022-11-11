@@ -1,5 +1,6 @@
 ﻿using ConnectFourConsoleApp.ConsoleIOs;
-using ConnectFourConsoleApp.Models.Types;
+using ConnectFourConsoleApp.Types;
+using ConnectFourConsoleApp.Utils;
 
 namespace ConnectFourConsoleApp.Models;
 
