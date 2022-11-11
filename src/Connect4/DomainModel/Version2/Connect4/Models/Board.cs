@@ -6,7 +6,7 @@ namespace Connect4.Models;
 internal class Board
 {
     private readonly Token[,] _tokens;
-    private Coordinate _lastDrop;
+    private Coordinate? _lastDrop;
 
     public Board()
     {
@@ -25,7 +25,7 @@ internal class Board
         }
     }
 
-    internal void Drop(int colunm, Token token)
+    internal void Drop(Token token, int colunm)
     {
         _lastDrop = GetLastDrop(colunm);
         if (!IsEmpty(_lastDrop))

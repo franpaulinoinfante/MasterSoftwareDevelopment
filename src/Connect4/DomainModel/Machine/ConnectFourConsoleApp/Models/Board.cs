@@ -1,12 +1,11 @@
-﻿using Connect4.Models.Types;
-using ConnectFourConsoleApp.ConsoleIOs;
+﻿using ConnectFourConsoleApp.ConsoleIOs;
 using ConnectFourConsoleApp.Models.Types;
 
 namespace ConnectFourConsoleApp.Models;
 
 internal class Board
 {
-    private Token[,] _tokens;
+    private readonly Token[,] _tokens;
     private Coordinate? _lastDrop;
 
     public Board()
@@ -39,7 +38,7 @@ internal class Board
     private Coordinate GetLastDrop(int colunm)
     {
         Coordinate coordinate = new Coordinate(rows: 0, colunm);
-        while ((coordinate.Row < Coordinate.MaxColunms) && !IsOccupied(coordinate, Token.Null))
+        while ((coordinate.Row < Coordinate.MaxRows - 1) && IsOccupied(coordinate, Token.Null))
         {
             coordinate = coordinate.Shifted(new Coordinate(rows: 1, colunms: 0));
         }
@@ -72,7 +71,7 @@ internal class Board
         {
             for (int j = 0; j < Coordinate.MaxColunms; j++)
             {
-                if (IsOccupied(new Coordinate(i,j), Token.Null))
+                if (IsOccupied(new Coordinate(i, j), Token.Null))
                 {
                     return false;
                 }
@@ -108,7 +107,7 @@ internal class Board
             {
                 return false;
             }
-            if ((i>0) && GetToken(coordinates[i - 1]) != GetToken(coordinates[i]))
+            if ((i > 0) && GetToken(coordinates[i - 1]) != GetToken(coordinates[i]))
             {
                 return false;
             }

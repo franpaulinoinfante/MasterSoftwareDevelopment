@@ -1,8 +1,7 @@
 ﻿using Connect4.ConsoleIOs;
-using Connect4.Models;
 using Connect4.Models.Types;
 
-namespace Connect4;
+namespace Connect4.Models;
 
 internal class ConnectFour
 {

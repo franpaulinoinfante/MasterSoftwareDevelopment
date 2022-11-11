@@ -5,8 +5,8 @@ namespace ConnectFourConsoleApp.Models;
 
 internal class ConnectFour
 {
-    private Board _board;
-    private Turn _turn;
+    private readonly Board _board;
+    private readonly Turn _turn;
 
     public ConnectFour()
     {

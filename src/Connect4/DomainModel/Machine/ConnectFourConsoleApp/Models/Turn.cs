@@ -1,12 +1,14 @@
-﻿namespace ConnectFourConsoleApp.Models;
+﻿using ConnectFourConsoleApp.Models.Types;
+
+namespace ConnectFourConsoleApp.Models;
 
 internal class Turn
 {
-    private Player[] _players;
+    private readonly Player[] _players;
     private readonly Board _board;
 
     private int _current;
-    private int _numOfPlayer;
+    private readonly int _numOfPlayer;
 
     public Turn(Board board)
     {
@@ -35,6 +37,13 @@ internal class Turn
 
     internal void WriteResult()
     {
-        throw new NotImplementedException();
+        if (_board.IsWinner())
+        {
+            _players[_current].WriteWinner();
+        }
+        else
+        {
+            Message.Titile.WriteLine();
+        }
     }
 }

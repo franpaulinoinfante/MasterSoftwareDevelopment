@@ -1,6 +1,4 @@
-using ConnectFourConsoleApp.Models.Types;
-
-namespace Connect4.Models.Types;
+namespace ConnectFourConsoleApp.Models.Types;
 
 internal class Line
 {
@@ -23,9 +21,9 @@ internal class Line
         {
             _coordinates = new Coordinate[Length];
             _coordinates[0] = _origin;
-            for (int i = 1; i < Line.Length; i++)
+            for (int i = 1; i < Length; i++)
             {
-                _coordinates[i] = _coordinates[i -1].Shifted(value.Coordinate);
+                _coordinates[i] = _coordinates[i - 1].Shifted(value.Coordinate);
             }
             _oppositeDirection = value.OppositeDirection;
         }
@@ -35,7 +33,7 @@ internal class Line
     {
         for (int i = 0; i < _coordinates.Length; i++)
         {
-             _coordinates[i] = _coordinates[i].Shifted(_oppositeDirection.Coordinate);
+            _coordinates[i] = _coordinates[i].Shifted(_oppositeDirection.Coordinate);
         }
     }
 }

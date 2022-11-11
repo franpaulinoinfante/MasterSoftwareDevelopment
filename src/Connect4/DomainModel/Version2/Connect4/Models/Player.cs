@@ -37,7 +37,7 @@ internal class Player
                 }
             }
         } while (!valid);
-        _board.Drop(colunm, _token);
+        _board.Drop(_token, colunm);
     }
 
     internal void WriteWinner()

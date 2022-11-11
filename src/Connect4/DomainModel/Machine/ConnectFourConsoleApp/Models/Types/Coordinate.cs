@@ -21,7 +21,7 @@ internal class Coordinate
     }
 
     public int Row { get => _row; set => _row = value; }
-    public int Colunm { get => _colunm; set => _colunm= value; }
+    public int Colunm { get => _colunm; set => _colunm = value; }
 
     internal Coordinate Shifted(Coordinate coordinate)
     {
@@ -30,9 +30,9 @@ internal class Coordinate
 
     internal bool IsValid()
     {
-        return 
-            new ClosedInterval(Coordinate.MaxRows, Coordinate.MaxColunms).IsValid(_row) && 
-            new ClosedInterval(Coordinate.MaxRows, Coordinate.MaxColunms).IsValid(_colunm);
+        return
+            new ClosedInterval(min: 0, Coordinate.MaxRows - 1).IsValid(_row) &&
+            new ClosedInterval(min: 0, Coordinate.MaxColunms - 1).IsValid(_colunm);
     }
 
     internal bool IsValid(int value)
