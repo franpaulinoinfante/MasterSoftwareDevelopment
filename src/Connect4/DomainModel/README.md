@@ -8,6 +8,7 @@
     - [Análisis Clásico](#Análisis-Clásico)  
     - [Análisis del Dominio](#Análisis-del-Dominio)  
     - [Análisis del Comportamiento](#Análisis-del-Comportamiento)  
+    - [Patrón de Experto en la Información](#Patrón-de-Experto-en-la-Información)  
     - [Análisis de Casos de Uso](#Análisis-de-Casos-de-Uso)  
     - [Antipatrón "Descomposición Funcional"](#Antipatrón-Descomposición-Funcional)  
 - [Relaciones entre Clases Básicas](#Relaciones-entre-Clases-Básicas)  
@@ -17,8 +18,8 @@
         - [Relación de Asociación](#Relación-de-Asociación)  
         - [Relación de Uso](#Relación-de-Uso)  
 - [Relaciones de Dependencia por Transmisión entre Clases](#Relaciones-de-Dependencia-por-Transmisión-entre-Clases)  
-    - [Herencia por especialización](#Herencia-por-especialización)
-    - [Herencia por extensión](#Herencia-por-extensión)
+    - [Herencia por especialización](#Herencia-por-especialización)  
+    - [Herencia por extensión](#Herencia-por-extensión)  
 
 ## Análisis y Diseño
 
