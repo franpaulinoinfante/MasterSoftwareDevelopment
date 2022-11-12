@@ -191,15 +191,33 @@ Ejemplos:
 - La relación de composición no abarca simplemente **cuestiones físicas** (*libro -todo- y páginas -parte-*) sino,
     - como **“contiene un”** (*aparato digestivo -todo- y bolo alimenticio -parte-*).
 - también, a **relaciones lógicas** que respondan adecuadamente al todo y a la parte.
-    - como **“posee un”** (*propietario -todo- y propiedades -parte*-).
+    - como **“posee un”** (*propietario -todo- y propiedades -parte*-).  
+
 Caracteristicas:
-
-
 | Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
 | :------- | :------: |  :------: |  
 
+- **Implantación mediante atributos y creación en el constructor o …​
+    - referencias privadas con ciclo de vida igual al objeto
+
 
 ## Relación de Agregación
+
+La agregación debil o compartida son asociaciones en las que una parte contiene a elementos de otra parte. Normalmente responden a la pregunta "tiene un".<br/>
+
+Caracteristicas:
+| Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
+| :------- | :------: |  :------: |  
+
+Comparación entre Relación de Composición y Agregación:
+| Composición | Agregación |
+| --- | --- |
+| es una composición donde la vida del objetos de la clase contenida debe coincidir con la vida de la clase contenedor. | Los componentes constituyen una parte del objeto compuesto. |  
+| Los componentes constituyen una parte del objeto compuesto. | Los componentes constituyen opcionalmente una parte del objeto compuesto. |
+| La supresión del objeto compuesto conlleva la supresión de los componentes. | La destrucción del compuesto no conlleva la destrucción de los componentes. |
+| los componentes no pueden ser compartidos por varios objetos compuestos. | Los componentes pueden ser compartidos por varios compuestos. |
+| composición fuerte | composición débil |
+| Clases persona y cabeza: una cabeza solo puede pertenecer a una persona y no puede existir una cabeza sin su persona, no va a su funeral | Clases persona y cabeza: una cabeza solo puede pertenecer a una persona y no puede existir una cabeza sin su persona, no va a su funeral |
 
 ## Relación de Asociación
 
