@@ -236,7 +236,8 @@ Es la relación que perdura entre un cliente y un servidor determinado.
 Caracteristicas:
 | Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
 | :------- | :------: |  :------: |  
-| Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto. |
+
+Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto.
 
 
 ## Relación de Uso
