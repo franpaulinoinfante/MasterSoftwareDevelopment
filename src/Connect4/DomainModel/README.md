@@ -195,8 +195,8 @@ Ejemplos:
 Caracteristicas:
 
 
-| Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja**| Foto Aqui | 
-| :------- | :------: |  
+| Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
+| :------- | :------: |  :------: |  
 
 
 ## Relación de Agregación
