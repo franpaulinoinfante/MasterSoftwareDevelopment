@@ -51,7 +51,7 @@ Desarrollar enfocados en los requisitos no funcionales y en el dominio de la sol
 
 ## Modelo del Dominio
 
-**Origen** *de identificadores del problema/solución*<br?>
+**Origen** *de identificadores del problema/solución*<br/>
 
 Describe los conceptos más importantes (tipos de objetos) del contexto como objetos del dominio y los enlaces de éstos con otros.
 
