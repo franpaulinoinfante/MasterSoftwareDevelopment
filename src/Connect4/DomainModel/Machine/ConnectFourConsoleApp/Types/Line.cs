@@ -1,6 +1,6 @@
-using ConnectFourConsoleApp.Types;
+using ConnectFourConsoleApp.Utils;
 
-namespace ConnectFourConsoleApp.Utils;
+namespace ConnectFourConsoleApp.Types;
 
 internal class Line
 {
