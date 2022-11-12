@@ -161,8 +161,7 @@ Solución:
 | **Dependencia** es la nueva forma de referirse a una relación entre calses. | *"Un objeto en si mismo no es interesante. Los objetos contribuyen al comportamiento de un sistema colaborando con otros objetos."* — Grady Booch Análisis y Diseño Orientado a Objetos. 1996. | 
 | :------- | :------: |  
 
-### Tipos de Relaciones entre Clases
-
+### Tipos de Relaciones entre Clases:  
 - Relaciones/Dependencias por Colaboración entre Objetos
     - si dos objetos colaboran, a través del paso de mensajes, sus respectivas clases están relacionadas.
     - Tipos de relación por colaboración:
@@ -174,11 +173,33 @@ Solución:
     - Tipos de relación por transmisión:
         - Relación de Herencia por Extensión
         - Relación de Herencia por Implementación
-    
 
 ## Relaciones de Dependencia por Colaboración entre Objetos
 
+### Caracteristicas de las relaciones por Colaboración:
+
+- Visibilidad: Con el objetivo de maximizar el nivel de encapsulación, la visibilidad que un objeto tiene de otro es un aspecto que debe tenerse en cuenta al crear relaciones, la visiblidad se restringe definiendo el carácter públicos, privados y protedigos entre dos objetos, y cuales son las interfaces, o sea, si otros objetos colaboran o no con el objeto que recibe el mensaje.
+- Temporabilidad: Cualquier relación entre objetos o entre clases tiene una duración temporal. Hay relaciones entre objetos que se dan en un ambito muy restringido (por ejemplo, dentro de un método) y hay relaciones entre objetos que abarcan toda la vida de los objetos (por ejemplo, en las propiedades). Se debe prestar atención al estudio de la temporalidad de una relación porque ayuda a definir el tipo de relación, aunque en igualdad de condiciones se prefiere una baja temporalidad, pues, esto implica mayor independencia y menor coste de recursos. [mayor o menor duración de la colaboración entre dos objetos que colaboran].
+- Versatilidad: Un objeto se dice que es versátil si puede combinarse con otros objetos de diversas maneras para dar lugar a diferentes comportamientos. [Intercambiabilidad de los objetos en la colaboración con otros objetos]. Por ejemplo, una clase Pila que pueda almacenar cualquier tipo de objeto es una clase más versátil que una clase Pila que sólo permita almacenar números enteros. En general, es preferible hacer código versátil, pues facilita su reutilización en diferentes problemas. Sin embargo, un código excesivamente versátil puede ser que se ajuste poco a un problema particular que se esté resolviendo y que, con ello, se dificulte la programación en vez de simplificarla. Por tanto, al desarrollar un programa, es importante estudial cuál es el nivel de versatilidad que interesa para la clase e interfaces que se van a crear, en el contexto del problema que se está resolviendo.
+
 ## Relación de Composición
+
+Es la relación que se constituye entre **el todo y la parte.**
+- Se puede determinar que existe una relación de c**omposición entre la clase A, el todo, y la clase B, la parte si:**
+    - si un objeto de la clase A “tiene un” objeto de la clase B.
+Ejemplos:
+- La relación de composición no abarca simplemente **cuestiones físicas** (*libro -todo- y páginas -parte-*) sino,
+    - como **“contiene un”** (*aparato digestivo -todo- y bolo alimenticio -parte-*).
+- también, a **relaciones lógicas** que respondan adecuadamente al todo y a la parte.
+    - como **“posee un”** (*propietario -todo- y propiedades -parte*-).
+Caracteristicas:
+
+
+| - Visibilidad: **Privada**
+- Temporabilidad: **Alta**
+- Versatilidad: **Baja**| Foto Aqui | 
+| :------- | :------: |  
+
 
 ## Relación de Agregación
 
