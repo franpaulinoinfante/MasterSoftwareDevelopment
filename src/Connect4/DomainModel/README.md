@@ -21,6 +21,15 @@
 
 ## Análisis y Diseño
 
+¿Qué es el diseño?
+- Traza o delineación de un edificio o de una figura.
+- Proyecto, plan que configura algo.
+- Concepción original de un objeto u obra destinados a la producción en serie.
+- Forma de un objeto de *diseño*. El diseño de esta silla es de inspiración modernista.
+- Descripción o bosquejo verbal de algo.
+
+|  aqui   |  aqui  | 
+| :------- | :------: |  
 
 
 ## Modelo del Dominio
@@ -34,21 +43,21 @@ Los objetos pueden ser:
 - **Nunca del software del sistema:** vista, validador, ¡etc.…!
 
 Los objetivos del modelo de dominio son:
-- Comprender la estructura y dinámica de la organización en la que el sistema se desarrollara.
-- Comprender los problemas actuales de la organización destino e identificar mejoras potenciales.
-- Asegurar que los clientes, usuarios finales y desarrolladores tienen compresión común de la organización destino.
-- Primera aproximación a la obtención de los requisitos del sistema para apoyar a la organización destino.
+- **Comprender la estructura y dinámica** de la organización en la que el sistema se desarrollara.
+- **Comprender los problemas actuales** de la organización destino e identificar mejoras potenciales.
+- **Asegurar que los clientes, usuarios finales y desarrolladores** tienen compresión común de la organización destino.
+- **Primera aproximación a la obtención de los requisitos** del sistema para apoyar a la organización destino.
 
 El modelo del dominio se obtiene en talleres/reuniones por parte de:
-- Analistas del dominio,
-- Expertos del dominio y,
-- Personas con habilidades de modelar
+- **Analistas del dominio**,
+- **Expertos del dominio** y,
+- **Personas con habilidades de modelar**
 
 El modelo del dominio se describe utilizando el Lenguaje Unificado de Modelado (UML) utilizando los diagramas de:
-- Clases,
-- Objetos,
-- Actividad y,
-- Estado
+- **Clases**,
+- **Objetos**,
+- **Actividad** y,
+- **Estado**
 
 ## Estrategias de Clasificación
 
