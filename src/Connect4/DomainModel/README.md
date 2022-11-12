@@ -196,6 +196,7 @@ Ejemplos:
 | Caracteristicas | Notación UML | Código C# |
 | --- | --- | --- |
 | Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja** | ![image](https://user-images.githubusercontent.com/46433173/201494732-038d5203-17e8-4aef-af45-c2b386663299.png) | ![image](https://user-images.githubusercontent.com/46433173/201494701-88531612-f0da-4b54-90ec-a4ff308330e9.png) |
+
 - **Implantación mediante atributos y creación en el constructor o …​
     - referencias privadas con ciclo de vida igual al objeto
 
@@ -205,8 +206,8 @@ La agregación debil o compartida son asociaciones en las que una parte contiene
 
 | Caracteristicas | Notación UML | Código C# |
 | --- | --- | --- |
-| Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| ![image](https://user-images.githubusercontent.com/46433173/201494906-7ddbcdd5-f7b2-49cd-b1d4-dd8407b4c4bd.png) | ![image](https://user-images.githubusercontent.com/46433173/201494950-5d238576-a09d-4f16-90c2-5f14d2693017.png)
- |
+| Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| ![image](https://user-images.githubusercontent.com/46433173/201494906-7ddbcdd5-f7b2-49cd-b1d4-dd8407b4c4bd.png) | ![image](https://user-images.githubusercontent.com/46433173/201494950-5d238576-a09d-4f16-90c2-5f14d2693017.png) |
+
 - Implantación mediante atributos y métodos de inserción, borrrado o …​
     - referencias privadas con ciclo de vida igual al objeto
 
@@ -235,7 +236,7 @@ Es la relación que perdura entre un cliente y un servidor determinado.
 | --- | --- | --- |
 | Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| ![image](https://user-images.githubusercontent.com/46433173/201495077-cd812c85-979e-4503-b668-9db6072d2fff.png) | ![image](https://user-images.githubusercontent.com/46433173/201495039-2094133a-ce5a-435b-b924-508ec3a575b7.png) |
 
-Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto.
+- Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto.
 
 ## Relación de Uso
 
@@ -248,7 +249,6 @@ Es la relación que se establece momentáneamente **entre un cliente y cualquier
 | Caracteristicas | Notación UML | Código C# |
 | --- | --- | --- |
 | Visibilidad: **Pública y Privada** <br/> Temporabilidad: **baja** <br/> Versatilidad: **Alta** | ![image](https://user-images.githubusercontent.com/46433173/201494031-5fe7286f-974e-43aa-ac0d-8a3ba2106037.png) | ![image](https://user-images.githubusercontent.com/46433173/201494509-cf349760-26f5-4721-97c9-aabb9ba2869f.png) |
-
 
 - Implantación mediante parámetros o variables locales de métodos o mediante referencias con ciclo de vida igual a la ejecución del método
 
