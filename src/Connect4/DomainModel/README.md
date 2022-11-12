@@ -193,9 +193,10 @@ Ejemplos:
 - también, a **relaciones lógicas** que respondan adecuadamente al todo y a la parte.
     - como **“posee un”** (*propietario -todo- y propiedades -parte*-).  
 
-Caracteristicas:
+| Caracteristicas | Notación UML | Código C# |
+| --- | --- | --- |
 | Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
-| :------- | :------: |  :------: |  
+
 
 - **Implantación mediante atributos y creación en el constructor o …​
     - referencias privadas con ciclo de vida igual al objeto
@@ -205,9 +206,9 @@ Caracteristicas:
 
 La agregación debil o compartida son asociaciones en las que una parte contiene a elementos de otra parte. Normalmente responden a la pregunta "tiene un".<br/>
 
-Caracteristicas:
+| Caracteristicas | Notación UML | Código C# |
+| --- | --- | --- |
 | Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
-| :------- | :------: |  :------: |  
 
 - Implantación mediante atributos y métodos de inserción, borrrado o …​
     - referencias privadas con ciclo de vida igual al objeto
@@ -233,9 +234,9 @@ Es la relación que perdura entre un cliente y un servidor determinado.
 - también a **cuestiones lógicas** que respondan adecuadamente al cliente y al servidor determinado.
     - como “beneficio”, empresa -cliente- y banca -servidor-, etc.
 
-Caracteristicas:
+| Caracteristicas | Notación UML | Código C# |
+| --- | --- | --- |
 | Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
-| :------- | :------: |  :------: |  
 
 Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto.
 
