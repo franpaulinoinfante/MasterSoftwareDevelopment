@@ -158,8 +158,8 @@ Solución:
 
 ## Relaciones entre Clases Básicas
 
-|**Dependencia** es la nueva forma de referirse a una relación entre calses.|
-*"Un objeto en si mismo no es interesante. Los objetos contribuyen al comportamiento de un sistema colaborando con otros objetos."* — Grady Booch Análisis y Diseño Orientado a Objetos. 1996. |
+| **Dependencia** es la nueva forma de referirse a una relación entre calses. | *"Un objeto en si mismo no es interesante. Los objetos contribuyen al comportamiento de un sistema colaborando con otros objetos."* — Grady Booch Análisis y Diseño Orientado a Objetos. 1996. | 
+| :------- | :------: |  
 
 
 
