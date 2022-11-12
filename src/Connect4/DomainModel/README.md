@@ -239,11 +239,32 @@ Caracteristicas:
 
 Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto.
 
-
 ## Relación de Uso
+
+Es la relación que se establece momentáneamente **entre un cliente y cualquier servidor.**
+- Existe una **relación de uso entre la clase A, el cliente, y la clase B, el servidor, si un objeto de la clase A disfruta de los servicios de un objeto de la clase B (mensajes lanzados) para llevar a cabo la responsabilidad del objeto de la clase A en un momento** dado sin dependencias futuras.
+    - La relación de uso no abarca simplemente **cuestiones tangibles.**
+        - ciudadano -cliente- y autobús -servidor-
+    - también a **cuestiones lógicas** que respondan adecuadamente al cliente y al servidor momentáneo cualquiera que sea.
+
+Caracteristicas:
+| Visibilidad: **Pública y Privada** <br/> Temporabilidad: **baja** <br/> Versatilidad: **Alta**| Foto Aqui | foto aqui |
+| :------- | :------: |  :------: |  
+
+- Implantación mediante parámetros o variables locales de métodos o mediante referencias con ciclo de vida igual a la ejecución del método
+
+### Comparativa de Relaciones entre Clases por Colaboración
+
+Foto aqui ------
+
+
 
 ## Relaciones de Dependencia por Transmisión entre Clases
 
 ## Herencia por especialización
 
 ## Herencia por extensión
+
+
+| Sin duda, falta mencionar el factor más determinante a la hora de decidir la relación entre las clases: el **contexto** en el que se desenvuelvan los objetos. Éste **determinará de forma “categórica” qué grados de visibilidad, temporalidad y versatilidad se producen en su colaboración.** | Si el contexto de los objetos paciente y médico es un hospital de urgencias la relación se decantaría por un uso mientras que si es el médico de cabecera que conoce su historial y tiene pendiente algún tratamiento, la relación se inclinaría a una asociación;<br/> Si el contexto de los objetos motor y coche es un taller mecánico (se accede al motor de un coche, se cambian motores a los coches, etc.) la relación se inclinaría a una asociación, mientras que si el contexto es la gestión municipal del parque automovilísticos (se da de alta y de baja al coche, se denuncia al coche, etc. y el motor se responsabiliza de ciertas características que dependen del ministerio de industria como su potencia fiscal, etc.) la relación se inclinaría a una composición |
+| :------- | :------: | 
