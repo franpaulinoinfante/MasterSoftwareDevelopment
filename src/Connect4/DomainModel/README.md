@@ -248,8 +248,7 @@ Es la relación que se establece momentáneamente **entre un cliente y cualquier
     - también a **cuestiones lógicas** que respondan adecuadamente al cliente y al servidor momentáneo cualquiera que sea.
 
 Caracteristicas:
-| Visibilidad: **Pública y Privada** <br/> Temporabilidad: **baja** <br/> Versatilidad: **Alta**| ![image](https://user-images.githubusercontent.com/46433173/201494031-5fe7286f-974e-43aa-ac0d-8a3ba2106037.png)
- | ![image](https://user-images.githubusercontent.com/46433173/201494509-cf349760-26f5-4721-97c9-aabb9ba2869f.png) |
+| Visibilidad: **Pública y Privada** <br/> Temporabilidad: **baja** <br/> Versatilidad: **Alta** | ![image](https://user-images.githubusercontent.com/46433173/201494031-5fe7286f-974e-43aa-ac0d-8a3ba2106037.png) | ![image](https://user-images.githubusercontent.com/46433173/201494509-cf349760-26f5-4721-97c9-aabb9ba2869f.png) |
 | :------- | :------: |  :------: |  
 
 - Implantación mediante parámetros o variables locales de métodos o mediante referencias con ciclo de vida igual a la ejecución del método
