@@ -29,6 +29,7 @@
 - Descripción o bosquejo verbal de algo.
 
 |  aqui   |  aqui  | 
+|          |        |
 | :------- | :------: |  
 
 
