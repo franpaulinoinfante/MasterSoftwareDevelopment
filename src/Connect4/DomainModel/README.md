@@ -195,9 +195,7 @@ Ejemplos:
 
 | Caracteristicas | Notación UML | Código C# |
 | --- | --- | --- |
-| Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja**| ![image](https://user-images.githubusercontent.com/46433173/201494732-038d5203-17e8-4aef-af45-c2b386663299.png)
- | ![image](https://user-images.githubusercontent.com/46433173/201494701-88531612-f0da-4b54-90ec-a4ff308330e9.png)
- |
+| Visibilidad: **Privada** <br/> Temporabilidad: **Alta** <br/> Versatilidad: **Baja** | ![image](https://user-images.githubusercontent.com/46433173/201494732-038d5203-17e8-4aef-af45-c2b386663299.png) | ![image](https://user-images.githubusercontent.com/46433173/201494701-88531612-f0da-4b54-90ec-a4ff308330e9.png) |
 - **Implantación mediante atributos y creación en el constructor o …​
     - referencias privadas con ciclo de vida igual al objeto
 
