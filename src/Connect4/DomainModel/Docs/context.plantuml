@@ -1,0 +1,21 @@
+@startuml context
+class Fracción{
+    -int numerator
+    -int denominator
+    +Fracción(int, int)
+    +Fracción()
+    +Add(Fracción) : Fracción
+    +GetValue() : float
+}
+Fracción <|-- FracciónNodo
+
+class FracciónNodo{
+    -FracciónNodo next
+    +FracciónNodo(Fracción)
+    +FracciónNodo(Fracción, FracciónNode)
+    +Link(FracciónNode)
+    +UnLink()
+    +GetNext() : FracciónNode
+    +IsLast() : boolean
+}
+@enduml
