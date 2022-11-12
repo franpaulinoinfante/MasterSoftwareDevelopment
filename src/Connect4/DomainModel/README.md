@@ -28,8 +28,11 @@
 - Forma de un objeto de *diseño*. El diseño de esta silla es de inspiración modernista.
 - Descripción o bosquejo verbal de algo.
 
-|  aqui   |  aqui  | 
-|          |        |
+|  Análisis  
+ - Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos.
+ - Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
+ - Estructurar los requisitos de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos.
+ - Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación |  Diseño  | 
 | :------- | :------: |  
 
 
