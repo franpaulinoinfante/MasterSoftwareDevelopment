@@ -209,6 +209,9 @@ Caracteristicas:
 | Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
 | :------- | :------: |  :------: |  
 
+- Implantación mediante atributos y métodos de inserción, borrrado o …​
+    - referencias privadas con ciclo de vida igual al objeto
+
 Comparación entre Relación de Composición y Agregación:
 | Composición | Agregación |
 | --- | --- |
@@ -220,6 +223,21 @@ Comparación entre Relación de Composición y Agregación:
 | Clases persona y cabeza: una cabeza solo puede pertenecer a una persona y no puede existir una cabeza sin su persona, no va a su funeral | Clases persona y cabeza: una cabeza solo puede pertenecer a una persona y no puede existir una cabeza sin su persona, no va a su funeral |
 
 ## Relación de Asociación
+
+Es la relación que perdura entre un cliente y un servidor determinado. 
+- Existe una relación de **asociación entre la clase A, el cliente, y la clase B, el servidor, si un objeto de la clase A disfruta de los servicios de un objeto determinado de la clase B (mensajes lanzados) para llevar a cabo la responsabilidad del objeto de la clase A en diversos momentos** creándose una dependencia del objeto servidor.
+- Especifica una conexión semántica entre objetos no relacionados.
+- Representan relaciones propias del dominio del problema, que no tienen las caracteristicas de la generalización (una clase es subclase de otra) o de la agregación (una clase se compone de otras). 
+- La relación de asociación no abarca simplemente **cuestiones tangibles.**
+    - como “provecho”, procesador -cliente- y memoria -servidor-, socio -cliente- y club -servidor-, …
+- también a **cuestiones lógicas** que respondan adecuadamente al cliente y al servidor determinado.
+    - como “beneficio”, empresa -cliente- y banca -servidor-, etc.
+
+Caracteristicas:
+| Visibilidad: **Pública** <br/> Temporabilidad: **Alta/Media** <br/> Versatilidad: **Baja**| Foto Aqui | foto aqui |
+| :------- | :------: |  :------: |  
+| Implantación mediante atributos y constructor, métodos de asociación o …​<br/> referencias privadas con ciclo de vida igual al objeto. |
+
 
 ## Relación de Uso
 
