@@ -259,10 +259,26 @@ Es la relación que se establece momentáneamente **entre un cliente y cualquier
 | Sin duda, falta mencionar el factor más determinante a la hora de decidir la relación entre las clases: el **contexto** en el que se desenvuelvan los objetos. Éste **determinará de forma “categórica” qué grados de visibilidad, temporalidad y versatilidad se producen en su colaboración.** | Si el contexto de los objetos paciente y médico es un hospital de urgencias la relación se decantaría por un uso mientras que si es el médico de cabecera que conoce su historial y tiene pendiente algún tratamiento, la relación se inclinaría a una asociación;<br/> Si el contexto de los objetos motor y coche es un taller mecánico (se accede al motor de un coche, se cambian motores a los coches, etc.) la relación se inclinaría a una asociación, mientras que si el contexto es la gestión municipal del parque automovilísticos (se da de alta y de baja al coche, se denuncia al coche, etc. y el motor se responsabiliza de ciertas características que dependen del ministerio de industria como su potencia fiscal, etc.) la relación se inclinaría a una composición |
 | :------- | :------: | 
 
+| La decisión de utilizar una agregación es discutible y suele ser arbitraria. Con frecuencia, no resulta evidente que una asociación deba ser modelada en forma de agregación, **En gran parte, este tipo de incertidumbre es típico del modelado; este requiere un juicio bien formado y hay pocas reglas inamovibles.** La experiencia demuestra que si uno piensa cuidadosamente e intenta ser congruente la distinción imprecisa entre asociación ordinaria y agregación no da lugar a problemas en la práctica. | **No existe para toda colaboración un relación ideal categórica.** Es muy frecuente que sean varias relaciones candidatas, cada una con sus ventajas y desventajas. Por tanto, al existir diversas alternativas, será una decisión de ingeniería, **un compromiso entre múltiples factores no cuantificables:** costes, modularidad, legibilidad, eficiencia, etc., la que determine la relación final. |
+| :------- | :------: | 
+
 ## Relaciones de Dependencia por Transmisión entre Clases
+
+Relación de Herencia: es la transmisión de la vista pública (métodos públicos) y de la vista privada (atributos, métodos privados y definición de los métodos) de una clase a otra.  
+- **Is A** (acrónimo de  ¿… is a …? - ¿… es un …? ) ¿<un elemento del dominio del nodo hijo> es un <elemento del dominio del nodo padre>?
 
 ## Herencia por especialización
 
+Es la presencia de unas características específicas de un subconjunto de elementos de un determinado conjunto como, para que si bien mantienen las características esenciales e identificativas del conjunto al que pertenecen, también son lo suficientemente relevantes como para ser rasgos distintivos de dicho subconjunto de elementos
+
 ## Herencia por extensión
 
+Donde la especialización transforma el concepto de la clase base a la clase derivada
+  
+Características 
+| Herencia por especialización | Herencia por extensión | Herencia por limitación (Mal hecha) | Herencia por construcción (Mal hecha) |
+| --- | --- | --- | --- |
+| ![image](https://user-images.githubusercontent.com/46433173/201495627-c58f12a9-a82f-42d7-973c-addc52f851b9.png) | ![image](https://user-images.githubusercontent.com/46433173/201495739-c279ca17-0fb4-48c2-816a-e5bb75ea3bd8.png)
 
+
+    
