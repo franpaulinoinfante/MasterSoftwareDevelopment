@@ -248,14 +248,15 @@ Es la relación que se establece momentáneamente **entre un cliente y cualquier
     - también a **cuestiones lógicas** que respondan adecuadamente al cliente y al servidor momentáneo cualquiera que sea.
 
 Caracteristicas:
-| Visibilidad: **Pública y Privada** <br/> Temporabilidad: **baja** <br/> Versatilidad: **Alta**| Foto Aqui | foto aqui |
+| Visibilidad: **Pública y Privada** <br/> Temporabilidad: **baja** <br/> Versatilidad: **Alta**| ![image](https://user-images.githubusercontent.com/46433173/201494031-5fe7286f-974e-43aa-ac0d-8a3ba2106037.png)
+ | ![image](https://user-images.githubusercontent.com/46433173/201494509-cf349760-26f5-4721-97c9-aabb9ba2869f.png) |
 | :------- | :------: |  :------: |  
 
 - Implantación mediante parámetros o variables locales de métodos o mediante referencias con ciclo de vida igual a la ejecución del método
 
 ### Comparativa de Relaciones entre Clases por Colaboración
 
-Foto aqui ------
+![image](https://user-images.githubusercontent.com/46433173/201493977-8e7d98fb-9ff0-42fd-ad20-0014bbf1dafa.png)
 
 | Sin duda, falta mencionar el factor más determinante a la hora de decidir la relación entre las clases: el **contexto** en el que se desenvuelvan los objetos. Éste **determinará de forma “categórica” qué grados de visibilidad, temporalidad y versatilidad se producen en su colaboración.** | Si el contexto de los objetos paciente y médico es un hospital de urgencias la relación se decantaría por un uso mientras que si es el médico de cabecera que conoce su historial y tiene pendiente algún tratamiento, la relación se inclinaría a una asociación;<br/> Si el contexto de los objetos motor y coche es un taller mecánico (se accede al motor de un coche, se cambian motores a los coches, etc.) la relación se inclinaría a una asociación, mientras que si el contexto es la gestión municipal del parque automovilísticos (se da de alta y de baja al coche, se denuncia al coche, etc. y el motor se responsabiliza de ciertas características que dependen del ministerio de industria como su potencia fiscal, etc.) la relación se inclinaría a una composición |
 | :------- | :------: | 
