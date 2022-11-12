@@ -161,7 +161,20 @@ Solución:
 | **Dependencia** es la nueva forma de referirse a una relación entre calses. | *"Un objeto en si mismo no es interesante. Los objetos contribuyen al comportamiento de un sistema colaborando con otros objetos."* — Grady Booch Análisis y Diseño Orientado a Objetos. 1996. | 
 | :------- | :------: |  
 
+### Tipos de Relaciones entre Clases
 
+- Relaciones/Dependencias por Colaboración entre Objetos
+    - si dos objetos colaboran, a través del paso de mensajes, sus respectivas clases están relacionadas.
+    - Tipos de relación por colaboración:
+        - Relación de Composición/Agregación
+        - Relación de Asociación
+        - Relación de Dependencia (Uso)
+- Relaciones/Dependencias por Transmisión entre Clases
+    - si una clase transmite a otra todos sus miembros, atributos y métodos, para organizar una jerarquía de clasificación, sin negar ni obligar a la colaboración entre objetos de las clases participantes.
+    - Tipos de relación por transmisión:
+        - Relación de Herencia por Extensión
+        - Relación de Herencia por Implementación
+    
 
 ## Relaciones de Dependencia por Colaboración entre Objetos
 
