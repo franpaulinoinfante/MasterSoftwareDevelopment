@@ -278,7 +278,4 @@ Donde la especialización transforma el concepto de la clase base a la clase der
 Características 
 | Herencia por especialización | Herencia por extensión | Herencia por limitación (Mal hecha) | Herencia por construcción (Mal hecha) |
 | --- | --- | --- | --- |
-| ![image](https://user-images.githubusercontent.com/46433173/201495627-c58f12a9-a82f-42d7-973c-addc52f851b9.png) | ![image](https://user-images.githubusercontent.com/46433173/201495739-c279ca17-0fb4-48c2-816a-e5bb75ea3bd8.png)
-
-
-    
+| ![image](https://user-images.githubusercontent.com/46433173/201495627-c58f12a9-a82f-42d7-973c-addc52f851b9.png) | ![image](https://user-images.githubusercontent.com/46433173/201495739-c279ca17-0fb4-48c2-816a-e5bb75ea3bd8.png) | ![image](https://user-images.githubusercontent.com/46433173/201495761-c7355ae6-9fd7-4fd6-a36c-4de544769276.png) | ![image](https://user-images.githubusercontent.com/46433173/201495770-08636ece-bc09-4008-a9a2-3049679eea95.png) |
