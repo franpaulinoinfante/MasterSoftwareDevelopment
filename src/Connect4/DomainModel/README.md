@@ -28,23 +28,23 @@
 - Forma de un objeto de *diseño*. El diseño de esta silla es de inspiración modernista.
 - Descripción o bosquejo verbal de algo.
 
-|  Análisis  <br/>
-Analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema:
- - Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos.
- - Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
- - Estructurar los requisitos de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos.
- - Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación |  
-  Diseño <br/>
- - Adquirir una comprensión profunda sobre los aspectos de los requisitos no funcionales y limitaciones relacionadas con:
- - los lenguajes de programación,
- - la reutilización de componentes,
- - sistemas operativos,
- - tecnologías de distribución y concurrencia,
- - tecnologías de bases de datos,
- - tecnologías de interfaz de usuario,
- - tecnologías de gestión de transacciones,
-
-y así sucesivamente| 
+|
+Análisis  <br/>
+Analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema:<br/>
+Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos.<br/>
+Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.<br/>
+Estructurar los requisitos de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos.<br/>
+Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación<br/> |  
+Diseño <br/>
+Adquirir una comprensión profunda sobre los aspectos de los requisitos no funcionales y limitaciones relacionadas con:<br/>
+los lenguajes de programación,<br/>
+la reutilización de componentes,<br/>
+sistemas operativos,<br/>
+tecnologías de distribución y concurrencia,<br/>
+tecnologías de bases de datos,<br/>
+tecnologías de interfaz de usuario,<br/>
+tecnologías de gestión de transacciones,<br/>
+y así sucesivamente| <br/>
 | :------- | :------: |  
 
 
