@@ -37,7 +37,7 @@ internal class Coordinate
 
     internal bool IsValid(int value)
     {
-        return new ClosedInterval(min: 0, MaxColunms).IsValid(value);
+        return new ClosedInterval(min: 0, MaxColunms - 1).IsValid(value);
     }
 
     internal bool Equals(Coordinate coordinate)

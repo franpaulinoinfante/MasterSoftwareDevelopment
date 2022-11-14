@@ -1,0 +1,13 @@
+@startuml Analysis
+title Analysis
+ConnectFour *--> "1"  Board : constain
+ConnectFour *--> "1"  Turn : constain
+
+Turn *--> "2" Player : constain
+Turn --> "1" Board: collaborate
+
+Player --> "1" Board : collaborate
+Player --> "21" Token : associated
+
+Board o--> "6x7" Token : drop in square
+@enduml

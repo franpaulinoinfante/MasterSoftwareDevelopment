@@ -1,0 +1,37 @@
+@startuml ViewUseCasePlay
+title View Use Case Play
+
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state G as " "
+state H as " "
+state A as " "
+state if1 <<choice>>
+state if2 <<choice>>
+state if3 <<choice>>
+
+[*] --> IN_GAME
+IN_GAME --> A : Current turn player requests Play
+A --> B : System requests the colunm to Drop a Token
+B --> C : Player introduces the colunm
+    C --> if1 
+    if1 --> G : [error]
+    note on link
+        Colunm out range
+        Colunm is complete
+    endnote
+    G --> H : System show Error message
+    H --> [*] : System allows Play
+if1 --> D 
+    if2 --> H
+D --> if2 : System shows the update Board with new Token
+if2 --> E : [IsFinished]
+E --> OUT_GAME : System shows Results message
+OUT_GAME --> if3 : System allows Resume
+    if3 --> INITIAL : [IsContinue]
+    INITIAL --> [*]
+if3 --> [*]
+@enduml
