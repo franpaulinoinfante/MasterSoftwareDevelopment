@@ -619,6 +619,12 @@ Do you want to continue? (y/n)
 
 ![image](https://user-images.githubusercontent.com/46433173/201672354-0feea666-0640-4e38-8fc0-817e4af13fb1.png)
 
+## Análisis de caso de uso Start
+
+## Análisis de caso de uso Play
+
+## Análisis de caso de uso Resume
+
 ## Arquitectura
 
 ## Namespace ConnectFour-ConsoleApp
