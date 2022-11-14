@@ -35,7 +35,7 @@
 ![image](https://user-images.githubusercontent.com/46433173/201663032-5ff28bf6-9d6e-4317-b522-ee0c0025affc.png)
 
 ## Prototipo de Interfaz
-
+Prototipo de interfaz partida empatada
 ```
 --- CONNECT 4 ---
 ----------------------
@@ -46,6 +46,16 @@
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
 ----------------------
+Turn: O
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+----------------------
 Turn: X
 Enter a colunm to drop a token: 3
 ----------------------
@@ -54,28 +64,461 @@ Enter a colunm to drop a token: 3
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
- |   |   | X |   |   |   |   |
+ | O |   | X |   |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 45
+Invalid columnn!!! Values [1-7]
+Enter a colunm to drop a token: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O |   |   |   |   |
+ | O |   | X |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O |   | X |   |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 1
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 1
+Invalid column!!! It's completed
+Enter a colunm to drop a token: 1
+Invalid column!!! It's completed
+Enter a colunm to drop a token: 3
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 2
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 4
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   |   |   |
+ | O | O | X | X |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 5
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   |   |   |
+ | O | O | X | X | O |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 6
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   |   |   |
+ | O | O | X | X | O | X |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 7
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   |   |   |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 8
+Invalid columnn!!! Values [1-7]
+Enter a colunm to drop a token: 7
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   |   | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 6
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   |   | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 5
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O |   | X | O | X |
+ | O | O | X | X | O | X | O |
 ----------------------
 Turn: O
 Enter a colunm to drop a token: 4
 ----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 3
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X |   | X |   |   |   |   |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 4
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X |   | X | O |   |   |   |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 5
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X |   | X | O | X |   |   |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 6
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X |   | X | O | X | O |   |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 7
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   |   |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X |   | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 3
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X |   | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 2
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O |   | X |   |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 2
+----------------------
+ | O |   |   |   |   |   |   |
+ | X |   | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 2
+----------------------
+ | O |   |   |   |   |   |   |
+ | X | X | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 2
+----------------------
+ | O | O |   |   |   |   |   |
+ | X | X | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 3
+----------------------
+ | O | O | X |   |   |   |   |
+ | X | X | O |   |   |   |   |
+ | O | O | X |   |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 4
+----------------------
+ | O | O | X |   |   |   |   |
+ | X | X | O |   |   |   |   |
+ | O | O | X | O |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 4
+----------------------
+ | O | O | X |   |   |   |   |
+ | X | X | O | X |   |   |   |
+ | O | O | X | O |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 4
+----------------------
+ | O | O | X | O |   |   |   |
+ | X | X | O | X |   |   |   |
+ | O | O | X | O |   |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 5
+----------------------
+ | O | O | X | O |   |   |   |
+ | X | X | O | X |   |   |   |
+ | O | O | X | O | X |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 5
+----------------------
+ | O | O | X | O |   |   |   |
+ | X | X | O | X | O |   |   |
+ | O | O | X | O | X |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 5
+----------------------
+ | O | O | X | O | X |   |   |
+ | X | X | O | X | O |   |   |
+ | O | O | X | O | X |   |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 6
+----------------------
+ | O | O | X | O | X |   |   |
+ | X | X | O | X | O |   |   |
+ | O | O | X | O | X | O |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 6
+----------------------
+ | O | O | X | O | X |   |   |
+ | X | X | O | X | O | X |   |
+ | O | O | X | O | X | O |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 6
+----------------------
+ | O | O | X | O | X | O |   |
+ | X | X | O | X | O | X |   |
+ | O | O | X | O | X | O |   |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 7
+----------------------
+ | O | O | X | O | X | O |   |
+ | X | X | O | X | O | X |   |
+ | O | O | X | O | X | O | X |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 7
+----------------------
+ | O | O | X | O | X | O |   |
+ | X | X | O | X | O | X | O |
+ | O | O | X | O | X | O | X |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 7
+----------------------
+ | O | O | X | O | X | O | X |
+ | X | X | O | X | O | X | O |
+ | O | O | X | O | X | O | X |
+ | X | X | X | O | X | O | X |
+ | X | O | O | O | X | O | X |
+ | O | O | X | X | O | X | O |
+----------------------
+TIED!!!
+Do you want to continue? (y/n)
+```
+
+Prototipo de interfaz una partida ganada
+```
+--- CONNECT 4 ---
+------------------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+------------------------------
+Turn: X
+Enter a colunm to drop a token: 3
+------------------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | X |   |   |   |   |
+------------------------------
+Turn: O
+Enter a colunm to drop a token: 4
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   | X | O |   |   |   |
-----------------------
+------------------------------
 Turn: X
 Enter a colunm to drop a token: 5
-----------------------
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   | X | O | X |   |   |
-----------------------
+------------------------------
 Turn: O
 Enter a colunm to drop a token: 6
 ----------------------
@@ -88,14 +531,14 @@ Enter a colunm to drop a token: 6
 ----------------------
 Turn: X
 Enter a colunm to drop a token: 2
-----------------------
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   | X | X | O | X | O |   |
-----------------------
+------------------------------
 Turn: O
 Enter a colunm to drop a token: 1
 ----------------------
@@ -105,7 +548,7 @@ Enter a colunm to drop a token: 1
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  | O | X | X | O | X | O |   |
-----------------------
+------------------------------
 Turn: X
 Enter a colunm to drop a token: 4
 ----------------------
@@ -115,17 +558,17 @@ Enter a colunm to drop a token: 4
  |   |   |   |   |   |   |   |
  |   |   |   | X |   |   |   |
  | O | X | X | O | X | O |   |
-----------------------
+------------------------------
 Turn: O
 Enter a colunm to drop a token: 6
-----------------------
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   | X |   | O |   |
  | O | X | X | O | X | O |   |
-----------------------
+------------------------------
 Turn: X
 Enter a colunm to drop a token: 7
 ----------------------
@@ -135,39 +578,39 @@ Enter a colunm to drop a token: 7
  |   |   |   |   |   |   |   |
  |   |   |   | X |   | O |   |
  | O | X | X | O | X | O | X |
-----------------------
+------------------------------
 Turn: O
 Enter a colunm to drop a token: 8
 Invalid columnn!!! Values [1-7]
 Enter a colunm to drop a token: 6
-----------------------
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   | O |   |
  |   |   |   | X |   | O |   |
  | O | X | X | O | X | O | X |
-----------------------
+------------------------------
 Turn: X
 Enter a colunm to drop a token: 5
-----------------------
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   | O |   |
  |   |   |   | X | X | O |   |
  | O | X | X | O | X | O | X |
-----------------------
+------------------------------
 Turn: O
 Enter a colunm to drop a token: 6
-----------------------
+------------------------------
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   | O |   |
  |   |   |   |   |   | O |   |
  |   |   |   | X | X | O |   |
  | O | X | X | O | X | O | X |
-----------------------
+------------------------------
 O WIN!!! : -)
 Do you want to continue? (y/n)
 ```
