@@ -17,7 +17,7 @@ internal class UserPlayer : Player
         do
         {
             colunm = ConsoleIO.Instance.ReadInt(Message.EnterColunmToDrop.GetMessage()) - 1;
-            isValid = new Coordinate(Coordinate.MaxRows, Coordinate.MaxColunms).IsValid(colunm);
+            isValid = new Coordinate(rows: 0, Coordinate.MaxColunms).IsValid(colunm);
             if (!isValid)
             {
                 Message.InvalidColunm.WriteLine();

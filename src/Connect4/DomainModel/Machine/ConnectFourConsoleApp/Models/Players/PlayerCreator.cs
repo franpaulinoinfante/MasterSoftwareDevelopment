@@ -8,13 +8,14 @@ internal class PlayerCreator
 
     private PlayerCreator()
     {
+        // for singleton
     }
 
     internal static PlayerCreator Instance
     {
         get
         {
-            if (_instance is null)
+            if (_instance == null)
             {
                 _instance = new PlayerCreator();
             }
@@ -22,7 +23,7 @@ internal class PlayerCreator
         }
     }
 
-    internal Player CreatePlayers(int position, int players, Board board)
+    internal Player Create(int position, int players, Board board)
     {
         if (position < players)
         {

@@ -22,9 +22,8 @@ internal class Turn
     {
         for (int i = 0; i < Turn.MaxPlayers; i++)
         {
-            _players[i] = PlayerCreator.Instance.CreatePlayers(i, numOfPlayers, _board);
+            _players[i] = PlayerCreator.Instance.Create(i, numOfPlayers, _board);
         }
-
         _current = new Random().Next(minValue: 0, Turn.MaxPlayers);
     }
 

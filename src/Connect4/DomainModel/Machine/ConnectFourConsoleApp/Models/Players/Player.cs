@@ -14,10 +14,11 @@ internal abstract class Player
         _board = board;
     }
 
-    internal Token Token { get => _token; }
-    internal Board Board { get => _board; }
+    protected Token Token { get => _token; }
 
-    internal void Play()
+    protected Board Board { get => _board; }
+
+    protected internal void Play()
     {
         Message.Turn.WriteLine(_token.ToString());
         int colunm = ReadColunm();
@@ -26,7 +27,7 @@ internal abstract class Player
 
     protected abstract int ReadColunm();
 
-    internal void WriteWinner()
+    protected internal void WriteWinner()
     {
         string message = Message.PlayerWin.GetMessage();
         message = message.Replace("#token", _token.ToString());

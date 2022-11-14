@@ -84,7 +84,7 @@ internal class Board
     internal bool IsWinner()
     {
         Line line = new Line(_lastDrop);
-        foreach (Direction direction in Direction.Directions.GetRange(index: 0, 3))
+        foreach (Direction direction in Direction.Directions.GetRange(index: 0, count: 3))
         {
             line.Direction = direction;
             for (int i = 0; i < Line.Length; i++)

@@ -17,7 +17,7 @@ internal class MachinePlayer : Player
             colunm = new Random().Next(minValue: 0, Coordinate.MaxColunms);
         } while (Board.IsComplete(colunm));
         Message.Random.WriteLine(colunm);
-        //Task.Delay(800).Wait();
+        Task.Delay(600).Wait();
         return colunm;
     }
 }

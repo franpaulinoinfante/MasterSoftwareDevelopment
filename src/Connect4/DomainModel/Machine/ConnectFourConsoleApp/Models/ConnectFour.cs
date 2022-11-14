@@ -31,7 +31,7 @@ internal class ConnectFour
         do
         {
             players = ConsoleIO.Instance.ReadInt(Message.NumOfPlayers.GetMessage());
-            if (players >= 0 || players <= Turn.MaxPlayers)
+            if (players >= 0 && players <= Turn.MaxPlayers)
             {
                 valid = true;
             }
