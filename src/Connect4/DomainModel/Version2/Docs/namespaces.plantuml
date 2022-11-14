@@ -1,0 +1,13 @@
+@startuml namespaces
+title namespaces
+package ConnectFour{
+
+    namespace Models{
+        
+    }
+    Models ..> Types
+
+    namespace Types{
+    }
+}
+@enduml
