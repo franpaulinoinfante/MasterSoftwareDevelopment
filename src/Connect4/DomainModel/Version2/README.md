@@ -615,7 +615,7 @@ O WIN!!! : -)
 Do you want to continue? (y/n)
 ```
 
-## Análisis
+## Vista de Análisis
 
 ![image](https://user-images.githubusercontent.com/46433173/201672354-0feea666-0640-4e38-8fc0-817e4af13fb1.png)
 
@@ -630,6 +630,12 @@ Do you want to continue? (y/n)
 ## Análisis de caso de uso Resume
 
 ![image](https://user-images.githubusercontent.com/46433173/201679961-8298590d-df26-4d41-af13-6b3d9e1273e6.png)
+
+## Namespaces
+
+![image](https://user-images.githubusercontent.com/46433173/201682386-d9702b12-a794-4555-beef-92939335e190.png)
+
+## Vista de Lógica/Diseño 
 
 ## Arquitectura
 
