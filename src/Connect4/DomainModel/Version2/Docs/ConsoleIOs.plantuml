@@ -1,0 +1,6 @@
+@startuml ConsoleIOs
+title ConsoleIOs
+namespace ConsoleIOs{
+    YesNotDialog ..> ConsoleIO
+}
+@enduml

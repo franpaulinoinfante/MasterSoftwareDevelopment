@@ -1,0 +1,18 @@
+@startuml Architecture
+title Architecture
+package ConnectFour{
+    namespace ConnectFourConsoleApp #White{}
+    namespace Models #SkyBlue{}
+    namespace Types #GreenYellow{}
+    namespace ConsoleIOs #DarkRed{}
+    
+    ConnectFourConsoleApp ..> Models
+    ConnectFourConsoleApp ..> Types
+    ConnectFourConsoleApp ..> ConsoleIOs
+    
+    Models ..> Types
+    Models ..> ConsoleIOs
+    
+    Types ..> ConsoleIOs
+}
+@enduml

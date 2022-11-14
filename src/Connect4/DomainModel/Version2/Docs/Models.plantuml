@@ -1,11 +1,6 @@
 @startuml ConnectFourConsoleApp
 title Connect-4 ConsoleApp
-namespace Connect4{
-    class Program{
-        +{static}MAIN(string[])
-    }
-    Program *--> ConnectFour
-
+namespace Models{
     class ConnectFour{
         ~ConnectFour()
         ~Run()
@@ -63,81 +58,5 @@ namespace Connect4{
     Player ..> Types.Message
     Player ..> Types.Coordinate
     Player ..> ConsoleIOS.ConsoleIO
-
-    class Types.Coordinate{
-        ~{static}ORIGIN : Coordinate
-        ~{static}NUMBER_OF_ROWS : int
-        ~{static}ROWS : ClosedInterval
-        ~{static}NUMBER_OF_COLUNMS : int
-        ~{static}COLUNMS : ClosedInterval
-        ~Coordinate(row, colunm)
-        ~GetRow() : int
-        ~SetRow(row)
-        ~GetColunm() : int
-        ~SetColunm(colunm)
-        ~Equals(Coordinate)
-        ~IsValid()
-        -~{static}IsRowValid(row) : bool
-        -~{static}IsColunmValid(colunm) : bool
-    }
-    Types.Coordinate ..> Types.ClosedInterval
-
-    class Types.ClosedInterval{
-        -min : int
-        -max : int
-        ~ClosedInterval(min, max)
-        ~IsIncluided(valur) : bool
-    }
-
-    class Types.Direction{
-        ~{static}NORTH : Direction
-        ~{static}NORTH_EAST : Direction
-        ~{static}EAST : Direction
-        ~{static}SOUTH_EAST : Direction
-        ~{static}SOUTH : Direction
-        ~{static}SOUTH_WEST : Direction
-        ~{static}WEST : Direction
-        ~{static}NORTH_WEST : Direction
-        ~Direction(row, colunm)
-        ~GetCoordinate() Coordinate
-        ~GetOpposite() : Direction
-        ~{static}Directions : List<Direction>
-    }
-    Types.Direction --> Types.Coordinate
-
-    class Types.Line {
-        ~{static}LENGTH : int
-        ~GetCoordinates() : Coordinate[]
-        ~SetDirection(Direction)
-        ~Shift()
-    }
-    Types.Line --> Types.Coordinate : origin
-    Types.Line o--> Types.Coordinate : coordinates
-    Types.Line --> Types.Direction : oppositeDirection
-
-    enum Types.Message{
-        +Titile
-        +HorizontalLine
-        +VerticalLine
-        +Turn
-        +EnterColunmToDrop
-        +InvalidColunm
-        +CompleteColunm
-        +PlayerWin
-        +PlayersTied
-        +Resume    
-        -{static}MESSAGES : string[]
-        ~{static}Write(Message)
-        ~{static}WriteLine(Message)
-        ~{static}GetMessage(Message)
-    }
-
-    enum Types.Token{
-        +X
-        +O
-        +Null        
-        ~{static}Write(Token)
-        ~IsNull(Token) : bool
-    }
 }
 @enduml

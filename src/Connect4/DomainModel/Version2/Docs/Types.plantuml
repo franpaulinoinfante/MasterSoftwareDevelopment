@@ -1,0 +1,80 @@
+@startuml Types
+title Types
+namespace Types{
+    class Coordinate{
+        ~{static}ORIGIN : Coordinate
+        ~{static}NUMBER_OF_ROWS : int
+        ~{static}ROWS : ClosedInterval
+        ~{static}NUMBER_OF_COLUNMS : int
+        ~{static}COLUNMS : ClosedInterval
+        ~Coordinate(row, colunm)
+        ~GetRow() : int
+        ~SetRow(row)
+        ~GetColunm() : int
+        ~SetColunm(colunm)
+        ~Equals(Coordinate)
+        ~IsValid()
+        -~{static}IsRowValid(row) : bool
+        -~{static}IsColunmValid(colunm) : bool
+    }
+    Coordinate ..> ClosedInterval
+
+    class ClosedInterval{
+        -min : int
+        -max : int
+        ~ClosedInterval(min, max)
+        ~IsIncluided(valur) : bool
+    }
+
+    class Direction{
+        ~{static}NORTH : Direction
+        ~{static}NORTH_EAST : Direction
+        ~{static}EAST : Direction
+        ~{static}SOUTH_EAST : Direction
+        ~{static}SOUTH : Direction
+        ~{static}SOUTH_WEST : Direction
+        ~{static}WEST : Direction
+        ~{static}NORTH_WEST : Direction
+        ~Direction(row, colunm)
+        ~GetCoordinate() Coordinate
+        ~GetOpposite() : Direction
+        ~{static}Directions : List<Direction>
+    }
+    Direction --> Coordinate
+
+    class Line {
+        ~{static}LENGTH : int
+        ~GetCoordinates() : Coordinate[]
+        ~SetDirection(Direction)
+        ~Shift()
+    }
+    Line --> Coordinate : origin
+    Line o--> Coordinate : coordinates
+    Line --> Direction : oppositeDirection
+
+    enum Message{
+        ~Titile
+        ~HorizontalLine
+        ~VerticalLine
+        ~Turn
+        ~EnterColunmToDrop
+        ~InvalidColunm
+        ~CompleteColunm
+        ~PlayerWin
+        ~PlayersTied
+        ~Resume    
+        -{static}MESSAGES : string[]
+        ~{static}Write(Message)
+        ~{static}WriteLine(Message)
+        ~{static}GetMessage(Message)
+    }
+
+    enum Token{
+        ~X,
+        ~O,
+        ~Null        
+        ~{static}Write(Token)
+        ~IsNull(Token) : bool
+    }
+}
+@enduml
