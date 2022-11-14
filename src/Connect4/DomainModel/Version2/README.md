@@ -621,9 +621,15 @@ Do you want to continue? (y/n)
 
 ## Análisis de caso de uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/201675647-f4bc1742-c385-4ecb-9136-0844a684a67e.png)
+
 ## Análisis de caso de uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/201678247-fdc116b8-e4aa-4e91-882e-5fbd584f11e5.png)
+
 ## Análisis de caso de uso Resume
+
+![image](https://user-images.githubusercontent.com/46433173/201679961-8298590d-df26-4d41-af13-6b3d9e1273e6.png)
 
 ## Arquitectura
 
