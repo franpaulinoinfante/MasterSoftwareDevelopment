@@ -8,8 +8,15 @@
     - [Vista de Caso de Uso Resume](#Vista-de-Caso-de-Uso-Resume)  
     - [Prototipo de Interfaz](#Prototipo-de-Interfaz)
 - [Análisis](#Analisis)  
+    - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
+    - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
+    - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
+    - [Namespaces](#Namespaces)  
+- [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
     - [Arquitectura](#Arquitectura)  
-    - [Namespace ConnectFour-ConsoleApp](#Namespace-ConnectFour-ConsoleApp)
+    - [Namespace ConsoleIOs](#Namespace-ConsoleIOs)  
+    - [Namespace Models](#Namespace-Models)  
+    - [Namespace Types](#Namespace-Types)  
 
 ## Requisitos
 
