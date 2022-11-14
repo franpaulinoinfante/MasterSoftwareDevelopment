@@ -639,8 +639,18 @@ Do you want to continue? (y/n)
 
 ## Arquitectura
 
-## Namespace ConnectFour-ConsoleApp
+![image](https://user-images.githubusercontent.com/46433173/201685927-f9049447-c19c-4384-b551-a1a44334c3e3.png)
 
-### Models
+## ConnectFour-ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/200595799-06b041d0-e3d3-4803-8e02-52b3708587e4.png)
+### Namespace ConsoleIOs
+
+![image](https://user-images.githubusercontent.com/46433173/201696749-5bd8fbef-dec5-48a5-9ee8-b3dd40111139.png)
+
+### Namespace Models
+
+![image](https://user-images.githubusercontent.com/46433173/201697502-b534e1c4-9b7e-46e1-8133-9671bcd316b4.png)
+
+### Namespace Types
+
+![image](https://user-images.githubusercontent.com/46433173/201698377-b4ec2970-e28a-459a-9a53-c43982a30bb9.png)
