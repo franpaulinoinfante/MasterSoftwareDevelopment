@@ -1,39 +1,32 @@
 # -------- Connect4 With Machine Player --------
 
-**Índice**
-2. [Requisitos](#Requisitos)
-    2.1. [Vista de Caso de Uso Start](#vista-de-caso-de-uso-start)  
-    2.2. [Vista de Caso de Uso Play](#vista-de-caso-de-uso-play)  
-    2.3. [Vista de Caso de Uso Resume](#vista-de-caso-de-uso-resume)    
-    2.4. [Prototipo de Interfaz](#prototipo-de-interfaz)   
-3. [Analisis](#Analisis)
-    3.1. [Casos de Uso](#casos-de-uso)  
-    3.1.1. [Analisis Start](#Analisis-start)  
-    3.1.2. [Analisis Play](#Analisis-play)  
-    3.1.3. [Analisis Resume](#Analisis-resume)  
-    3.2. [Namespaces](#Namespace)  
-4. [Vista de Lógica/Diseño](#vista-de-lógicadiseño)  
-   4.1. [Arquitectura](#arquitectura)  
-   4.4. [Namespace Consoleapp](#Namespace-Consoleapp)
-   4.6. [Namespace Models](#Namespace-Models)  
-   4.7. [namespace Types](#Namespace-Types)  
-   4.8. [Arquitectura](#Arquitectura)
-5. [Calidad del Software](#alidad-del-software)  
-   4.1. [Diseño](#Diseño)  
-   4.2. [Rediseño](#Rediseño)
-6. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
-7. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
-
-## Modelo del Dominio
-
-
+**índice**
+- [Requisitos](#Requisitos)  
+- [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)  
+    - [Vista de Caso de Uso Start](#Vista-de-Caso-de-Uso-Start)  
+    - [Vista de Caso de Uso Play](#Vista-de-Caso-de-Uso-Play)  
+    - [Vista de Caso de Uso Resume](#Vista-de-Caso-de-Uso-Resume)  
+    - [Prototipo de Interfaz](#Prototipo-de-Interfaz)
+        - [Interfaz Máquina](#Interfaz-Máquina)  
+        - [Interfaz Jugador y Máquina](#Interfaz-Jugador-y-Máquina)  
+        - [Interfaz 2 Jugadores](#Interfaz-2-Jugadores)  
+- [Análisis](#Analisis)  
+    - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
+    - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
+    - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
+    - [Namespaces](#Namespaces)  
+- [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
+    - [Arquitectura](#Arquitectura)  
+    - [Namespace ConsoleIOs](#Namespace-ConsoleIOs)  
+    - [Namespace Models](#Namespace-Models)  
+    - [Namespace Types](#Namespace-Types)  
 
 ## Requisitos
 
 | * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![Screenshot 2022-11-01 092020](https://user-images.githubusercontent.com/46433173/199308347-025f54a1-49fc-4a3e-9385-aabbbf493ded.png) | 
 | :------- | :------: |  
 
-## Casos de Uso
+## Vista de Casos de Uso
 
 |   ![image](https://user-images.githubusercontent.com/46433173/199312534-1b0b7c04-2e8e-47dc-8312-a3ab93868e17.png)   | ![image](https://user-images.githubusercontent.com/46433173/199313770-e5feb014-6a7b-4865-a993-e0246f7ad5d1.png) | 
 | :------- | :------: |  
@@ -51,183 +44,580 @@
 ![image](https://user-images.githubusercontent.com/46433173/199319016-d86605be-6774-4e75-9580-c3e5438b4ab1.png)
 
 ## Prototipo de Interfaz
-
+### Interfaz Máquina
 ```
------ Connect-4 -----
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-----------------------------
-Enter the column to insert a token:
-Colunm: -1
-The column is wrong
-Enter the column to insert a token:
-Colunm: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 8
-The column is wrong
-Enter the column to insert a token:
-Column: 4
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 1
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-The colunm is full
-Enter the column to insert a token:
-Column: 4
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 2
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 7
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   | X |
-----------------------------
-Enter the column to insert a token:
-Column: 3
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O | O | O | X |   | X |
-----------------------------
-O Player: You win!!! :-)
-Do you want to continue? (y/n):
+Enter the players: 0
+--- CONNECT 4 ---
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   | X |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   | X |   |   |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   | X | X |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   | O | X | X |   |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   | X |   |   |
+ | O |   |   | O | X | X |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   | X |   |   |
+ | O |   |   | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   | X |   |   |
+ | O |   |   | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   | X |   |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | O |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ |   |   |   |   |   | O |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O | X | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X | O | X |   | X | X | O |
+ | O | X | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X | O | X | X | X | X | O |
+ | O | X | O | O | X | X | O |
+----------------------
+X WIN!!! : -)
+Do you want to continue? (y/n)y
+```
+### Interfaz Jugador y Máquina 
+```
+Enter the players: 1
+--- CONNECT 4 ---
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | X | O |   |   |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O | X | O |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | X |   |   |   |   |
+ | O | X | O |   |   |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O | X |   |   |   |   |
+ | O | X | O |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X | O | X |   |   |   |   |
+ | O | X | O |   |   |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   |   |   |   |   |
+ | X | O | X |   |   |   |   |
+ | O | X | O |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   |   |   |   |   |
+ | X | O | X |   |   |   |   |
+ | O | X | O | X |   |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   |   |   |   |   |
+ | X | O | X |   |   |   |   |
+ | O | X | O | X | O |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   |   |   |   |   |
+ | X | O | X |   | X |   |   |
+ | O | X | O | X | O |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   |   |   |   |   |
+ | X | O | X |   | X |   |   |
+ | O | X | O | X | O |   | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   |   |   |   |   |
+ | X | O | X | X | X |   |   |
+ | O | X | O | X | O |   | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   | O |   |   |   |
+ | X | O | X | X | X |   |   |
+ | O | X | O | X | O |   | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   | O |   | O | X |   |   |
+ | X | O | X | X | X |   |   |
+ | O | X | O | X | O |   | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   | O |   |   |   |
+ |   | O |   | O | X |   |   |
+ | X | O | X | X | X |   |   |
+ | O | X | O | X | O |   | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   | O |   |   |   |
+ |   | O |   | O | X |   |   |
+ | X | O | X | X | X |   |   |
+ | O | X | O | X | O | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   | O | O |   |   |
+ |   | O |   | O | X |   |   |
+ | X | O | X | X | X |   |   |
+ | O | X | O | X | O | X | O |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   | O | O |   |   |
+ |   | O |   | O | X |   |   |
+ | X | O | X | X | X | X |   |
+ | O | X | O | X | O | X | O |
+----------------------
+X WIN!!! : -)
+Do you want to continue? (y/n)y
 ```
 
-## Analisis
+### Interfaz 2 Jugadores
+```
+Enter the players: 2
+--- CONNECT 4 ---
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   |   |   |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   | X |   |   |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   | X |   | O |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   | X | X |   | O |   |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   | X | X | O | O |   |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 7
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   | X | X | O | O | X |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O |   |   |   |   |
+ | O |   | X | X | O | O | X |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O |   |   |   |   |
+ | O | X | X | X | O | O | X |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O |   | O |   |   |
+ | O | X | X | X | O | O | X |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 7
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O |   | O |   | X |
+ | O | X | X | X | O | O | X |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   | O | O | O |   | X |
+ | O | X | X | X | O | O | X |
+----------------------
+Turn: X
+Enter a colunm to drop a token: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   | O | O | O |   | X |
+ | O | X | X | X | O | O | X |
+----------------------
+Turn: O
+Enter a colunm to drop a token: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X | O | O | O | O |   | X |
+ | O | X | X | X | O | O | X |
+----------------------
+O WIN!!! : -)
+Do you want to continue? (y/n)n
+```
+## Vista de Análisis
 
 
-## Caso de Uso
-
-## Analisis Start
+## Análisis de caso de uso Start
 
 
-## Analisis Play
+## Análisis de caso de uso Play
 
 
-## Analisis Resume
+## Análisis de caso de uso Resume
 
 
 ## Namespaces
 
 
-## Vista de Lógica/Diseño
+## Vista de Lógica/Diseño 
 
-## namespace connectfour
-
-## namespace connectfour.consoleapp
-
-## namespace connectfour.models
-
-## namespace connectfour.types
 
 ## Arquitectura
 
-## Calidad del Software
 
-## Vista de Dessarrollo/Implementación
-
-## Vista de Despliegue/Física
+## ConnectFour-ConsoleApp
 
 
+### Namespace ConsoleIOs
+
+
+### Namespace Models
+
+
+### Namespace Types
