@@ -18,6 +18,9 @@
     - [Namespaces](#Namespaces)  
 - [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
     - [Arquitectura](#Arquitectura)  
+    - [Diseño de caso de uso Start](#Diseño de caso de uso Start)  
+    - [Diseño de caso de uso Play](#Diseño de caso de uso Play)  
+    - [Diseño de caso de uso Resume](#Diseño de caso de uso Resume)  
     - [Namespace ConsoleIOs](#Namespace-ConsoleIOs)  
     - [Namespace Models](#Namespace-Models)  
     - [Namespace Types](#Namespace-Types)  
@@ -614,13 +617,20 @@ Do you want to continue? (y/n)n
 
 ## Vista de Lógica/Diseño 
 
-
 ### Arquitectura
 
 ![image](https://user-images.githubusercontent.com/46433173/201950321-d0b3d6cf-defc-4ef3-8f54-6d55eb570dca.png)
 
+### Diseño de caso de uso Start
+
+### Diseño de caso de uso Play
+
+### Diseño de caso de uso Resume
+
+
 ### Namespace ConsoleIOs
 
+![image](https://user-images.githubusercontent.com/46433173/201951820-1b3f55c9-bd17-4e46-8095-8c9dfc3a2cbb.png)
 
 ### Namespace Models
 
