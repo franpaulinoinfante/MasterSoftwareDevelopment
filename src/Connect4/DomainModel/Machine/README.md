@@ -14,6 +14,7 @@
     - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
     - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
+    - [Vista de Análisis](#Vista-de-Análisis)  
     - [Namespaces](#Namespaces)  
 - [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
     - [Arquitectura](#Arquitectura)  
@@ -589,8 +590,7 @@ Enter a colunm to drop a token: 2
 O WIN!!! : -)
 Do you want to continue? (y/n)n
 ```
-## Vista de Análisis
-
+## Análisis
 
 ### Análisis de caso de uso Start
 
@@ -599,6 +599,9 @@ Do you want to continue? (y/n)n
 
 
 ### Análisis de caso de uso Resume
+
+
+### Vista de Análisis
 
 
 ### Namespaces
