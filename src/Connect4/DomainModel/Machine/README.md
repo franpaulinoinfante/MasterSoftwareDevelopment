@@ -31,20 +31,20 @@
 |   ![image](https://user-images.githubusercontent.com/46433173/199312534-1b0b7c04-2e8e-47dc-8312-a3ab93868e17.png)   | ![image](https://user-images.githubusercontent.com/46433173/199313770-e5feb014-6a7b-4865-a993-e0246f7ad5d1.png) | 
 | :------- | :------: |  
 
-## Vista de Caso de Uso Start
+### Vista de Caso de Uso Start
 
 ![image](https://user-images.githubusercontent.com/46433173/199314660-3b7ca1e8-b789-4ec9-bc80-41d1fa3e085d.png)
 
-## Vista de Caso de Uso Play
+### Vista de Caso de Uso Play
 
 ![image](https://user-images.githubusercontent.com/46433173/199346389-1e79d0bf-c2a7-4672-a1d9-56c89463cfbb.png)
 
-## Vista de Caso de Uso Resume
+### Vista de Caso de Uso Resume
 
 ![image](https://user-images.githubusercontent.com/46433173/199319016-d86605be-6774-4e75-9580-c3e5438b4ab1.png)
 
 ## Prototipo de Interfaz
-### Interfaz Máquina
+#### Interfaz Máquina
 ```
 Enter the players: 0
 --- CONNECT 4 ---
@@ -593,25 +593,25 @@ Do you want to continue? (y/n)n
 ## Vista de Análisis
 
 
-## Análisis de caso de uso Start
+### Análisis de caso de uso Start
 
 
-## Análisis de caso de uso Play
+### Análisis de caso de uso Play
 
 
-## Análisis de caso de uso Resume
+### Análisis de caso de uso Resume
 
 
-## Namespaces
+### Namespaces
 
 
 ## Vista de Lógica/Diseño 
 
 
-## Arquitectura
+### Arquitectura
 
 
-## ConnectFour-ConsoleApp
+### ConnectFour-ConsoleApp
 
 
 ### Namespace ConsoleIOs
