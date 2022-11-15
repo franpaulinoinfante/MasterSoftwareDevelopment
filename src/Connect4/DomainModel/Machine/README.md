@@ -1,12 +1,12 @@
 # -------- Connect4 With Machine Player --------
 
-**Índice**
-2. [Requisitos](#Requisitos)
+**Índice**  
+2. [Requisitos](#Requisitos)  
     2.1. [Vista de Caso de Uso Start](#vista-de-caso-de-uso-start)  
     2.2. [Vista de Caso de Uso Play](#vista-de-caso-de-uso-play)  
-    2.3. [Vista de Caso de Uso Resume](#vista-de-caso-de-uso-resume)    
-    2.4. [Prototipo de Interfaz](#prototipo-de-interfaz)   
-3. [Analisis](#Analisis)
+    2.3. [Vista de Caso de Uso Resume](#vista-de-caso-de-uso-resume)  
+    2.4. [Prototipo de Interfaz](#prototipo-de-interfaz)  
+3. [Analisis](#Analisis  
     3.1. [Casos de Uso](#casos-de-uso)  
     3.1.1. [Analisis Start](#Analisis-start)  
     3.1.2. [Analisis Play](#Analisis-play)  
@@ -14,15 +14,15 @@
     3.2. [Namespaces](#Namespace)  
 4. [Vista de Lógica/Diseño](#vista-de-lógicadiseño)  
    4.1. [Arquitectura](#arquitectura)  
-   4.4. [Namespace Consoleapp](#Namespace-Consoleapp)
+   4.4. [Namespace Consoleapp](#Namespace-Consoleapp)  
    4.6. [Namespace Models](#Namespace-Models)  
    4.7. [namespace Types](#Namespace-Types)  
-   4.8. [Arquitectura](#Arquitectura)
+   4.8. [Arquitectura](#Arquitectura  
 5. [Calidad del Software](#alidad-del-software)  
    4.1. [Diseño](#Diseño)  
-   4.2. [Rediseño](#Rediseño)
-6. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)
-7. [Vista de Despliegue/Física](#vista-de-desplieguefísica)
+   4.2. [Rediseño](#Rediseño)  
+6. [Vista de Desarrollo/Implementación](#vista-de-desarrolloimplementación)  
+7. [Vista de Despliegue/Física](#vista-de-desplieguefísica)  
 
 ## Modelo del Dominio
 
