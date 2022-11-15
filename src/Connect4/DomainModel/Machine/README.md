@@ -623,10 +623,15 @@ Do you want to continue? (y/n)n
 
 ### Diseño de caso de uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/201962881-8ad46147-0258-496d-8e09-2d78499f26e1.png)
+
 ### Diseño de caso de uso Play
+
+![image](https://user-images.githubusercontent.com/46433173/201968482-67e66b51-7344-44dc-a144-4b29bdc4ba94.png)
 
 ### Diseño de caso de uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/201974054-4ceef7dd-aceb-4caa-b444-f5c3b68cf6bc.png)
 
 ### Namespace ConsoleIOs
 
