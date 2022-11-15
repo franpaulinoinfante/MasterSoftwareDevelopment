@@ -639,5 +639,13 @@ Do you want to continue? (y/n)n
 
 ### Namespace Models
 
+![image](https://user-images.githubusercontent.com/46433173/201999768-676f7811-7724-4a1f-8889-b13ae92ab12b.png)
 
 ### Namespace Types
+
+![image](https://user-images.githubusercontent.com/46433173/202002456-09727d4f-318e-47db-ab06-52811d5ecbca.png)
+
+### Namespace Utils
+
+![image](https://user-images.githubusercontent.com/46433173/202006881-868114eb-edf8-4e19-b3b1-e286bc1d6906.png)
+    
