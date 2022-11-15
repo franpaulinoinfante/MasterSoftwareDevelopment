@@ -24,6 +24,7 @@
     - [Namespace ConsoleIOs](#Namespace-ConsoleIOs)  
     - [Namespace Models](#Namespace-Models)  
     - [Namespace Types](#Namespace-Types)  
+    - [Namespace Utils](#Namespace-Utils)  
 
 ## Requisitos
 
