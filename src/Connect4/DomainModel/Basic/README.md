@@ -26,8 +26,8 @@
 ## Vista de Casos de Uso
 
 |  Diagrama de Actores y Casos de Uso |  Diagrama de Contexto  |
-|  ![image](https://user-images.githubusercontent.com/46433173/201655805-28718256-bf6f-408d-99bc-a195714dff1d.png) | ![image](https://user-images.githubusercontent.com/46433173/201657041-f93b90c5-5d02-43c3-939e-844b10eaea43.png) |
 | --- | ---- |  
+|  ![image](https://user-images.githubusercontent.com/46433173/201655805-28718256-bf6f-408d-99bc-a195714dff1d.png) | ![image](https://user-images.githubusercontent.com/46433173/201657041-f93b90c5-5d02-43c3-939e-844b10eaea43.png) |
 
 ## Vista de Caso de Uso Start
 
