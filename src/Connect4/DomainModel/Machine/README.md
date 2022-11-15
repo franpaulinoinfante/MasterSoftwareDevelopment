@@ -606,19 +606,18 @@ Do you want to continue? (y/n)n
 
 ### Vista de Análisis
 
-![image](https://user-images.githubusercontent.com/46433173/201947411-ce83a766-74cd-43e6-95ad-b2cea2333fbc.png)
+![image](https://user-images.githubusercontent.com/46433173/201950249-6b3537be-b5db-47c2-bf8c-eeac8915e07e.png)
 
 ### Namespaces
 
+![image](https://user-images.githubusercontent.com/46433173/201949604-bc81242a-433c-489c-81ca-33b327396894.png)
 
 ## Vista de Lógica/Diseño 
 
 
 ### Arquitectura
 
-
-### ConnectFour-ConsoleApp
-
+![image](https://user-images.githubusercontent.com/46433173/201950321-d0b3d6cf-defc-4ef3-8f54-6d55eb570dca.png)
 
 ### Namespace ConsoleIOs
 
