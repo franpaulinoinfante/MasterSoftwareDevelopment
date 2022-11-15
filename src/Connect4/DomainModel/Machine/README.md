@@ -594,15 +594,19 @@ Do you want to continue? (y/n)n
 
 ### Análisis de caso de uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/201943318-ca1ce7c3-eaf9-429f-a47a-5591e930c9a6.png)
 
 ### Análisis de caso de uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/201943488-aba2da1d-1654-4862-a635-6a529a136413.png)
 
 ### Análisis de caso de uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/201943403-c6abb8ff-8006-4b5d-b6b6-9a6ca67f2bc9.png)
 
 ### Vista de Análisis
 
+![image](https://user-images.githubusercontent.com/46433173/201947411-ce83a766-74cd-43e6-95ad-b2cea2333fbc.png)
 
 ### Namespaces
 
