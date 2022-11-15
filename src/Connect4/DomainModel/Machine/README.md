@@ -7,6 +7,9 @@
     - [Vista de Caso de Uso Play](#Vista-de-Caso-de-Uso-Play)  
     - [Vista de Caso de Uso Resume](#Vista-de-Caso-de-Uso-Resume)  
     - [Prototipo de Interfaz](#Prototipo-de-Interfaz)
+    - [Interfaz Maquina](#Interfaz-Maquina)  
+    - [Interfaz Jugador y Máquina](#Interfaz-Jugador-y-Máquina)  
+    - [Interfaz 2 Jugadores](#Interfaz--ugadores)  
 - [Análisis](#Analisis)  
     - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
@@ -41,149 +44,214 @@
 ![image](https://user-images.githubusercontent.com/46433173/199319016-d86605be-6774-4e75-9580-c3e5438b4ab1.png)
 
 ## Prototipo de Interfaz
+### Interfaz Máquina
+```
+Enter the players: 0
+--- CONNECT 4 ---
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   | X |   |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   | X |   |   |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   |   | X | X |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | O |   |   | O | X | X |   |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 4
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   | X |   |   |
+ | O |   |   | O | X | X |   |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   | X |   |   |
+ | O |   |   | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   | X |   |   |
+ | O |   |   | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   | X |   |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | O |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ |   |   |   |   |   | O |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   |   |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 2
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X |   |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 6
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 5
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 0
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O |   | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X |   | X |   | X | X | O |
+ | O | X | O | O | X | X | O |
+----------------------
+Turn: O
+Aleatoriamente en la columna: 1
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X | O | X |   | X | X | O |
+ | O | X | O | O | X | X | O |
+----------------------
+Turn: X
+Aleatoriamente en la columna: 3
+----------------------
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   | X |   |
+ | O |   |   |   |   | X |   |
+ | O |   |   |   |   | O |   |
+ | X | O | X | X | X | X | O |
+ | O | X | O | O | X | X | O |
+----------------------
+X WIN!!! : -)
+Do you want to continue? (y/n)
+```
+### Interfaz Jugador y Máquina 
 
-```
------ Connect-4 -----
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-----------------------------
-Enter the column to insert a token:
-Colunm: -1
-The column is wrong
-Enter the column to insert a token:
-Colunm: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 8
-The column is wrong
-Enter the column to insert a token:
-Column: 4
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 1
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   |   |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-----------------------------
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   |   | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 5
-The colunm is full
-Enter the column to insert a token:
-Column: 4
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O |   |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 2
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   |   |
-----------------------------
-Enter the column to insert a token:
-Column: 7
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O |   | O | X |   | X |
-----------------------------
-Enter the column to insert a token:
-Column: 3
-----------------------------
-|   |   |   |   | X |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | O |   |   |
-|   |   |   |   | X |   |   |
-|   |   |   | X | X |   |   |
-| O | O | O | O | X |   | X |
-----------------------------
-O Player: You win!!! :-)
-Do you want to continue? (y/n):
-```
+### Interfaz 2 Jugadores
 
 ## Vista de Análisis
 
