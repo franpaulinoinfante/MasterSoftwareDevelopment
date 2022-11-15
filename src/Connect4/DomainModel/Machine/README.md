@@ -9,7 +9,7 @@
     - [Prototipo de Interfaz](#Prototipo-de-Interfaz)
         - [Interfaz Máquina](#Interfaz-Máquina)  
         - [Interfaz Jugador y Máquina](#Interfaz-Jugador-y-Máquina)  
-        - [Interfaz 2 Jugadores](#Interfaz-2-ugadores)  
+        - [Interfaz 2 Jugadores](#Interfaz-2-Jugadores)  
 - [Análisis](#Analisis)  
     - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
