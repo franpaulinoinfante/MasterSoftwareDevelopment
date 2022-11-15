@@ -1,0 +1,13 @@
+@startuml Namespaces
+title namespace
+package ConnectFour{
+    namespace Models{}
+    Models ..> Types
+    Models ..> ConsoleIOs
+
+    namespace Types{}
+    Types ..> ConsoleIOs
+
+    namespace ConsoleIOs{}
+}
+@enduml

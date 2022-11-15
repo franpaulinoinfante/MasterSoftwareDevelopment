@@ -1,0 +1,17 @@
+@startuml ResumeUseCaseView
+title Resume Use Case View
+
+state OUT_GAME
+state EXIT
+state INITIAL
+state A as " "
+state if <<choice>>
+
+[*] --> OUT_GAME
+OUT_GAME --> A : Player requests to Resume
+A --> if : System requests to continue
+    if --> EXIT : Player introduces Not
+if --> INITIAL : Player introduces Yes
+EXIT --> [*]
+INITIAL --> [*]
+@enduml

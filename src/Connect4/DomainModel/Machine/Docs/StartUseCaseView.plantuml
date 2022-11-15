@@ -1,0 +1,14 @@
+@startuml StartUseCaseView
+title Start Use Case View
+
+state INITIAL
+state IN_GAME
+state A as " "
+state B as " "
+
+[*] --> INITIAL
+INITIAL --> A : Player requests to Start a new game
+A --> B : System show Title and empty board
+B --> IN_GAME : System allows Play
+IN_GAME --> [*]
+@enduml

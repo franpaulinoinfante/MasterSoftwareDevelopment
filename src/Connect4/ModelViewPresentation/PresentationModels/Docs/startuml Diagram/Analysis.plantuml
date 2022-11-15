@@ -13,7 +13,6 @@ namespace ConsoleApp{
     PlayView ..> BoardView
 
     ResumeView ..> MessageView
-
     BoardView ..> MessageView
     BoardView ..> TokenView
 

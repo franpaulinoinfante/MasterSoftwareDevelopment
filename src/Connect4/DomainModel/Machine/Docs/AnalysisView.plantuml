@@ -1,0 +1,19 @@
+@startuml AnalysisView
+title Analysis class View
+namespace ConnectFour{
+    ConnectFour *--> "1" Board : constain
+    ConnectFour *--> "1" Turn : constain
+
+    Turn *--> "2" Player : constain
+    Turn --> Board : collaborate
+    Turn ..> Token : assign to player
+
+    Player <|-- UserPlayer
+    Player <|-- MachinePlayer
+    Player --> "1" Board  : drop token on
+    Player --> Token 
+
+    Board o--> Token : aggregate in a coordinate
+    Board ..> Coordinate : use
+}
+@enduml

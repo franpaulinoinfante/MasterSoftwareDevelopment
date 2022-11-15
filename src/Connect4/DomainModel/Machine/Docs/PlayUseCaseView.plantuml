@@ -1,0 +1,43 @@
+@startuml PlayUseCaseView
+title Play Use Case View
+
+state IN_GAME
+state OUT_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state if1 <<choice>>
+state if2 <<choice>>
+
+[*] --> IN_GAME
+IN_GAME --> A : Player requests to Play
+A --> B : System requests a colunm to Drop the token
+B --> if1 
+    if1 --> E : [error]
+    note on link
+        Colunm out of range
+        Colunm is complete
+    endnote
+    E --> F : System shows an error messages
+    F --> [*] : System allows Play
+if1 --> C : System show update board with new token
+C --> if2
+    if2 --> F
+if2 --> D : [IsFinished]
+D --> OUT_GAME :  System show results message
+    note on link
+        Winner message
+        Tie message
+    endnote
+OUT_GAME --> [*] : System allows Resume
+@enduml
+
+
+
+D --> OUT_GAME :  System show results message
+    if3 --> [*]
+if3 --> OUT_GAME : System show winner message
+OUT_GAME --> [*] : System allows Resume

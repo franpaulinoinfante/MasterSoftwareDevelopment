@@ -1,0 +1,32 @@
+@startuml UseCasesView
+title Use Cases View
+left to right direction
+
+actor Player
+usecase Start
+usecase Play
+usecase Resume
+
+Player --> Start
+Player --> Play
+Player --> Resume
+@enduml
+
+@startuml UseCaseContext
+title Use Cases Context
+
+state INITIAL
+state IN_GAME
+state OUT_GAME
+state if1 <<choice>>
+state if2 <<choice>>
+
+[*] --> INITIAL
+INITIAL --> IN_GAME : Start
+IN_GAME --> if1 : Play
+    if1 --> IN_GAME
+if1 --> OUT_GAME : [IsFinished]
+OUT_GAME --> if2 : Resume
+    if2 --> INITIAL : [IsContinue]
+if2 --> [*]
+@enduml
