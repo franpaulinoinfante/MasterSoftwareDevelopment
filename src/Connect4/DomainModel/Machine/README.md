@@ -43,7 +43,7 @@
 
 ![image](https://user-images.githubusercontent.com/46433173/199319016-d86605be-6774-4e75-9580-c3e5438b4ab1.png)
 
-## Prototipo de Interfaz
+### Prototipo de Interfaz
 #### Interfaz Máquina
 ```
 Enter the players: 0
@@ -249,7 +249,7 @@ Aleatoriamente en la columna: 3
 X WIN!!! : -)
 Do you want to continue? (y/n)y
 ```
-### Interfaz Jugador y Máquina 
+#### Interfaz Jugador y Máquina 
 ```
 Enter the players: 1
 --- CONNECT 4 ---
@@ -444,8 +444,7 @@ Enter a colunm to drop a token: 6
 X WIN!!! : -)
 Do you want to continue? (y/n)y
 ```
-
-### Interfaz 2 Jugadores
+#### Interfaz 2 Jugadores
 ```
 Enter the players: 2
 --- CONNECT 4 ---
