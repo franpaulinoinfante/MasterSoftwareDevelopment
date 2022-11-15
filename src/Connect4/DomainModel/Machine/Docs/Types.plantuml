@@ -1,0 +1,66 @@
+@startuml Types
+title Types
+package ConnectFourConsoleApp{
+    namespace Types{
+        enum Token{
+            ~X,
+            ~O,
+            ~Null
+            ~Write(Token)
+            ~IsNull(Token) : boolean
+        }
+        Token ..> ConsoleIOs.ConsoleIO
+
+        enum Message
+        {
+            ~Titile,
+            ~HorizontalLine,
+            ~VerticalLine,
+            ~Turn,
+            ~NumOfPlayers,
+            ~Random,
+            ~EnterColunmToDrop,
+            ~InvalidColunm,
+            ~CompleteColunm,
+            ~PlayerWin,
+            ~PlayersTied,
+            ~Resume
+            -{static}MESSAGES : string[]
+            ~Write(Message)
+            ~WriteLine(Message)
+            ~WriteLine(Message, columna)
+            ~WriteLine(Message, token)
+            ~GetMessage(Message) : string
+        }
+        Message ..> ConsoleIOs.ConsoleIO
+
+        class Direction
+        {
+            -coordinate : Coordinate
+            ~{static}North = Direction(1, 0);
+            ~{static}NorthEast = Direction(1, 1);
+            ~{static}East = Direction(0, 1);
+            ~{static}SouthEast = Direction(-1, 1);
+            ~{static}South = Direction(-1, 0);
+            ~{static}SouthWest = Direction(-1, -1);
+            ~{static}West = Direction(0, -1);
+            ~{static}NorthWest = Direction(1, -1);
+            ~Direction(row, colunm)
+            ~GetCoordinate() : Coordinate
+            ~GetOppositeDirection()
+            ~{static}GetDirections() : List<Direction>
+        }   
+        Direction ..> Utils.Coordinate
+
+        class Line{
+            ~{static}Length = 4
+            ~GetCoordinates() : List<Coordinate>
+            ~SetDirection(Direction)
+            ~Shift()
+        }
+        Line --> "1" Utils.Coordinate : origin
+        Line ..>  Utils.Coordinate : coordinates
+        Line ..> Direction
+    }
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml ConsoleIOs
+title ConsoleIOs
+
+class ConsoleIO{
+    ~Write(title)
+    ~ReadInt(title) : int
+    ~ReadChart(title) : chat
+}
+
+class YesNotDialog{
+    -answer : char
+    ~Read(title)
+    ~IsAffirmative() : bool
+}
+YesNotDialog ..> ConsoleIO
+@enduml

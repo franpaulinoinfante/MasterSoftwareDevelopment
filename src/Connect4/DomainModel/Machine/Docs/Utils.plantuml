@@ -1,0 +1,31 @@
+@startuml Utils
+title Utils
+package ConnectFourConsoleApp{
+    namespace Utils{
+        class Coordinate{
+            ~{static}MAX_ROWS = 6
+            ~{static}MAX_COLUNM = 7
+            -row : int
+            -colunm : colunm
+            ~Coordinate()
+            ~Coordinate(row, colunm)
+            ~SetRow(row)
+            ~Set(Colunm)
+            ~GetRow() : int
+            ~GetColunm() : int
+            ~Shifted(Coordinate) : Coordinate
+            ~IsValie() : boolean
+            ~IsValid(value) : boolean
+            ~Equals(Coordinate) : boolean
+        }
+        Coordinate ..> ClosedInterval
+
+        class ClosedInterval{
+            -min : int
+            -max : int
+            ~ClosedInterval(min, max)
+            ~IsValid(value) : boolean
+        }
+    }
+}
+@enduml

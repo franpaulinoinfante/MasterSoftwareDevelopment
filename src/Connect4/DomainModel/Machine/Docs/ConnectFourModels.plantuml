@@ -1,0 +1,98 @@
+@startuml ConnectFour
+title Models
+
+package ConnectFourConsoleApp{
+    namespace Models{
+        class ConnectFour{
+            ~ConnectFour()
+            ~Init()
+            -SetUp()
+            -Start()
+            -Play()
+            -Resume() : boolean
+        }
+        ConnectFour *--> Board
+        ConnectFour *--> Turn
+        ConnectFour ..> Types.Message
+        ConnectFour ..> ConsoleIOs.ConsoleIO
+        ConnectFour ..> ConsoleIOs.YesNotDialog
+
+        class Turn{
+            ~{static}MaxPlayers = 2
+            -current : int
+            ~Turn(Board)
+            ~SetUp(numOfPlayer)
+            ~Play()
+            ~Write()
+        }
+        Turn --> Board
+        Turn *--> "2" Player
+        Turn ..> PlayerCreator
+
+        abstract Player{
+            ~Player(Token, Board)
+            ~GetToken() : Token
+            ~GetBoard() : Board
+            #Play()
+            #{abstract}ReadColunm() : int
+            ~Write()
+        }
+        Player --> Token
+        Player --> Board
+        Player <|-- UserPlayer
+        Player <|-- MachinePlayer
+        Player ..> Types.Message
+        Player ..> ConsoleIOs.ConsoleIO
+
+        class UserPlayer{
+            ~UserPlayer(Token, Board) : base(Token,Board)
+            ~ReadColunm() : int
+        }
+        UserPlayer ..> Utils.Coordinate
+
+        class MachinePlayer{
+            ~MachinePlayer(Token, Board) : base(Token,Board)
+            ~ReadColunm() : int
+        }
+        MachinePlayer ..> Utils.Coordinate
+
+        class PlayerCreator{
+            -playerCreator : PlayerCreator
+            -PlayerCreator()
+            ~{static}GetInstante() : PlayerCreator
+            ~Create(position, players, Board) : Player
+        }
+        PlayerCreator --> Token
+        PlayerCreator --> Board
+        
+        class Board{
+            -lastDrop : Coordinate
+            ~Board()
+            ~Reset()
+            ~Drop(colunm, Token)
+            -GetLastDrop(colunm) : Coordinate
+            -IsOccupied(Coordinate, Token) : boolean
+            -GetToken(Coordinate) : Token
+            ~IsComplete(colunm) : bollean
+            ~IsFinished() : boolean
+            -IsComplete() : boolean
+            ~IsWinner() : boolean
+            -IsConnectFour(Line) : boolean
+            ~Write()
+            -WriteHorizontalLine() 
+        }
+        Board *--> "6x7" Types.Token
+        Board *--> "1" Coordinate : lastDrop
+        Board ..> Types.Line
+        Board ..> Types.Direction
+        Board ..> Types.Message
+        Board ..> ConsoleIOs.ConsoleIO
+    }
+
+    namespace Types{
+        enum Message{}
+
+        enum Token{}
+    }
+}
+@enduml
