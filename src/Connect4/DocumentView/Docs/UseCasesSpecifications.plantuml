@@ -1,0 +1,67 @@
+@startuml StartUseCaseView
+title Start Use Case View
+
+state INITIAL
+state IN_GAME
+state A as " "
+state B as " "
+
+[*] --> INITIAL
+INITIAL --> A : The player requests to start a new game
+A --> B : The system shows the title and the empty board
+B --> IN_GAME : The system allows Play
+IN_GAME --> [*]
+@enduml
+
+@startuml PlayUseCaseSpecification
+title Play Use Case Specification
+
+state IN_GAME
+state OUT_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state if1 <<choice>>
+state if2 <<choice>>
+
+[*] --> IN_GAME
+IN_GAME --> A : The player requests to Play
+A --> B : The system requests introduces a colunm to Drop the token
+B --> if1 : Player introduces the colunm
+    if1 --> E : [error]
+    note on link
+        The colunm is out of range
+        The colunm is complete
+    endnote
+    E --> F : The system shows Error message
+    F --> [*] : The System allows Play
+if1 --> C
+C --> if2  : The system shows updated board with a new token
+    if2 --> F
+if2 --> D : [isFinished]
+D --> OUT_GAME : The system shows Result message
+OUT_GAME --> [*] : The System allows Resume
+@enduml
+
+@startuml ResumeUseCaseSpecification
+title Resume Use Case Specification
+
+state OUT_GAME
+state INITIAL
+state EXIT
+state A as " "
+state B as " "
+state if <<choice>>
+
+[*] --> OUT_GAME
+OUT_GAME --> A : The player requests to Resume
+A --> B : The system requests to Continue
+B --> if 
+    if --> EXIT : The player introduces Not
+    EXIT --> [*]
+if --> INITIAL : The player introduces Yes
+INITIAL --> [*]
+@enduml
