@@ -661,6 +661,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Diseño de caso de uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/202294252-392829c7-ba3a-4a35-8515-8abbcf0fc663.png)
 
 ### Diseño de caso de uso Play
 
