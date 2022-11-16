@@ -640,14 +640,19 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis Clases de Vistas
 
+![image](https://user-images.githubusercontent.com/46433173/202275332-7ee9da25-150e-4f52-970a-86e0b58f65c7.png)
 
 ### Análisis Clases de Modelos
 
+![image](https://user-images.githubusercontent.com/46433173/202275379-620da538-dc6d-4fef-a8a3-5ba88b219ef4.png)
 
 ### Análisis Clases de Tipos
 
+![image](https://user-images.githubusercontent.com/46433173/202275652-1e4589ee-8fe3-4baf-849f-a332fb786cc2.png)
 
 ### Análisis Clases de Utils 
+
+![image](https://user-images.githubusercontent.com/46433173/202275714-52c66fcf-29cb-43b4-811c-9e2dc3e1682d.png)
 
 ## Vista de Lógica/Diseño 
 
