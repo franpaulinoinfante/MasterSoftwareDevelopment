@@ -23,7 +23,7 @@
         - [Análisis Clases de Tipos](#Análisis-Clases-de-Tipos)  
         - [Análisis Clases de Utils ](#Análisis-Clases-de-Utils)  
 - [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
-    - [Arquitectura](#Arquitectura)  
+    - [Diseño de la Arquitectura](#Diseño-de-la-Arquitectura)  
     - [Diseño de caso de uso Start](#Diseño-de-caso-de-uso-Start)  
     - [Diseño de caso de uso Play](#Diseño-de-caso-de-uso-Play)  
     - [Diseño de caso de uso Resume](#Diseño-de-caso-de-uso-Resume)  
@@ -655,8 +655,9 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ## Vista de Lógica/Diseño 
 
-### Arquitectura
+### Diseño de la Arquitectura
 
+![image](https://user-images.githubusercontent.com/46433173/202287804-e17fe951-6c4e-40f2-a08f-6833ba56e645.png)
 
 ### Diseño de caso de uso Start
 
