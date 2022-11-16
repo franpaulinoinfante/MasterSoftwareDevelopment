@@ -612,9 +612,11 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de la Arquictura
 
+![image](https://user-images.githubusercontent.com/46433173/202216196-e337862f-c18d-4765-bd42-f97d5074fe7a.png)
 
 ### Análisis de las vistas
 
+![image](https://user-images.githubusercontent.com/46433173/202228036-f080f046-9dfa-4fea-b739-383bb2e059c0.png)
 
 ### Análisis de los Modelos
 
