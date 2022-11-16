@@ -620,6 +620,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de los Modelos
 
+![image](https://user-images.githubusercontent.com/46433173/202233208-7d7c3970-f7c7-47b6-a641-86ed73ef1c2b.png)
 
 ### Análisis de caso de uso Start
 
