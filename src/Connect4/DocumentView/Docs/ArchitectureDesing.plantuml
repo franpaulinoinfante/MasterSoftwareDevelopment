@@ -1,0 +1,23 @@
+@startuml Architecture
+title Architecture Design
+package ConnectFour{
+    package ConsoleApp{
+    }
+    ConsoleApp ..> Models
+    ConsoleApp ..> Types
+    ConsoleApp ..> Utils
+
+    package Models #SkyBlue{
+    }
+    Models ..> Types
+    Models ..> Utils
+
+    package Types #GreenYellow{
+    }
+    Types ..> Utils
+
+    package Utils #OrangeRed{
+    }
+}
+@enduml
+

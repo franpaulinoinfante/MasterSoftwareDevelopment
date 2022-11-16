@@ -1,0 +1,303 @@
+@startuml StartUseCasesDesign
+title Start Use Case Design
+allow_mixing
+
+actor Player
+
+package models{
+    object ": Board" as Board{
+    }
+
+    object ": Game" as Game{
+    }
+
+    object ": Turn" as Turn{
+    }
+}
+
+package types{
+    object ": Coordinate" as Coordinate{
+    }
+
+    object ": Token" as Token{
+    }
+}
+
+package views {
+    object ": BoardView" as BoardView{
+    }
+
+    object ": StartView" as StartView{
+    }
+
+    object ": TokenView" as TokenView{
+    }
+    
+    object ": Message" as Message{
+    }
+    
+    object ": SetUpView" as SetUpView{
+    }
+}
+
+Player --> StartView
+    note on link
+        Start()
+    endnote
+StartView ..> Message
+    note on link
+        WriteLine(Message)
+    endnote
+StartView ..> SetUpView
+    note on link
+        ReadNumOfPlayers(Game)
+    endnote
+    SetUpView ..> Message
+        note on link
+            GetMessage(Message)
+        endnote
+    SetUpView ..> Game
+        note on link
+            SetPlayer(players)
+        endnote
+        Game *--> Turn
+            note on link
+                SetPlayers(players)
+            endnote
+StartView ..> BoardView
+    note on link
+        Write(Game)
+    endnote
+    BoardView ..> Message
+        note on link
+            WriteLine(Message)
+        endnote
+    BoardView ..> TokenView
+        note on link
+            Write(Token)
+        endnote
+    BoardView ..> Game
+        note on link                    
+            GetToken(Coordinate)
+        endnote
+    Game *--> Board
+        note on link
+            GetToken(Coordinate)
+        endnote
+
+StartView --> Game
+TokenView ..> Token
+BoardView ..> Coordinate
+Board ..> Coordinate
+Board *--> Token
+@enduml
+
+@startuml PlaytUseCasesDesign
+title Play Use Case Design
+allow_mixing
+actor User
+
+package models{
+    object ": Board" as Board{
+    }
+
+    object ": Game" as Game{
+    }
+
+    object ": Turn" as Turn{
+    }
+
+    object ": Player" as Player{
+    }
+}
+
+package types{
+    object ": Coordinate" as Coordinate{
+    }
+
+    object ": Token" as Token{
+    }
+}
+
+package views {
+    object ": BoardView" as BoardView{
+    }
+
+    object ": PlayView" as PlayView{
+    }
+
+    object ": PlayerView" as PlayerView{
+    }
+
+    object ": TokenView" as TokenView{
+    }
+    
+    object ": Message" as Message{
+    }    
+
+    object ": ConsoleIO" as ConsoleIO{
+    }  
+}
+
+User --> PlayView
+    note on link
+        Play()
+    endnote
+PlayView --> Game
+    note on link
+        GetCurrent()
+        IsWinner()
+    endnote
+    Game *--> Turn
+        note on link
+            GetCurrent()
+            GetErrorToDrop(colunm)
+            Drop(colunm)
+        endnote
+    Turn --> Player
+        note on link
+            GetToken()
+            GetErrorToDrop(colunm)
+            Drop(colunm)
+        endnote
+        Player --> Board
+        note on link
+            IsComplete(colunm)
+            Drop(colunm, Token)
+        endnote
+PlayView ..> Message
+    note on link
+        WriteLine(Message, Token)
+    endnote
+PlayView ..> PlayerView
+    note on link
+        Play(Game)
+    endnote
+    PlayerView ..> Message
+        note on link
+            GetMessage(Message)
+        endnote    
+    PlayerView ..> ConsoleIO
+        note on link
+            ReadInt(message)
+        endnote 
+    PlayerView ..> Game
+        note on link
+            GetErrorToDrop(colunm)
+            Drop(colunm)
+        endnote 
+PlayView ..> BoardView
+    note on link
+        Write(Game)
+    endnote
+    BoardView ..> Message
+        note on link
+            WriteLine(Message)
+        endnote
+    BoardView ..> TokenView
+        note on link
+            Write(Token)
+        endnote
+    BoardView ..> Game
+        note on link                    
+            GetToken(Coordinate)
+        endnote
+    Game *--> Board
+        note on link
+            GetToken(Coordinate)
+            IsWinner()
+        endnote
+
+TokenView ..> Token
+BoardView ..> Coordinate
+BoardView ..> Token
+
+Game ..> Token
+Turn ..> Token
+Player --> Token
+Player ..> Coordinate
+Board *--> Token
+Board ..> Coordinate
+@enduml
+
+@startuml ResumeUseCasesDesign
+title Resume Use Case Design
+allow_mixing
+
+actor Player
+
+package models{
+    object ": Board" as Board{
+    }
+
+    object ": Game" as Game{
+    }
+
+    object ": Turn" as Turn{
+    }
+
+    object ": Player" as Player{
+    }
+}
+
+package types{
+    object ": Coordinate" as Coordinate{
+    }
+
+    object ": Token" as Token{
+    }
+}
+
+package views {
+    object ": BoardView" as BoardView{
+    }
+
+    object ": ResumeView" as ResumeView{
+    }
+
+    object ": TokenView" as TokenView{
+    }
+    
+    object ": Message" as Message{
+    }    
+
+    object ": YesNotDialogView" as YesNotDialogView{
+    }
+}
+
+Player --> ResumeView
+    note on link
+        Resume()
+    endnote
+ResumeView ..> Message
+    note on link
+        GetMessage(Message)
+    endnote
+ResumeView ..> YesNotDialogView
+    note on link
+        Read(message)
+    endnote
+ResumeView ..> BoardView
+    note on link
+        Reset(Game)
+    endnote
+ResumeView --> Game
+    note on link
+        Reset()
+    endnote
+    Game *--> Board
+    note on link
+        Reset()
+    endnote
+    Game *--> Turn
+    note on link
+        Reset()
+    endnote
+
+BoardView ..> Coordinate
+BoardView ..> TokenView
+TokenView ..> Token
+Board ..> Token
+Board ..> Coordinate
+Turn ..> Token
+@enduml
