@@ -39,6 +39,7 @@
 
 |  Vista de Caso de Uso  |  Contexto de Casos de Uso  | 
 | :------- | :------: |  
+| ![image](https://user-images.githubusercontent.com/46433173/202189687-6d1c8a99-087a-441f-b1ce-f3cd098b8690.png)  |   |
 
 ### Vista de Caso de Uso Start
 
