@@ -1,0 +1,9 @@
+@startuml ArchitectureAnalysis
+title Architecture Analysis
+package ConnectFour{
+    namespace Views #IndianRed{}
+    namespace Models #CadetBlue{}
+    
+    Views ..> Models
+}
+@enduml

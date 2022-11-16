@@ -12,6 +12,8 @@
         - [Interfaz 2 Jugadores](#Interfaz-2-Jugadores)  
 - [Análisis](#Analisis)  
     - [Análisis de la Arquictura](#Análisis-de-la-Arquictura)  
+    - [Análisis de las vistas](#Análisis-de-las-vistas)  
+    - [Análisis de los Modelos](#Análisis-de-los-Modelos)  
     - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
     - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
@@ -609,6 +611,12 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 - Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación.
 
 ### Análisis de la Arquictura
+
+
+### Análisis de las vistas
+
+
+### Análisis de los Modelos
 
 
 ### Análisis de caso de uso Start
