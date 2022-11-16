@@ -637,10 +637,9 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de Clases
 
-
 ### Análisis Clases de Vistas
 
-![image](https://user-images.githubusercontent.com/46433173/202275332-7ee9da25-150e-4f52-970a-86e0b58f65c7.png)
+![image](https://user-images.githubusercontent.com/46433173/202278095-ffc8845c-363e-471e-ae8c-07f0f2d95b2c.png)
 
 ### Análisis Clases de Modelos
 
