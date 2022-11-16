@@ -43,15 +43,15 @@
 
 ### Especificación de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/202192700-dea85bd9-bce7-4544-893d-e60118112ff1.png)
+![image](https://user-images.githubusercontent.com/46433173/202204734-91866dbc-4b80-43cb-849c-9d0974902699.png)
 
 ### Especificación de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/202195444-df1dd5e3-2249-4280-b8fc-9a9fa7f724de.png)
+![image](https://user-images.githubusercontent.com/46433173/202204452-ed4d3670-6ef8-4a5a-8ab6-dc45b3ca49fe.png)
 
 ### Especificación de Caso de Uso Resume
 
-![image](https://user-images.githubusercontent.com/46433173/202196193-4adf2149-a9f9-4439-be24-250b95aee612.png)
+![image](https://user-images.githubusercontent.com/46433173/202204530-7930f74f-c224-478b-a9cb-aecbbdcb53f5.png)
 
 ### Prototipo de Interfaz
 #### Interfaz Máquina
