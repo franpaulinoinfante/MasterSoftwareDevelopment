@@ -670,6 +670,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Diseño de caso de uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/202303397-58706de6-d6d0-410b-aaa9-a268467a35ec.png)
 
 ### Namespace ConsoleIOs
 
