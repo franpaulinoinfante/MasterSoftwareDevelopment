@@ -2,10 +2,10 @@
 
 **índice**
 - [Requisitos](#Requisitos)  
-- [Vista de Casos de Uso](#Vista-de-Casos-de-Uso)  
-    - [Vista de Caso de Uso Start](#Vista-de-Caso-de-Uso-Start)  
-    - [Vista de Caso de Uso Play](#Vista-de-Caso-de-Uso-Play)  
-    - [Vista de Caso de Uso Resume](#Vista-de-Caso-de-Uso-Resume)  
+- [Casos de Uso](#Casos-de-Uso)  
+    - [Especificación de Caso de Uso Start](#Especificación-de-Caso-de-Uso-Start)  
+    - [Especificación de Caso de Uso Play](#Especificación-de-Caso-de-Uso-Play)  
+    - [Especificación de Caso de Uso Resume](#Especificación-de-Caso-de-Uso-Resume)  
     - [Prototipo de Interfaz](#Prototipo-de-Interfaz)
         - [Interfaz Máquina](#Interfaz-Máquina)  
         - [Interfaz Jugador y Máquina](#Interfaz-Jugador-y-Máquina)  
@@ -35,20 +35,23 @@
 | * _Funcionalidad: **Sencilla**_<br/>  * _Interfaz: **Texto**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **No**_<br/> | ![Screenshot 2022-11-01 092020](https://user-images.githubusercontent.com/46433173/199308347-025f54a1-49fc-4a3e-9385-aabbbf493ded.png) | 
 | :------- | :------: |  
 
-## Vista de Casos de Uso
+## Casos de Uso
 
 |  Vista de Caso de Uso  |  Contexto de Casos de Uso  | 
 | :------- | :------: |  
-| ![image](https://user-images.githubusercontent.com/46433173/202189687-6d1c8a99-087a-441f-b1ce-f3cd098b8690.png)  |   |
+| ![image](https://user-images.githubusercontent.com/46433173/202189687-6d1c8a99-087a-441f-b1ce-f3cd098b8690.png)  |  ![image](https://user-images.githubusercontent.com/46433173/202190975-52e7edb2-a56d-4ded-8d08-b732846573de.png) |
 
-### Vista de Caso de Uso Start
+### Especificación de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/202192700-dea85bd9-bce7-4544-893d-e60118112ff1.png)
 
-### Vista de Caso de Uso Play
+### Especificación de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/202195444-df1dd5e3-2249-4280-b8fc-9a9fa7f724de.png)
 
-### Vista de Caso de Uso Resume
+### Especificación de Caso de Uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/202196193-4adf2149-a9f9-4439-be24-250b95aee612.png)
 
 ### Prototipo de Interfaz
 #### Interfaz Máquina
