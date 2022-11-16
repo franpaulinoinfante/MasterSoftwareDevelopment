@@ -11,6 +11,7 @@
         - [Interfaz Jugador y Máquina](#Interfaz-Jugador-y-Máquina)  
         - [Interfaz 2 Jugadores](#Interfaz-2-Jugadores)  
 - [Análisis](#Analisis)  
+    - [Análisis de la Arquictura](#Análisis-de-la-Arquictura)  
     - [Análisis de caso de uso Start](#Análisis-de-caso-de-uso-Start)  
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
     - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
@@ -19,7 +20,6 @@
     - [Análisis Models](#Análisis-Models)  
     - [Análisis Types](#Análisis-Types)  
     - [Análisis Utils](#Análisis-Utils)  
-    - [Namespaces](#Namespaces)  
 - [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
     - [Arquitectura](#Arquitectura)  
     - [Diseño de caso de uso Start](#Diseño-de-caso-de-uso-Start)  
@@ -608,6 +608,9 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 - Estructurar los requisitos de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos.
 - Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación.
 
+### Análisis de la Arquictura
+
+
 ### Análisis de caso de uso Start
 
 
@@ -630,10 +633,6 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 
 ### Análisis Utils 
-
-
-### Análisis namespaces
-
 
 ## Vista de Lógica/Diseño 
 

@@ -1,5 +1,5 @@
-@startuml StartUseCaseView
-title Start Use Case View
+@startuml StartUseCaseSpecification
+title Start Use Case Specification
 
 state INITIAL
 state IN_GAME

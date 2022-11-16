@@ -1,0 +1,14 @@
+@startuml StartUseCaseAnalysis
+title Start Use Case Analysis
+
+@enduml
+
+@startuml PlayUseCaseAnalysis
+title Play Use Case Analysis
+
+@enduml
+
+@startuml ResumeUseCaseAnalysis
+title Resume Use Case Analysis
+
+@enduml
