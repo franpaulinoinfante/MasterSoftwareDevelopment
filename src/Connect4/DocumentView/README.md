@@ -18,10 +18,10 @@
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
     - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
     - [Vista de Análisis](#Vista-de-Análisis)  
-    - [Análisis Views](#Análisis-Views)  
-    - [Análisis Models](#Análisis-Models)  
-    - [Análisis Types](#Análisis-Types)  
-    - [Análisis Utils](#Análisis-Utils)  
+    - [Análisis Clases de Vistas](#Análisis-Clases-de-Vistass)  
+    - [Análisis Clases de Modelos](#Análisis-Clases-de-Modelos)  
+    - [Análisis Clases de Tipos](#Análisis-Clases-de-Tipos)  
+    - [Análisis Clases de Utils ](#Análisis-Clases-de-Utils)  
 - [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
     - [Arquitectura](#Arquitectura)  
     - [Diseño de caso de uso Start](#Diseño-de-caso-de-uso-Start)  
@@ -624,7 +624,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de caso de uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/202236094-d3a33452-074d-45fa-8465-23c82a130846.png)
+![image](https://user-images.githubusercontent.com/46433173/202242232-9bf820c3-6bd9-4212-b60b-a1fb36d3606d.png)
 
 ### Análisis de caso de uso Play
 
@@ -635,19 +635,19 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 ![image](https://user-images.githubusercontent.com/46433173/202241689-55b1714b-ca81-4f66-803f-4edbb30fc975.png)
 
 
-### Vista de Análisis
+### Análisis de Clases
 
 
-### Análisis Views
+### Análisis Clases de Vistas
 
 
-### Análisis Models
+### Análisis Clases de Modelos
 
 
-### Análisis Types
+### Análisis Clases de Tipos
 
 
-### Análisis Utils 
+### Análisis Clases de Utils 
 
 ## Vista de Lógica/Diseño 
 
