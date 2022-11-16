@@ -36,6 +36,11 @@ internal class MessageView
         ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)_messageType]);
     }
 
+    internal void WriteLine(string player)
+    {
+        ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)_messageType].Replace("#player", player));
+    }
+
     internal void WriteLine(MessageType messageType)
     {
         ConsoleIO.GetInstance().WriteLine(MESSAGES[(int)messageType]);

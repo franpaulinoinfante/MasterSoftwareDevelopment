@@ -17,6 +17,8 @@ public class Game
 
     public PlayerType CurrentPlayerType => _turn.CurrentPlayer.PlayerType;
 
+    public Token LastPlayer => _turn.LastPlayer.Token;
+
     public void NewGame()
     {
         _turn.NewGame();

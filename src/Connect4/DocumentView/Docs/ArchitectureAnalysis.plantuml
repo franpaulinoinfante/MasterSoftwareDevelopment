@@ -1,9 +1,57 @@
 @startuml ArchitectureAnalysis
-title Architecture Analysis
+title Architecture Analysis - Document/View
 package ConnectFour{
     namespace Views #IndianRed{}
     namespace Models #CadetBlue{}
     
     Views ..> Models
 }
+@enduml
+
+@startuml ViewsAnalysis
+title Views Analysis
+
+actor Player
+boundary GameView
+boundary StartView
+boundary PlayView
+boundary ResumeView
+boundary MessageView
+boundary SetUpView
+boundary BoardView
+boundary TokenView
+boundary ErrorView
+boundary YesNotDialogView
+
+Player --> GameView
+GameView *--> StartView
+GameView *--> PlayView
+GameView *--> ResumeView
+
+StartView ..> MessageView
+StartView ..> SetUpView
+StartView ..> BoardView
+
+PlayView ..> MessageView
+PlayView ..> ErrorView
+PlayView ..> BoardView
+
+ResumeView ..> MessageView
+ResumeView ..> YesNotDialogView
+
+BoardView ..> TokenView
+@enduml
+
+@startuml ModelsAnalysis
+title Models Analysis
+
+entity Game
+entity Board
+entity Turn
+entity Player
+entity Coordinate
+entity Message
+entity Error
+
+
 @enduml

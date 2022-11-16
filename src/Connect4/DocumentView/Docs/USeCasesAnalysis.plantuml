@@ -1,14 +1,111 @@
 @startuml StartUseCaseAnalysis
+left to right direction
 title Start Use Case Analysis
 
+actor Player
+boundary GameView
+boundary StartView
+boundary MessageView
+boundary BoardView
+
+entity GameEntity
+entity BoardEntity
+entity TokenEntity
+entity Coordinate
+
+Player -- GameView
+GameView -- StartView
+StartView -- MessageView
+StartView -- BoardView
+BoardView -- MessageView
+BoardView -- GameEntity
+
+GameEntity -- BoardEntity
+BoardEntity -- TokenEntity
+BoardEntity -- Coordinate
 @enduml
 
 @startuml PlayUseCaseAnalysis
+left to right direction
 title Play Use Case Analysis
+
+actor Player
+boundary GameView
+boundary PlayView
+boundary MessageView
+boundary BoardView
+boundary ErrorView
+boundary TokenView
+
+entity GameEntity
+entity BoardEntity
+entity TokenEntity
+entity TurnEntity
+entity PlayerEntity
+entity ErrorEntity
+entity CoordinateEntity
+
+Player -- GameView
+GameView -- PlayView
+PlayView -- MessageView
+PlayView -- ErrorView
+PlayView -- BoardView
+PlayView -- GameEntity
+
+BoardView .. MessageView
+BoardView -- TokenView
+BoardView .. CoordinateEntity
+
+TokenView .. TokenEntity
+
+ErrorView -- GameEntity
+ErrorView .. ErrorEntity
+
+GameEntity -- TurnEntity
+TurnEntity -- PlayerEntity
+PlayerEntity -- TokenEntity
+PlayerEntity -- BoardEntity
+PlayerEntity -- ErrorEntity
+
+BoardEntity -- CoordinateEntity
+BoardEntity -- TokenEntity
+BoardView -- GameEntity
 
 @enduml
 
 @startuml ResumeUseCaseAnalysis
+left to right direction
 title Resume Use Case Analysis
 
+actor Player
+boundary GameView
+boundary ResumeView
+boundary YesNotDialog
+boundary MessageView
+
+entity GameEntity
+entity TurnEntity
+entity BoardEntity
+entity PlayerEntity
+entity TokenEntity
+entity CoordinateEntity
+
+Player -- GameView
+GameView -- ResumeView
+ResumeView -- MessageView
+ResumeView -- YesNotDialog
+ResumeView -- GameEntity
+
+GameEntity -- TurnEntity
+GameEntity -- BoardEntity
+
+BoardEntity -- TokenEntity
+BoardEntity -- CoordinateEntity
+
+TurnEntity .. TokenEntity
+TurnEntity -- PlayerEntity
+
+PlayerEntity -- TokenEntity
 @enduml
+
+

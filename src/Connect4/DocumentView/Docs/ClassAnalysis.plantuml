@@ -1,0 +1,134 @@
+@startuml AnalysisViews
+title Análisis de las Clases de Vistas
+class GameView{
+
+}
+GameView "1" *--> "1" StartView : constain
+GameView "1" *--> "1" PlayView : constain
+GameView "1" *--> "1" ResumeView : constain
+
+class StartView{
+
+}
+StartView ..> MessageView : write title
+StartView ..> SetUpView
+StartView ..> BoardView
+
+class PlayView{
+
+}
+PlayView ..> PlayerView
+PlayView ..> TokenView : get token win
+PlayView ..> MessageView : write player win
+
+class ResumeView{
+
+}
+ResumeView ..> MessageView : read
+ResumeView ..> YesNotDialog
+
+enum MessageView{
+
+}
+
+class SetUpView{
+    
+}
+SetUpView ..> MessageView : write player to plays
+
+class BoardView{
+
+}
+BoardView ..> MessageView : write horizontal/vertical lines
+BoardView ..> TokenView
+
+class TokenView{
+
+}
+
+class PlayerView{
+
+}
+PlayerView ..> TokenView : read token
+PlayerView ..> MessageView : write turn/colunm to drop
+PlayerView ..> ErrorView : write error
+@enduml
+
+@startuml AnalysisModels
+title Análisis de las Clases de Modelos
+
+class Game{
+
+}
+Game "1" *--> "1" Board : constain
+Game "1" *--> "1" Turn : constain
+
+class Board{
+
+}
+Board o--> "6x7" Token : aggregate in coordinates
+Board ..> Coordinate 
+
+class Turn{
+    -current : int
+}
+Turn "1" --> "1" Board : collaborate
+Turn "1" --> "2" Player : collaborate
+Turn ..> Token : assign to player
+
+class Player{
+
+}
+Player --> "1" Board : drop tokens on
+Player --> "21" Token : collaborate
+Player <|-- UserPlayer
+Player <|-- MachinePlayer
+
+class Coordinate{
+}
+Coordinate "1" ..> "1" Token : constain
+
+enum Token{
+
+}
+@enduml
+
+@startuml AnalysisTypes
+title Análisis de las Clases de Tipos
+
+enum Message{
+    +Titile,
+    +HorizontalLine,
+    +VerticalLine,
+    +Turn,
+    +NumOfPlayers,
+    +Random,
+    +EnterColunmToDrop,
+    +InvalidColunm,
+    +CompleteColunm,
+    +PlayerWin,
+    +PlayersTied,
+    +Resume
+}
+
+enum Token{
+    +X,
+    +O,
+    +Null
+}
+
+enum Error{
+    +ColunmOutOfRange,
+    +ColunmIsComplete
+}
+
+@enduml
+
+@startuml AnalysisUtils
+title Análisis de las Clases de Utils
+
+class Coordinate{
+    -row : int
+    -colunm : int
+}
+@enduml

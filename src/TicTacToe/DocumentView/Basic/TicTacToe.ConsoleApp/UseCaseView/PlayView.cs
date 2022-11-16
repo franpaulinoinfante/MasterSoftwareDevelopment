@@ -1,4 +1,5 @@
-﻿using TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews;
+﻿using TicTacToe.ConsoleApp.ConsolesIOs;
+using TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews;
 using TicTacToe.ConsoleApp.UseCaseView.PlayerViews;
 using TicTacToe.Models;
 
@@ -21,5 +22,6 @@ internal class PlayView
             new BoardView().Write(_game);
             _game.Next();
         } while (!_game.IsTicTacToe());
+        new MessageView(Views.MessageType.WINNER).WriteLine(_game.LastPlayer.ToString());
     }
 }
