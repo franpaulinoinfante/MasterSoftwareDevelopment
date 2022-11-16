@@ -1,4 +1,4 @@
-# -------- Connect4 With Machine Player --------
+# -------- Connect4 Document/View Architecture --------
 
 **índice**
 - [Requisitos](#Requisitos)  
@@ -15,6 +15,10 @@
     - [Análisis de caso de uso Play](#Análisis-de-baso-de-uso-Play)  
     - [Análisis de caso de uso Resume](#Análisis-de-baso-de-uso-Resume)  
     - [Vista de Análisis](#Vista-de-Análisis)  
+    - [Análisis Views](#Análisis-Views)  
+    - [Análisis Models](#Análisis-Models)  
+    - [Análisis Types](#Análisis-Types)  
+    - [Análisis Utils](#Análisis-Utils)  
     - [Namespaces](#Namespaces)  
 - [Vista de Lógica/Diseño](#Vista-de-Lógica-Diseño) 
     - [Arquitectura](#Arquitectura)  
@@ -33,20 +37,17 @@
 
 ## Vista de Casos de Uso
 
-|   ![image](https://user-images.githubusercontent.com/46433173/199312534-1b0b7c04-2e8e-47dc-8312-a3ab93868e17.png)   | ![image](https://user-images.githubusercontent.com/46433173/199313770-e5feb014-6a7b-4865-a993-e0246f7ad5d1.png) | 
+|  Vista de Caso de Uso  |  Contexto de Casos de Uso  | 
 | :------- | :------: |  
 
 ### Vista de Caso de Uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/199314660-3b7ca1e8-b789-4ec9-bc80-41d1fa3e085d.png)
 
 ### Vista de Caso de Uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/199346389-1e79d0bf-c2a7-4672-a1d9-56c89463cfbb.png)
 
 ### Vista de Caso de Uso Resume
 
-![image](https://user-images.githubusercontent.com/46433173/199319016-d86605be-6774-4e75-9580-c3e5438b4ab1.png)
 
 ### Prototipo de Interfaz
 #### Interfaz Máquina
@@ -596,56 +597,61 @@ Do you want to continue? (y/n)n
 ```
 ## Análisis
 
+analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema:
+
+- Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos.
+- Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
+- Estructurar los requisitos de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos.
+- Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación.
+
 ### Análisis de caso de uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/201943318-ca1ce7c3-eaf9-429f-a47a-5591e930c9a6.png)
 
 ### Análisis de caso de uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/201943488-aba2da1d-1654-4862-a635-6a529a136413.png)
 
 ### Análisis de caso de uso Resume
 
-![image](https://user-images.githubusercontent.com/46433173/201943403-c6abb8ff-8006-4b5d-b6b6-9a6ca67f2bc9.png)
 
 ### Vista de Análisis
 
-![image](https://user-images.githubusercontent.com/46433173/201950249-6b3537be-b5db-47c2-bf8c-eeac8915e07e.png)
 
-### Namespaces
+### Análisis Views
 
-![image](https://user-images.githubusercontent.com/46433173/201949604-bc81242a-433c-489c-81ca-33b327396894.png)
+
+### Análisis Models
+
+
+### Análisis Types
+
+
+### Análisis Utils 
+
+
+### Análisis namespaces
+
 
 ## Vista de Lógica/Diseño 
 
 ### Arquitectura
 
-![image](https://user-images.githubusercontent.com/46433173/201950321-d0b3d6cf-defc-4ef3-8f54-6d55eb570dca.png)
 
 ### Diseño de caso de uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/201962881-8ad46147-0258-496d-8e09-2d78499f26e1.png)
 
 ### Diseño de caso de uso Play
 
-![image](https://user-images.githubusercontent.com/46433173/201968482-67e66b51-7344-44dc-a144-4b29bdc4ba94.png)
 
 ### Diseño de caso de uso Resume
 
-![image](https://user-images.githubusercontent.com/46433173/201974054-4ceef7dd-aceb-4caa-b444-f5c3b68cf6bc.png)
 
 ### Namespace ConsoleIOs
 
-![image](https://user-images.githubusercontent.com/46433173/201951820-1b3f55c9-bd17-4e46-8095-8c9dfc3a2cbb.png)
 
 ### Namespace Models
 
-![image](https://user-images.githubusercontent.com/46433173/201999768-676f7811-7724-4a1f-8889-b13ae92ab12b.png)
 
 ### Namespace Types
 
-![image](https://user-images.githubusercontent.com/46433173/202002456-09727d4f-318e-47db-ab06-52811d5ecbca.png)
 
-### Namespace Utils
-
-![image](https://user-images.githubusercontent.com/46433173/202006881-868114eb-edf8-4e19-b3b1-e286bc1d6906.png)  
+### Namespace Utils 
