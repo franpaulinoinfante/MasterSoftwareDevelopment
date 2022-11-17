@@ -674,12 +674,16 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Namespace ConsoleIOs
 
-![image](https://user-images.githubusercontent.com/46433173/202469571-69bfca12-83cd-4036-b1d0-dfb79d280067.png)
+![image](https://user-images.githubusercontent.com/46433173/202480157-94854f04-531c-4b49-a61f-5d66a8d8649b.png)
 
 ### Namespace Models
 
+![image](https://user-images.githubusercontent.com/46433173/202480237-b4627e01-908f-4f8f-8c42-349f4b8f9d8a.png)
 
 ### Namespace Types
 
+![image](https://user-images.githubusercontent.com/46433173/202480365-a9fe965c-2446-4c74-9a7b-66205bc5376b.png)
 
 ### Namespace Utils 
+
+![image](https://user-images.githubusercontent.com/46433173/202480325-87a7dd74-c2f1-4984-9681-4c9d9f06687d.png)
