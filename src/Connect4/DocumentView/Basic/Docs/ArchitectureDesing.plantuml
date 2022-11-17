@@ -21,3 +21,243 @@ package ConnectFour{
 }
 @enduml
 
+@startuml ConsoleAppDesign
+title Diseño de las Clases de Vista
+
+package ConnectFour.ConsoleApp{
+    namespace ConsoleApp{
+        class Program{
+        +Main(string[])
+    }
+    Program *-right-> GameView
+
+    class GameView{
+        ~Start()
+        ~Play()
+        ~Resume()
+    }
+    GameView *--> Models.Game
+    GameView *--> Views.StartView
+    GameView *--> Views.PlayView
+    GameView *--> Views.ResumeView
+
+    namespace Views{
+        class StartView{
+            ~StartView(Game)
+            ~Interact()
+            -WriteLineTitle(Message)
+            -WriteBoard(Game)
+        }
+        StartView ..> ViewModels.SetUpPlayerView
+        StartView ..> ViewModels.BoardView
+        StartView ..> ViewModels.Message
+        StartView --> Models.Game
+
+        class PlayView{
+            ~PlayView(Game)
+            ~Interact()
+            -PlayerPlay()
+            -GameNext()
+            -GameIsFinished() : boolean
+            -GameIsWinner() : boolean
+            -GetCurrent() : Token
+            -WriteResults(Message)
+        }
+        PlayView --> Models.Game
+        PlayView ..> ViewModels.PlayerView
+        PlayView ..> ViewModels.Message
+        PlayView ..> ViewModels.TokenView
+
+        class ResumeView{
+            ~ResumeView(Game)
+            ~Interact() : boolean
+            -GetMessage(Message) : string
+            -IsContinue(message) : bool
+            -GameReset()
+        }
+        ResumeView --> Models.Game
+        ResumeView ..> ViewModels.Message
+        ResumeView ..> ConsoleIOs.YesNotDialogView
+
+        namespace ViewModels{
+            class SetUpPlayerView{
+                ~ReadNumOfPlayers(Game) : int
+                -Write(Message)
+                -SetPlayers()
+            }
+            SetUpPlayerView ..> Models.Game
+            SetUpPlayerView ..> Message
+            SetUpPlayerView ..> ConsoleIOs.ConsoleIO
+
+            class BoardView{
+                ~Write(Game)
+                -WriteLine(Message)
+                -Write(Message)
+                -Write(Token)
+                -GetToken(Coordinate)
+            }
+            BoardView ..> Models.Game
+            BoardView ..> Utils.Coordinate
+            BoardView ..> Message
+            BoardView ..> Types.Token
+            BoardView ..> TokenView
+            BoardView ..> ConsoleIOs.ConsoleIO
+
+            class PlayerView{
+                ~Play(Game)
+                ~WriteLine(Message)
+                -ReadColunm() : int
+                -GetErrorToDropColunm(colunm) : Error
+                -WriteLine(Error)
+            }
+            PlayerView ..> Models.Game
+            PlayerView ..> Message
+            PlayerView ..> ErrorView
+
+            class TokenView{
+                -{static}TOKENS : string[]
+                ~Write(Token)
+                ~GetToken(Token)
+            }
+            TokenView ..> ConsoleIOs.ConsoleIO
+            TokenView ..> Types.Token
+
+            enum Types.Token{}
+
+            class ErrorView{
+                -{static}ERRORS : string[]
+                ~WriteLine(Error)
+            }
+            ErrorView ..> ConsoleIOs.ConsoleIO
+
+            enum Message{
+                ~Titile
+                ~HorizontalLine
+                ~VerticalLine
+                ~Turn
+                ~EnterColunmToDrop
+                ~InvalidColunm
+                ~CompleteColunm
+                ~PlayerWin
+                ~PlayersTied
+                ~Resume    
+                -{static}MESSAGES : string[]
+                ~{static}Write(Message)
+                ~{static}WriteLine(Message)
+                ~{static}GetMessage(Message)
+            }
+            Message ..> ConsoleIOs.ConsoleIO
+        }
+
+        namespace ConsoleIOs{
+             class ConsoleIO{}
+
+             class YesNotDialogView{}
+             YesNotDialogView ..> ConsoleIO
+        }
+    }
+}
+@enduml
+
+@startuml ModelsDesign
+title Desiño de Clases del Modelo
+
+package ConnectFour.Models{
+    class Game{
+        +Game()
+        +Reset()
+        +Next()
+        +IsFinished() : boolean
+        +GameIsWinner() : boolean
+        +GetCurrent() : boolean
+        +Drop(colunm)
+        +GetErrorToDrop(colum) : Error
+        +SetPlayers(players)
+        +GetToken(Coordinate) : Token
+    }
+    Game *--> "1" Board
+    Game *--> "1" Turn
+    Game ..> Types.Error
+
+    class Board{
+        +Board()
+        ~IsFinished()
+        ~GetToken(Coordinate) : Token
+        ~Drop(colunm, Token)
+        ~IsComplete(colunm) : boolean
+        ~IsComplete() : boolean
+        ~IsFinished() : boolean
+        ~IsWinner() : boolean
+    }
+    Board *--> "6x7" Types.Token
+    Board ..> Utils.Coordinate
+
+    class Turn{
+        +Turn(Game)
+        ~Next()
+        ~SetPlayers(players)
+        ~Drop(colunm)
+        ~GetErrorToDrop(colunm) : Error
+        ~GetCurrent() : Token
+    }
+    Turn *--> "2" Player
+    Turn --> Board
+    Turn ..> Types.Token
+    Turn ..> Types.Error
+
+    abstract Player{
+        +Player(Token, Board)
+        ~Drop(colunm)
+        ~GetErrorToDrop(colunm) : Error
+        ~GetCurrent() : Token
+    }
+    Player --> Types.Token
+    Player --> Board
+    Player ..> Types.Error
+}
+@enduml
+
+@startuml TypesDesign
+title Desiño de Clases de los Tipos
+
+package ConnectFour.Types{
+    enum Token{
+        +X,
+        +O,
+        +Null
+    }
+
+    enum Error{
+        +ColunmIsOutOfRange,
+        +ColunmIsComplete
+    }
+}
+
+@enduml
+
+@startuml UtilsDesign
+title Desiño de Clases de las Utilidades
+
+package ConnectFour.Utils{
+    class Coordinate{
+        +{static}ROWS = 6
+        +{static}COLUNM = 7
+        -row : int
+        -colunm : int
+        +Coordinate(row, colunm)
+        +SetRow(row)
+        +GetRow() : int
+        +SetColunm(colunm) 
+        +GetColunm() : int
+        +isValid(value) : boolean
+    }
+    Coordinate ..> ClosedInterval
+
+    class ClosedInterval{
+        -min : int
+        -max : int
+        ~ClosedInterval(min, max)
+        ~IsValid(value) : boolean
+    }
+}
+@enduml
