@@ -674,6 +674,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Namespace ConsoleIOs
 
+![image](https://user-images.githubusercontent.com/46433173/202469571-69bfca12-83cd-4036-b1d0-dfb79d280067.png)
 
 ### Namespace Models
 
