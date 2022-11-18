@@ -27,7 +27,7 @@
     - [Diseño de caso de uso Start](#Diseño-de-caso-de-uso-Start)  
     - [Diseño de caso de uso Play](#Diseño-de-caso-de-uso-Play)  
     - [Diseño de caso de uso Resume](#Diseño-de-caso-de-uso-Resume)  
-    - [Namespace ConsoleIOs](#Namespace-ConsoleIOs)  
+    - [Namespace ConsoleApp](#Namespace-ConsoleApp)  
     - [Namespace Models](#Namespace-Models)  
     - [Namespace Types](#Namespace-Types)  
     - [Namespace Utils](#Namespace-Utils)  
@@ -672,13 +672,13 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ![image](https://user-images.githubusercontent.com/46433173/202303397-58706de6-d6d0-410b-aaa9-a268467a35ec.png)
 
-### Namespace ConsoleIOs
+### Namespace ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/202480157-94854f04-531c-4b49-a61f-5d66a8d8649b.png)
+![image](https://user-images.githubusercontent.com/46433173/202740504-13dd236a-6b81-4e78-ba4c-dd487c0c0f0d.png)
 
 ### Namespace Models
 
-![image](https://user-images.githubusercontent.com/46433173/202480237-b4627e01-908f-4f8f-8c42-349f4b8f9d8a.png)
+![image](https://user-images.githubusercontent.com/46433173/202731941-b218dbc2-00cf-408d-bd83-16bc562c57e5.png)
 
 ### Namespace Types
 
@@ -686,4 +686,4 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Namespace Utils 
 
-![image](https://user-images.githubusercontent.com/46433173/202480325-87a7dd74-c2f1-4984-9681-4c9d9f06687d.png)
+![image](https://user-images.githubusercontent.com/46433173/202734749-e4dd8897-4143-4f9b-96ef-1af97b29b179.png)
