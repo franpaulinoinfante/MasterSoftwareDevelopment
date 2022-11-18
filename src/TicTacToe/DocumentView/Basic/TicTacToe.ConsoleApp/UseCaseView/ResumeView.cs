@@ -21,6 +21,7 @@ namespace TicTacToe.ConsoleApp.UseCaseView
             {
                 _game.NewGame();
             }
+
             return yesNoDialog.IsAffirmative();
         }
     }

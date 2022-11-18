@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectFour.Models\ConnectFour.Models.csproj" />
+    <ProjectReference Include="..\ConnectFour.Types\ConnectFour.Types.csproj" />
+    <ProjectReference Include="..\ConnectFour.Utils\ConnectFour.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
