@@ -24,7 +24,7 @@ internal static class MessageExtension
         "--------------------------------------------",
         "| ",
         "Turn: #token",
-        "Enter the players [0-2] :",
+        "Enter the players [0-2]: ",
         "Aleatoriamente en la columna: #columna",
         "Enter a colunm to drop a token: ",
         "Invalid columnn!!! Values [1-7]",

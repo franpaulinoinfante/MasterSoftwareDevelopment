@@ -5,7 +5,8 @@ namespace ConnectFour.Models;
 
 internal class Board
 {
-    private Token[,] _tokens;
+    private readonly Token[,] _tokens;
+    private Coordinate _lastDrop;
 
     public Board()
     {
@@ -26,7 +27,34 @@ internal class Board
 
     internal void Drop(int colunm, Token token)
     {
-        throw new NotImplementedException();
+        _lastDrop = GetLastDrop(colunm);
+        if (!IsEmpty(_lastDrop))
+        {
+            _lastDrop.Row--;
+        }
+
+        _tokens[_lastDrop.Row, _lastDrop.Column] = token;
+    }
+
+    private Coordinate GetLastDrop(int colunm)
+    {
+        Coordinate coordinate = new Coordinate(row: 0, column: 0);
+        while ((coordinate.Row < Coordinate.Rows - 1) && IsEmpty(coordinate))
+        {
+            coordinate = coordinate.Shifted(new Coordinate(row: 1, column: 0));
+        }
+
+        return coordinate;
+    }
+
+    private bool IsEmpty(Coordinate lastDrop)
+    {
+        return IsOccupied(lastDrop, Token.Null);
+    }
+
+    private bool IsOccupied(Coordinate lastDrop, Token token)
+    {
+        return GetToken(lastDrop) == token;
     }
 
     internal Token GetToken(Coordinate coordinate)
@@ -36,16 +64,64 @@ internal class Board
 
     internal bool IsComplete(int colunm)
     {
-        throw new NotImplementedException();
+        return !IsEmpty(new Coordinate(row: 0, colunm));
     }
 
     internal bool IsFinished()
     {
-        throw new NotImplementedException();
+        return IsWinner() || IsComplete();
+    }
+
+    private bool IsComplete()
+    {
+        for (int i = 0; i < Coordinate.Rows; i++)
+        {
+            for (int j = 0; j < Coordinate.Colunms; j++)
+            {
+                if (IsEmpty(new Coordinate(i, j)))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     internal bool IsWinner()
     {
-        throw new NotImplementedException();
+        Line line = new Line(_lastDrop);
+        foreach (Direction direction in Direction.Directions.GetRange(index: 0, count: 3))
+        {
+            line.Direction = direction;
+            for (int i = 0; i < Line.Length; i++)
+            {
+                if (IsConnectFour(line))
+                {
+                    return true;
+                }
+                line.Shift();
+            }
+        }
+
+        return false;
+    }
+
+    private bool IsConnectFour(Line line)
+    {
+        Coordinate[] coordinates = line.Coordinates;
+        for (int i = 0; i < Line.Length; i++)
+        {
+            if (!coordinates[i].IsValid())
+            {
+                return false;
+            }
+            if (i > 0 && GetToken(coordinates[i - 1]) != GetToken(coordinates[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

@@ -34,6 +34,11 @@ internal class Turn
         }
     }
 
+    internal void Next()
+    {
+        _current = Change();
+    }
+
     private int Change()
     {
         return (_current + 1) % Turn.MaxPlayer;
@@ -56,10 +61,5 @@ internal class Turn
             return Error.Null;
         }
         return Error.NumOfPlayerOutOfRange;
-    }
-
-    internal void Next()
-    {
-        _current = Change();
     }
 }

@@ -1,4 +1,5 @@
-﻿using ConnectFour.ConsoleApp.Views.ViewsModels;
+﻿using ConnectFour.ConsoleApp.ConsoleIOs;
+using ConnectFour.ConsoleApp.Views.ViewsModels;
 using ConnectFour.ConsoleApp.Views.ViewsModels.PlayerViewModels;
 using ConnectFour.Models;
 
@@ -17,6 +18,7 @@ internal class PlayView
     {
         do
         {
+            ConsoleIO.Instance.WriteLine($"{Message.Turn} {_game.GetActivePlayer()}");
             PlayerView playerView = PlayerCreator.Instance.CreatePlayerView(_game);
             playerView.Interact();
             _game.Next();
@@ -24,7 +26,7 @@ internal class PlayView
 
         if (_game.IsWinner())
         {
-            Message.PlayerWin.WriteLine(_game.GetLastToken().ToString());
+            Message.PlayerWin.WriteLine(_game.GetLastPlayer().ToString());
         }
         else
         {

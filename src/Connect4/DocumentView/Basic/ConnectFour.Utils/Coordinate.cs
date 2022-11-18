@@ -10,6 +10,7 @@ public class Coordinate
 
     public Coordinate()
     {
+        //Empty Coordinate
     }
 
     public Coordinate(int row, int column)
@@ -21,6 +22,11 @@ public class Coordinate
     public int Row { get => _row; set => _row = value; }
     public int Column { get => _column; set => _column = value; }
 
+    public Coordinate Shifted(Coordinate coordinate)
+    {
+        return new Coordinate(_row + coordinate.Row, Column+ coordinate.Column);
+    }
+
     public bool IsValid()
     {
         return new ClosedInterval(Coordinate.Rows, Coordinate.Colunms).IsValid(_row) && new ClosedInterval(Coordinate.Rows, Coordinate.Colunms).IsValid(_column);
@@ -30,6 +36,4 @@ public class Coordinate
     {
         return new ClosedInterval(min: 0, Coordinate.Colunms - 1).IsValid(value);
     }
-
-
 }

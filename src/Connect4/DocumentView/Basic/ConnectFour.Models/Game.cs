@@ -34,7 +34,12 @@ public class Game
         return _turn.GetErrorToSetNum(players);
     }
 
-    public Token GetLastToken()
+    public Token GetActivePlayer()
+    {
+        return _turn.ActivePlayer;
+    }
+
+    public Token GetLastPlayer()
     {
         return _turn.LastPlayer;
     }
