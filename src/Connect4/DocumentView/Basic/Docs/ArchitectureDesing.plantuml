@@ -29,51 +29,48 @@ package ConnectFour.ConsoleApp{
         class Program{
         +Main(string[])
     }
-    Program *-right-> GameView
+    Program *-right-> Connect4
 
-    class GameView{
-        ~Start()
+    class Connect4{
         ~Play()
-        ~Resume()
     }
-    GameView *--> Models.Game
-    GameView *--> Views.StartView
-    GameView *--> Views.PlayView
-    GameView *--> Views.ResumeView
+    Connect4 *--> Models.Game
+    Connect4 *--> Views.GameView
 
-    namespace Views{
+    namespace Views{        
+        class GameView{
+            ~Start()
+            ~Play()
+            ~Resume()
+        }
+        GameView --> Models.Game
+        GameView *--> Views.StartView
+        GameView *--> Views.PlayView
+        GameView *--> Views.ResumeView
+
         class StartView{
             ~StartView(Game)
             ~Interact()
-            -WriteLineTitle(Message)
-            -WriteBoard(Game)
         }
-        StartView ..> ViewModels.SetUpPlayerView
-        StartView ..> ViewModels.BoardView
-        StartView ..> ViewModels.Message
         StartView --> Models.Game
+        StartView ..> ViewModels.SetUpPlayerView
+        StartView ..> ViewModels.Message
+        StartView ..> ViewModels.BoardView
 
         class PlayView{
             ~PlayView(Game)
             ~Interact()
-            -PlayerPlay()
-            -GameNext()
-            -GameIsFinished() : boolean
-            -GameIsWinner() : boolean
-            -GetCurrent() : Token
-            -WriteResults(Message)
         }
         PlayView --> Models.Game
         PlayView ..> ViewModels.PlayerView
+        PlayView .down.> ViewModels.PlayerCreator
         PlayView ..> ViewModels.Message
         PlayView ..> ViewModels.TokenView
+        PlayView ..> ConsoleIOs.ConsoleIO
 
         class ResumeView{
             ~ResumeView(Game)
-            ~Interact() : boolean
-            -GetMessage(Message) : string
-            -IsContinue(message) : bool
-            -GameReset()
+            ~Interact()
         }
         ResumeView --> Models.Game
         ResumeView ..> ViewModels.Message
@@ -81,20 +78,15 @@ package ConnectFour.ConsoleApp{
 
         namespace ViewModels{
             class SetUpPlayerView{
-                ~ReadNumOfPlayers(Game) : int
-                -Write(Message)
-                -SetPlayers()
+                -SetPlayers(Game)
             }
             SetUpPlayerView ..> Models.Game
             SetUpPlayerView ..> Message
+            SetUpPlayerView ..> ErrorView
             SetUpPlayerView ..> ConsoleIOs.ConsoleIO
 
             class BoardView{
                 ~Write(Game)
-                -WriteLine(Message)
-                -Write(Message)
-                -Write(Token)
-                -GetToken(Coordinate)
             }
             BoardView ..> Models.Game
             BoardView ..> Utils.Coordinate
@@ -104,20 +96,43 @@ package ConnectFour.ConsoleApp{
             BoardView ..> ConsoleIOs.ConsoleIO
 
             class PlayerView{
-                ~Play(Game)
-                ~WriteLine(Message)
-                -ReadColunm() : int
-                -GetErrorToDropColunm(colunm) : Error
-                -WriteLine(Error)
+                ~PlayView(Game)
+                ~Interact()
+                #{abstract}GetColunm() : int
+                #GetErrorToDrop(colunm) : Error
             }
             PlayerView ..> Models.Game
             PlayerView ..> Message
             PlayerView ..> ErrorView
 
+            class PlayerCreator{
+                -{static}instance : PlayerCreator
+                -PlayerCreator()
+                ~GetInstance() : PlayerCreator
+                ~CreatePlayerView(Game) : PlayerView
+            }
+            PlayerCreator ..> PlayerView
+            PlayerCreator ..> PlayerViews.UserPlayer
+            PlayerCreator ..> PlayerViews.MachinePlayer
+            
+            namespace PlayerViews{
+                class UserPlayer{
+                    ~UserPlayer(Game)
+                    #GetColunm() : int
+                    -GetErrorColunmOutOfRange(colunm) : error
+                    #GetErrorToDrop(colunm) : Error
+                }
+                UserPlayer -up-|> ViewModels.PlayerView
+            
+                class MachinePlayer{
+                    ~MachinePlayer(Game)
+                    #GetColunm() : int
+                }
+                MachinePlayer -up-|> ViewModels.PlayerView
+            }
+
             class TokenView{
-                -{static}TOKENS : string[]
                 ~Write(Token)
-                ~GetToken(Token)
             }
             TokenView ..> ConsoleIOs.ConsoleIO
             TokenView ..> Types.Token
@@ -144,6 +159,7 @@ package ConnectFour.ConsoleApp{
                 -{static}MESSAGES : string[]
                 ~{static}Write(Message)
                 ~{static}WriteLine(Message)
+                ~{static}WriteLine(Message, title)
                 ~{static}GetMessage(Message)
             }
             Message ..> ConsoleIOs.ConsoleIO
@@ -166,14 +182,17 @@ package ConnectFour.Models{
     class Game{
         +Game()
         +Reset()
-        +Next()
-        +IsFinished() : boolean
-        +GameIsWinner() : boolean
-        +GetCurrent() : boolean
         +Drop(colunm)
         +GetErrorToDrop(colum) : Error
-        +SetPlayers(players)
+        +GetErrorToSetNumOfPlayers(int players) : Error
+        +GetActivePlayer() : Token
+        +GetLastPlayer() : Token
+        +GetPlayerType() : PlayerType
         +GetToken(Coordinate) : Token
+        +IsFinished() : boolean
+        +IsWinner() : boolean
+        +Next()
+        +SetPlayers(players)
     }
     Game *--> "1" Board
     Game *--> "1" Turn
@@ -181,24 +200,32 @@ package ConnectFour.Models{
 
     class Board{
         +Board()
-        ~IsFinished()
-        ~GetToken(Coordinate) : Token
+        ~Reset()
         ~Drop(colunm, Token)
+        -GetLastDrop(colunm) : Coordinate
+        -IsEmpty(Coordinate) : boolean
+        ~IsOccupied(Coordinate, Token) : boolean
+        ~GetToken(Coordinate) : Token
         ~IsComplete(colunm) : boolean
-        ~IsComplete() : boolean
         ~IsFinished() : boolean
+        ~IsComplete() : boolean
         ~IsWinner() : boolean
+        -IsCoonectFour(Line) : boolean
     }
     Board *--> "6x7" Types.Token
     Board ..> Utils.Coordinate
 
     class Turn{
         +Turn(Game)
-        ~Next()
+        +GetActivePlayer() : Token
+        +GetLastPlayer() : Token
+        +GetPlayerType() : PlayerType
         ~SetPlayers(players)
-        ~Drop(colunm)
-        ~GetErrorToDrop(colunm) : Error
-        ~GetCurrent() : Token
+        ~Next()
+        -Change() : int
+        +Drop(colunm)       
+        +GetErrorToDrop(colum) : Error
+        +GetErrorToSetNumOfPlayers(int players) : Error
     }
     Turn *--> "2" Player
     Turn --> Board
@@ -206,13 +233,15 @@ package ConnectFour.Models{
     Turn ..> Types.Error
 
     abstract Player{
-        +Player(Token, Board)
+        +Player(Token, Board, PlayerType)
+        ~GetToken() : Token
+        +GetPlayerType() : PlayerType
         ~Drop(colunm)
         ~GetErrorToDrop(colunm) : Error
-        ~GetCurrent() : Token
     }
     Player --> Types.Token
     Player --> Board
+    Player --> Types.PlayerType
     Player ..> Types.Error
 }
 @enduml
@@ -231,6 +260,11 @@ package ConnectFour.Types{
         +ColunmIsOutOfRange,
         +ColunmIsComplete
     }
+
+    enum PlayerType{
+        +UserPlayer,
+        +MachinePlayer
+    }
 }
 
 @enduml
@@ -244,11 +278,14 @@ package ConnectFour.Utils{
         +{static}COLUNM = 7
         -row : int
         -colunm : int
+        +Coordinate()
         +Coordinate(row, colunm)
         +SetRow(row)
         +GetRow() : int
         +SetColunm(colunm) 
         +GetColunm() : int
+        +Shifted(Coordinate) : Coordinate
+        +IsValid() : boolean
         +isValid(value) : boolean
     }
     Coordinate ..> ClosedInterval
@@ -256,8 +293,35 @@ package ConnectFour.Utils{
     class ClosedInterval{
         -min : int
         -max : int
-        ~ClosedInterval(min, max)
-        ~IsValid(value) : boolean
+        +ClosedInterval(min, max)
+        +IsIncluided(value) : boolean
     }
+
+    class Direction{
+        +{static}NORTH = Direction(1, 0)
+        +{static}NORTH_EAST = Direction(1, 1)
+        +{static}EAST = Direction(0, 1)
+        +{static}SOUTH_EAST = Direction(-1, 1)
+        +{static}SOUTH = Direction(-1, 0)
+        +{static}SOUT_WEST = Direction(-1, -1)
+        +{static}WEST = Direction(0, -1)
+        +{static}NORTH_WEST = Direction(1, -1)
+        +GetCoordinate() : Coordinate
+        +GetOppositeDirection() : Direction
+        +GetDirections() : List<Direction>
+    }
+    Direction --> Coordinate
+
+    class Line{
+        +{static}Length = 4
+        +Line(Coordinate)
+        +GetCoordinates() : Coordinates[]
+        +GetDirection() : Direction
+        +Shift()
+    }
+    Line --> Coordinate : origin
+    Line --> Coordinate : coordinates
+    Line --> Direction 
+
 }
 @enduml

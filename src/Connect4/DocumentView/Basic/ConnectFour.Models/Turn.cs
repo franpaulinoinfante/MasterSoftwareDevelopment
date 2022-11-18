@@ -54,7 +54,7 @@ internal class Turn
         return _players[_current].GetErrorToDrop(colunm);
     }
 
-    internal Error GetErrorToSetNum(int players)
+    internal Error GetErrorToSetNumOfPlayers(int players)
     {
         if (players >= 0 && players <= Turn.MaxPlayer)
         {

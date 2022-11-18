@@ -29,11 +29,11 @@ public class Coordinate
 
     public bool IsValid()
     {
-        return new ClosedInterval(Coordinate.Rows, Coordinate.Colunms).IsValid(_row) && new ClosedInterval(Coordinate.Rows, Coordinate.Colunms).IsValid(_column);
+        return new ClosedInterval(Coordinate.Rows, Coordinate.Colunms).IsIncluided(_row) && new ClosedInterval(Coordinate.Rows, Coordinate.Colunms).IsIncluided(_column);
     }
 
     public bool IsValid(int value)
     {
-        return new ClosedInterval(min: 0, Coordinate.Colunms - 1).IsValid(value);
+        return new ClosedInterval(min: 0, Coordinate.Colunms - 1).IsIncluided(value);
     }
 }

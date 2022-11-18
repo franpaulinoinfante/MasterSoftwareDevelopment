@@ -29,9 +29,9 @@ public class Game
         return _turn.GetErrorToDrop(colunm);
     }
 
-    public Error GetErrorToSetNum(int players)
+    public Error GetErrorToSetNumOfPlayers(int players)
     {
-        return _turn.GetErrorToSetNum(players);
+        return _turn.GetErrorToSetNumOfPlayers(players);
     }
 
     public Token GetActivePlayer()

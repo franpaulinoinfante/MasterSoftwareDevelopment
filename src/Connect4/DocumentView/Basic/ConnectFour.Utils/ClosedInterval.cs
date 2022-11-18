@@ -11,7 +11,7 @@ internal class ClosedInterval
         _max = max;
     }
 
-    internal bool IsValid(int value)
+    internal bool IsIncluided(int value)
     {
         return _min <= value && value <= _max;
     }

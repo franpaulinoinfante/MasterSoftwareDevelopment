@@ -52,9 +52,9 @@ internal class Board
         return IsOccupied(lastDrop, Token.Null);
     }
 
-    private bool IsOccupied(Coordinate lastDrop, Token token)
+    private bool IsOccupied(Coordinate coordinate, Token token)
     {
-        return GetToken(lastDrop) == token;
+        return GetToken(coordinate) == token;
     }
 
     internal Token GetToken(Coordinate coordinate)

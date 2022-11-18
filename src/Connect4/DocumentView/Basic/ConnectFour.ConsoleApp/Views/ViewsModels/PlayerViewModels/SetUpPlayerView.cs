@@ -11,7 +11,7 @@ internal class SetUpPlayerView
         do
         {
             players = ConsoleIOs.ConsoleIO.Instance.ReadInt(Message.NumOfPlayers.GetMessage());
-            error = game.GetErrorToSetNum(players);
+            error = game.GetErrorToSetNumOfPlayers(players);
             new ErrorView().WriteLine(error);
         } while (!error.IsNull());
 
