@@ -15,9 +15,10 @@ actor Player
 boundary GameView
 boundary StartView
 boundary PlayView
+boundary PlayerView
 boundary ResumeView
 boundary MessageView
-boundary SetUpView
+boundary SetUpPlayerView
 boundary BoardView
 boundary TokenView
 boundary ErrorView
@@ -29,17 +30,24 @@ GameView *--> PlayView
 GameView *--> ResumeView
 
 StartView ..> MessageView
-StartView ..> SetUpView
+StartView ..> SetUpPlayerView
 StartView ..> BoardView
 
+SetUpPlayerView ..> ErrorView
+SetUpPlayerView ..> MessageView
+
+PlayView ..> PlayerView
 PlayView ..> MessageView
-PlayView ..> ErrorView
 PlayView ..> BoardView
+
+PlayerView ..> MessageView
+PlayerView ..> ErrorView
 
 ResumeView ..> MessageView
 ResumeView ..> YesNotDialogView
 
 BoardView ..> TokenView
+BoardView ..> MessageView
 @enduml
 
 @startuml ModelsAnalysis
@@ -52,6 +60,4 @@ entity Player
 entity Coordinate
 entity Message
 entity Error
-
-
 @enduml

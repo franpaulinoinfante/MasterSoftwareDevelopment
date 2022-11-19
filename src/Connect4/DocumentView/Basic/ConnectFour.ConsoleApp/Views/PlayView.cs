@@ -19,8 +19,7 @@ internal class PlayView
         do
         {
             ConsoleIO.Instance.WriteLine($"{Message.Turn} {_game.GetActivePlayer()}");
-            PlayerView playerView = PlayerCreator.Instance.CreatePlayerView(_game);
-            playerView.Interact();
+            PlayerCreator.Instance.CreatePlayerView(_game).Interact();
             _game.Next();
         } while (!_game.IsFinished());
 
