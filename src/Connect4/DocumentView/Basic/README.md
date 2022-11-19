@@ -624,7 +624,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de caso de uso Start
 
-![image](https://user-images.githubusercontent.com/46433173/202242232-9bf820c3-6bd9-4212-b60b-a1fb36d3606d.png)
+![image](https://user-images.githubusercontent.com/46433173/202852277-4ed71283-933a-4b19-8b87-0e36e84521b6.png)
 
 ### Análisis de caso de uso Play
 
@@ -633,7 +633,6 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 ### Análisis de caso de uso Resume
 
 ![image](https://user-images.githubusercontent.com/46433173/202241689-55b1714b-ca81-4f66-803f-4edbb30fc975.png)
-
 
 ### Análisis de Clases
 
