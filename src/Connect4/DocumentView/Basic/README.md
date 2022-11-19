@@ -616,7 +616,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de las vistas
 
-![image](https://user-images.githubusercontent.com/46433173/202228036-f080f046-9dfa-4fea-b739-383bb2e059c0.png)
+![image](https://user-images.githubusercontent.com/46433173/202851661-b9528050-ff2c-4c13-a17f-ddce5cae96a8.png)
 
 ### Análisis de los Modelos
 
