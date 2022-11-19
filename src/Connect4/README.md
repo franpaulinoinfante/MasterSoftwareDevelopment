@@ -10,19 +10,7 @@
 ## Modelo del dominio
 |  Descripción | Escenario |
 | :------- | :------: | 
-|  Conecta 4 (también conocido como 4 en Linea en algunas versiones) 
-es un juego de mesa para dos jugadores distribuido por Hasbro, 
-en el que se introducen fichas en un tablero vertical c
-on el objetivo de alinear cuatro consecutivas de un mismo color. 
-Fue creado en 1974 por Ned Strongin y Howard Wexler para Milton Bradley Company. <br/>
-**Reglas**  
-El objetivo de Conecta 4 es alinear cuatro fichas sobre un tablero formado
-por seis filas y siete columnas. Cada jugador dispone de 21 fichas de un color 
-(por lo general, rojas o amarillas).2​ Por turnos, los jugadores deben introducir 
-una ficha en la columna que prefieran (siempre que no esté completa) 
-y ésta caerá a la posición más baja. Gana la partida el primero que consiga 
-alinear cuatro fichas consecutivas de un mismo color en horizontal, vertical o diagonal.
-Si todas las columnas están llenas pero nadie ha hecho una fila válida, hay empate. | ![Screenshot 2022-11-01 092020](https://user-images.githubusercontent.com/46433173/199242919-550c3616-9585-472f-b9b2-d4af46882528.png) |
+|  Conecta 4 (también conocido como 4 en Linea en algunas versiones)es un juego de mesa para dos jugadores distribuido por Hasbro, en el que se introducen fichas en un tablero vertical con el objetivo de alinear cuatro consecutivas de un mismo color. Fue creado en 1974 por Ned Strongin y Howard Wexler para Milton Bradley Company. <br/> **Reglas**  <br/>El objetivo de Conecta 4 es alinear cuatro fichas sobre un tablero formado por seis filas y siete columnas. Cada jugador dispone de 21 fichas de un color (por lo general, rojas o amarillas).2​ Por turnos, los jugadores deben introducir una ficha en la columna que prefieran (siempre que no esté completa) y ésta caerá a la posición más baja. Gana la partida el primero que consiga alinear cuatro fichas consecutivas de un mismo color en horizontal, vertical o diagonal. Si todas las columnas están llenas pero nadie ha hecho una fila válida, hay empate. | ![Screenshot 2022-11-01 092020](https://user-images.githubusercontent.com/46433173/199242919-550c3616-9585-472f-b9b2-d4af46882528.png) |
 
 ## Vocabulario
 
