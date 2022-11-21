@@ -616,10 +616,19 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 - Acercase al diseño, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación.
 
 ### Análisis de la Arquictura
+**Arquitectura Documents/Views
 
+![image](https://user-images.githubusercontent.com/46433173/203092727-286ef869-67df-4b2f-989c-36ea316ccde0.png)
 
 ### Paquetes de Análisis
 
+![image](https://user-images.githubusercontent.com/46433173/203092949-9ff89314-a04a-4bb4-b023-56f5c04875fc.png)
+
+![image](https://user-images.githubusercontent.com/46433173/203093128-c42d109d-f8ad-4c2f-9b74-6c3b2484e30f.png)
+
+![image](https://user-images.githubusercontent.com/46433173/203093229-fb428f96-a7b0-4220-a734-c9c476f91a10.png)
+
+![image](https://user-images.githubusercontent.com/46433173/203093323-0044da69-61e4-4511-ba38-0b8f398f0fd2.png)
 
 ### Análisis de los Casos de Uso
 #### Análisis de caso de uso Start
