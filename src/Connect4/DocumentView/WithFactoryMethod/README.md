@@ -633,12 +633,15 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 ### Análisis de los Casos de Uso
 #### Análisis de caso de uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/203131523-34a4fbb9-bc14-4b92-8bb8-5752bae91870.png)
 
 #### Análisis de caso de uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/203131414-8845a6b2-2f4d-44ea-a6de-016df838fdf5.png)
 
 #### Análisis de caso de uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/203131363-1bb237ba-79c9-431f-94c7-69f8f96cad76.png)
 
 ### Análisis de Clases
 #### Análisis Clases de Vistas
