@@ -47,16 +47,19 @@
 
 |  Vista de Caso de Uso  |  Contexto de Casos de Uso  | 
 | :------- | :------: |  
-| here | here |
+| ![image](https://user-images.githubusercontent.com/46433173/203078488-b3f38802-854e-4cb8-b28e-5003a1fd61ca.png) | ![image](https://user-images.githubusercontent.com/46433173/203078539-217c457c-a5ac-4eba-a4fc-01a89f74dffa.png) |
 
 #### Especificación de Caso de Uso Start
 
+![image](https://user-images.githubusercontent.com/46433173/203078842-2a19edc6-5455-483f-bca7-778b9302ee9e.png)
 
 #### Especificación de Caso de Uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/203078913-0d2ec3f7-20bf-4d7f-9ea6-3142ecd30f0f.png)
 
 #### Especificación de Caso de Uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/203078973-05943ad4-9ec8-4a21-9b74-93f3195ade0f.png)
 
 ### Prototipo de Interfaz
 #### Interfaz Máquina
