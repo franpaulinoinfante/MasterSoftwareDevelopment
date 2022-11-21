@@ -31,10 +31,11 @@
          [Diseño de caso de uso Play](#Diseño-de-caso-de-uso-Play)  
          [Diseño de caso de uso Resume](#Diseño-de-caso-de-uso-Resume)  
     - [Diseño de las Clases](#Diseño-de-las-Clases)
-        - [Namespace ConsoleApp](#Namespace-ConsoleApp)  
-        - [Namespace Models](#Namespace-Models)  
-        - [Namespace Types](#Namespace-Types)  
-        - [Namespace Utils](#Namespace-Utils)  
+        - [Diseño de la ConsoleApp](#Diseño-de-la-ConsoleApp)  
+        - [Diseño de los Modelos](#Diseño-de-los-Modelos)  
+        - [Diseño de los Tipos](#Diseño-de-los-Tipos)  
+        - [Diseño de las Utilidades](#Diseño-de-las-Utilidades) 
+        - [Diseño de las Relaciones](#Diseño-de-las-Relaciones)  
 
 ## Requisitos
 
@@ -604,8 +605,7 @@ Do you want to continue? (y/n)n
 ```
 ## Análisis
 
-analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema:
-
+Analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema:
 - Dar una especificación más precisa de los requisitos obtenidos en la captura de requisitos.
 - Describir usando el lenguaje de los desarrolladores y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema.
 - Estructurar los requisitos de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos.
@@ -627,7 +627,6 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 
 ### Análisis de Clases
-
 #### Análisis Clases de Vistas
 
 
@@ -640,7 +639,7 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 #### Análisis Clases de Utils 
 
 
-#### Análisis 
+#### Análisis de la Relaciones
 
 
 ## Vista de Lógica/Diseño 
@@ -670,3 +669,6 @@ analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 
 #### Diseño de las Utilidades
+
+
+#### Diseño de las Relaciones
