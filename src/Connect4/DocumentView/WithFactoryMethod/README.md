@@ -614,9 +614,9 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Análisis de la Arquictura
 
-![image](https://user-images.githubusercontent.com/46433173/202216196-e337862f-c18d-4765-bd42-f97d5074fe7a.png)
 
-#### Paquetes de Análisis
+### Paquetes de Análisis
+
 
 ### Análisis de los Casos de Uso
 #### Análisis de caso de uso Start
