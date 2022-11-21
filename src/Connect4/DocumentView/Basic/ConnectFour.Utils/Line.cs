@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConnectFour.Utils;
+﻿namespace ConnectFour.Utils;
 
 public class Line
 {
     public const int Length = 4;
 
-    private Coordinate _origine;
+    private readonly Coordinate _origine;
     private Coordinate[] _coordinates;
     private Direction _oppositeDirection;
 

@@ -5,8 +5,8 @@ namespace ConnectFour.Models;
 
 public class Game
 {
-    private Board _board;
-    private Turn _turn;
+    private readonly Board _board;
+    private readonly Turn _turn;
 
     public Game()
     {

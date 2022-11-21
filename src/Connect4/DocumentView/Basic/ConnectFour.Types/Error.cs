@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConnectFour.Types;
+﻿namespace ConnectFour.Types;
 
 public enum Error
 {
@@ -13,7 +7,6 @@ public enum Error
     ColunmIsComplete,
     Null
 }
-
 
 public static class ErrorExtension
 {

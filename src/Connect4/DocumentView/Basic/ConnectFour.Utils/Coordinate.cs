@@ -3,7 +3,7 @@
 public class Coordinate
 {
     public static int Rows = 6;
-    public static int Colunms  = 7;
+    public static int Colunms = 7;
 
     private int _row;
     private int _column;
@@ -24,7 +24,7 @@ public class Coordinate
 
     public Coordinate Shifted(Coordinate coordinate)
     {
-        return new Coordinate(_row + coordinate.Row, Column+ coordinate.Column);
+        return new Coordinate(_row + coordinate.Row, Column + coordinate.Column);
     }
 
     public bool IsValid()

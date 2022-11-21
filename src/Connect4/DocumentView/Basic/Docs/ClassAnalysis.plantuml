@@ -81,8 +81,6 @@ class Player{
 }
 Player --> "1" Board : drop tokens on
 Player --> "21" Token : collaborate
-Player <|-- UserPlayer
-Player <|-- MachinePlayer
 
 class Coordinate{
 }

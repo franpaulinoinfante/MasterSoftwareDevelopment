@@ -6,7 +6,6 @@ internal interface IGraphic
     string SecrectCombination { set; }
     string ProposedCombination { get; }
 
-
     event EventHandler GetproposedCombinationEvent;
 
     void GetProposeCombinationsBindingSource(BindingSource bindingSource);

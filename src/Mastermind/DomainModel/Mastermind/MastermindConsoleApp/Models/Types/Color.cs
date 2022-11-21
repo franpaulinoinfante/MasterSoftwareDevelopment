@@ -24,7 +24,6 @@ internal static class ExtensionColorType
         ""
     };
 
-
     internal static string GetColorType(this Color colorType)
     {
 

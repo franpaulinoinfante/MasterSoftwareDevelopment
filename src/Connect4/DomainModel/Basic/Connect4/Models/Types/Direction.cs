@@ -20,7 +20,7 @@ internal class Direction
 
     public Coordinate Coordinate => _coordinate;
 
-    internal Direction GetOpposite()
+    internal Direction? GetOpposite()
     {
         foreach (Direction direction in Direction.Directions())
         {

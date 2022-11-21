@@ -1,5 +1,4 @@
-﻿using TicTacToe.ConsoleApp.ConsolesIOs;
-using TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews;
+﻿using TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews;
 using TicTacToe.ConsoleApp.UseCaseView.PlayerViews;
 using TicTacToe.Models;
 

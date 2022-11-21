@@ -2,21 +2,20 @@
 using TicTacToe.Models;
 using TicTacToe.Views;
 
-namespace TicTacToe.ConsoleApp.UseCaseView
+namespace TicTacToe.ConsoleApp.UseCaseView;
+
+internal class StartView
 {
-    internal class StartView
+    private readonly Game _game;
+
+    public StartView(Game game)
     {
-        private readonly Game _game;
+        _game = game;
+    }
 
-        public StartView(Game game)
-        {
-            _game = game;
-        }
-
-        internal void Interact()
-        {
-            new MessageView(MessageType.TITLE).WriteLine();
-            new BoardView().Write(_game);
-        }
+    internal void Interact()
+    {
+        new MessageView(MessageType.TITLE).WriteLine();
+        new BoardView().Write(_game);
     }
 }

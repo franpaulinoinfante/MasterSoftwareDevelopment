@@ -15,7 +15,6 @@
             "Do you want to continue "
     };
 
-
     public Message(MessageType messageType)
     {
         _messageType = messageType;

@@ -1,65 +1,64 @@
-﻿namespace TicTacToe.Utils.Coordinates
+﻿namespace TicTacToe.Utils.Coordinates;
+
+public class ConcreteCoordinate : ICoordinate
 {
-    public class ConcreteCoordinate : ICoordinate
+    public static string ROW = "Row: ";
+    public static string COLUNM = "Colunm: ";
+
+    private readonly int _row;
+    private readonly int _column;
+
+    public ConcreteCoordinate()
+    { }
+
+    public ConcreteCoordinate(int row, int column)
     {
-        public static string ROW = "Row: ";
-        public static string COLUNM = "Colunm: ";
+        _row = row;
+        _column = column;
+    }
 
-        private readonly int _row;
-        private readonly int _column;
+    public int Row => _row;
 
-        public ConcreteCoordinate()
-        { }
+    public int Column => _column;
 
-        public ConcreteCoordinate(int row, int column)
+    public bool IsNull()
+    {
+        return false;
+    }
+
+    public Direction GetDirection(ICoordinate coordinate)
+    {
+        if (this.Equals(coordinate) || IsNull())
         {
-            _row = row;
-            _column = column;
-        }
-
-        public int Row => _row;
-
-        public int Column => _column;
-
-        public bool IsNull()
-        {
-            return false;
-        }
-
-        public Direction GetDirection(ICoordinate coordinate)
-        {
-            if (this.Equals(coordinate) || IsNull())
-            {
-                return Direction.NULL;
-            }
-            if (IsInHorizonal(coordinate))
-            {
-                return Direction.HORIZONTAL;
-            }
-            if (IsInVertical(coordinate))
-            {
-                return Direction.VERTICAL;
-            }
-            if (IsInMainDiagonal())
-            {
-                return Direction.MAIN_DIAGONAL;
-            }
             return Direction.NULL;
         }
-
-        public bool IsInHorizonal(ICoordinate coordinate)
+        if (IsInHorizonal(coordinate))
         {
-            return _row == ((ConcreteCoordinate)coordinate)._row;
+            return Direction.HORIZONTAL;
         }
-
-        public bool IsInVertical(ICoordinate coordinate)
+        if (IsInVertical(coordinate))
         {
-            return _column == ((ConcreteCoordinate)coordinate)._column;
+            return Direction.VERTICAL;
         }
-
-        public bool IsInMainDiagonal()
+        if (IsInMainDiagonal())
         {
-            return _row - _column == 0;
+            return Direction.MAIN_DIAGONAL;
         }
+        return Direction.NULL;
+    }
+
+    public bool IsInHorizonal(ICoordinate coordinate)
+    {
+        return _row == ((ConcreteCoordinate)coordinate)._row;
+    }
+
+    public bool IsInVertical(ICoordinate coordinate)
+    {
+        return _column == ((ConcreteCoordinate)coordinate)._column;
+    }
+
+    public bool IsInMainDiagonal()
+    {
+        return _row - _column == 0;
     }
 }

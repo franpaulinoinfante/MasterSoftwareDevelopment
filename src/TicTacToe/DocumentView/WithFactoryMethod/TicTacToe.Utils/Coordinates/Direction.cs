@@ -1,11 +1,10 @@
-﻿namespace TicTacToe.Utils.Coordinates
+﻿namespace TicTacToe.Utils.Coordinates;
+
+public enum Direction
 {
-    public enum Direction
-    {
-        VERTICAL,
-        HORIZONTAL,
-        MAIN_DIAGONAL,
-        INVERSE_DIAGONAL,
-        NULL
-    }
+    VERTICAL,
+    HORIZONTAL,
+    MAIN_DIAGONAL,
+    INVERSE_DIAGONAL,
+    NULL
 }

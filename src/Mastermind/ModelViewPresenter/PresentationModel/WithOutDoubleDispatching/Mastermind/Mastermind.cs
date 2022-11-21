@@ -37,5 +37,4 @@ public abstract class Mastermind
             }
         } while (_logic.Controller != null);
     }
-
 }

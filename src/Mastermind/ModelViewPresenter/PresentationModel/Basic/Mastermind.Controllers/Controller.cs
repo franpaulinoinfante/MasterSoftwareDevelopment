@@ -28,5 +28,4 @@ public abstract class Controller
     {
         return _game.GetWhites(position);
     }
-
 }

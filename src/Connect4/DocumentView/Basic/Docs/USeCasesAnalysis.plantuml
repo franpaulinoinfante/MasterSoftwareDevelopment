@@ -7,22 +7,39 @@ boundary GameView
 boundary StartView
 boundary MessageView
 boundary BoardView
+boundary SetUpPlayerView
 
 entity GameEntity
 entity BoardEntity
+entity TurnEntity
+entity PlayerEntity
 entity TokenEntity
 entity Coordinate
 
 Player -- GameView
 GameView -- StartView
+
 StartView -- MessageView
 StartView -- BoardView
+StartView -- SetUpPlayerView
+
+SetUpPlayerView -- MessageView
+SetUpPlayerView -- GameEntity
+
 BoardView -- MessageView
 BoardView -- GameEntity
+BoardView .. Coordinate
+BoardView .. TokenEntity
 
 GameEntity -- BoardEntity
-BoardEntity -- TokenEntity
-BoardEntity -- Coordinate
+GameEntity -- TurnEntity
+
+TurnEntity -- PlayerEntity
+TurnEntity .. TokenEntity
+PlayerEntity -- TokenEntity
+
+BoardEntity --TokenEntity
+BoardEntity .. Coordinate
 @enduml
 
 @startuml PlayUseCaseAnalysis
@@ -32,6 +49,7 @@ title Play Use Case Analysis
 actor Player
 boundary GameView
 boundary PlayView
+boundary PlayerView
 boundary MessageView
 boundary BoardView
 boundary ErrorView
@@ -47,13 +65,19 @@ entity CoordinateEntity
 
 Player -- GameView
 GameView -- PlayView
+
+PlayView -- PlayerView
 PlayView -- MessageView
-PlayView -- ErrorView
 PlayView -- BoardView
 PlayView -- GameEntity
 
-BoardView .. MessageView
-BoardView -- TokenView
+PlayerView -- MessageView
+PlayerView -- ErrorView
+PlayerView -- GameEntity
+PlayView .. TokenEntity
+
+BoardView -- MessageView
+BoardView .. TokenView
 BoardView .. CoordinateEntity
 
 TokenView .. TokenEntity
@@ -67,7 +91,7 @@ PlayerEntity -- TokenEntity
 PlayerEntity -- BoardEntity
 PlayerEntity -- ErrorEntity
 
-BoardEntity -- CoordinateEntity
+BoardEntity .. CoordinateEntity
 BoardEntity -- TokenEntity
 BoardView -- GameEntity
 
@@ -84,9 +108,7 @@ boundary YesNotDialog
 boundary MessageView
 
 entity GameEntity
-entity TurnEntity
 entity BoardEntity
-entity PlayerEntity
 entity TokenEntity
 entity CoordinateEntity
 
@@ -96,16 +118,12 @@ ResumeView -- MessageView
 ResumeView -- YesNotDialog
 ResumeView -- GameEntity
 
-GameEntity -- TurnEntity
+YesNotDialog .. MessageView
+
 GameEntity -- BoardEntity
 
 BoardEntity -- TokenEntity
-BoardEntity -- CoordinateEntity
-
-TurnEntity .. TokenEntity
-TurnEntity -- PlayerEntity
-
-PlayerEntity -- TokenEntity
+BoardEntity .. CoordinateEntity
 @enduml
 
 

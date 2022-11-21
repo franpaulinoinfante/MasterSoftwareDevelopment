@@ -1,41 +1,40 @@
 ﻿using Mastermind.Types;
 
-namespace Mastermind.Models
+namespace Mastermind.Models;
+
+internal class ProposedCombination : Combination
 {
-    internal class ProposedCombination : Combination
+    public ProposedCombination(List<ColorCode> colorCodes)
     {
-        public ProposedCombination(List<ColorCode> colorCodes)
+        _colorCodes = colorCodes;
+    }
+
+    public List<ColorCode> ProposedCombinations => _colorCodes;
+
+    internal ErrorCode GetErrorCodeToProposedCombination()
+    {
+        if (_colorCodes.Count != Combination.Width)
         {
-            _colorCodes = colorCodes;
+            return ErrorCode.WrongLength;
         }
 
-        public List<ColorCode> ProposedCombinations => _colorCodes;
-
-        internal ErrorCode GetErrorCodeToProposedCombination()
+        List<ColorCode> colorCodes = new List<ColorCode>();
+        for (int i = 0; i < _colorCodes.Count; i++)
         {
-            if (_colorCodes.Count != Combination.Width)
+            ColorCode colorCode = _colorCodes[i];
+            if (colorCode.IsNull())
             {
-                return ErrorCode.WrongLength;
+                return ErrorCode.WrongCharacters;
             }
-
-            List<ColorCode> colorCodes = new List<ColorCode>();
-            for (int i = 0; i < _colorCodes.Count; i++)
+            for (int j = 0; j < i; j++)
             {
-                ColorCode colorCode = _colorCodes[i];
-                if (colorCode.IsNull())
+                if (colorCodes[j] == colorCode)
                 {
-                    return ErrorCode.WrongCharacters;
+                    return ErrorCode.Duplicated;
                 }
-                for (int j = 0; j < i; j++)
-                {
-                    if (colorCodes[j] == colorCode)
-                    {
-                        return ErrorCode.Duplicated;
-                    }
-                }
-                colorCodes.Add(colorCode);
             }
-            return ErrorCode.Null;
+            colorCodes.Add(colorCode);
         }
+        return ErrorCode.Null;
     }
 }

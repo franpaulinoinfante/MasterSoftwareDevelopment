@@ -1,27 +1,26 @@
-﻿namespace TicTacToe.Models
+﻿namespace TicTacToe.Models;
+
+internal class Turn
 {
-    internal class Turn
+    internal static int NUM_PLAYERS = 2;
+    private readonly Player[]? _players;
+    private int _current;
+
+    public Turn(Player[]? players)
     {
-        internal static int NUM_PLAYERS = 2;
-        private readonly Player[]? _players;
-        private int _current;
+        _players = players;
+        _current = 0;
+    }
 
-        public Turn(Player[]? players)
-        {
-            _players = players;
-            _current = 0;
-        }
+    internal Player CurrentPlayer => _players[_current];
 
-        internal Player CurrentPlayer => _players[_current];
+    internal void Next()
+    {
+        _current = Current();
+    }
 
-        internal void Next()
-        {
-            _current = Current();
-        }
-
-        private int Current()
-        {
-            return (_current + 1) % Turn.NUM_PLAYERS;
-        }
+    private int Current()
+    {
+        return (_current + 1) % Turn.NUM_PLAYERS;
     }
 }

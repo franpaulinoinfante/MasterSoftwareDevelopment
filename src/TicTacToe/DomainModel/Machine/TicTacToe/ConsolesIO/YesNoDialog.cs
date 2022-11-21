@@ -9,7 +9,7 @@ public class YesNoDialog
     private static readonly string SUFFIX = $"? ({AFFIRMATIVE}/{NEGATIVE})";
     private static readonly string MESSAGE = $"The value must be: ({AFFIRMATIVE} or {NEGATIVE})";
 
-    private string _answer;
+    private string? _answer;
 
     public void Read(string? message)
     {

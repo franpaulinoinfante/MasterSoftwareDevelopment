@@ -21,6 +21,9 @@ package types{
 
     object ": Token" as Token{
     }
+
+    object ": Error" as Error{
+    }
 }
 
 package views {
@@ -36,7 +39,10 @@ package views {
     object ": Message" as Message{
     }
     
-    object ": SetUpView" as SetUpView{
+    object ": SetUpPlayerView" as SetUpPlayerView{
+    }
+    
+    object ": ErrorView" as ErrorView{
     }
 }
 
@@ -48,22 +54,31 @@ StartView ..> Message
     note on link
         WriteLine(Message)
     endnote
-StartView ..> SetUpView
+StartView ..> SetUpPlayerView
     note on link
-        ReadNumOfPlayers(Game)
+        SetPlayers(Game)
     endnote
-    SetUpView ..> Message
+    SetUpPlayerView ..> Message
         note on link
             GetMessage(Message)
         endnote
-    SetUpView ..> Game
+    SetUpPlayerView ..> Game
         note on link
+            GetErrorToSetNumOfPlayers(players)
             SetPlayer(players)
         endnote
         Game *--> Turn
             note on link
                 SetPlayers(players)
             endnote
+    SetUpPlayerView ..> Error
+        note on link
+            IsNull()
+        endnote
+    SetUpPlayerView ..> ErrorView
+        note on link
+            WriteLine(Error)
+        endnote
 StartView ..> BoardView
     note on link
         Write(Game)
@@ -86,10 +101,12 @@ StartView ..> BoardView
         endnote
 
 StartView --> Game
+ErrorView ..> Error
 TokenView ..> Token
 BoardView ..> Coordinate
 Board ..> Coordinate
 Board *--> Token
+Turn .. Error
 @enduml
 
 @startuml PlaytUseCasesDesign
@@ -134,9 +151,6 @@ package views {
     
     object ": Message" as Message{
     }    
-
-    object ": ConsoleIO" as ConsoleIO{
-    }  
 }
 
 User --> PlayView
@@ -145,17 +159,20 @@ User --> PlayView
     endnote
 PlayView --> Game
     note on link
-        GetCurrent()
-        IsWinner()
+        GetActivePlayer()
+        IsFinished()
+        Next()
+        GetLastPlayer()
     endnote
     Game *--> Turn
         note on link
-            GetCurrent()
-            GetErrorToDrop(colunm)
-            Drop(colunm)
+            GetActivePlayer()
+            Next()
+            GetLastPlayer()
         endnote
     Turn --> Player
         note on link
+            Next()
             GetToken()
             GetErrorToDrop(colunm)
             Drop(colunm)
@@ -171,16 +188,12 @@ PlayView ..> Message
     endnote
 PlayView ..> PlayerView
     note on link
-        Play(Game)
+        Interact(Game)
     endnote
     PlayerView ..> Message
         note on link
             GetMessage(Message)
         endnote    
-    PlayerView ..> ConsoleIO
-        note on link
-            ReadInt(message)
-        endnote 
     PlayerView ..> Game
         note on link
             GetErrorToDrop(colunm)
@@ -205,6 +218,7 @@ PlayView ..> BoardView
     Game *--> Board
         note on link
             GetToken(Coordinate)
+            IsFinished()
             IsWinner()
         endnote
 

@@ -2,27 +2,26 @@
 using TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews;
 using TicTacToe.Models;
 
-namespace TicTacToe.ConsoleApp.UseCaseView
+namespace TicTacToe.ConsoleApp.UseCaseView;
+
+internal class ResumeView
 {
-    internal class ResumeView
+    private readonly Game _game;
+
+    public ResumeView(Game game)
     {
-        private readonly Game _game;
+        _game = game;
+    }
 
-        public ResumeView(Game game)
+    internal bool Interact()
+    {
+        YesNoDialog yesNoDialog = new YesNoDialog();
+        yesNoDialog.Read(new MessageView(Views.MessageType.RESUME).ToString());
+        if (yesNoDialog.IsAffirmative())
         {
-            _game = game;
+            _game.NewGame();
         }
 
-        internal bool Interact()
-        {
-            YesNoDialog yesNoDialog = new YesNoDialog();
-            yesNoDialog.Read(new MessageView(Views.MessageType.RESUME).ToString());
-            if (yesNoDialog.IsAffirmative())
-            {
-                _game.NewGame();
-            }
-
-            return yesNoDialog.IsAffirmative();
-        }
+        return yesNoDialog.IsAffirmative();
     }
 }

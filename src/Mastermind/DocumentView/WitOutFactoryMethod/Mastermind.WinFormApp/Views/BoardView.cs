@@ -1,6 +1,5 @@
-﻿namespace Mastermind.WinFormApp.Views
+﻿namespace Mastermind.WinFormApp.Views;
+
+internal class BoardView
 {
-    internal class BoardView
-    {
-    }
 }

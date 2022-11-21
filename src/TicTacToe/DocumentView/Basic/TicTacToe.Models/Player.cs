@@ -77,5 +77,4 @@ internal abstract class Player
         }
         return ErrorType.NULL;
     }
-
 }

@@ -4,7 +4,7 @@ namespace TicTacToe.Models;
 
 internal class PlayerCreator
 {
-    private static readonly PlayerCreator _instance;
+    private static readonly PlayerCreator? _instance;
 
     internal static PlayerCreator GetInstance
     {

@@ -1,6 +1,6 @@
 ﻿public class ConsoleIO
 {
-    private static ConsoleIO _instance;
+    private static ConsoleIO? _instance;
 
     private ConsoleIO() { }
 

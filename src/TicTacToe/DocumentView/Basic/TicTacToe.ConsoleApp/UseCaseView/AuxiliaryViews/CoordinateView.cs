@@ -2,40 +2,38 @@
 using TicTacToe.Models.Types;
 using TicTacToe.Views;
 
-namespace TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews
+namespace TicTacToe.ConsoleApp.UseCaseView.AuxiliaryViews;
+
+internal class CoordinateView
 {
-    internal class CoordinateView
+    internal Coordinate Read(MessageType messageType)
     {
-        internal Coordinate Read(MessageType messageType)
+        new MessageView(messageType).WriteLine();
+        ErrorType errorType;
+        Coordinate coordinate;
+        do
         {
-            new MessageView(messageType).WriteLine();
-            ErrorType errorType;
-            Coordinate coordinate;
-            do
-            {
-                int row = ConsoleIO.GetInstance().ReadInt($"{Coordinate.ROW}") - 1;
-                int colunm = ConsoleIO.GetInstance().ReadInt($"{Coordinate.COLUMN}") - 1;
-                coordinate = new Coordinate(row, colunm);
-                errorType = GetErrorTypeToReadCoordinate(coordinate);
-                new ErrorView(errorType).WriteLine();
-            } while (errorType != ErrorType.NULL);
-            return coordinate;
-        }
+            int row = ConsoleIO.GetInstance().ReadInt($"{Coordinate.ROW}") - 1;
+            int colunm = ConsoleIO.GetInstance().ReadInt($"{Coordinate.COLUMN}") - 1;
+            coordinate = new Coordinate(row, colunm);
+            errorType = GetErrorTypeToReadCoordinate(coordinate);
+            new ErrorView(errorType).WriteLine();
+        } while (errorType != ErrorType.NULL);
+        return coordinate;
+    }
 
-        internal Coordinate ReadRandom(MessageType messageType)
+    internal Coordinate ReadRandom(MessageType messageType)
+    {
+        return new Coordinate().Random();
+    }
+
+    private ErrorType GetErrorTypeToReadCoordinate(Coordinate coordinate)
+    {
+        Coordinate a = new Coordinate();
+        if (!coordinate.IsValid())
         {
-            return new Coordinate().Random();
+            return ErrorType.WRONG_COORDINATE;
         }
-
-        private ErrorType GetErrorTypeToReadCoordinate(Coordinate coordinate)
-        {
-            Coordinate a = new Coordinate();
-            if (!coordinate.IsValid())
-            {
-                return ErrorType.WRONG_COORDINATE;
-            }
-            return ErrorType.NULL;
-        }
-
+        return ErrorType.NULL;
     }
 }

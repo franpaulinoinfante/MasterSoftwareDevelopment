@@ -2,19 +2,18 @@
 using Mastermind.Controllers;
 using Mastermind.GameViews;
 
-namespace Mastermind.ConsoleApp.UseCasesViews
-{
-    internal class StartView : WithGameView
-    {
-        public StartView(Logic logic) : base(logic)
-        {
-        }
+namespace Mastermind.ConsoleApp.UseCasesViews;
 
-        internal void Interact()
-        {
-            new MessageView(MessageCode.Title).WriteLine();
-            new BoardView().Write(_logic);
-            _logic.NewGame();
-        }
+internal class StartView : WithGameView
+{
+    public StartView(Logic logic) : base(logic)
+    {
+    }
+
+    internal void Interact()
+    {
+        new MessageView(MessageCode.Title).WriteLine();
+        new BoardView().Write(_logic);
+        _logic.NewGame();
     }
 }

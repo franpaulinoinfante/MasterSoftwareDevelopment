@@ -4,10 +4,10 @@ namespace ConnectFour.Models;
 
 internal class Turn
 {
-    private static int MaxPlayer = 2;
+    private static readonly int MaxPlayer = 2;
 
-    private Player[] _players;
-    private Board _board;
+    private readonly Player[] _players;
+    private readonly Board _board;
 
     private int _current;
 

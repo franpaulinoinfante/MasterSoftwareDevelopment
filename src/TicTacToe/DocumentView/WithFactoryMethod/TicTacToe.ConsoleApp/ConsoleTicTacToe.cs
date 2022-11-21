@@ -29,6 +29,4 @@ public class ConsoleTicTacToe : ViewGame
     {
         return _resumeView.Interact();
     }
-
-
 }

@@ -1,16 +1,15 @@
 ﻿using Mastermind.Types;
 
-namespace Mastermind.Models
+namespace Mastermind.Models;
+
+internal class Combination
 {
-    internal class Combination
-    {
-        protected List<ColorCode> _colorCodes;
+    protected List<ColorCode>? _colorCodes;
 
-        protected const int Width = 4;
+    protected const int Width = 4;
 
-        //public Combination()
-        //{
-        //    _colorCodes = new List<ColorCode>();
-        //}
-    }
+    //public Combination()
+    //{
+    //    _colorCodes = new List<ColorCode>();
+    //}
 }

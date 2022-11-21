@@ -1,17 +1,16 @@
 ﻿using TicTacToe.Types;
 
-namespace TicTacToe.ConsoleApp
+namespace TicTacToe.ConsoleApp;
+
+internal class TokenView
 {
-    internal class TokenView
+    internal void Write(Token token)
     {
-        internal void Write(Token token)
+        string color = Enum.GetName(token);
+        if (token == Token.NULL)
         {
-            string color = Enum.GetName(token);
-            if (token == Token.NULL)
-            {
-                color = " ";
-            }
-            ConsoleIO.GetInstance().Write(color);
+            color = " ";
         }
+        ConsoleIO.GetInstance().Write(color);
     }
 }

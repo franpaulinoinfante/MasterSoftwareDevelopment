@@ -5,9 +5,9 @@ namespace Connect4.Models;
 internal class Turn
 {
     private const int NumberOfPlayers = 2;
-    
+
     private readonly Board _board;
-    private Player[] _players;
+    private readonly Player[] _players;
 
     private int _current;
 

@@ -6,7 +6,7 @@ internal class TokenView
 {
     internal void Write(Token token)
     {
-        
+
         if (!token.IsNull())
         {
             ConsoleIOs.ConsoleIO.Instance.Write($"{token} ");

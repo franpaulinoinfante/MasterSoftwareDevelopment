@@ -13,7 +13,6 @@ public class PlayController : Controller
 
     public bool IsWinner => _game.IsWinner;
 
-
     public void AddProposedCombination(List<ColorCode> colorCodes)
     {
         _game.AddProposedCombination(colorCodes);

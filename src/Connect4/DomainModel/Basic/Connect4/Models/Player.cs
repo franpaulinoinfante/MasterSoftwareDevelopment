@@ -5,8 +5,8 @@ namespace Connect4.Models;
 
 internal class Player
 {
-    private Token _token;
-    private Board _board;
+    private readonly Token _token;
+    private readonly Board _board;
 
     public Player(Token token, Board board)
     {

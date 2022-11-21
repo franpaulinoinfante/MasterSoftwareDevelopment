@@ -1,8 +1,7 @@
-﻿namespace TicTacToe.Models.Types
+﻿namespace TicTacToe.Models.Types;
+
+public enum PlayerType
 {
-    public enum PlayerType
-    {
-        USER,
-        MACHINE
-    }
+    USER,
+    MACHINE
 }

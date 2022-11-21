@@ -2,7 +2,7 @@
 
 internal class UserCreator
 {
-    private static UserCreator _instance;
+    private static UserCreator? _instance;
 
     public static UserCreator GetInstante()
     {

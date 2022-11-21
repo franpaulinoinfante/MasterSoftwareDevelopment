@@ -22,10 +22,7 @@ public abstract class Mastermind
         do
         {
             controller = _logic.Controller;
-            if (controller != null)
-            {
-                controller.Accept(_gameView);
-            }
+            controller?.Accept(_gameView);
         } while (controller != null);
     }
 }

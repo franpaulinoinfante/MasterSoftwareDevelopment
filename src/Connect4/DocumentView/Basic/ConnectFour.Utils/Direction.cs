@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConnectFour.Utils;
+﻿namespace ConnectFour.Utils;
 
 public class Direction
 {
@@ -21,12 +15,12 @@ public class Direction
 
     public Direction(int row, int colunm)
     {
-        _coordinate = new Coordinate(row, colunm);  
+        _coordinate = new Coordinate(row, colunm);
     }
 
     public Coordinate Coordinate => _coordinate;
 
-    public Direction OppositeDirection
+    public Direction? OppositeDirection
     {
         get
         {

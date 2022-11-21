@@ -1,41 +1,40 @@
-﻿namespace TicTacToe.Utils.Coordinates
+﻿namespace TicTacToe.Utils.Coordinates;
+
+public class NullCoordinate : ICoordinate
 {
-    public class NullCoordinate : ICoordinate
+    private static NullCoordinate? _instance;
+
+    public static NullCoordinate GetInstante()
     {
-        private static NullCoordinate _instance;
-
-        public static NullCoordinate GetInstante()
+        if (NullCoordinate._instance == null)
         {
-            if (NullCoordinate._instance == null)
-            {
-                NullCoordinate._instance = new NullCoordinate();
-            }
-            return NullCoordinate._instance;
+            NullCoordinate._instance = new NullCoordinate();
         }
+        return NullCoordinate._instance;
+    }
 
-        public bool IsNull()
-        {
-            return true;
-        }
+    public bool IsNull()
+    {
+        return true;
+    }
 
-        public Direction GetDirection(ICoordinate coordinate)
-        {
-            return Direction.NULL;
-        }
+    public Direction GetDirection(ICoordinate coordinate)
+    {
+        return Direction.NULL;
+    }
 
-        public bool IsInHorizonal(ICoordinate coordinate)
-        {
-            return false;
-        }
+    public bool IsInHorizonal(ICoordinate coordinate)
+    {
+        return false;
+    }
 
-        public bool IsInVertical(ICoordinate coordinate)
-        {
-            return false;
-        }
+    public bool IsInVertical(ICoordinate coordinate)
+    {
+        return false;
+    }
 
-        public bool IsInMainDiagonal()
-        {
-            return false;
-        }
+    public bool IsInMainDiagonal()
+    {
+        return false;
     }
 }
