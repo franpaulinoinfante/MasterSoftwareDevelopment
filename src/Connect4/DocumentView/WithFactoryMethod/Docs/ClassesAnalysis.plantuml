@@ -1,0 +1,114 @@
+@startuml AnalysisViewClasses
+title Analysis View Classes
+
+package Views{
+    class PlayerView{
+        ~Start()
+        ~Play()
+        ~Resume() : boolean
+    }
+    PlayerView *--> StartView
+    PlayerView *--> PlayView
+    PlayerView *--> ResumeView
+
+    class StartView{
+        ~StartView(Game)
+        ~Interact()
+    }
+    StartView --> Models.Game
+    StartView ..> MessageView
+    StartView ..> SetUpPlayerView
+    StartView ..> BoardView
+
+    class PlayView{
+        ~PlayView(Game)
+        ~Interact()
+    }
+    PlayView --> Models.Game
+    PlayView ..> MessageView
+    PlayView ..> Types.Token
+    PlayView ..> TokenView
+    PlayView ..> Types.Error
+    PlayView ..> ErrorView
+    PlayView ..> BoardView
+
+    class ResumeView{
+        ~ResumeView(Game)
+        ~Interact() : boolean
+    }
+    ResumeView --> Models.Game
+    ResumeView ..> MessageView
+    ResumeView ..> YesNotDialogVIew
+
+    enum MessageView{
+        ~Write(Message)
+        ~WriteLine(Message)
+        ~WriteLine(Message, title)
+    }
+
+    class SetUpPlayerView{
+        ~SetUp(Game)
+        -GetErrorToSetUpPlayers(players) : Error
+    }
+    SetUpPlayerView ..> Models.Game
+    SetUpPlayerView ..> MessageView
+    SetUpPlayerView ..> Types.Error
+    SetUpPlayerView ..> ErrorView
+
+    class BoardView{
+        ~Write(Game)
+    }
+    BoardView ..> Models.Game
+    BoardView ..> MessageView
+    BoardView ..> Types.Token
+    BoardView ..> TokenView
+
+    class ErrorView{
+        ~WriteLine(Error)
+    }
+    ErrorView ..> Types.Error
+
+    class TokenView{
+        ~Write(Token)
+    }
+    TokenView ..> Types.Token
+
+    class YesNotDialogVIew{
+        -answer: char
+        ~Read()
+        ~IsAffirmative() : boolean
+    }
+}
+
+package Types{
+    enum Error{}
+    enum Token{}
+}
+@enduml
+
+@startuml AnalysisModelClasses
+title Analysis Model Classes
+
+package Models{
+    class Game{
+
+    }
+    Game *--> Board
+    Game *--> Turn
+    Game *--> "2" Player
+
+    class Turn{
+
+    }
+    Turn --> "2" Player
+
+    class Player{
+
+    }
+    Player --> Board
+
+    class Board{
+
+    }
+}
+@enduml
