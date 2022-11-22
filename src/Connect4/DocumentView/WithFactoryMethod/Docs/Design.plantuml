@@ -1,0 +1,36 @@
+@startuml ArchitectureDesign
+title Architecture Design - Document/View
+package ConnectFour{
+    namespace Connect4 #Brown{}
+    namespace ConsoleApp #SlateBlue{}
+    namespace WindFormsApp #BlueViolet{}
+    namespace Views #IndianRed{}
+    namespace Models #GreenYellow{}
+    namespace Types #CadetBlue{}
+    namespace Utils #Yellow{}
+    
+    Connect4 ..> Models
+    Connect4 ..> Views
+
+    ConsoleApp ..> Connect4
+    ConsoleApp ..> Models
+    ConsoleApp ..> Views
+    ConsoleApp ..> Types
+    ConsoleApp ..> Utils
+    
+    WindFormsApp ..> Connect4
+    WindFormsApp ..> Models
+    WindFormsApp ..> Views
+    WindFormsApp ..> Types
+    WindFormsApp ..> Utils
+
+    Views ..> Models
+    Views ..> Types
+    Views ..> Utils
+
+    Models ..> Types
+    Models ..> Utils
+
+    Types ..> Utils
+}
+@enduml

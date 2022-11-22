@@ -1,0 +1,286 @@
+@startuml StartUseCaseDesign
+title Start Use Case Design
+allow_mixing
+
+actor Player
+
+package Models{
+    object ": Board" as Board{        
+    }
+    object ": Game" as Game{        
+    }
+}
+
+package Types{        
+    object ": Error" as Error{
+    }    
+    object ": Token" as Token{
+    }
+}
+
+package Utils{
+    object ": Coordinate" as Coordinate{
+    }
+    object ": ClosedInterval" as ClosedInterval{
+    }
+}
+
+package Views{
+    object ": StartView" as StartView{
+    }
+    object ": Message" as Message{
+    }
+    object ": SetUpPlayerView" as SetUpPlayerView{
+    }    
+    object ": ErrorView" as ErrorView{
+    }    
+    object ": BoardView" as BoardView{
+    }    
+}
+
+package ConsoleIOs{   
+    object ": ConsoleIO" as ConsoleIO{
+    }
+}
+
+Player --> StartView
+    note on link
+        Start()
+    endnote
+    StartView --> Game
+    StartView ..> Message
+    note on link
+        WriteLine(Title)
+    endnote
+    StartView ..> SetUpPlayerView
+    note on link
+        SetUp(Game)
+    endnote
+        SetUpPlayerView ..> Message
+        note on link
+            GetMessage(EnterThePlayers) 
+        endnote
+        SetUpPlayerView ..> ConsoleIO
+        note on link
+            ReadInt(message)
+        endnote
+        SetUpPlayerView ..> ErrorView
+        note on link
+            WriteLine(Error)
+        endnote
+        SetUpPlayerView ..> Game
+        note on link
+            SetUp(players)
+        endnote
+    StartView ..> BoardView
+    note on link
+        Write(Game)
+    endnote
+        BoardView ..> Message
+        note on link
+            WriteLine(HorizontalLine)
+            Write(VerticalLine)
+        endnote
+        BoardView ..> Game
+        note on link
+            GetToken(Coordinate)
+        endnote
+            Game *--> Board
+            note on link
+                GetToken(Coordinate)
+            endnote
+            Coordinate ..> ClosedInterval
+            note on link
+                IsValid(value)
+            endnote
+        BoardView ..> ConsoleIO
+        note on link
+            WriteLine("")
+        endnote
+            
+
+ErrorView ..> Error
+BoardView ..> Coordinate
+BoardView ..> Token
+Message ..> ConsoleIO
+Game ..> Coordinate
+Game ..> Token
+Board *--> Token
+Board ..> Coordinate
+@enduml
+
+@startuml PlayUseCaseDesign
+title Play Use Case Design
+allow_mixing
+
+actor Player
+
+package Views{
+    object ": PlayView" as PlayView{
+    }
+    object ": Message" as Message{
+    }
+    object ": BoardView" as BoardView{
+    }
+    object ": ErrorView" as ErrorView{
+    }    
+}
+
+package Models{
+    object ": Game" as Game{
+    }
+    object ": Player" as PlayerEntity{
+    }
+    object ": Board" as Board{
+    }
+    object ": Turn" as Turn{
+    }
+}
+
+package Types{
+    object ": Token" as Token{
+    }
+    object ": Error" as Error{
+    }
+}
+
+package Utils{
+    object ": Coordinate" as Coordinate{
+    }
+    object ": ClosedInterval" as ClosedInterval{
+    }
+}
+
+Player -- PlayView
+    note on link
+        Play()
+    endnote
+    PlayView -- Game
+        note on link
+            GetCurrentToken()
+            Drop(colunm)
+            GetErrorToDrop(colunm)
+            IsFinished()
+            IsWinner()
+        endnote
+    PlayView -- Message
+        note on link
+            WriteLine(Turn, title)
+            WriteLine(Winner, title)
+            WriteLine(Tie)
+        endnote
+    PlayView -- ErrorView
+        note on link
+            WriteLine(Error)
+        endnote
+        Game -- Turn
+            note on link
+                GetCurrentPlayer()
+                Next()
+                GetLastPlayer()
+            endnote
+        Game -- PlayerEntity
+            note on link
+                GetErrorToDrop(colunm)
+                Drop(colunm)
+            endnote
+            PlayerEntity -- Board
+                note on link
+                    IsComplete(colunm)
+                    Drop(colunm, Token)
+                endnote
+        Game -- Board
+            note on link
+                IsFinished()
+                IsWinner()
+            endnote
+            Board .. Coordinate
+                note on link
+                    IsValid(colunm)
+                endnote    
+                Coordinate .. ClosedInterval
+                    note on link
+                        IsValid(value)
+                    endnote
+    PlayView -- BoardView
+        note on link
+            Write(Game)
+        endnote
+        BoardView -- Message
+            note on link
+                WriteLine(HorrizontalLine)
+                Write(VerticalLine)
+            endnote
+        BoardView -- Game
+            note on link
+                GetToken(Coordinate)
+            endnote
+
+PlayView .. Error
+ErrorView .. Error
+BoardView .. Coordinate
+BoardView .. Token
+
+Turn -- PlayerEntity
+Game .. Coordinate
+Game .. Token
+Game .. Error
+PlayerEntity .. Token
+PlayerEntity .. Error
+Board .. Token
+@enduml
+
+@startuml ResumeUseCaseDesign
+title Resume Use Case Design
+allow_mixing
+
+actor Player 
+
+package Views{
+    object ": ResumeView" as ResumeView{ 
+    }
+    object ": Message" as Message{ 
+    }
+    object ": YesNotDialogView" as YesNotDialogView{ 
+    }
+}
+package Models{
+    object ": Game" as Game{ 
+    }
+        object ": Board" as Board{ 
+    }
+}
+package Types{
+    object ": Token" as Token{ 
+    }
+}
+package Utils{
+    object ": Coordinate" as Coordinate{ 
+    }
+}
+
+Player -- ResumeView
+    note on link
+        Resume()
+    endnote
+    ResumeView -- Message
+        note on link
+            GetMessage(Resume)
+        endnote
+    ResumeView -- YesNotDialogView
+        note on link
+            Read(title)
+            IsAffirmative()
+        endnote
+    ResumeView -- Game 
+        note on link
+            Reset()
+        endnote
+        Game -- Board
+            note on link
+                Reset()
+            endnote
+
+Board .. Coordinate
+Board .. Token
+@enduml

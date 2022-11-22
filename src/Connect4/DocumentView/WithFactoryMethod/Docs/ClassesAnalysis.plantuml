@@ -91,24 +91,164 @@ title Analysis Model Classes
 
 package Models{
     class Game{
-
+        +Game()
+        +SetUpPlayer(players)
+        +GetToken(Coordinate) : Token
+        +GetCurrentPlayer() : Token
+        +GetPlayerType() : PlayerType
+        +Drop(colunm)
+        +GetErrorToDrop(colunm) : Error
+        +Change()
+        +IsFinished() : boolean
+        +IsWinner() : boolean
+        +Reset()
     }
     Game *--> Board
     Game *--> Turn
     Game *--> "2" Player
+    Game ..> Types.Token
+    Game ..> Types.Error
+    Game ..> Types.PlayerType
+    Game ..> Utils.Coordinate
 
     class Turn{
-
+        ~Change()
+        ~GetCurrentPlayer() : Player
     }
     Turn --> "2" Player
 
     class Player{
-
+        ~Player(Token, Board, PlayerType)
+        ~Drop(Colunm)
+        ~GetErrorToDrop(colunm) : Error
+        ~GetPlayerType() : PlayerType
     }
     Player --> Board
+    Player ..> Types.Token
+    Player ..> Types.PlayerType
 
     class Board{
-
+        ~Board()
+        ~Reset()
+        ~GetToken(Coordinate) : Token
+        ~Drop(colunm, Token)
+        ~IsComplete() : boolean
+        ~IsWinner() : boolean
     }
+    Board *--> "6*7" Types.Token
+    Board ..> Utils.Coordinate
+}
+
+package Types{
+    enum Token{}
+    enum Error{}
+    enum PlayerType{}
+}
+@enduml
+
+@startuml AnalysisTypesClasses
+title Analysis Type Classes
+
+package Types{
+    enum Error{
+        +ColunmIsComplete,
+        +ColunmIsOutOfRange,
+        +Null
+        +IsNull(Error) : boolean
+    }
+
+    enum Token{
+        +X,
+        +O,
+        +Null
+        +IsNull(Token) : boolean
+    }
+
+    enum PlayerType{
+        +UserPlayer
+        +MachinePlayer
+    }
+}
+@enduml
+
+@startuml AnalysisUtilsClasses
+title Analysis Utils Classes
+
+package Utils{
+    class Coordinate{
+        +{static}ROWS = 6
+        +{static}COLUNM = 7
+        -row : int
+        -Colunm : int
+        +Coordinate(row, colunm)
+        +Shifted(Coordinate) : Coordinate
+        +GetRow() : int
+        +GetColunm() : int
+        +IsValid(value) : boolean
+    }
+    Coordinate ..> ClosedInterval
+
+    class ClosedInterval{
+        -min : int
+        -max : int
+        ~ClosedInterval(min, max)
+        ~IsValid(value) : boolean
+    }
+}
+@enduml
+
+@startuml AnalysisPackageClasses
+title Analysis Package Classes
+
+package Views{
+    PlayerView *--> StartView
+    PlayerView *--> PlayView
+    PlayerView *--> ResumeView
+
+    StartView ..> MessageView
+    StartView ..> BoardView
+    StartView ..> SetUpPlayerView
+
+    PlayView ..> MessageView
+    PlayView ..> BoardView
+    PlayView ..> ErrorView
+    PlayView ..> TokenView
+
+    ResumeView ..> MessageView
+    ResumeView ..> YesNotDialogView
+
+    SetUpPlayerView ..> MessageView
+    SetUpPlayerView ..> ErrorView
+
+    BoardView ..> MessageView
+    BoardView ..> TokenView
+
+
+}
+Views ..> Models
+Views ..> Types
+Views ..> Utils
+
+package Models{
+    Game *--> Board
+    Game *--> Turn
+    Game *--> "2" Player
+
+    Turn --> "2" Player
+
+    Player --> Board
+}
+Models ..> Types
+Models ..> Utils
+
+package Types{
+    enum Token{}
+    enum Error{}
+    enum PlayerTypeP{}
+}
+Types ..> Utils
+
+package Utils{
+    Coordinate ..> ClosedInterval
 }
 @enduml
