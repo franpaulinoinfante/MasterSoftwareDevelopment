@@ -667,8 +667,10 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 ## Vista de Lógica/Diseño 
 ### Diseño de la Arquitectura
 
+![image](https://user-images.githubusercontent.com/46433173/203404057-d1708cf3-1fb4-470c-97d0-6c2f3ea2bb3f.png)
 
 ### Diseño de los Casos de Uso
+
 
 #### Diseño de caso de uso Start
 
