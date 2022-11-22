@@ -662,6 +662,7 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 #### Análisis de la Relaciones
 
+![image](https://user-images.githubusercontent.com/46433173/203334214-745d27ab-f08b-46c8-934a-5ad31dfaa3ed.png)
 
 ## Vista de Lógica/Diseño 
 ### Diseño de la Arquitectura
