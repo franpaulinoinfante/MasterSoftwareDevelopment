@@ -654,9 +654,11 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 #### Análisis Clases de Tipos
 
+![image](https://user-images.githubusercontent.com/46433173/203331311-32bc683c-f652-487c-9b00-34515b231478.png)
 
 #### Análisis Clases de Utils 
 
+![image](https://user-images.githubusercontent.com/46433173/203331284-bc9225dd-cff3-4144-85ed-85464b1994ca.png)
 
 #### Análisis de la Relaciones
 
