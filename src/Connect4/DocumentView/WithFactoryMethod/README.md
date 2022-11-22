@@ -676,9 +676,11 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 #### Diseño de caso de uso Play
 
+![image](https://user-images.githubusercontent.com/46433173/203427611-d5249e88-b35a-4a5e-ad52-1c07dc5246c7.png)
 
 #### Diseño de caso de uso Resume
 
+![image](https://user-images.githubusercontent.com/46433173/203427570-9e889988-9746-4ebd-bf68-e6af3d4e6b04.png)
 
 ### Diseño de las Clases
 
