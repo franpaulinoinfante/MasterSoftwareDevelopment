@@ -1,0 +1,109 @@
+@startuml ActorsandUseCases
+title Actors and Use Cases
+
+actor Player
+actor UserPlayer
+actor MachinePlayer
+
+usecase Start
+usecase Play
+usecase Resume
+
+Player <|-down- UserPlayer
+Player <|-down- MachinePlayer
+Player -right-> Start
+Player -right-> Play
+Player -right-> Resume
+@enduml
+
+@startuml UseCasesContext
+title Use CasesContext
+
+state INITIAL
+state IN_GAME
+state OUT_GAME
+state if1 <<choice>>
+state if2 <<choice>>
+
+[*] --> INITIAL
+INITIAL --> IN_GAME : Start
+IN_GAME --> if1 : Play
+    if1 --> IN_GAME
+if1 --> OUT_GAME : [IsFinished]
+OUT_GAME --> if2 : Rsume
+    if2 --> INITIAL : [IsContinue]
+if2 --> [*]
+@enduml
+
+@startuml StartUseCaseSpecification
+title Start Use Case Specification
+
+state INITIAL
+state IN_GAME
+state A as " "
+state B as " "
+
+[*] --> INITIAL
+INITIAL --> A : Player requests to Start a new game
+A --> B : The system displays Title and Board
+B --> IN_GAME : The system allows Play
+IN_GAME --> [*]
+@enduml
+
+@startuml PlayUseCaseSpecification
+title Play Use Case Specification
+
+state IN_GAME
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state H as " "
+state if1 <<choice>>
+state if2 <<choice>>
+
+[*] --> IN_GAME
+IN_GAME --> A : Current player requests to Play
+A --> H : The system requests Introduces a colunm to Drop the token
+H --> if1 : Player introduces the colunm to Drop
+    if1 --> E : [error]
+        note on link
+            The colunm is out of range
+            The colunm is complete
+        endnote
+    E --> F : The system displays error message
+    F --> [*] : The system allows Play
+if1 --> B 
+B --> C : The system displays updated board with a new token
+C --> if2 
+    if2 --> F
+if2 --> D : [IsFinished]
+D --> OUT_GAME : The system displays message results
+    note on link
+        Winner message
+        Tied message
+    endnote
+OUT_GAME --> [*] : The system allows Resume
+
+@enduml
+
+
+@startuml ResumeUseCaseSpecification
+title Resume Use Case Specification
+
+state OUT_GAME
+state EXIT
+state INITIAL
+state A as " "
+state if <<choice>>
+
+[*] --> OUT_GAME
+OUT_GAME --> A : Player requests to Resume
+A --> if : The system requests Continue
+    if --> EXIT : Player introduces Not
+    EXIT --> [*]
+if --> INITIAL : Player introduces Yes
+INITIAL --> [*]
+@enduml

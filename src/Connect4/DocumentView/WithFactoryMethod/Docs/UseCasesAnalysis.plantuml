@@ -1,0 +1,101 @@
+@startuml StartUseCaseAnalysis
+title Start Use Case Analysis
+
+left to right direction
+actor Player
+boundary PlayerView
+boundary Message
+boundary SetUpPlayersView
+boundary BoardView
+boundary TokenView
+
+entity Game
+entity PlayerEntity
+entity Token
+entity PlayerEntity
+entity PlayerType
+entity Board
+entity Coordinate
+
+Player --> PlayerView
+PlayerView --> Message
+PlayerView --> SetUpPlayersView
+    SetUpPlayersView --> Message
+    SetUpPlayersView --> Game
+    Game ..> Token
+    Game --> PlayerEntity
+    Game ..> PlayerType
+        PlayerEntity --> Token
+        PlayerEntity --> PlayerType
+PlayerView --> BoardView
+    BoardView --> Message
+    BoardView --> Game
+        Game --> Board
+        Board --> Token
+        Board ..> Coordinate
+    BoardView ..> Coordinate
+    BoardView --> TokenView
+        TokenView ..> Token
+@enduml
+
+@startuml PlayUseCaseAnalysis
+title Start Use Case Analysis
+
+left to right direction
+actor Player
+boundary PlayerView
+boundary PlayView
+boundary Message
+boundary BoardView
+boundary TokenView
+
+entity GameEntity
+entity PlayerEntity
+entity TurnEntity
+entity BoardEntity
+entity Token
+entity Coordinate
+
+Player --> PlayerView
+    PlayerView --> PlayView
+        PlayView --> Message
+        PlayView --> TokenView
+            TokenView ..> Token
+        PlayView --> GameEntity
+            GameEntity --> TurnEntity
+            GameEntity --> PlayerEntity
+                PlayerEntity --> BoardEntity
+                PlayerEntity --> Token
+                    BoardEntity --> Token
+                    BoardEntity --> Coordinate
+        PlayView --> BoardView
+            BoardView --> Message
+            BoardView ..> Coordinate
+            BoardView --> GameEntity
+                GameEntity --> BoardEntity
+@enduml
+
+
+@startuml ResumeUseCaseAnalysis
+title Resume Use Case Analysis
+left to right direction
+
+actor Player
+boundary PlayerView
+boundary YesNotDialogView
+boundary MessageView
+
+entity GameEntity
+entity BoardEntity
+entity Token
+entity Coordinate
+
+Player --> PlayerView
+    PlayerView --> MessageView
+    PlayerView --> YesNotDialogView
+        YesNotDialogView --> MessageView
+    PlayerView --> GameEntity
+    GameEntity --> BoardEntity
+        BoardEntity --> Token
+        BoardEntity ..> Coordinate
+@enduml

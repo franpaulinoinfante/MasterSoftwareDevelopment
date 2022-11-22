@@ -1,0 +1,61 @@
+@startuml ArchitectureAnalysis
+title Architecture Analysis - Document/View
+package ConnectFour{
+    namespace Views #IndianRed{}
+    namespace Models #CadetBlue{}
+    namespace Types #GreenYellow{}
+    namespace Utils #Yellow{}
+    
+    Views ..> Models
+    Views ..> Types
+    Views ..> Utils
+
+    Models ..> Types
+    Models ..> Utils
+
+    Types ..> Utils
+}
+@enduml
+
+@startuml Views Analysis
+title Views Analysys
+
+package Views #IndianRed{
+    boundary PlayerView
+    boundary StartView
+    boundary PlayView
+    boundary ResumeView
+    boundary MessageView
+    boundary BoardView
+    boundary TokenView
+    boundary ErrorView
+    boundary SetUpPlayerView
+
+    PlayerView *--> StartView
+    PlayerView *--> PlayView
+    PlayerView *--> ResumeView
+
+    StartView ..> MessageView
+    StartView ..> SetUpPlayerView
+    StartView ..> BoardView
+
+    SetUpPlayerView ..> MessageView
+    SetUpPlayerView ..> ErrorView
+
+    BoardView ..> MessageView
+    BoardView ..> TokenView
+
+    PlayView ..> MessageView
+    PlayView ..> BoardView
+    PlayView ..> ErrorView
+
+    ResumeView ..> MessageView
+    ResumeView ..> YesNotDialogView
+}
+@enduml
+
+@startuml Analysis
+title  Analysis
+
+package Models #CadetBlue{}
+@enduml
