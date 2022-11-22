@@ -650,6 +650,7 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 #### Análisis Clases de Modelos
 
+![image](https://user-images.githubusercontent.com/46433173/203329301-561e586f-4cc6-4615-95c8-11dd5003a720.png)
 
 #### Análisis Clases de Tipos
 
