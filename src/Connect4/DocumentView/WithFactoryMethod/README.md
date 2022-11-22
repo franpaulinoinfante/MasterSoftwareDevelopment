@@ -10,7 +10,7 @@
         - [Interfaz Máquina](#Interfaz-Máquina)  
         - [Interfaz Jugador y Máquina](#Interfaz-Jugador-y-Máquina)  
         - [Interfaz 2 Jugadores](#Interfaz-2-Jugadores)  
-- [Análisis](#Analisis)  
+- [Análisis](#Análisis)  
     - [Análisis de la Arquictura](#Análisis-de-la-Arquictura)  
         - [Paquetes de Análisis](#Paquetes-de-Análisis)
     - [Análisis de  los casos de uso](#Análisis-de-los-Casos-de-Uso)  
@@ -660,7 +660,7 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ![image](https://user-images.githubusercontent.com/46433173/203331284-bc9225dd-cff3-4144-85ed-85464b1994ca.png)
 
-#### Análisis de la Relaciones
+#### Análisis de Paquetes
 
 ![image](https://user-images.githubusercontent.com/46433173/203334214-745d27ab-f08b-46c8-934a-5ad31dfaa3ed.png)
 
