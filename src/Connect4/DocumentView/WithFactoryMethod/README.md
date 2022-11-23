@@ -684,16 +684,26 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 ### Diseño de las Clases
 
+#### Diseño de Connect4
+
+![image](https://user-images.githubusercontent.com/46433173/203589227-80ef8bfb-c8d3-4457-a7b4-83e8a786733f.png)
+
 #### Diseño de la ConsoleApp
 
+![image](https://user-images.githubusercontent.com/46433173/203589290-4c6b4c60-3613-4f29-9741-9679586bedb2.png)
+
+#### Diseño de las Vistas del Juego
+
+![image](https://user-images.githubusercontent.com/46433173/203589392-9a0fedcd-3496-4419-9b4b-53bc3d1e9b64.png)
 
 #### Diseño de los Modelos
 
+![image](https://user-images.githubusercontent.com/46433173/203589428-9ff6339b-4d01-470d-a5fd-73825dc03911.png)
 
 #### Diseño de los Tipos
 
+![image](https://user-images.githubusercontent.com/46433173/203589571-a051a3b6-1047-4c7c-bc52-51df0977eeb6.png)
 
 #### Diseño de las Utilidades
 
-
-#### Diseño de las Relaciones
+![image](https://user-images.githubusercontent.com/46433173/203589607-9d983ee2-70cf-419e-9ccd-0fb4b163e733.png)
