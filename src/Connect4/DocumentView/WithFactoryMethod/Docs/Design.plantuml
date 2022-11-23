@@ -34,3 +34,320 @@ package ConnectFour{
     Types ..> Utils
 }
 @enduml
+
+@startuml Connect4Design
+title Connect4 Design
+package Connect4{
+    abstract Connect4{
+        +Connect4()
+        #{abstract}CreateGameView(Game) : GameView
+        #Play()
+    }
+    Connect4 <|-- ConsoleApp.ConnectFourView
+    Connect4 <|-- WindFormApp.ConnectFourView
+    Connect4 *--> Models.Game
+    Connect4 *--> GameViews.GameView
+}
+@enduml
+
+@startuml ConsoleApp
+title ConsoleApp Design
+package ConsoleApp #SlateBlue{
+    class ConnectFour{
+        ~Play()
+    }
+    ConnectFour -up-|> Connect4.Connect4
+    ConnectFour ..> ConsoleView
+    ConnectFour *--> Models.Game
+
+    class ConsoleView{
+        ~ConsoleView(Game)
+        ~Start()
+        ~Play()
+        ~IsResume() : boolean
+    }
+    ConsoleView -up-|> GViews.GameView
+    ConsoleView --> Models.Game
+    ConsoleView *--> StartView
+    ConsoleView *--> PlayView
+    ConsoleView *--> ResumeView
+
+    class StartView{
+        ~StartView(Game)
+        ~Interact()
+        -WriteLine(Title)
+        -SetUpPlayer(Game)
+        -WriteBoard(Game)
+    }
+    StartView --> Models.Game
+    StartView ..> MessageView
+    StartView ..> SetUpPlayerView
+    StartView ..> BoardView
+
+    class PlayView{
+        ~PlayView(Game)
+        ~Interact()
+        -GetCurrentTokne() : Token
+        -WriteLine(Message)
+        -GetPlayerType() : PlayerType
+        -CreatePlayerView(PlayerType) : PlayerView
+        -Drop(Game)
+        -IsFinished() : boolean
+        -IsWinner() : boolean
+        -WriteLine(Message, player)
+    }
+    PlayView --> Models.Game
+    PlayView ..> Types.Token
+    PlayView ..> GameViews.Message
+    PlayView ..> MessageView
+    PlayView ..> Types.PlayerType
+    PlayView ..> PlayerView
+    PlayView ..> PlayerCreator
+
+    class ResumeView{
+        ~ResumeView(Game)
+        ~Interact() : boolean
+        -GetMessage(Message) : string
+        -ReadAnswer(message) : char
+        -IsAffirmative() : boolean
+        -Reset()
+    }
+    ResumeView --> Models.Game
+    ResumeView ..> GameViews.Message
+    ResumeView ..> ConsoleIOs.YesNotDialog
+
+    class MessageView{
+        ~WriteLine(Message)
+        ~WriteLine(Message, string)
+        ~GetMessage(Message)
+    }
+    MessageView ..> GameViews.Message
+    MessageView ..> ConsoleIOs.ConsoleIO
+
+    class SetUpPlayerView{
+        ~SetUp(Game)
+        -GetMessage(Message)
+        -ReadPlayers(message) : int
+        -GetErrorToSetUp(players) : Error
+        -WriteLine(Error)
+    }
+    SetUpPlayerView ..> Models.Game
+    SetUpPlayerView ..> ConsoleIOs.ConsoleIO
+    SetUpPlayerView ..> GameViews.Message
+    SetUpPlayerView ..> MessageView
+    SetUpPlayerView ..> Types.Error
+    SetUpPlayerView ..> ErrorView
+
+    class ErrorView{
+        ~WriteLine(Error)
+    }
+
+    class BoardView{
+        ~Write(Game)
+        -WriteLine(Message)
+        -Write(Message)
+        -Write(Token)
+    }
+    BoardView ..> Models.Game
+    BoardView ..> GameViews.Message
+    BoardView ..> MessageView
+    BoardView ..> Types.Token
+    BoardView ..> TokenView
+    BoardView ..> ConsoleIOs.ConsoleIO
+
+    class TokenView{
+        ~Write(Token)
+    }
+    TokenView ..> Types.Token
+    TokenView ..> ConsoleIOs.ConsoleIO
+
+    class PlayerCreator{
+        -{static}instance : PlayerCreator
+        -PlayerCreator()
+        ~{static}GetInstance() : PlayerCreator
+        ~CreatePlayerView(PlayerType) : PlayerView
+    }
+    PlayerCreator ..> PlayerView
+    PlayerCreator ..> UserPlayer
+    PlayerCreator ..> MachinePlayer
+
+    abstract PlayerView{
+        ~Drop(Game)
+        #WriteLine(Message)
+        #{abstract}ReadColunm(Message) : int
+        #GetErrorToDrop(colunm) : Error        
+    }
+    PlayerView <|-- UserPlayer
+    PlayerView <|-- MachinePlayer
+    PlayerView ..> Models.Game
+    PlayerView ..> Types.Error
+    PlayerView ..> ErrorView
+    PlayerView ..> GameViews.Message
+    PlayerView ..> MessageView
+
+
+    class UserPlayer{
+        ~ReadColunm() : int
+        ~GetErrorToDrop(colum) : Error
+    }
+    UserPlayer ..> ConsoleIOs.ConsoleIO
+
+    class MachinePlayer{
+        ~ReadColunm(Message) : int
+    }
+}
+@enduml
+
+@startuml GameViewsDesign
+title Game Views Design
+
+package GameViews{
+    abstract WithGameView{
+        #gameView : Game
+        +WithGameView(Game)
+    }
+    WithGameView --> Models.Game 
+
+    abstract GameView{
+        #{abstract}Start()
+        #{abstract}Play()
+        #{abstract}IsResume() : boolean
+    }
+
+    enum Message{
+        +Titile,
+        +HorizontalLine,
+        +VerticalLine,
+        +Turn,
+        +NumOfPlayers,
+        +Random,
+        +EnterColunmToDrop,
+        +InvalidColunm,
+        +CompleteColunm,
+        +PlayerWin,
+        +PlayersTied,
+        +Resume
+        +GetMessage(Message) : string
+    }
+
+    abstract ErrorView{
+        +{abstract}WriteLine(Error)
+    }
+    ErrorView ..> Types.Error
+
+
+    abstract TokenView{
+        +{abstract}Write(Token)
+    }
+    TokenView ..> Types.Token
+}
+@enduml
+
+@startuml ModelsDesign
+title Models Design
+
+package Models{
+    class Game{
+        +Game()
+        +Reset()
+        +SetUp(players)
+        +GetToken(Coordinate) : Token
+        +GetPlayerType() : PlayerType
+        +GetCurrentPlayer() : Token
+        +GetLastPlayer() : Token
+        +Drop(colunm)
+        +GetErrorToDrop(colunm) : Error
+        +Next()
+        +IsFinished() : boolean
+        +IsWinner() : boolean
+    }
+    Game *--> Board
+    Game *--> Turn
+    Game *--> "2" Player
+    Game ..> Types.PlayerType
+    Game ..> Types.Token
+    Game ..> Types.Error
+    Game ..> Utils.Coordinate
+
+    class Board{
+        ~Board()
+        ~Reset()
+        ~GetToken(Coordinate) : Token
+        ~Drop(colunm, Token)
+        ~IsFinished() : boolean
+        ~IsWinner() : boolean
+        ~IsComplete() : boolean
+    }
+    Board *--> "6x7" Types.Token
+    Board ..> Utils.Coordinate
+
+    class Turn{
+        -current : int
+        ~Turn(Player[])
+        ~Next()
+        ~GetCurrentPlayer() : Player
+        ~GetLastPlayer() : Player
+    }
+    Turn --> "2" Player
+
+    class Player{
+        ~Player(Token, Board, PlayerType)
+        ~Drop(Token)
+        ~GetErrorToDrop(colunm) : Error
+        ~GetToken() : Token
+        ~GetPlayerType() : PlayerType
+    }
+    Player --> Board
+    Player --> Types.Token
+    Player --> Types.PlayerType
+    Player ..> Types.Error
+}
+@enduml
+
+@startuml TypesDesign
+title Types Design
+package Types{
+    enum Token{
+        +X,
+        +O,
+        +Null
+        +IsNull(Token) : boolean
+    }
+
+    enum Error{
+        +TheColunmIsComplete,
+        +TheColunmIsOutOfRange,
+        +PlayerIsOutOfRange
+        +Null
+        +IsNull(Error) : boolean
+    }
+
+    enum PlayerType{
+        +UserPlayer,
+        +MachinePlayer
+    }
+}
+@enduml
+
+@startuml UtilsDesign
+title Utils Design
+package Utils{
+    class Coordinate{
+        +{static}ROWS = 6
+        +{static}COLUNM = 7
+        -row : int
+        -colunm : int
+        +Coordinate(row, colunm)
+        +IsValid() : boolean
+        +IsValid(value) : boolean
+    }
+    Coordinate ..> ClosedInterval
+
+    class ClosedInterval{
+        -min : int
+        -max : int
+        ~ClosedInterval(min, max)
+        ~IsIncluide(value) : boolean
+    }
+}
+@enduml
