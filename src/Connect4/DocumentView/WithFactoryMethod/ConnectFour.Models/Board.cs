@@ -6,19 +6,19 @@ namespace ConnectFour.Models;
 internal class Board
 {
     private readonly Token[,] _tokens;
-    private Coordinate _lastDrop;
+    private Coordinate? _lastDrop;
 
     public Board()
     {
-        _tokens = new Token[Coordinate.Rows, Coordinate.Colunms];
+        _tokens = new Token[Coordinate.MaxRows, Coordinate.MaxColumns];
         Reset();
     }
 
-    internal void Reset()
+    public void Reset()
     {
-        for (int i = 0; i < Coordinate.Rows; i++)
+        for (int i = 0; i < Coordinate.MaxRows; i++)
         {
-            for (int j = 0; j < Coordinate.Colunms; j++)
+            for (int j = 0; j < Coordinate.MaxColumns; j++)
             {
                 _tokens[i, j] = Token.Null;
             }
@@ -39,17 +39,17 @@ internal class Board
     private Coordinate GetLastDrop(int colunm)
     {
         Coordinate coordinate = new Coordinate(row: 0, colunm);
-        while ((coordinate.Row < Coordinate.Rows - 1) && IsEmpty(coordinate))
+        while ((coordinate.Row < Coordinate.MaxRows - 1) && IsEmpty(coordinate))
         {
-            coordinate = coordinate.Shifted(new Coordinate(row: 1, column: 0));
+            coordinate = coordinate.Shifted(new Coordinate(row: 1, 0));
         }
 
         return coordinate;
     }
 
-    private bool IsEmpty(Coordinate lastDrop)
+    private bool IsEmpty(Coordinate coordinate)
     {
-        return IsOccupied(lastDrop, Token.Null);
+        return IsOccupied(coordinate, Token.Null);
     }
 
     private bool IsOccupied(Coordinate coordinate, Token token)
@@ -74,9 +74,9 @@ internal class Board
 
     private bool IsComplete()
     {
-        for (int i = 0; i < Coordinate.Rows; i++)
+        for (int i = 0; i < Coordinate.MaxRows; i++)
         {
-            for (int j = 0; j < Coordinate.Colunms; j++)
+            for (int j = 0; j < Coordinate.MaxColumns; j++)
             {
                 if (IsEmpty(new Coordinate(i, j)))
                 {
@@ -103,7 +103,6 @@ internal class Board
                 line.Shift();
             }
         }
-
         return false;
     }
 
@@ -112,16 +111,15 @@ internal class Board
         Coordinate[] coordinates = line.Coordinates;
         for (int i = 0; i < Line.Length; i++)
         {
-            if (!coordinates[i].IsValid())
+            if (!coordinates[i].IsIncluided())
             {
                 return false;
             }
-            if (i > 0 && GetToken(coordinates[i - 1]) != GetToken(coordinates[i]))
+            if ((i > 0) && GetToken(coordinates[i - 1]) != GetToken(coordinates[i]))
             {
                 return false;
             }
         }
-
         return true;
     }
 }

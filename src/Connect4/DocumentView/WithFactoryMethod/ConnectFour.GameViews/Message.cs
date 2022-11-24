@@ -1,33 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConnectFour.GameViews;
+﻿namespace ConnectFour.GameViews;
 
 public enum Message
 {
     Titile,
     HorizontalLine,
     VerticalLine,
-    Turn,
-    NumOfPlayers,
-    Random,
+    TurnOf,
+    EnterNumOfPlayers,
     EnterColunmToDrop,
-    InvalidColunm,
-    CompleteColunm,
+    RandomColunmToDrop,
     PlayerWin,
-    PlayersTied,
+    PlayersTie,
     Resume
 }
 
 public static class MessageExtension
 {
-    private static string[] Messages =
+    private static readonly string[] Messages =
     {
-
+        "--- CONNECT 4 ---",
+        "----------------------",
+        "| ",
+        "Turn of:",
+        "Enter the number of players [0 - 2]: ",
+        "Enter a colunm to drop a token: ",
+        "Aleatoriamente en la columna: #columna",
+        "#token WIN!!! : -)",
+        "TIE!!!",
+        "Do you want to continue"
     };
 
-
+    public static string GetToString(this Message message)
+    {
+        return Messages[(int)message];
+    }
 }

@@ -13,4 +13,14 @@ public static class TokenExtension
     {
         return token == Token.Null;
     }
+
+    public static string GetToString(this Token token)
+    {
+        if (!token.IsNull())
+        {
+            return token.ToString();
+        }
+
+        return " ";
+    }
 }

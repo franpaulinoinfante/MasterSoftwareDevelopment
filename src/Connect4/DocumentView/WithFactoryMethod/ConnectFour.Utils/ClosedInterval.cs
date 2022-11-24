@@ -2,8 +2,8 @@
 
 internal class ClosedInterval
 {
-    private int _min;
-    private int _max;
+    private readonly int _min;
+    private readonly int _max;
 
     public ClosedInterval(int min, int max)
     {
@@ -11,7 +11,7 @@ internal class ClosedInterval
         _max = max;
     }
 
-    internal bool IsIncuided(int value)
+    internal bool IsIncluide(int value)
     {
         return _min <= value && value <= _max;
     }
