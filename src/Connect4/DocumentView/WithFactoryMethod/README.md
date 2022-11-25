@@ -688,24 +688,24 @@ Analizar los requisitos a través de su refinamiento y estructura para realizar 
 
 #### Diseño de Connect4
 
-![image](https://user-images.githubusercontent.com/46433173/203589227-80ef8bfb-c8d3-4457-a7b4-83e8a786733f.png)
+![image](https://user-images.githubusercontent.com/46433173/203988879-090d0e55-7b05-485a-aeca-4e7bf89299fe.png)
 
 #### Diseño de la ConsoleApp
 
-![image](https://user-images.githubusercontent.com/46433173/203589290-4c6b4c60-3613-4f29-9741-9679586bedb2.png)
+![image](https://user-images.githubusercontent.com/46433173/203988915-93488aaf-3ffc-4962-93bd-a2e6282d7508.png)
 
 #### Diseño de las Vistas del Juego
 
-![image](https://user-images.githubusercontent.com/46433173/203589392-9a0fedcd-3496-4419-9b4b-53bc3d1e9b64.png)
+![image](https://user-images.githubusercontent.com/46433173/203988954-4eb878e6-3fd6-429b-a6d8-b8b094d88df3.png)
 
 #### Diseño de los Modelos
 
-![image](https://user-images.githubusercontent.com/46433173/203589428-9ff6339b-4d01-470d-a5fd-73825dc03911.png)
+![image](https://user-images.githubusercontent.com/46433173/203989175-d353268b-f002-4e4e-810a-dc0f14bff439.png)
 
 #### Diseño de los Tipos
 
-![image](https://user-images.githubusercontent.com/46433173/203589571-a051a3b6-1047-4c7c-bc52-51df0977eeb6.png)
+![image](https://user-images.githubusercontent.com/46433173/203989210-1fefa401-c195-4981-b6a8-7a42f8b41f85.png)
 
 #### Diseño de las Utilidades
 
-![image](https://user-images.githubusercontent.com/46433173/203589607-9d983ee2-70cf-419e-9ccd-0fb4b163e733.png)
+![image](https://user-images.githubusercontent.com/46433173/203989246-c2844c0f-73dd-4a30-ab22-6aa4342071c6.png)
