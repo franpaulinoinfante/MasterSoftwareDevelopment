@@ -19,14 +19,14 @@ internal class Player
 
     public PlayerType PlayerType => _playerType;
 
-    internal void Drop(int colunm)
+    internal void Drop(int column)
     {
-        _board.Drop(colunm, _token);
+        _board.Drop(column, _token);
     }
 
-    internal Error GetErrorToDrop(int colunm)
+    internal Error GetErrorToDrop(int column)
     {
-        if (_board.IsComplete(colunm))
+        if (_board.IsComplete(column))
         {
             return Error.TheColunmIsComplete;
         }

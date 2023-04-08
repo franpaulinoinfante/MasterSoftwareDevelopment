@@ -10,11 +10,13 @@ internal class SecrectCombination : Combination
         List<ColorCode> colorCodes = Enum.GetValues<ColorCode>().ToList();
         colorCodes.Remove(ColorCode.Null);
         int colorCodeToRemove = colorCodes.Count - Result.Width;
+
         Random random = new Random();
         for (int i = 0; i < colorCodeToRemove; i++)
         {
             colorCodes.Remove(colorCodes[random.Next(minValue: 0, colorCodes.Count)]);
         }
+
         colorCodes.Sort();
         colorCodes.Reverse();
         _colorCodes = colorCodes;

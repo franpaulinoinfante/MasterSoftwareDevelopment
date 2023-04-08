@@ -54,7 +54,8 @@ package Connect4{
 title ConsoleApp Design
 package ConsoleApp #SlateBlue{
     class ConnectFour{
-        ~Play()
+        ~Init()
+        ~CreateGameView(Game) : ConsoleView
     }
     ConnectFour -up-|> Connect4.Connect4
     ConnectFour ..> ConsoleView
@@ -76,30 +77,28 @@ package ConsoleApp #SlateBlue{
         ~StartView(Game)
         ~Interact()
         -WriteLine(Title)
-        -SetUpPlayer(Game)
+        -SetPlayer(Game)
         -WriteBoard(Game)
     }
     StartView --> Models.Game
     StartView ..> MessageView
-    StartView ..> SetUpPlayerView
+    StartView ..> PlayerConfigurationView
     StartView ..> BoardView
 
     class PlayView{
         ~PlayView(Game)
         ~Interact()
         -GetCurrentTokne() : Token
-        -WriteLine(Message)
+        -WriteLine(TurnOf)
         -GetPlayerType() : PlayerType
         -CreatePlayerView(PlayerType) : PlayerView
-        -Drop(Game)
-        -IsFinished() : boolean
         -IsWinner() : boolean
-        -WriteLine(Message, player)
+        -GetWinnerPlayer() : Token
+        -WriteResult(isWinner, winnerPlayer)
     }
     PlayView --> Models.Game
     PlayView ..> Types.Token
     PlayView ..> GameViews.Message
-    PlayView ..> MessageView
     PlayView ..> Types.PlayerType
     PlayView ..> PlayerView
     PlayView ..> PlayerCreator
@@ -124,42 +123,37 @@ package ConsoleApp #SlateBlue{
     MessageView ..> GameViews.Message
     MessageView ..> ConsoleIOs.ConsoleIO
 
-    class SetUpPlayerView{
-        ~SetUp(Game)
+    class PlayerConfigurationView{
+        ~SetPlayer(Game)
         -GetMessage(Message)
-        -ReadPlayers(message) : int
-        -GetErrorToSetUp(players) : Error
+        -ReadNumOfPlayers(message) : int
+        -GetErrorToSetUp(numOfPlayer) : Error
         -WriteLine(Error)
     }
-    SetUpPlayerView ..> Models.Game
-    SetUpPlayerView ..> ConsoleIOs.ConsoleIO
-    SetUpPlayerView ..> GameViews.Message
-    SetUpPlayerView ..> MessageView
-    SetUpPlayerView ..> Types.Error
-    SetUpPlayerView ..> ErrorView
+    PlayerConfigurationView ..> Models.Game
+    PlayerConfigurationView ..> ConsoleIOs.ConsoleIO
+    PlayerConfigurationView ..> GameViews.Message
+    PlayerConfigurationView ..> Types.Error
+    PlayerConfigurationView ..> ErrorView
 
     class ErrorView{
+        ~ErrorView(Error) : base(error)
         ~WriteLine(Error)
+        ~WriteLine(colunm)
     }
 
     class BoardView{
         ~Write(Game)
-        -WriteLine(Message)
-        -Write(Message)
+        -WriteLine(HorizontalLine)
+        -Write(VerticalLine)
+        -GetToken(Coordinate)
         -Write(Token)
     }
     BoardView ..> Models.Game
     BoardView ..> GameViews.Message
     BoardView ..> MessageView
     BoardView ..> Types.Token
-    BoardView ..> TokenView
     BoardView ..> ConsoleIOs.ConsoleIO
-
-    class TokenView{
-        ~Write(Token)
-    }
-    TokenView ..> Types.Token
-    TokenView ..> ConsoleIOs.ConsoleIO
 
     class PlayerCreator{
         -{static}instance : PlayerCreator
@@ -173,28 +167,28 @@ package ConsoleApp #SlateBlue{
 
     abstract PlayerView{
         ~Drop(Game)
-        #WriteLine(Message)
-        #{abstract}ReadColunm(Message) : int
+        #{abstract}ReadColunm() : int
         #GetErrorToDrop(colunm) : Error        
     }
     PlayerView <|-- UserPlayer
     PlayerView <|-- MachinePlayer
     PlayerView ..> Models.Game
     PlayerView ..> Types.Error
-    PlayerView ..> ErrorView
-    PlayerView ..> GameViews.Message
-    PlayerView ..> MessageView
 
 
     class UserPlayer{
+        ~UserPlayer(Game) : base(Game)
         ~ReadColunm() : int
+        ~GetErrorToReadColunmOutOfRange(colunm) : Error
         ~GetErrorToDrop(colum) : Error
     }
     UserPlayer ..> ConsoleIOs.ConsoleIO
 
     class MachinePlayer{
-        ~ReadColunm(Message) : int
+        ~MachinePlayer(Game) : base(Game)
+        ~ReadColunm() : int
     }
+    MachinePlayer ..> Utils.Coordinate
 }
 @enduml
 
@@ -227,19 +221,15 @@ package GameViews{
         +PlayerWin,
         +PlayersTied,
         +Resume
+        -{static}MESSAGES : string[]
         +GetMessage(Message) : string
     }
 
     abstract ErrorView{
-        +{abstract}WriteLine(Error)
+        #{static}ERRORS : string[]
+        +{abstract}WriteLine()
     }
-    ErrorView ..> Types.Error
-
-
-    abstract TokenView{
-        +{abstract}Write(Token)
-    }
-    TokenView ..> Types.Token
+    ErrorView --> Types.Error
 }
 @enduml
 
@@ -250,16 +240,17 @@ package Models{
     class Game{
         +Game()
         +Reset()
-        +SetUp(players)
+        +SetUp(numOfPlayers)
+        +GetErrorToSetUpNumOfPlayer(players) : Error
         +GetToken(Coordinate) : Token
         +GetPlayerType() : PlayerType
-        +GetCurrentPlayer() : Token
-        +GetLastPlayer() : Token
+        +GetCurrentTurn() : Token
         +Drop(colunm)
-        +GetErrorToDrop(colunm) : Error
-        +Next()
+        +GetErrorToDrop(colunm) : Error   
+        +Next()     
         +IsFinished() : boolean
         +IsWinner() : boolean
+        +GetWinner() : Token
     }
     Game *--> Board
     Game *--> Turn
@@ -270,25 +261,39 @@ package Models{
     Game ..> Utils.Coordinate
 
     class Board{
+        -tokens : Token[,]
+        -lastDrop : Coordinate
         ~Board()
         ~Reset()
-        ~GetToken(Coordinate) : Token
         ~Drop(colunm, Token)
+        -GetLastDrop(colunm) : Coordinate
+        -IsEmpty(Coordinate) : boolean
+        -IsOccupied(Coordinate, Token) : boolean
+        ~GetToken(Coordinate) : Token
+        ~IsComplete(colunm) : boolean
         ~IsFinished() : boolean
-        ~IsWinner() : boolean
         ~IsComplete() : boolean
+        ~IsWinner() : boolean
+        -IsCoonectFour(Line) : boolean
     }
     Board *--> "6x7" Types.Token
     Board ..> Utils.Coordinate
+    Board ..> Utils.Line
+    Board ..> Utils.Direction
 
     class Turn{
+        ~{static}MAX_PLAYERS = 2
+        ~{static}MIN_PLAYERS = 0
         -current : int
         ~Turn(Player[])
         ~Next()
+        -Change()
+        ~GetErrorToSetUpNumOfPlayer(players) : Error
         ~GetCurrentPlayer() : Player
         ~GetLastPlayer() : Player
     }
     Turn --> "2" Player
+    Turn ..> Types.Error
 
     class Player{
         ~Player(Token, Board, PlayerType)
@@ -310,20 +315,21 @@ package Types{
     enum Token{
         +X,
         +O,
-        +Null
+        +Null,
         +IsNull(Token) : boolean
+        +GetToString(Token) : string
     }
 
     enum Error{
         +TheColunmIsComplete,
-        +TheColunmIsOutOfRange,
-        +PlayerIsOutOfRange
-        +Null
+        +TheColunmIsOutOfRang,
+        +PlayerIsOutOfRange,
+        +Null,
         +IsNull(Error) : boolean
     }
 
     enum PlayerType{
-        +UserPlayer,
+        +UserPlayer
         +MachinePlayer
     }
 }
@@ -338,8 +344,10 @@ package Utils{
         -row : int
         -colunm : int
         +Coordinate(row, colunm)
-        +IsValid() : boolean
+        +IsIncluded() : boolean
         +IsValid(value) : boolean
+        +Equals(Coordinate) : boolean
+        +Shifted(Coordinate) : Coordinate
     }
     Coordinate ..> ClosedInterval
 
@@ -347,7 +355,42 @@ package Utils{
         -min : int
         -max : int
         ~ClosedInterval(min, max)
-        ~IsIncluide(value) : boolean
+        ~IsIncluded(value) : boolean
     }
+
+    class Direction{
+        +{static}North : Direction(1, 0)
+        +{static}NorthEast : Direction(1, 1)
+        +{static}East : Direction(0, 1)
+        +{static}SouthEast : Direction(-1, 1)
+        +{static}South : Direction(-1, 0)
+        +{static}SouthWest : Direction(-1, -1)
+        +{static}West : Direction(0, -1)
+        +{static}NorthWest : Direction(1, -1)
+        +{static}Null : Direction(0, 0)
+
+        -coordinate : Coordinate
+        +Direction(row, colunm)
+        +GetCoordinate() : Coordinate
+        +GetOppositeDirection() : Direction
+        +GetDirections() : List<Direction>
+    }
+    Direction *--> Coordinate
+
+
+    class Line{
+        +{static}LENGTH = 4
+        -coordinates : Coordinate[]
+        -coordinate : Coordinate
+        -oppositeDirection : Direction
+        +Line(Coordinate)
+        +GetCoordinates : Coordinate[]
+        +SetDirection()
+        +Shift()
+    }
+    Line --> Coordinate : coordinate
+    Line *--> "4" Coordinate : coordinates
+    Line --> Direction
+
 }
 @enduml

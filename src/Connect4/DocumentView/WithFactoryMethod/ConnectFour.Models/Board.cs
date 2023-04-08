@@ -11,10 +11,10 @@ internal class Board
     public Board()
     {
         _tokens = new Token[Coordinate.MaxRows, Coordinate.MaxColumns];
-        Reset();
+        //NewGame();
     }
 
-    public void Reset()
+    public void NewGame()
     {
         for (int i = 0; i < Coordinate.MaxRows; i++)
         {
@@ -41,7 +41,7 @@ internal class Board
         Coordinate coordinate = new Coordinate(row: 0, colunm);
         while ((coordinate.Row < Coordinate.MaxRows - 1) && IsEmpty(coordinate))
         {
-            coordinate = coordinate.Shifted(new Coordinate(row: 1, 0));
+            coordinate = coordinate.Shifted(new Coordinate(row: 1, column: 0)) ;
         }
 
         return coordinate;
@@ -100,9 +100,11 @@ internal class Board
                 {
                     return true;
                 }
+
                 line.Shift();
             }
         }
+
         return false;
     }
 
@@ -120,6 +122,7 @@ internal class Board
                 return false;
             }
         }
+
         return true;
     }
 }

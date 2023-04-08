@@ -19,7 +19,7 @@ public class Coordinate
 
     public bool IsValid(int value)
     {
-        return new ClosedInterval(min: 0, _column - 1).IsIncluide(value);
+        return new ClosedInterval(min: 0, _column).IsIncluide(value);
     }
 
     public Coordinate Shifted(Coordinate coordinate)

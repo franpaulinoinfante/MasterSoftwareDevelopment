@@ -10,10 +10,10 @@ internal class ResumeView : WithGameView
     internal bool Interact()
     {
         YesNoDialog yesNoDialog = new YesNoDialog();
-        yesNoDialog.Read(Message.Resume.GetToString());
+        yesNoDialog.Read(Message.Resume.GetMessage());
         if (yesNoDialog.IsAffirmative())
         {
-            _game.Reset();
+            _game.NewGame();
         }
 
         return yesNoDialog.IsAffirmative();

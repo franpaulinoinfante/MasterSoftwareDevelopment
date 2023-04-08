@@ -8,7 +8,7 @@ public enum Message
     TurnOf,
     EnterNumOfPlayers,
     EnterColunmToDrop,
-    RandomColunmToDrop,
+    RandomlyColunmToDrop,
     PlayerWin,
     PlayersTie,
     Resume
@@ -20,17 +20,17 @@ public static class MessageExtension
     {
         "--- CONNECT 4 ---",
         "----------------------",
-        "| ",
+        " | ",
         "Turn of:",
         "Enter the number of players [0 - 2]: ",
         "Enter a colunm to drop a token: ",
-        "Aleatoriamente en la columna: #columna",
-        "#token WIN!!! : -)",
+        "Randomly in the column: #colunm",
+        "Player -> #token, WIN!!! : -)",
         "TIE!!!",
         "Do you want to continue"
     };
 
-    public static string GetToString(this Message message)
+    public static string GetMessage(this Message message)
     {
         return Messages[(int)message];
     }

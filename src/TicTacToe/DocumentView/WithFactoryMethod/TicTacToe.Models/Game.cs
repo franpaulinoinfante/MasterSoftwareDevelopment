@@ -12,8 +12,8 @@ public class Game
     {
         _board = new Board();
         _players = new Player[Turn.NUM_PLAYERS];
-        NewGame();
         _turn = new Turn(_players);
+        NewGame();
     }
 
     public void NewGame()

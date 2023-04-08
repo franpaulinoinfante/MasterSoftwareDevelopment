@@ -12,13 +12,14 @@
             {
                 _instance = new ConsoleIO();
             }
+
             return _instance;
         }
     }
 
     public string ReadString()
     {
-        return ReadString("");
+        return ReadString(string.Empty);
     }
 
     public string ReadString(string? title)

@@ -34,6 +34,7 @@ internal class ProposedCombination : Combination
             }
             correctColorCodes.Add(colorCode);
         }
+
         return ErrorCode.Null;
     }
 }

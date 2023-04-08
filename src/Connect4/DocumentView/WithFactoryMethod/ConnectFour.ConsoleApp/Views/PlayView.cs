@@ -11,12 +11,12 @@ internal class PlayView : WithGameView
     {
         do
         {
-            ConsoleIO.Instance.WriteLine($"{Message.TurnOf.GetToString()} {_game.GetCurrentTurn()}");
+            ConsoleIO.Instance.WriteLine($"{Message.TurnOf.GetMessage()} {_game.GetCurrentTurn()}");
             PlayerViewCreator.Instance.Create(_game).Interact();
             _game.Next();
             new BoardView().Write(_game);
         } while (!_game.IsFinished());
 
-        new ResultView().WriteLine(_game.IsWinner(), _game.GetWinner().ToString());
+        new ResultView().WriteLine(_game.IsWinner(), _game.GetWinnerPlayer().ToString());
     }
 }

@@ -10,7 +10,8 @@ internal class StartView : WithGameView
     internal void Interact()
     {
         new MessageView().WriteLine(Message.Titile);
-        new PlayerConfigurationView().Set(_game);
+        new PlayerConfigurationView().SetPlayer(_game);
+        _game.NewGame();
         new BoardView().Write(_game);
     }
 }

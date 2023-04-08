@@ -8,7 +8,7 @@ public class Game
     private const int Initial = 0;
     private const int MaxAttempts = 10;
 
-    private readonly SecrectCombination _secrectCombination;
+    private readonly SecrectCombination _secretCombination;
     private readonly ProposedCombination[] _proposedCombinations;
     private readonly Result[] _results;
     private readonly State _state;
@@ -18,7 +18,7 @@ public class Game
 
     public Game()
     {
-        _secrectCombination = new SecrectCombination();
+        _secretCombination = new SecrectCombination();
         _proposedCombinations = new ProposedCombination[MaxAttempts];
         _results = new Result[MaxAttempts];
         _state = new State();
@@ -29,15 +29,20 @@ public class Game
 
     public void NewGame()
     {
-        for (int i = 0; i < _attempts; i++)
-        {
-            _proposedCombinations[i] = null;
-            _results[i] = null;
-        }
+        Array.Clear(_proposedCombinations);
+        Array.Clear(_results);
+
+        //for (int i = 0; i < _attempts; i++)
+        //{
+
+        //    _proposedCombinations[i] = null;
+        //    _results[i] = null;
+        //}
+
         _attempts = Initial;
         _resultCount = Initial;
         _state.Reset();
-        _secrectCombination.Generate();
+        _secretCombination.Generate();
     }
 
     public StateCode GetStateCode()
@@ -74,7 +79,7 @@ public class Game
     {
         Debug.Assert(_attempts >= 0);
 
-        _results[_resultCount] = _secrectCombination.CheckResult(_proposedCombinations[_attempts - 1]);
+        _results[_resultCount] = _secretCombination.CheckResult(_proposedCombinations[_attempts - 1]);
         _resultCount++;
     }
 

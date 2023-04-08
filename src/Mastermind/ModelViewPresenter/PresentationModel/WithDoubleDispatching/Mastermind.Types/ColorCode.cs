@@ -30,6 +30,7 @@ public static class ColorCodeExtension
         {
             sb.Append(GetInitial(colorCode));
         }
+        
         return sb.ToString();
     }
 

@@ -2,6 +2,7 @@
 using ConnectFour.Utils;
 
 namespace ConnectFour.Models;
+
 public class Game
 {
     private readonly Board _board;
@@ -15,7 +16,14 @@ public class Game
         _turn = new Turn(_players);
     }
 
-    public void Set(int numOfPlayers)
+    private Player CurrentPlayer => _turn.CurrentPlayer;
+
+    public void NewGame()
+    {
+        _board.NewGame();
+    }
+
+    public void SetPlayer(int numOfPlayers)
     {
         for (int i = 0; i < numOfPlayers; i++)
         {
@@ -27,29 +35,9 @@ public class Game
         }
     }
 
-    public void Drop(int colunm)
-    {
-        _turn.CurrentPlayer.Drop(colunm);
-    }
-
-    public Token GetCurrentTurn()
-    {
-        return _turn.CurrentPlayer.Token;
-    }
-
-    public Error GetErrorToDrop(int colunm)
-    {
-        return _turn.CurrentPlayer.GetErrorToDrop(colunm);
-    }
-
     public Error GetErrorToSetUpNumOfPlayer(int players)
     {
         return _turn.GetErrorToSetUpNumOfPlayer(players);
-    }
-
-    public PlayerType GetPlayerTypeFromTurn()
-    {
-        return _turn.CurrentPlayer.PlayerType;
     }
 
     public Token GetToken(Coordinate coordinate)
@@ -57,9 +45,29 @@ public class Game
         return _board.GetToken(coordinate);
     }
 
-    public Token GetWinner()
+    public PlayerType GetPlayerTypeFromTurn()
     {
-        return _turn.GetLastPlayer.Token;
+        return CurrentPlayer.PlayerType;
+    }
+
+    public Token GetCurrentTurn()
+    {
+        return CurrentPlayer.Token;
+    }
+
+    public void Drop(int column)
+    {
+        CurrentPlayer.Drop(column);
+    }
+
+    public Error GetErrorToDrop(int column)
+    {
+        return CurrentPlayer.GetErrorToDrop(column);
+    }
+
+    public void Next()
+    {
+        _turn.Next();
     }
 
     public bool IsFinished()
@@ -72,13 +80,8 @@ public class Game
         return _board.IsWinner();
     }
 
-    public void Next()
+    public Token GetWinnerPlayer()
     {
-        _turn.Next();
-    }
-
-    public void Reset()
-    {
-        _board.Reset();
+        return _turn.GetLastPlayer.Token;
     }
 }

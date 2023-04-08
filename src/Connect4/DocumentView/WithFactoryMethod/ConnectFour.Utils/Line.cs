@@ -30,9 +30,7 @@ public class Line
             _oppositeDirection = value.OppositeDirection;
         }
     }
-
-    public Coordinate[] Coodinates { get; set; }
-
+    
     public void Shift()
     {
         for (int i = 0; i < Line.Length; i++)

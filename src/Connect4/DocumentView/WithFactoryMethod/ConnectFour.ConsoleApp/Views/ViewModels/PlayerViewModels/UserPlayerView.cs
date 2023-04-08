@@ -16,15 +16,15 @@ internal class UserPlayerView : PlayerView
         Error error;
         do
         {
-            colunm = ConsoleIO.Instance.ReadInt(Message.EnterColunmToDrop.GetToString()) - 1;
-            error = GetErrorToOutOfRange(colunm);
+            colunm = ConsoleIO.Instance.ReadInt(Message.EnterColunmToDrop.GetMessage()) - 1;
+            error = GetErrorToReadColunmOutOfRange(colunm);
             new ErrorView(error).WriteLine();
         } while (!error.IsNull());
 
         return colunm;
     }
 
-    private Error GetErrorToOutOfRange(int colunm)
+    private Error GetErrorToReadColunmOutOfRange(int colunm)
     {
         if (!new Coordinate(row: 0, Coordinate.MaxColumns - 1).IsValid(colunm))
         {

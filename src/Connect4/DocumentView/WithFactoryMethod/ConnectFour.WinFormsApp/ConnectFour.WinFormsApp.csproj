@@ -8,4 +8,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectFour.Models\ConnectFour.Models.csproj" />
+    <ProjectReference Include="..\ConnectFour.Types\ConnectFour.Types.csproj" />
+    <ProjectReference Include="..\ConnectFour.Utils\ConnectFour.Utils.csproj" />
+    <ProjectReference Include="..\ConnectFour\ConnectFour.csproj" />
+  </ItemGroup>
+
 </Project>

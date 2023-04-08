@@ -1,8 +1,12 @@
+using ConnectFour.Models;
+
 namespace ConnectFour.WinFormsApp;
 
 public partial class Dashboard : Form
 {
-    public Dashboard()
+
+
+    public Dashboard(Game game)
     {
         InitializeComponent();
     }

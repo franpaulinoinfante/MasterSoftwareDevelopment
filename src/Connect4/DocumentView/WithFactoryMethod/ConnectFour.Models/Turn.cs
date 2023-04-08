@@ -27,7 +27,7 @@ internal class Turn
 
     internal Error GetErrorToSetUpNumOfPlayer(int players)
     {
-        if (players < MinPlayers || players > Turn.MaxPlayers)
+        if (players < Turn.MinPlayers || players > Turn.MaxPlayers)
         {
             return Error.ThePlayersIsOutOfRange;
         }
