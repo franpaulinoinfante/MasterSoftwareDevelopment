@@ -9,8 +9,8 @@
         _max = max;
     }
 
-    internal bool Incuide(int row)
+    internal bool Incuide(int value)
     {
-        return _min <= row && row <= _max;
+        return _min <= value && value <= _max;
     }
 }

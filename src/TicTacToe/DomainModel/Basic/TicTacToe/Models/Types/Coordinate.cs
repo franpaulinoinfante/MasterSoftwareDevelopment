@@ -9,6 +9,7 @@
 
     public Coordinate()
     {
+        var array = new List<int>().Contains(2);
     }
 
     public Coordinate(int row, int colunm)

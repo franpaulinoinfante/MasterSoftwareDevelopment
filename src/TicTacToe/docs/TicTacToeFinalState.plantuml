@@ -101,8 +101,10 @@ Square33 *-down-> Coordinate33
 
 Square11 -[hidden]right-> Square12
 Square12 -[hidden]right-> Square13
+
 Square21 -[hidden]right-> Square22
 Square22 -[hidden]right-> Square23
+
 Square31 -[hidden]right-> Square32
 Square32 -[hidden]right-> Square33
 

@@ -3,10 +3,10 @@
 internal class Turn
 {
     internal static int NUM_PLAYERS = 2;
-    private readonly Player[]? _players;
+    private readonly Player[] _players;
     private int _current;
 
-    public Turn(Player[]? players)
+    public Turn(Player[] players)
     {
         _players = players;
         _current = 0;

@@ -101,6 +101,7 @@ internal class Board
     internal bool IsticTacToe(Token token)
     {
         Debug.Assert(token != Token.NULL);
+
         List<Direction> directions = GetDirections(token);
         if (directions.Count < Coordinate.DIMENSION - 1)
         {

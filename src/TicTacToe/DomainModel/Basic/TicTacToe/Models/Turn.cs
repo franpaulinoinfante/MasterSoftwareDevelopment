@@ -21,6 +21,7 @@
         {
             _players[i] = new Player(Enum.GetValues<TokenType>()[i], board);
         }
+        
         _current = new Random().Next(NUM_PLAYERS);
     }
 
