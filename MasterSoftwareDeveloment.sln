@@ -153,7 +153,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectFour.Utils", "src\Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{72FDC9E1-3AAB-46D2-B571-17A6035462F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.WindFormsApp", "src\Mastermind\ModelViewPresenter\PresentationModel\WithDoubleDispatching\Mastermind.WindFormsApp\Mastermind.WindFormsApp.csproj", "{B32B187F-0A8B-44C6-8680-36D813694395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermind.WindFormsApp", "src\Mastermind\ModelViewPresenter\PresentationModel\WithDoubleDispatching\Mastermind.WindFormsApp\Mastermind.WindFormsApp.csproj", "{B32B187F-0A8B-44C6-8680-36D813694395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.ConsoleApp.v2", "Mastermind.ConsoleApp.v2\Mastermind.ConsoleApp.v2.csproj", "{7A22A1CA-CD66-48C4-A960-DEC6CAF80C8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermind.WindowsFormsApp.v2", "Mastermind.WindowsFormsApp.v2\Mastermind.WindowsFormsApp.v2.csproj", "{4BACB41C-D5FE-449B-A12E-1E6FB15D2A27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -369,6 +373,14 @@ Global
 		{B32B187F-0A8B-44C6-8680-36D813694395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B32B187F-0A8B-44C6-8680-36D813694395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B32B187F-0A8B-44C6-8680-36D813694395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A22A1CA-CD66-48C4-A960-DEC6CAF80C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A22A1CA-CD66-48C4-A960-DEC6CAF80C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A22A1CA-CD66-48C4-A960-DEC6CAF80C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A22A1CA-CD66-48C4-A960-DEC6CAF80C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BACB41C-D5FE-449B-A12E-1E6FB15D2A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BACB41C-D5FE-449B-A12E-1E6FB15D2A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BACB41C-D5FE-449B-A12E-1E6FB15D2A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BACB41C-D5FE-449B-A12E-1E6FB15D2A27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -449,6 +461,8 @@ Global
 		{4C85D2F7-B35E-401F-AFDC-0414547516F7} = {1B0451E3-8AE0-4265-8C26-018C391C0C01}
 		{72FDC9E1-3AAB-46D2-B571-17A6035462F2} = {B6E0F41D-E6B0-4421-B0FE-F1C33C81AC0F}
 		{B32B187F-0A8B-44C6-8680-36D813694395} = {5AB45C1F-FD0F-4FCE-A3E3-8EEDAA426CD7}
+		{7A22A1CA-CD66-48C4-A960-DEC6CAF80C8F} = {5AB45C1F-FD0F-4FCE-A3E3-8EEDAA426CD7}
+		{4BACB41C-D5FE-449B-A12E-1E6FB15D2A27} = {5AB45C1F-FD0F-4FCE-A3E3-8EEDAA426CD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2380246B-19BF-4707-9D5B-161687277C4A}
